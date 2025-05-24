@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INNi Accounting Program</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-2xl font-bold">INNi Accounting Program</h1>
+        <p class="text-sm">"Simplifying Accounting, Empowering Your Business"</p>
+      </div>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav id="nav-menu" class="hidden md:flex space-x-4">
+        <a href="#intro" class="hover:text-blue-300 transition">Home</a>
+        <a href="#features" class="hover:text-blue-300 transition">Features</a>
+        <a href="#benefits" class="hover:text-blue-300 transition">Benefits</a>
+        <a href="#reports" class="hover:text-blue-300 transition">Reports</a>
+        <a href="#contact" class="hover:text-blue-300 transition">Contact</a>
+      </nav>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+      <a href="#intro" class="block py-2 px-4 hover:bg-blue-700 transition">Home</a>
+      <a href="#features" class="block py-2 px-4 hover:bg-blue-700 transition">Features</a>
+      <a href="#benefits" class="block py-2 px-4 hover:bg-blue-700 transition">Benefits</a>
+      <a href="#reports" class="block py-2 px-4 hover:bg-blue-700 transition">Reports</a>
+      <a href="#contact" class="block py-2 px-4 hover:bg-blue-700 transition">Contact</a>
+    </div>
+  </header>
+
+  <!-- Introduction -->
+  <section id="intro" class="bg-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold text-gray-800">Welcome to INNi Accounting Program</h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+        INNi Accounting Program is designed for SMEs, CVs, BUMDes, and Cooperatives, offering affordable and user-friendly financial accounting solutions to streamline your business operations.
+      </p>
+      <button id="contact-btn" class="mt-6 bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition">Contact Us</button>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Chart of Accounts</h3>
+          <p class="mt-2 text-gray-600">Classify financial accounts like assets, liabilities, and equity with ease.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline" data-desc="Organize your financial accounts with a structured coding system for assets, liabilities, and equity.">Learn More</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Voucher Management</h3>
+          <p class="mt-2 text-gray-600">Create and track transaction vouchers, including discounts and payments.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline" data-desc="Easily create vouchers with automatic validation to ensure balanced debit and credit entries.">Learn More</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">General Ledger</h3>
+          <p class="mt-2 text-gray-600">Comprehensive record of all financial transactions for accurate reporting.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline" data-desc="Track every financial transaction in a detailed ledger for precise reporting and analysis.">Learn More</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Accounts Receivable</h3>
+          <p class="mt-2 text-gray-600">Manage customer receivables with detailed tracking.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline" data-desc="Monitor and manage customer receivables with detailed subsidiary ledgers.">Learn More</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Accounts Payable</h3>
+          <p class="mt-2 text-gray-600">Track and manage debts to suppliers or other parties.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline" data-desc="Keep track of debts to suppliers with organized subsidiary ledgers for efficient management.">Learn More</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Data Export</h3>
+          <p class="mt-2 text-gray-600">Export data to PDF or Excel for further analysis with customizable reports.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline" data-desc="Export financial data to PDF or Excel with customizable options for specific accounts and periods.">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Why Choose INNi?</h2>
+      <ul class="list-disc list-inside max-w-2xl mx-auto text-gray-600">
+        <li class="mb-2">Easy to use, even for beginners.</li>
+        <li class="mb-2">Accurate and organized financial data.</li>
+        <li class="mb-2">Time and cost-efficient solutions.</li>
+        <li class="mb-2">On-site training for seamless adoption.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sample Reports -->
+  <section id="reports" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Sample Financial Reports</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Trial Balance (April 2025)</h3>
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-blue-500 text-white">
+                <th class="p-2">Account Code</th>
+                <th class="p-2">Account Name</th>
+                <th class="p-2">Total (Rp)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-2 border">1.1.01.01</td><td class="p-2 border">Cash</td><td class="p-2 border">15,700,000.00</td></tr>
+              <tr><td class="p-2 border">1.1.01.03</td><td class="p-2 border">Bank Mandiri</td><td class="p-2 border">600,000.00</td></tr>
+              <tr><td class="p-2 border">1.1.03.01</td><td class="p-2 border">Accounts Receivable</td><td class="p-2 border">5,900,000.00</td></tr>
+              <tr><td class="p-2 border">1.1.05.01</td><td class="p-2 border">Inventory</td><td class="p-2 border">17,000,000.00</td></tr>
+              <tr><td class="p-2 border">2.1.01.01</td><td class="p-2 border">Accounts Payable</td><td class="p-2 border">-8,000,000.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Balance Sheet (2025)</h3>
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-blue-500 text-white">
+                <th class="p-2">Category</th>
+                <th class="p-2">Amount (Rp)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-2 border font-bold">Assets</td><td class="p-2 border"></td></tr>
+              <tr><td class="p-2 border pl-4">Inventory</td><td class="p-2 border">17,000,000.00</td></tr>
+              <tr><td class="p-2 border pl-4">Accounts Receivable</td><td class="p-2 border">5,900,000.00</td></tr>
+              <tr><td class="p-2 border pl-4">Cash & Equivalents</td><td class="p-2 border">16,300,000.00</td></tr>
+              <tr><td class="p-2 border font-bold">Total Assets</td><td class="p-2 border">39,200,000.00</td></tr>
+              <tr><td class="p-2 border font-bold">Liabilities & Equity</td><td class="p-2 border"></td></tr>
+              <tr><td class="p-2 border pl-4">Accounts Payable</td><td class="p-2 border">8,000,000.00</td></tr>
+              <tr><td class="p-2 border pl-4">Retained Earnings</td><td class="p-2 border">15,200,000.00</td></tr>
+              <tr><td class="p-2 border pl-4">Owner's Equity</td><td class="p-2 border">16,000,000.00</td></tr>
+              <tr><td class="p-2 border font-bold">Total Liabilities & Equity</td><td class="p-2 border">39,200,000.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold text-gray-800 mb-8">Let's Collaborate</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Ready to simplify your accounting? Contact us to discuss further or schedule a product demonstration.
+      </p>
+      <div class="mt-6">
+        <p class="text-gray-800"><strong>S. Eric Dallan (Eric):</strong> 087725113689</p>
+        <p class="text-gray-800"><strong>Heri Noviandana:</strong> 087702882986</p>
+        <p class="text-gray-800"><strong>Zaenal Abidin (Team Leader):</strong> 081932278584 | <a href="mailto:zabidin_buf@yahoo.com" class="text-blue-500 hover:underline">zabidin_buf@yahoo.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 INNi Accounting Program. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="feature-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg max-w-md w-full">
+      <h3 class="text-xl font-bold text-blue-900 mb-4" id="modal-title"></h3>
+      <p class="text-gray-600" id="modal-desc"></p>
+      <button id="modal-close" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">Close</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        mobileMenu.classList.add('hidden'); // Close mobile menu on click
+      });
+    });
+
+    // Feature Modal
+    const featureButtons = document.querySelectorAll('.feature-btn');
+    const modal = document.getElementById('feature-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalClose = document.getElementById('modal-close');
+
+    featureButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const title = button.parentElement.querySelector('h3').textContent;
+        const desc = button.getAttribute('data-desc');
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modal.classList.remove('hidden');
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    // Contact Button Alert
+    document.getElementById('contact-btn').addEventListener('click', () => {
+      alert('Ready to simplify your accounting? Reach out to us at zabidin_buf@yahoo.com or call 081932278584 to schedule a demo!');
+      window.scrollTo({ top: document.getElementById('contact').offsetTop, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
