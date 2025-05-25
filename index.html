@@ -4,47 +4,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Program Akuntansi INNi menyediakan solusi akuntansi keuangan yang terjangkau dan ramah pengguna untuk UKM, CV, BUMDes, dan Koperasi.">
+  <meta name="keywords" content="akuntansi, UKM, BUMDes, koperasi, program akuntansi, keuangan, INNi">
   <title>Program Akuntansi INNi</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    #feature-carousel-modal {
+      z-index: 60;
+    }
+
+    #image-modal {
+      z-index: 50;
+    }
+
+    #feature-modal,
+    #contact-modal {
+      z-index: 50;
+    }
+
+    #feature-carousel img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+    }
+
+    .feature-carousel-item {
+      width: 100%;
+    }
+
+    .benefit-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .benefit-item i {
+      font-size: 2.5rem;
+      color: #1e40af;
+      margin-bottom: 1rem;
+    }
+
+    /* Ensure modals are accessible */
+    .modal[aria-hidden="false"] {
+      display: flex !important;
+    }
+
+    /* Improve focus visibility */
+    button:focus,
+    a:focus {
+      outline: 2px solid #1e40af;
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 
 <body class="font-sans">
   <!-- Header -->
-  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50">
+  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50" aria-label="Main navigation">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <div>
         <h1 class="text-2xl font-bold">Program Akuntansi INNi</h1>
         <p class="text-sm">"Mempermudah Akuntansi, Memberdayakan Bisnis Anda"</p>
       </div>
       <div class="flex items-center space-x-4">
-        <button id="menu-toggle" class="md:hidden focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu"
+          aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-        <nav id="nav-menu" class="hidden md:flex space-x-4">
+        <nav id="nav-menu" class="hidden md:flex space-x-4" aria-label="Primary navigation">
           <a href="#intro" class="hover:text-blue-300 transition">Beranda</a>
           <a href="#features" class="hover:text-blue-300 transition">Fitur</a>
           <a href="#benefits" class="hover:text-blue-300 transition">Manfaat</a>
-          <a href="#interface" class="hover:text-blue-300 transition">Antarmuka</a>
+          <a href="#client" class="hover:text-blue-300 transition">Klien</a>
           <a href="#contact" class="hover:text-blue-300 transition">Kontak</a>
         </nav>
         <div class="flex space-x-2">
-          <button id="btn-id" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition">ID</button>
-          <button id="btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition">EN</button>
+          <button id="btn-id"
+            class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition bg-blue-700 text-white"
+            aria-label="Switch to Indonesian">ID</button>
+          <button id="btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition"
+            aria-label="Switch to English">EN</button>
         </div>
       </div>
     </div>
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800" aria-hidden="true">
       <a href="#intro" class="block py-2 px-4 hover:bg-blue-700 transition">Beranda</a>
       <a href="#features" class="block py-2 px-4 hover:bg-blue-700 transition">Fitur</a>
       <a href="#benefits" class="block py-2 px-4 hover:bg-blue-700 transition">Manfaat</a>
-      <a href="#interface" class="block py-2 px-4 hover:bg-blue-700 transition">Antarmuka</a>
+      <a href="#client" class="block py-2 px-4 hover:bg-blue-700 transition">Klien</a>
       <a href="#contact" class="block py-2 px-4 hover:bg-blue-700 transition">Kontak</a>
       <div class="flex space-x-2 px-4 py-2">
-        <button id="mobile-btn-id" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition">ID</button>
-        <button id="mobile-btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition">EN</button>
+        <button id="mobile-btn-id"
+          class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition bg-blue-700 text-white"
+          aria-label="Switch to Indonesian">ID</button>
+        <button id="mobile-btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition"
+          aria-label="Switch to English">EN</button>
       </div>
     </div>
   </header>
@@ -58,7 +118,8 @@
         terjangkau dan ramah pengguna untuk menyederhanakan operasi bisnis Anda.
       </p>
       <button id="contact-btn"
-        class="mt-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 hover:shadow-xl transition duration-300 transform hover:scale-105">
+        class="mt-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 hover:shadow-xl transition duration-300 transform hover:scale-105"
+        aria-label="Open contact modal">
         Hubungi Kami
       </button>
     </div>
@@ -74,45 +135,66 @@
           <p class="mt-2 text-gray-600">Klasifikasikan akun keuangan seperti aset, liabilitas, dan ekuitas dengan mudah.
           </p>
           <button class="feature-btn mt-2 text-blue-500 hover:underline"
-            data-desc="Organisasi akun keuangan Anda dengan sistem pengkodean terstruktur untuk aset, liabilitas, dan ekuitas.">Pelajari
-            Lebih Lanjut</button>
+            data-desc="Organisasi akun keuangan Anda dengan sistem pengkodean terstruktur untuk aset, liabilitas, dan ekuitas."
+            aria-label="Learn more about Chart of Accounts">Pelajari Lebih Lanjut</button>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-bold text-blue-900">Manajemen Voucher</h3>
           <p class="mt-2 text-gray-600">Buat dan lacak voucher transaksi, termasuk diskon dan pembayaran.</p>
           <button class="feature-btn mt-2 text-blue-500 hover:underline"
-            data-desc="Buat voucher dengan mudah dengan validasi otomatis untuk memastikan entri debit dan kredit seimbang.">Pelajari
-            Lebih Lanjut</button>
+            data-desc="Buat voucher dengan mudah dengan validasi otomatis untuk memastikan entri debit dan kredit seimbang."
+            aria-label="Learn more about Voucher Management">Pelajari Lebih Lanjut</button>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-bold text-blue-900">Buku Besar Umum</h3>
           <p class="mt-2 text-gray-600">Catatan komprehensif dari semua transaksi keuangan untuk pelaporan yang akurat.
           </p>
           <button class="feature-btn mt-2 text-blue-500 hover:underline"
-            data-desc="Lacak setiap transaksi keuangan dalam buku besar terperinci untuk pelaporan dan analisis yang presisi.">Pelajari
-            Lebih Lanjut</button>
+            data-desc="Lacak setiap transaksi keuangan dalam buku besar terperinci untuk pelaporan dan analisis yang presisi."
+            aria-label="Learn more about General Ledger">Pelajari Lebih Lanjut</button>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-bold text-blue-900">Piutang</h3>
           <p class="mt-2 text-gray-600">Kelola piutang pelanggan dengan pelacakan terperinci.</p>
           <button class="feature-btn mt-2 text-blue-500 hover:underline"
-            data-desc="Pantau dan kelola piutang pelanggan dengan buku pembantu terperinci.">Pelajari Lebih
-            Lanjut</button>
+            data-desc="Pantau dan kelola piutang pelanggan dengan buku pembantu terperinci."
+            aria-label="Learn more about Accounts Receivable">Pelajari Lebih Lanjut</button>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-bold text-blue-900">Hutang</h3>
           <p class="mt-2 text-gray-600">Lacak dan kelola utang kepada pemasok atau pihak lain.</p>
           <button class="feature-btn mt-2 text-blue-500 hover:underline"
-            data-desc="Pantau utang kepada pemasok dengan buku pembantu terorganisasi untuk pengelolaan yang efisien.">Pelajari
-            Lebih Lanjut</button>
+            data-desc="Pantau utang kepada pemasok dengan buku pembantu terorganisasi untuk pengelolaan yang efisien."
+            aria-label="Learn more about Accounts Payable">Pelajari Lebih Lanjut</button>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
           <h3 class="text-xl font-bold text-blue-900">Ekspor Data</h3>
           <p class="mt-2 text-gray-600">Ekspor data ke PDF atau Excel untuk analisis lebih lanjut dengan laporan yang
             dapat disesuaikan.</p>
           <button class="feature-btn mt-2 text-blue-500 hover:underline"
-            data-desc="Ekspor data keuangan ke PDF atau Excel dengan opsi yang dapat disesuaikan untuk akun dan periode tertentu.">Pelajari
-            Lebih Lanjut</button>
+            data-desc="Ekspor data keuangan ke PDF atau Excel dengan opsi yang dapat disesuaikan untuk akun dan periode tertentu."
+            aria-label="Learn more about Data Export">Pelajari Lebih Lanjut</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Neraca Saldo</h3>
+          <p class="mt-2 text-gray-600">Lihat saldo akun secara menyeluruh untuk analisis keuangan.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline"
+            data-desc="Tampilkan neraca saldo untuk memastikan keseimbangan akun dan analisis keuangan yang akurat."
+            aria-label="Learn more about Trial Balance">Pelajari Lebih Lanjut</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Neraca Keuangan</h3>
+          <p class="mt-2 text-gray-600">Pantau arus kas dan posisi keuangan secara real-time.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline"
+            data-desc="Lacak arus kas masuk dan keluar serta pantau posisi keuangan bisnis Anda secara real-time."
+            aria-label="Learn more about Financial Overview">Pelajari Lebih Lanjut</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900">Laba Rugi</h3>
+          <p class="mt-2 text-gray-600">Hasilkan laporan laba rugi untuk evaluasi kinerja bisnis.</p>
+          <button class="feature-btn mt-2 text-blue-500 hover:underline"
+            data-desc="Buat laporan laba rugi untuk mengevaluasi pendapatan, biaya, dan profitabilitas bisnis Anda."
+            aria-label="Learn more about Profit and Loss">Pelajari Lebih Lanjut</button>
         </div>
       </div>
     </div>
@@ -122,80 +204,84 @@
   <section id="benefits" class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Mengapa Memilih INNi?</h2>
-      <ul class="list-disc list-inside max-w-2xl mx-auto text-gray-600">
-        <li class="mb-2">Mudah digunakan, bahkan untuk pemula.</li>
-        <li class="mb-2">Data keuangan yang akurat dan terorganisasi.</li>
-        <li class="mb-2">Solusi yang hemat waktu dan biaya.</li>
-        <li class="mb-2">Pelatihan di lokasi untuk adopsi yang mulus.</li>
-      </ul>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="benefit-item">
+          <i class="fas fa-check-circle" aria-hidden="true"></i>
+          <p class="text-gray-600">Mudah digunakan, bahkan untuk pemula.</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+          <p class="text-gray-600">Data keuangan yang akurat dan terorganisasi.</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          <p class="text-gray-600">Solusi yang hemat waktu dan biaya.</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <p class="text-gray-600">Pelatihan di lokasi untuk adopsi yang mulus.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Antarmuka Carousel -->
-  <section id="interface" class="py-12 bg-gray-100">
+  <section id="client" class="py-12 bg-gray-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Antarmuka Program Akuntansi INNi</h2>
+      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Client Program Akuntansi INNi</h2>
       <div class="relative max-w-4xl mx-auto">
-        <!-- Kontainer Carousel -->
         <div class="overflow-hidden">
-          <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-            <!-- Slide 1 -->
+          <div id="carousel" class="flex transition-transform duration-500 ease-in-out" role="region"
+            aria-label="Client carousel">
             <div class="carousel-item min-w-full flex flex-col justify-center items-center">
-              <img src="img/Chart_of_Account.png" alt="Tampilan Bagan Akun"
+              <img src="img/Client_Training.jpg" alt="Pelatihan Klien"
                 class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
-                data-fullscreen-src="img/Chart_of_Account.png">
-              <p class="text-center mt-4 text-gray-600">Antarmuka Bagan Akun</p>
+                data-fullscreen-src="/img/Client_Training.png" loading="lazy">
+              <p class="text-center mt-4 text-gray-600">Pelatihan Klien</p>
             </div>
-            <!-- Slide 2 -->
             <div class="carousel-item min-w-full flex flex-col justify-center items-center">
-              <img src="img/Voucher_Page.png" alt="Tampilan Manajemen Voucher"
+              <img src="img/Client_Visit.jpg" alt="Kunjungan Klien"
                 class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
-                data-fullscreen-src="img/Voucher_Page.png">
-              <p class="text-center mt-4 text-gray-600">Antarmuka Manajemen Voucher</p>
+                data-fullscreen-src="/img/Client_Visit.jpg" loading="lazy">
+              <p class="text-center mt-4 text-gray-600">Kunjungan Klien</p>
             </div>
-            <!-- Slide 3 -->
             <div class="carousel-item min-w-full flex flex-col justify-center items-center">
-              <img src="img/General_Ledger.png" alt="Tampilan Buku Besar Umum"
+              <img src="img/Admin_Create_Voucher.jpg" alt="Penggunaan Aplikasi oleh Admin"
                 class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
-                data-fullscreen-src="img/General_Ledger.png">
-              <p class="text-center mt-4 text-gray-600">Antarmuka Buku Besar Umum</p>
+                data-fullscreen-src="/img/Admin_Create_Voucher.jpg" loading="lazy">
+              <p class="text-center mt-4 text-gray-600">Penggunaan Aplikasi oleh Admin</p>
             </div>
-            <!-- Slide 4 -->
             <div class="carousel-item min-w-full flex flex-col justify-center items-center">
-              <img src="img/Tracking_Customer.png" alt="Tampilan Pelacakan Pelanggan"
+              <img src="img/Admin_Create_Voucher2.jpg" alt="Penggunaan Aplikasi oleh Admin"
                 class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
-                data-fullscreen-src="img/Tracking_Customer.png">
-              <p class="text-center mt-4 text-gray-600">Pelacakan Pelanggan</p>
-            </div>
-            <!-- Slide 5 -->
-            <div class="carousel-item min-w-full flex flex-col justify-center items-center">
-              <img src="img/Voucher_Output.png" alt="Tampilan Keluaran Voucher"
-                class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
-                data-fullscreen-src="img/Voucher_Output.png">
-              <p class="text-center mt-4 text-gray-600">Keluaran Voucher</p>
+                data-fullscreen-src="/img/Admin_Create_Voucher2.jpg" loading="lazy">
+              <p class="text-center mt-4 text-gray-600">Penggunaan Aplikasi oleh Admin</p>
             </div>
           </div>
         </div>
-        <!-- Tombol Navigasi -->
         <button id="prev-btn"
-          class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+          aria-label="Previous slide">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
         <button id="next-btn"
-          class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+          aria-label="Next slide">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
-        <!-- Titik Carousel -->
-        <div class="flex justify-center mt-4 space-x-2">
-          <button class="carousel-dot w-3 h-3 bg-blue-500 rounded-full" data-index="0"></button>
-          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="1"></button>
-          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="2"></button>
-          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="3"></button>
-          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="4"></button>
+        <div class="flex justify-center mt-4 space-x-2" role="tablist" aria-label="Carousel navigation">
+          <button class="carousel-dot w-3 h-3 bg-blue-500 rounded-full" data-index="0" aria-label="Slide 1" role="tab"
+            aria-selected="true"></button>
+          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="1" aria-label="Slide 2" role="tab"
+            aria-selected="false"></button>
+          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="2" aria-label="Slide 3" role="tab"
+            aria-selected="false"></button>
+          <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="3" aria-label="Slide 4" role="tab"
+            aria-selected="false"></button>
         </div>
       </div>
     </div>
@@ -211,8 +297,8 @@
         <li class="flex items-center justify-center"><span class="font-semibold">Heri Noviandana:</span> 087702882986
         </li>
         <li class="flex items-center justify-center"><span class="font-semibold">Zaenal Abidin (Kepala Tim):</span>
-          081932278584 | <a href="mailto:zabidin_buf@yahoo.com"
-            class="text-blue-500 hover:underline">zabidin_buf@yahoo.com</a></li>
+          081932278584 | <a href="#" class="contact-email text-blue-500 hover:underline"
+            data-email="zabidin_buf@yahoo.com">zabidin_buf@yahoo.com</a></li>
       </ul>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-8">
         Siap menyederhanakan akuntansi Anda? Hubungi kami untuk diskusi lebih lanjut atau jadwalkan demonstrasi produk.
@@ -228,219 +314,241 @@
   </footer>
 
   <!-- Modal Fitur -->
-  <div id="feature-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div id="feature-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 modal" aria-hidden="true"
+    role="dialog" aria-labelledby="modal-title">
     <div class="bg-white p-6 rounded-lg max-w-md w-full">
       <h3 class="text-xl font-bold text-blue-900 mb-4" id="modal-title"></h3>
       <p class="text-gray-600" id="modal-desc"></p>
-      <button id="modal-close"
-        class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">Tutup</button>
+      <button id="modal-close" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+        aria-label="Close feature modal">Tutup</button>
     </div>
   </div>
 
   <!-- Modal Gambar Penuh -->
-  <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50">
+  <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50 modal"
+    aria-hidden="true" role="dialog" aria-labelledby="fullscreen-image-label">
     <div class="relative max-w-4xl w-full">
-      <img id="fullscreen-image" src="" alt="Gambar Penuh" class="w-full h-auto max-h-[80vh] object-contain rounded-lg">
+      <img id="fullscreen-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+        aria-labelledby="fullscreen-image-label">
+      <span id="fullscreen-image-label" class="sr-only">Full screen image</span>
       <button id="image-modal-close"
-        class="absolute top-2 right-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        class="absolute top-2 right-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+        aria-label="Close image modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
   </div>
 
+  <!-- Modal Carousel Fitur -->
+  <div id="feature-carousel-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-60 modal" aria-hidden="true"
+    role="dialog" aria-labelledby="feature-carousel-title">
+    <div class="bg-white p-6 rounded-lg max-w-4xl w-full">
+      <h3 class="text-2xl font-bold text-blue-900 mb-4 text-center" id="feature-carousel-title"></h3>
+      <div class="relative">
+        <div class="overflow-hidden">
+          <div id="feature-carousel" class="flex transition-transform duration-500 ease-in-out" role="region"
+            aria-label="Feature carousel"></div>
+        </div>
+        <button id="feature-prev-btn"
+          class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+          aria-label="Previous feature slide">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button id="feature-next-btn"
+          class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+          aria-label="Next feature slide">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div id="feature-carousel-dots" class="flex justify-center mt-4 space-x-2" role="tablist"
+          aria-label="Feature carousel navigation"></div>
+      </div>
+      <button id="feature-carousel-close"
+        class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition w-full"
+        aria-label="Close feature carousel">Tutup</button>
+    </div>
+  </div>
+
   <!-- Modal Kontak -->
-  <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div id="contact-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 modal" aria-hidden="true"
+    role="dialog" aria-labelledby="contact-modal-title">
     <div
-      class="bg-white p-6 rounded-lg max-w-xl w-full transform transition duration-300 ease-in-out scale-95 hover:scale-100">
-      <h3 class="text-2xl font-bold text-blue-900 mb-4 text-center">Hubungi Kami Sekarang!</h3>
-      <p class="text-gray-600 mb-4 text-center">Siap menyederhanakan akuntansi Anda? Mari kita bicara!</p>
-      <ul class="text-gray-700 space-y-3">
+      class="bg-white p-6 rounded-lg max-w-xl w-short transform transition duration-300 ease-in-out scale-95 hover:scale-100">
+      <h3 id="contact-modal-title" class="text-2xl font-bold text-blue-900 mb-4 text-center">Hubungi Kami Sekarang!</h3>
+      <p id="contact-modal-text" class="text-gray-600 mb-4 text-center">Siap menyederhanakan akuntansi Anda? Mari kita
+        bicara!</p>
+      <ul class="text-gray-600 space-y-3">
         <li class="flex items-center"><span class="font-semibold">S. Eric Dallan (Eric):</span> 087725113689</li>
         <li class="flex items-center"><span class="font-semibold">Heri Noviandana:</span> 087702882986</li>
         <li class="flex items-center"><span class="font-semibold">Zaenal Abidin (Kepala Tim):</span> 081932278584 | <a
-            href="mailto:zabidin_buf@yahoo.com" class="text-blue-500 hover:underline">zabidin_buf@yahoo.com</a></li>
+            href="#" class="contact-email text-blue-500 hover:underline"
+            data-email="zabidin_buf@yahoo.com">zabidin_buf@yahoo.com</a></li>
       </ul>
       <button id="schedule-demo"
-        class="mt-6 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 w-full">
-        Jadwalkan Demo
-      </button>
+        class="mt-6 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 w-full"
+        aria-label="Schedule a demo">Jadwalkan Demo</button>
       <button id="contact-modal-close"
-        class="mt-2 text-gray-500 hover:text-gray-700 transition duration-300 w-full text-center">Tutup</button>
+        class="mt-2 text-gray-500 hover:text-gray-700 transition duration-300 w-full text-center"
+        aria-label="Close contact modal">Tutup</button>
     </div>
   </div>
 
   <!-- JavaScript -->
   <script>
-    // Toggle Menu Mobile
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    // Base path for images
+    const BASE_PATH = 'img/';
 
-    // Gulir Halus untuk Tautan Navigasi
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        mobileMenu.classList.add('hidden'); // Tutup menu mobile saat diklik
-      });
-    });
+    // Feature images with base path
+    const featureImages = {
+      "Bagan Akun": [
+        { src: `${BASE_PATH}Chart_of_Account.png`, alt: "Tampilan Bagan Akun", caption: "Antarmuka Bagan Akun" },
+        { src: `${BASE_PATH}Chart_of_Account2.png`, alt: "Tampilan Bagan Akun 2", caption: "Modal Pembuatan Akun Baru" }
+      ],
+      "Manajemen Voucher": [
+        { src: `${BASE_PATH}Voucher_Page.png`, alt: "Tampilan Manajemen Voucher", caption: "Antarmuka Manajemen Voucher" },
+        { src: `${BASE_PATH}Voucher_Create.png`, alt: "Tampilan Pembuatan Voucher", caption: "Antarmuka Pembuatan Data Voucher" },
+        { src: `${BASE_PATH}Voucher_Edit.png`, alt: "Tampilan Edit Voucher", caption: "Antarmuka Perubahan Data Voucher" },
+        { src: `${BASE_PATH}Voucher_Output.png`, alt: "Tampilan Keluaran Voucher", caption: "Keluaran Voucher" }
+      ],
+      "Buku Besar Umum": [
+        { src: `${BASE_PATH}General_Ledger.png`, alt: "Tampilan Buku Besar Umum", caption: "Antarmuka Buku Besar Umum" }
+      ],
+      "Piutang": [
+        { src: `${BASE_PATH}Piutang_Page.png`, alt: "Tampilan Piutang", caption: "Antarmuka Piutang" },
+        { src: `${BASE_PATH}Tracking_Customer_Piutang.png`, alt: "Tampilan Pelacakan Pelanggan", caption: "Pelacakan Pelanggan" }
+      ],
+      "Hutang": [
+        { src: `${BASE_PATH}Hutang_Page.png`, alt: "Tampilan Hutang", caption: "Antarmuka Hutang" },
+        { src: `${BASE_PATH}Tracking_Customer_Hutang.png`, alt: "Tampilan Pelacakan Hutang", caption: "Pelacakan Pelanggan" }
+      ],
+      "Ekspor Data": [
+        { src: `${BASE_PATH}General_Ledger_Export.png`, alt: "Tampilan Ekspor Buku Besar", caption: "Output Buku Besar" },
+        { src: `${BASE_PATH}Trial_Balance_Export.png`, alt: "Tampilan Ekspor Neraca Saldo", caption: "Output Laporan Neraca Saldo" },
+        { src: `${BASE_PATH}Profit_Loss_Export.png`, alt: "Tampilan Ekspor Laba Rugi", caption: "Output Laporan Laba Rugi" },
+        { src: `${BASE_PATH}Balance_Sheet_Export.png`, alt: "Tampilan Ekspor Neraca", caption: "Output Laporan Neraca Keuangan" }
+      ],
+      "Neraca Saldo": [
+        { src: `${BASE_PATH}Trial_Balance.png`, alt: "Tampilan Neraca Saldo", caption: "Antarmuka Neraca Saldo" }
+      ],
+      "Neraca Keuangan": [
+        { src: `${BASE_PATH}Balance_Sheet.png`, alt: "Tampilan Neraca Keuangan", caption: "Antarmuka Neraca Keuangan" }
+      ],
+      "Laba Rugi": [
+        { src: `${BASE_PATH}Profit_Loss.png`, alt: "Tampilan Laba Rugi", caption: "Antarmuka Laba Rugi" }
+      ]
+    };
 
-    // Highlight Navigasi Saat Scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('#nav-menu a, #mobile-menu a');
-    const headerHeight = document.querySelector('header').offsetHeight;
-
-    function highlightNav() {
-      let currentSection = '';
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - headerHeight;
-        const sectionHeight = section.offsetHeight;
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('text-blue-300', 'font-bold');
-        if (link.getAttribute('href').substring(1) === currentSection) {
-          link.classList.add('text-blue-300', 'font-bold');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', highlightNav);
-    window.addEventListener('load', highlightNav); // Pastikan highlight saat halaman dimuat
-
-    // Modal Fitur
-    const featureButtons = document.querySelectorAll('.feature-btn');
-    const featureModal = document.getElementById('feature-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalClose = document.getElementById('modal-close');
-
-    featureButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const title = button.parentElement.querySelector('h3').textContent;
-        const desc = button.getAttribute('data-desc');
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        featureModal.classList.remove('hidden');
-      });
-    });
-
-    modalClose.addEventListener('click', () => {
-      featureModal.classList.add('hidden');
-    });
-
-    // Modal Gambar Penuh
-    const imageModal = document.getElementById('image-modal');
-    const fullscreenImage = document.getElementById('fullscreen-image');
-    const imageModalClose = document.getElementById('image-modal-close');
-    const carouselImages = document.querySelectorAll('.carousel-item img');
-
-    carouselImages.forEach(image => {
-      image.addEventListener('click', () => {
-        const src = image.getAttribute('data-fullscreen-src');
-        fullscreenImage.src = src;
-        imageModal.classList.remove('hidden');
-      });
-    });
-
-    imageModalClose.addEventListener('click', () => {
-      imageModal.classList.add('hidden');
-    });
-
-    imageModal.addEventListener('click', (e) => {
-      if (e.target === imageModal) {
-        imageModal.classList.add('hidden');
+    // Feature translations
+    const featureTranslations = {
+      id: {
+        "Bagan Akun": [
+          { alt: "Tampilan Bagan Akun", caption: "Antarmuka Bagan Akun" },
+          { alt: "Tampilan Bagan Akun 2", caption: "Modal Pembuatan Akun Baru" }
+        ],
+        "Manajemen Voucher": [
+          { alt: "Tampilan Manajemen Voucher", caption: "Antarmuka Manajemen Voucher" },
+          { alt: "Tampilan Pembuatan Voucher", caption: "Antarmuka Pembuatan Data Voucher" },
+          { alt: "Tampilan Edit Voucher", caption: "Antarmuka Perubahan Data Voucher" },
+          { alt: "Tampilan Keluaran Voucher", caption: "Keluaran Voucher" }
+        ],
+        "Buku Besar Umum": [
+          { alt: "Tampilan Buku Besar Umum", caption: "Antarmuka Buku Besar Umum" }
+        ],
+        "Piutang": [
+          { alt: "Tampilan Piutang", caption: "Antarmuka Piutang" },
+          { alt: "Tampilan Pelacakan Pelanggan", caption: "Pelacakan Pelanggan" }
+        ],
+        "Hutang": [
+          { alt: "Tampilan Hutang", caption: "Antarmuka Hutang" },
+          { alt: "Tampilan Pelacakan Hutang", caption: "Pelacakan Pelanggan" }
+        ],
+        "Ekspor Data": [
+          { alt: "Tampilan Ekspor Buku Besar", caption: "Output Buku Besar" },
+          { alt: "Tampilan Ekspor Neraca Saldo", caption: "Output Laporan Neraca Saldo" },
+          { alt: "Tampilan Ekspor Laba Rugi", caption: "Output Laporan Laba Rugi" },
+          { alt: "Tampilan Ekspor Neraca", caption: "Output Laporan Neraca Keuangan" }
+        ],
+        "Neraca Saldo": [
+          { alt: "Tampilan Neraca Saldo", caption: "Antarmuka Neraca Saldo" }
+        ],
+        "Neraca Keuangan": [
+          { alt: "Tampilan Neraca Keuangan", caption: "Antarmuka Neraca Keuangan" }
+        ],
+        "Laba Rugi": [
+          { alt: "Tampilan Laba Rugi", caption: "Antarmuka Laba Rugi" }
+        ]
+      },
+      en: {
+        "Bagan Akun": [
+          { alt: "Chart of Accounts Screenshot", caption: "Chart of Accounts Interface" },
+          { alt: "Chart of Accounts Creation Modal", caption: "New Account Creation Modal" }
+        ],
+        "Manajemen Voucher": [
+          { alt: "Voucher Management Screenshot", caption: "Voucher Management Interface" },
+          { alt: "Voucher Creation Screenshot", caption: "Voucher Creation Interface" },
+          { alt: "Voucher Edit Screenshot", caption: "Voucher Edit Interface" },
+          { alt: "Voucher Output Screenshot", caption: "Voucher Output" }
+        ],
+        "Buku Besar Umum": [
+          { alt: "General Ledger Screenshot", caption: "General Ledger Interface" }
+        ],
+        "Piutang": [
+          { alt: "Accounts Receivable Screenshot", caption: "Accounts Receivable Interface" },
+          { alt: "Customer Tracking Screenshot", caption: "Customer Tracking" }
+        ],
+        "Hutang": [
+          { alt: "Accounts Payable Screenshot", caption: "Accounts Payable Interface" },
+          { alt: "Supplier Tracking Screenshot", caption: "Supplier Tracking" }
+        ],
+        "Ekspor Data": [
+          { alt: "General Ledger Export Screenshot", caption: "General Ledger Output" },
+          { alt: "Trial Balance Export Screenshot", caption: "Trial Balance Report Output" },
+          { alt: "Profit and Loss Export Screenshot", caption: "Profit and Loss Report Output" },
+          { alt: "Balance Sheet Export Screenshot", caption: "Balance Sheet Report Output" }
+        ],
+        "Neraca Saldo": [
+          { alt: "Trial Balance Screenshot", caption: "Trial Balance Interface" }
+        ],
+        "Neraca Keuangan": [
+          { alt: "Financial Overview Screenshot", caption: "Financial Overview Interface" }
+        ],
+        "Laba Rugi": [
+          { alt: "Profit and Loss Screenshot", caption: "Profit and Loss Interface" }
+        ]
       }
-    });
+    };
 
-    // Modal Kontak
-    const contactModal = document.getElementById('contact-modal');
-    const contactBtn = document.getElementById('contact-btn');
-    const contactModalClose = document.getElementById('contact-modal-close');
-    const scheduleDemo = document.getElementById('schedule-demo');
+    // Feature name mapping
+    const featureNameMapping = {
+      "Chart of Accounts": "Bagan Akun",
+      "Voucher Management": "Manajemen Voucher",
+      "General Ledger": "Buku Besar Umum",
+      "Accounts Receivable": "Piutang",
+      "Accounts Payable": "Hutang",
+      "Data Export": "Ekspor Data",
+      "Trial Balance": "Neraca Saldo",
+      "Financial Overview": "Neraca Keuangan",
+      "Profit and Loss": "Laba Rugi",
+      "Bagan Akun": "Bagan Akun",
+      "Manajemen Voucher": "Manajemen Voucher",
+      "Buku Besar Umum": "Buku Besar Umum",
+      "Piutang": "Piutang",
+      "Hutang": "Hutang",
+      "Ekspor Data": "Ekspor Data",
+      "Neraca Saldo": "Neraca Saldo",
+      "Neraca Keuangan": "Neraca Keuangan",
+      "Laba Rugi": "Laba Rugi"
+    };
 
-    contactBtn.addEventListener('click', () => {
-      contactModal.classList.remove('hidden');
-    });
-
-    contactModalClose.addEventListener('click', () => {
-      contactModal.classList.add('hidden');
-    });
-
-    scheduleDemo.addEventListener('click', () => {
-      window.location.href = 'mailto:zabidin_buf@yahoo.com?subject=Schedule%20Demo';
-      contactModal.classList.add('hidden');
-    });
-
-    // Fungsi Carousel
-    const carousel = document.getElementById('carousel');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let currentIndex = 0;
-    let autoPlayInterval;
-
-    function updateCarousel() {
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('bg-blue-500', index === currentIndex);
-        dot.classList.toggle('bg-gray-300', index !== currentIndex);
-      });
-    }
-
-    function startAutoPlay() {
-      autoPlayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % 5;
-        updateCarousel();
-      }, 5000);
-    }
-
-    function stopAutoPlay() {
-      clearInterval(autoPlayInterval);
-    }
-
-    nextBtn.addEventListener('click', () => {
-      stopAutoPlay();
-      currentIndex = (currentIndex + 1) % 5;
-      updateCarousel();
-      startAutoPlay();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      stopAutoPlay();
-      currentIndex = (currentIndex - 1 + 5) % 5;
-      updateCarousel();
-      startAutoPlay();
-    });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        stopAutoPlay();
-        currentIndex = parseInt(dot.getAttribute('data-index'));
-        updateCarousel();
-        startAutoPlay();
-      });
-    });
-
-    startAutoPlay();
-
-    const carouselContainer = carousel.parentElement;
-    carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-    carouselContainer.addEventListener('mouseleave', startAutoPlay);
-
-    // Language Switch
-    const langButtons = document.querySelectorAll('#btn-id, #btn-en, #mobile-btn-id, #mobile-btn-en');
+    // Translations
     const translations = {
       id: {
         headerTitle: "Program Akuntansi INNi",
@@ -448,7 +556,7 @@
         navHome: "Beranda",
         navFeatures: "Fitur",
         navBenefits: "Manfaat",
-        navInterface: "Antarmuka",
+        navInterface: "Klien",
         navContact: "Kontak",
         introTitle: "Selamat Datang di Program Akuntansi INNi",
         introText: "Program Akuntansi INNi dirancang untuk UKM, CV, BUMDes, dan Koperasi, menawarkan solusi akuntansi keuangan yang terjangkau dan ramah pengguna untuk menyederhanakan operasi bisnis Anda.",
@@ -472,26 +580,36 @@
         feature6Title: "Ekspor Data",
         feature6Desc: "Ekspor data ke PDF atau Excel untuk analisis lebih lanjut dengan laporan yang dapat disesuaikan.",
         feature6LearnMore: "Pelajari Lebih Lanjut",
+        feature7Title: "Neraca Saldo",
+        feature7Desc: "Lihat saldo akun secara menyeluruh untuk analisis keuangan.",
+        feature7LearnMore: "Pelajari Lebih Lanjut",
+        feature8Title: "Neraca Keuangan",
+        feature8Desc: "Pantau arus kas dan posisi keuangan secara real-time.",
+        feature8LearnMore: "Pelajari Lebih Lanjut",
+        feature9Title: "Laba Rugi",
+        feature9Desc: "Hasilkan laporan laba rugi untuk evaluasi kinerja bisnis.",
+        feature9LearnMore: "Pelajari Lebih Lanjut",
         benefitsTitle: "Mengapa Memilih INNi?",
         benefit1: "Mudah digunakan, bahkan untuk pemula.",
         benefit2: "Data keuangan yang akurat dan terorganisasi.",
         benefit3: "Solusi yang hemat waktu dan biaya.",
         benefit4: "Pelatihan di lokasi untuk adopsi yang mulus.",
-        interfaceTitle: "Antarmuka Program Akuntansi INNi",
-        slide1Alt: "Tampilan Bagan Akun",
-        slide1Caption: "Antarmuka Bagan Akun",
-        slide2Alt: "Tampilan Manajemen Voucher",
-        slide2Caption: "Antarmuka Manajemen Voucher",
-        slide3Alt: "Tampilan Buku Besar Umum",
-        slide3Caption: "Antarmuka Buku Besar Umum",
-        slide4Alt: "Tampilan Pelacakan Pelanggan",
-        slide4Caption: "Pelacakan Pelanggan",
-        slide5Alt: "Tampilan Keluaran Voucher",
-        slide5Caption: "Keluaran Voucher",
+        clientTitle: "Client Program Akuntansi INNi",
+        slide1Alt: "Pelatihan Klien",
+        slide1Caption: "Pelatihan Klien",
+        slide2Alt: "Kunjungan Klien",
+        slide2Caption: "Kunjungan Klien",
+        slide3Alt: "Penggunaan Aplikasi oleh Admin",
+        slide3Caption: "Penggunaan Aplikasi oleh Admin",
+        slide4Alt: "Penggunaan Aplikasi oleh Admin",
+        slide4Caption: "Penggunaan Aplikasi oleh Admin",
         contactTitle: "Ayo Berkolaborasi",
         contactText: "Siap menyederhanakan akuntansi Anda? Hubungi kami untuk diskusi lebih lanjut atau jadwalkan demonstrasi produk.",
         footerText: "© 2025 Program Akuntansi INNi. Seluruh hak cipta dilindungi.",
         modalClose: "Tutup",
+        contactModalTitle: "Hubungi Kami Sekarang!",
+        contactModalText: "Siap menyederhanakan akuntansi Anda? Mari kita bicara!",
+        scheduleDemo: "Jadwalkan Demo",
         contactAlert: "Siap menyederhanakan akuntansi Anda? Hubungi kami di zabidin_buf@yahoo.com atau telepon 081932278584 untuk jadwal demo!"
       },
       en: {
@@ -500,7 +618,7 @@
         navHome: "Home",
         navFeatures: "Features",
         navBenefits: "Benefits",
-        navInterface: "Interface",
+        navInterface: "Client",
         navContact: "Contact",
         introTitle: "Welcome to INNi Accounting Program",
         introText: "INNi Accounting Program is designed for SMEs, CVs, BUMDes, and Cooperatives, offering affordable and user-friendly financial accounting solutions to streamline your business operations.",
@@ -524,35 +642,364 @@
         feature6Title: "Data Export",
         feature6Desc: "Export data to PDF or Excel for further analysis with customizable reports.",
         feature6LearnMore: "Learn More",
+        feature7Title: "Trial Balance",
+        feature7Desc: "View account balances comprehensively for financial analysis.",
+        feature7LearnMore: "Learn More",
+        feature8Title: "Financial Overview",
+        feature8Desc: "Monitor cash flow and financial position in real-time.",
+        feature8LearnMore: "Learn More",
+        feature9Title: "Profit and Loss",
+        feature9Desc: "Generate profit and loss reports to evaluate business performance.",
+        feature9LearnMore: "Learn More",
         benefitsTitle: "Why Choose INNi?",
         benefit1: "Easy to use, even for beginners.",
         benefit2: "Accurate and organized financial data.",
         benefit3: "Time and cost-efficient solutions.",
         benefit4: "On-site training for seamless adoption.",
-        interfaceTitle: "INNi Accounting Program Interface",
-        slide1Alt: "Chart of Accounts Screenshot",
-        slide1Caption: "Chart of Accounts Interface",
-        slide2Alt: "Voucher Management Screenshot",
-        slide2Caption: "Voucher Management Interface",
-        slide3Alt: "General Ledger Screenshot",
-        slide3Caption: "General Ledger Interface",
-        slide4Alt: "Tracking Customer Screenshot",
-        slide4Caption: "Tracking Customer",
-        slide5Alt: "Voucher Output Screenshot",
-        slide5Caption: "Voucher Output",
+        clientTitle: "Client INNi Accounting Program",
+        slide1Alt: "Client Training",
+        slide1Caption: "Client Training",
+        slide2Alt: "Client Visit",
+        slide2Caption: "Client Visit",
+        slide3Alt: "Application Usage by Admin",
+        slide3Caption: "Application Usage by Admin",
+        slide4Alt: "Application Usage by Admin",
+        slide4Caption: "Application Usage by Admin",
         contactTitle: "Let's Collaborate",
         contactText: "Ready to simplify your accounting? Contact us to discuss further or schedule a product demonstration.",
         footerText: "© 2025 INNi Accounting Program. All rights reserved.",
         modalClose: "Close",
+        contactModalTitle: "Contact Us Now!",
+        contactModalText: "Ready to simplify your accounting? Let's talk!",
+        scheduleDemo: "Schedule a Demo",
         contactAlert: "Ready to simplify your accounting? Reach out to us at zabidin_buf@yahoo.com or call 081932278584 to schedule a demo!"
       }
     };
 
-    let currentLang = 'id';
+    // Toggle Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.setAttribute('aria-hidden', isExpanded);
+    });
+
+    // Smooth Scroll and Close Mobile Menu
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    // Highlight Navigation on Scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('#nav-menu a, #mobile-menu a');
+    const headerHeight = document.querySelector('header').offsetHeight;
+
+    function highlightNav() {
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight;
+        const sectionHeight = section.offsetHeight;
+        const scrollPosition = window.scrollY;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('text-blue-300', 'font-bold');
+        if (link.getAttribute('href').substring(1) === currentSection) {
+          link.classList.add('text-blue-300', 'font-bold');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightNav);
+    window.addEventListener('load', highlightNav);
+
+    // Modal Handling
+    const featureModal = document.getElementById('feature-modal');
+    const imageModal = document.getElementById('image-modal');
+    const contactModal = document.getElementById('contact-modal');
+    const featureCarouselModal = document.getElementById('feature-carousel-modal');
+
+    function closeAllModals() {
+      featureModal.classList.add('hidden');
+      imageModal.classList.add('hidden');
+      contactModal.classList.add('hidden');
+      featureCarouselModal.classList.add('hidden');
+      featureModal.setAttribute('aria-hidden', 'true');
+      imageModal.setAttribute('aria-hidden', 'true');
+      contactModal.setAttribute('aria-hidden', 'true');
+      featureCarouselModal.setAttribute('aria-hidden', 'true');
+      stopFeatureAutoPlay();
+      startAutoPlay();
+    }
+
+    // Main Carousel
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentIndex = 0;
+    let autoPlayInterval;
+    const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('bg-blue-500', index === currentIndex);
+        dot.classList.toggle('bg-gray-300', index !== currentIndex);
+        dot.setAttribute('aria-selected', index === currentIndex);
+      });
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        if (!featureCarouselModal.classList.contains('hidden') || !imageModal.classList.contains('hidden')) return;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }, 5000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      stopAutoPlay();
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+      startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      stopAutoPlay();
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+      startAutoPlay();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        stopAutoPlay();
+        currentIndex = parseInt(dot.getAttribute('data-index'));
+        updateCarousel();
+        startAutoPlay();
+      });
+    });
+
+    const carouselContainer = carousel.parentElement;
+    carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+    carouselContainer.addEventListener('mouseleave', startAutoPlay);
+
+    // Feature Carousel
+    const featureCarousel = document.getElementById('feature-carousel');
+    const featurePrevBtn = document.getElementById('feature-prev-btn');
+    const featureNextBtn = document.getElementById('feature-next-btn');
+    const featureCarouselDots = document.getElementById('feature-carousel-dots');
+    const featureCarouselClose = document.getElementById('feature-carousel-close');
+    let featureCurrentIndex = 0;
+    let featureAutoPlayInterval;
+
+    function updateFeatureCarousel() {
+      featureCarousel.style.transform = `translateX(-${featureCurrentIndex * 100}%)`;
+      const dots = featureCarouselDots.querySelectorAll('.feature-carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('bg-blue-500', index === featureCurrentIndex);
+        dot.classList.toggle('bg-gray-300', index !== featureCurrentIndex);
+        dot.setAttribute('aria-selected', index === featureCurrentIndex);
+      });
+    }
+
+    function startFeatureAutoPlay() {
+      featureAutoPlayInterval = setInterval(() => {
+        if (!imageModal.classList.contains('hidden')) return;
+        const totalFeatureSlides = featureCarousel.querySelectorAll('.feature-carousel-item').length;
+        featureCurrentIndex = (featureCurrentIndex + 1) % totalFeatureSlides;
+        updateFeatureCarousel();
+      }, 5000);
+    }
+
+    function stopFeatureAutoPlay() {
+      clearInterval(featureAutoPlayInterval);
+    }
+
+    function loadFeatureCarousel(feature) {
+      featureCarousel.innerHTML = '';
+      featureCarouselDots.innerHTML = '';
+      const featureKey = featureNameMapping[feature] || feature;
+      const images = featureImages[featureKey] || [];
+      if (!images.length) {
+        console.error(`No images found for feature: ${featureKey}`);
+        return;
+      }
+      images.forEach((img, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'feature-carousel-item min-w-full flex flex-col justify-center items-center';
+        slide.innerHTML = `
+          <img src="${img.src}" alt="${featureTranslations[currentLang][featureKey][index]?.alt || img.alt}" class="w-full max-h-[400px] object-contain rounded-lg shadow-md cursor-pointer" data-fullscreen-src="${img.src}" loading="lazy">
+          <p class="text-center mt-4 text-gray-600">${featureTranslations[currentLang][featureKey][index]?.caption || img.caption}</p>
+        `;
+        featureCarousel.appendChild(slide);
+        const dot = document.createElement('button');
+        dot.className = `feature-carousel-dot w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'}`;
+        dot.setAttribute('data-index', index);
+        dot.setAttribute('aria-label', `Slide ${index + 1}`);
+        dot.setAttribute('role', 'tab');
+        dot.addEventListener('click', () => {
+          stopFeatureAutoPlay();
+          featureCurrentIndex = parseInt(dot.getAttribute('data-index'));
+          updateFeatureCarousel();
+          startFeatureAutoPlay();
+        });
+        featureCarouselDots.appendChild(dot);
+      });
+      featureCurrentIndex = 0;
+      updateFeatureCarousel();
+    }
+
+    function setupFeatureButtons() {
+      const featureButtons = document.querySelectorAll('.feature-btn');
+      featureButtons.forEach(button => {
+        button.removeEventListener('click', handleFeatureButtonClick);
+        button.addEventListener('click', handleFeatureButtonClick);
+      });
+    }
+
+    function handleFeatureButtonClick() {
+      closeAllModals();
+      const feature = this.parentElement.querySelector('h3').textContent;
+      document.getElementById('feature-carousel-title').textContent = currentLang === 'id'
+        ? `Antarmuka Program Akuntansi INNi (${feature})`
+        : `INNi Accounting Program Interface (${feature})`;
+      loadFeatureCarousel(feature);
+      featureCarouselModal.classList.remove('hidden');
+      featureCarouselModal.setAttribute('aria-hidden', 'false');
+      startFeatureAutoPlay();
+    }
+
+    featurePrevBtn.addEventListener('click', () => {
+      stopFeatureAutoPlay();
+      const totalFeatureSlides = featureCarousel.querySelectorAll('.feature-carousel-item').length;
+      featureCurrentIndex = (featureCurrentIndex - 1 + totalFeatureSlides) % totalFeatureSlides;
+      updateFeatureCarousel();
+      startFeatureAutoPlay();
+    });
+
+    featureNextBtn.addEventListener('click', () => {
+      stopFeatureAutoPlay();
+      const totalFeatureSlides = featureCarousel.querySelectorAll('.feature-carousel-item').length;
+      featureCurrentIndex = (featureCurrentIndex + 1) % totalFeatureSlides;
+      updateFeatureCarousel();
+      startFeatureAutoPlay();
+    });
+
+    featureCarouselClose.addEventListener('click', closeAllModals);
+
+    featureCarouselModal.addEventListener('click', (e) => {
+      if (e.target === featureCarouselModal) {
+        closeAllModals();
+      }
+    });
+
+    featureCarouselModal.addEventListener('click', (e) => {
+      if (e.target.tagName === 'IMG' && e.target.hasAttribute('data-fullscreen-src')) {
+        const src = e.target.getAttribute('data-fullscreen-src');
+        document.getElementById('fullscreen-image').src = src;
+        document.getElementById('fullscreen-image-label').textContent = e.target.getAttribute('alt');
+        imageModal.classList.remove('hidden');
+        imageModal.setAttribute('aria-hidden', 'false');
+        stopFeatureAutoPlay();
+        imageModal.style.zIndex = 70;
+      }
+    });
+
+    document.getElementById('image-modal-close').addEventListener('click', () => {
+      imageModal.classList.add('hidden');
+      imageModal.setAttribute('aria-hidden', 'true');
+      imageModal.style.zIndex = 50;
+      startFeatureAutoPlay();
+    });
+
+    imageModal.addEventListener('click', (e) => {
+      if (e.target === imageModal) {
+        imageModal.classList.add('hidden');
+        imageModal.setAttribute('aria-hidden', 'true');
+        imageModal.style.zIndex = 50;
+        startFeatureAutoPlay();
+      }
+    });
+
+    const carouselImages = document.querySelectorAll('.carousel-item img');
+    carouselImages.forEach(image => {
+      image.addEventListener('click', () => {
+        const src = image.getAttribute('data-fullscreen-src');
+        document.getElementById('fullscreen-image').src = src;
+        document.getElementById('fullscreen-image-label').textContent = image.getAttribute('alt');
+        imageModal.classList.remove('hidden');
+        imageModal.setAttribute('aria-hidden', 'false');
+        imageModal.style.zIndex = 70;
+        stopAutoPlay();
+      });
+    });
+
+    document.getElementById('contact-btn').addEventListener('click', () => {
+      closeAllModals();
+      contactModal.classList.remove('hidden');
+      contactModal.setAttribute('aria-hidden', 'false');
+    });
+
+    document.getElementById('contact-modal-close').addEventListener('click', closeAllModals);
+
+    document.getElementById('schedule-demo').addEventListener('click', () => {
+      window.location.href = 'mailto:zabidin_buf@yahoo.com?subject=Schedule%20Demo';
+      closeAllModals();
+    });
+
+    // Email link obfuscation
+    document.querySelectorAll('.contact-email').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = link.getAttribute('data-email');
+        window.location.href = `mailto:${email}`;
+      });
+    });
+
+    // Keyboard Accessibility
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllModals();
+      }
+      if (e.key === 'ArrowLeft' && !featureCarouselModal.classList.contains('hidden')) {
+        featurePrevBtn.click();
+      }
+      if (e.key === 'ArrowRight' && !featureCarouselModal.classList.contains('hidden')) {
+        featureNextBtn.click();
+      }
+      if (e.key === 'ArrowLeft' && !carousel.classList.contains('hidden')) {
+        prevBtn.click();
+      }
+      if (e.key === 'ArrowRight' && !carousel.classList.contains('hidden')) {
+        nextBtn.click();
+      }
+    });
+
+    // Language Switch
+    let currentLang = localStorage.getItem('language') || 'id';
+    const langButtons = document.querySelectorAll('#btn-id, #btn-en, #mobile-btn-id, #mobile-btn-en');
 
     function updateLanguage(lang) {
       currentLang = lang;
-      // Update button styles
+      localStorage.setItem('language', lang);
+      document.documentElement.setAttribute('lang', lang);
       langButtons.forEach(btn => {
         if (btn.id.includes('btn-id') && lang === 'id') {
           btn.classList.add('bg-blue-700', 'text-white');
@@ -563,7 +1010,6 @@
         }
       });
 
-      // Update text content
       document.querySelector('h1').textContent = translations[lang].headerTitle;
       document.querySelector('h1 + p').textContent = translations[lang].headerSlogan;
       document.querySelectorAll('#nav-menu a')[0].textContent = translations[lang].navHome;
@@ -598,12 +1044,21 @@
       document.querySelectorAll('#features h3')[5].textContent = translations[lang].feature6Title;
       document.querySelectorAll('#features p')[5].textContent = translations[lang].feature6Desc;
       document.querySelectorAll('.feature-btn')[5].textContent = translations[lang].feature6LearnMore;
+      document.querySelectorAll('#features h3')[6].textContent = translations[lang].feature7Title;
+      document.querySelectorAll('#features p')[6].textContent = translations[lang].feature7Desc;
+      document.querySelectorAll('.feature-btn')[6].textContent = translations[lang].feature7LearnMore;
+      document.querySelectorAll('#features h3')[7].textContent = translations[lang].feature8Title;
+      document.querySelectorAll('#features p')[7].textContent = translations[lang].feature8Desc;
+      document.querySelectorAll('.feature-btn')[7].textContent = translations[lang].feature8LearnMore;
+      document.querySelectorAll('#features h3')[8].textContent = translations[lang].feature9Title;
+      document.querySelectorAll('#features p')[8].textContent = translations[lang].feature9Desc;
+      document.querySelectorAll('.feature-btn')[8].textContent = translations[lang].feature9LearnMore;
       document.querySelector('#benefits h2').textContent = translations[lang].benefitsTitle;
-      document.querySelectorAll('#benefits li')[0].textContent = translations[lang].benefit1;
-      document.querySelectorAll('#benefits li')[1].textContent = translations[lang].benefit2;
-      document.querySelectorAll('#benefits li')[2].textContent = translations[lang].benefit3;
-      document.querySelectorAll('#benefits li')[3].textContent = translations[lang].benefit4;
-      document.querySelector('#interface h2').textContent = translations[lang].interfaceTitle;
+      document.querySelectorAll('#benefits p')[0].textContent = translations[lang].benefit1;
+      document.querySelectorAll('#benefits p')[1].textContent = translations[lang].benefit2;
+      document.querySelectorAll('#benefits p')[2].textContent = translations[lang].benefit3;
+      document.querySelectorAll('#benefits p')[3].textContent = translations[lang].benefit4;
+      document.querySelector('#client h2').textContent = translations[lang].clientTitle;
       document.querySelectorAll('.carousel-item img')[0].setAttribute('alt', translations[lang].slide1Alt);
       document.querySelectorAll('.carousel-item p')[0].textContent = translations[lang].slide1Caption;
       document.querySelectorAll('.carousel-item img')[1].setAttribute('alt', translations[lang].slide2Alt);
@@ -612,12 +1067,18 @@
       document.querySelectorAll('.carousel-item p')[2].textContent = translations[lang].slide3Caption;
       document.querySelectorAll('.carousel-item img')[3].setAttribute('alt', translations[lang].slide4Alt);
       document.querySelectorAll('.carousel-item p')[3].textContent = translations[lang].slide4Caption;
-      document.querySelectorAll('.carousel-item img')[4].setAttribute('alt', translations[lang].slide5Alt);
-      document.querySelectorAll('.carousel-item p')[4].textContent = translations[lang].slide5Caption;
       document.querySelector('#contact h2').textContent = translations[lang].contactTitle;
       document.querySelector('#contact p').textContent = translations[lang].contactText;
       document.querySelector('footer p').textContent = translations[lang].footerText;
       document.querySelector('#modal-close').textContent = translations[lang].modalClose;
+      document.querySelector('#feature-carousel-close').textContent = translations[lang].modalClose;
+      document.getElementById('contact-modal-title').textContent = translations[lang].contactModalTitle;
+      document.getElementById('contact-modal-text').textContent = translations[lang].contactModalText;
+      document.getElementById('schedule-demo').textContent = translations[lang].scheduleDemo;
+      document.getElementById('contact-modal-close').textContent = translations[lang].modalClose;
+
+      // Update feature buttons
+      setupFeatureButtons();
     }
 
     langButtons.forEach(button => {
@@ -627,9 +1088,35 @@
       });
     });
 
-    // Set default language to ID on page load
-    updateLanguage('id');
+    // Initial setup
+    setupFeatureButtons();
+    updateLanguage(currentLang);
+    startAutoPlay();
+
+    // Fallback for no JavaScript
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.classList.add('hidden');
+    });
   </script>
+  <noscript>
+    <style>
+      .modal {
+        display: none !important;
+      }
+
+      #mobile-menu {
+        display: none !important;
+      }
+
+      #nav-menu {
+        display: flex !important;
+      }
+    </style>
+    <div class="bg-yellow-100 p-4 text-center text-gray-800">
+      JavaScript is disabled. Some features, such as the mobile menu and modals, may not work as expected. Please enable
+      JavaScript for the best experience.
+    </div>
+  </noscript>
 </body>
 
 </html>
