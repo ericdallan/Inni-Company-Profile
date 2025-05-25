@@ -766,7 +766,7 @@
         if (!featureCarouselModal.classList.contains('hidden') || !imageModal.classList.contains('hidden')) return;
         currentIndex = (currentIndex + 1) % totalSlides;
         updateCarousel();
-      }, 5000);
+      }, 8000);
     }
 
     function stopAutoPlay() {
@@ -825,7 +825,7 @@
         const totalFeatureSlides = featureCarousel.querySelectorAll('.feature-carousel-item').length;
         featureCurrentIndex = (featureCurrentIndex + 1) % totalFeatureSlides;
         updateFeatureCarousel();
-      }, 5000);
+      }, 8000);
     }
 
     function stopFeatureAutoPlay() {
