@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (useJasa) {
         useJasa.addEventListener('click', () => {
-            window.location.href = 'mailto:zabidin_buf@yahoo.com?subject=Use%20Our%20Services';
+            window.location.href = 'mailto:inni.zaenal@gmail.com?subject=Use%20Our%20Services';
             closeAllModals();
         });
     }
@@ -135,11 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
             service4Title: "Legalitas Usaha",
             service4Desc: "Pendaftaran merk dan legalitas usaha (NIB, NPWP, dll).",
             contactTitle: "Hubungi Kami",
-            contactText: "Siap mengoptimalkan keuangan bisnis Anda? Gunakan jasa kami untuk solusi keuangan terpercaya bagi UMKM dan Koperasi!",
             footerText: "© 2025 PT. Integrasindo Multi Kreasi (INNi). Seluruh hak cipta dilindungi.",
             modalClose: "Tutup",
             contactModalTitle: "Hubungi Kami Sekarang!",
-            contactModalText: "Siap mengoptimalkan keuangan Anda? Kirim email kepada kami untuk memulai!",
             useJasa: "Kirim Email"
         },
         en: {
@@ -162,11 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
             service4Title: "Business Legalization",
             service4Desc: "Registration of trademarks and business legalization (NIB, NPWP, etc.).",
             contactTitle: "Contact Us",
-            contactText: "Ready to optimize your business finances? Use our services for trusted financial solutions for SMEs and Cooperatives!",
             footerText: "© 2025 PT. Integrasindo Multi Kreasi (INNi). All rights reserved.",
             modalClose: "Close",
             contactModalTitle: "Contact Us Now!",
-            contactModalText: "Ready to optimize your finances? Send us an email to get started!",
             useJasa: "Send Email"
         }
     };

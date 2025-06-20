@@ -146,16 +146,16 @@ const featureNameMapping = {
 // Translations
 const translations = {
     id: {
-        headerTitle: "Program Akuntansi INNi",
-        headerSlogan: '"Mempermudah Akuntansi, Memberdayakan Bisnis Anda"',
+        headerTitle: "Software 'inni akun digi'",
+        headerSlogan: '"Solusi Praktis Laporan Keuangan & Pajak Untuk UMKM dan Koperasi"',
         navHome: "Beranda",
         navFeatures: "Fitur",
         navBenefits: "Manfaat",
         navInterface: "Klien",
         navContact: "Kontak",
         navProfile: "Profil",
-        introTitle: "Selamat Datang di Program Akuntansi INNi",
-        introText: "Program Akuntansi INNi dirancang untuk UKM, CV, BUMDes, dan Koperasi, menawarkan solusi akuntansi keuangan yang terjangkau dan ramah pengguna untuk menyederhanakan operasi bisnis Anda.",
+        introTitle: "Selamat Datang di Software 'inni akun digi'",
+        introText: "Software 'inni akun digi' dirancang untuk UKM, CV, BUMDes, dan Koperasi, menawarkan solusi akuntansi keuangan yang terjangkau dan ramah pengguna untuk menyederhanakan operasi bisnis Anda.",
         contactBtn: "Hubungi Kami",
         featuresTitle: "Fitur Utama",
         feature1Title: "Bagan Akun",
@@ -206,19 +206,19 @@ const translations = {
         contactModalTitle: "Hubungi Kami Sekarang!",
         contactModalText: "Siap menyederhanakan akuntansi Anda? Mari kita bicara!",
         scheduleDemo: "Jadwalkan Demo",
-        contactAlert: "Siap menyederhanakan akuntansi Anda? Hubungi kami di zabidin_buf@yahoo.com atau telepon 081932278584 untuk jadwal demo!"
+        contactAlert: "Siap menyederhanakan akuntansi Anda? Hubungi kami di inni.zaenal@gmail.com atau telepon 081932278584 untuk jadwal demo!"
     },
     en: {
-        headerTitle: "INNi Accounting Program",
-        headerSlogan: '"Simplifying Accounting, Empowering Your Business"',
+        headerTitle: "Software inni akun digi",
+        headerSlogan: '"Practical Solutions for Financial Reports & Taxes for MSMEs and Cooperatives"',
         navHome: "Home",
         navFeatures: "Features",
         navBenefits: "Benefits",
         navInterface: "Client",
         navContact: "Contact",
         navProfile: "Profile",
-        introTitle: "Welcome to INNi Accounting Program",
-        introText: "INNi Accounting Program is designed for SMEs, CVs, BUMDes, and Cooperatives, offering affordable and user-friendly financial accounting solutions to streamline your business operations.",
+        introTitle: "Welcome to 'inni akun digi' software",
+        introText: "'inni akun digi' software is designed for SMEs, CVs, BUMDes, and Cooperatives, offering affordable and user-friendly financial accounting solutions to streamline your business operations.",
         contactBtn: "Contact Us",
         featuresTitle: "Key Features",
         feature1Title: "Chart of Accounts",
@@ -269,7 +269,7 @@ const translations = {
         contactModalTitle: "Contact Us Now!",
         contactModalText: "Ready to simplify your accounting? Let's talk!",
         scheduleDemo: "Schedule a Demo",
-        contactAlert: "Ready to simplify your accounting? Reach out to us at zabidin_buf@yahoo.com or call 081932278584 to schedule a demo!"
+        contactAlert: "Ready to simplify your accounting? Reach out to us at inni.zaenal@gmail.com or call 081932278584 to schedule a demo!"
     }
 };
 
@@ -557,7 +557,7 @@ document.getElementById('contact-btn').addEventListener('click', () => {
 document.getElementById('contact-modal-close').addEventListener('click', closeAllModals);
 
 document.getElementById('schedule-demo').addEventListener('click', () => {
-    window.location.href = 'mailto:zabidin_buf@yahoo.com?subject=Schedule%20Demo';
+    window.location.href = 'mailto:inni.zaenal@gmail.com?subject=Schedule%20Demo';
     closeAllModals();
 });
 
