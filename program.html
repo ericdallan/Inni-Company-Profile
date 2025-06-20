@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Program Akuntansi INNi menyediakan solusi akuntansi keuangan yang terjangkau dan ramah pengguna untuk UKM, CV, BUMDes, dan Koperasi.">
+    <meta name="keywords" content="akuntansi, UKM, BUMDes, koperasi, program akuntansi, keuangan, INNi">
+    <title>Program Akuntansi INNi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/program.css">
+</head>
+
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-4 sticky top-0 z-50" aria-label="Main navigation">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold">Program Akuntansi INNi</h1>
+                <p class="text-sm">"Mempermudah Akuntansi, Memberdayakan Bisnis Anda"</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu"
+                    aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <nav id="nav-menu" class="hidden md:flex space-x-4" aria-label="Primary navigation">
+                    <a href="#intro" class="hover:text-blue-300 transition">Beranda</a>
+                    <a href="#features" class="hover:text-blue-300 transition">Fitur</a>
+                    <a href="#benefits" class="hover:text-blue-300 transition">Manfaat</a>
+                    <a href="#client" class="hover:text-blue-300 transition">Klien</a>
+                    <a href="#contact" class="hover:text-blue-300 transition">Kontak</a>
+                    <a href="index.html" class="hover:text-blue-300 transition">Profil</a>
+                </nav>
+                <div class="flex space-x-2">
+                    <button id="btn-id"
+                        class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition bg-blue-700 text-white"
+                        aria-label="Switch to Indonesian">ID</button>
+                    <button id="btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition"
+                        aria-label="Switch to English">EN</button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-800" aria-hidden="true">
+            <a href="#intro" class="block py-2 px-4 hover:bg-blue-700 transition">Beranda</a>
+            <a href="#features" class="block py-2 px-4 hover:bg-blue-700 transition">Fitur</a>
+            <a href="#benefits" class="block py-2 px-4 hover:bg-blue-700 transition">Manfaat</a>
+            <a href="#client" class="block py-2 px-4 hover:bg-blue-700 transition">Klien</a>
+            <a href="#contact" class="block py-2 px-4 hover:bg-blue-700 transition">Kontak</a>
+            <a href="/index.html" class="block py-2 px-4 hover:bg-blue-700 transition">Profil</a>
+            <div class="flex space-x-2 px-4 py-2">
+                <button id="mobile-btn-id"
+                    class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition bg-blue-700 text-white"
+                    aria-label="Switch to Indonesian">ID</button>
+                <button id="mobile-btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition"
+                    aria-label="Switch to English">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pengantar -->
+    <section id="intro" class="bg-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">Selamat Datang di Program Akuntansi INNi</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                Program Akuntansi INNi dirancang untuk UKM, CV, BUMDes, dan Koperasi, menawarkan solusi akuntansi
+                keuangan yang
+                terjangkau dan ramah pengguna untuk menyederhanakan operasi bisnis Anda.
+            </p>
+            <button id="contact-btn"
+                class="mt-6 bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 hover:shadow-xl transition duration-300 transform hover:scale-105"
+                aria-label="Open contact modal">
+                Hubungi Kami
+            </button>
+        </div>
+    </section>
+
+    <!-- Fitur -->
+    <section id="features" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Fitur Utama</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Bagan Akun</h3>
+                    <p class="mt-2 text-gray-600">Klasifikasikan akun keuangan seperti aset, liabilitas, dan ekuitas
+                        dengan mudah.
+                    </p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Organisasi akun keuangan Anda dengan sistem pengkodean terstruktur untuk aset, liabilitas, dan ekuitas."
+                        aria-label="Learn more about Chart of Accounts">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Manajemen Voucher</h3>
+                    <p class="mt-2 text-gray-600">Buat dan lacak voucher transaksi, termasuk diskon dan pembayaran.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Buat voucher dengan mudah dengan validasi otomatis untuk memastikan entri debit dan kredit seimbang."
+                        aria-label="Learn more about Voucher Management">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Buku Besar Umum</h3>
+                    <p class="mt-2 text-gray-600">Catatan komprehensif dari semua transaksi keuangan untuk pelaporan
+                        yang akurat.
+                    </p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Lacak setiap transaksi keuangan dalam buku besar terperinci untuk pelaporan dan analisis yang presisi."
+                        aria-label="Learn more about General Ledger">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Piutang</h3>
+                    <p class="mt-2 text-gray-600">Kelola piutang pelanggan dengan pelacakan terperinci.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Pantau dan kelola piutang pelanggan dengan buku pembantu terperinci."
+                        aria-label="Learn more about Accounts Receivable">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Hutang</h3>
+                    <p class="mt-2 text-gray-600">Lacak dan kelola utang kepada pemasok atau pihak lain.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Pantau utang kepada pemasok dengan buku pembantu terorganisasi untuk pengelolaan yang efisien."
+                        aria-label="Learn more about Accounts Payable">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Ekspor Data</h3>
+                    <p class="mt-2 text-gray-600">Ekspor data ke PDF atau Excel untuk analisis lebih lanjut dengan
+                        laporan yang
+                        dapat disesuaikan.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Ekspor data keuangan ke PDF atau Excel dengan opsi yang dapat disesuaikan untuk akun dan periode tertentu."
+                        aria-label="Learn more about Data Export">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Neraca Saldo</h3>
+                    <p class="mt-2 text-gray-600">Lihat saldo akun secara menyeluruh untuk analisis keuangan.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Tampilkan neraca saldo untuk memastikan keseimbangan akun dan analisis keuangan yang akurat."
+                        aria-label="Learn more about Trial Balance">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Neraca Keuangan</h3>
+                    <p class="mt-2 text-gray-600">Pantau arus kas dan posisi keuangan secara real-time.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Lacak arus kas masuk dan keluar serta pantau posisi keuangan bisnis Anda secara real-time."
+                        aria-label="Learn more about Financial Overview">Pelajari Lebih Lanjut</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900">Laba Rugi</h3>
+                    <p class="mt-2 text-gray-600">Hasilkan laporan laba rugi untuk evaluasi kinerja bisnis.</p>
+                    <button class="feature-btn mt-2 text-blue-500 hover:underline"
+                        data-desc="Buat laporan laba rugi untuk mengevaluasi pendapatan, biaya, dan profitabilitas bisnis Anda."
+                        aria-label="Learn more about Profit and Loss">Pelajari Lebih Lanjut</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manfaat -->
+    <section id="benefits" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Mengapa Memilih INNi?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    <p class="text-gray-600">Mudah digunakan, bahkan untuk pemula.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <p class="text-gray-600">Data keuangan yang akurat dan terorganisasi.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <p class="text-gray-600">Solusi yang hemat waktu dan biaya.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <p class="text-gray-600">Pelatihan di lokasi untuk adopsi yang mulus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Antarmuka Carousel -->
+    <section id="client" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Client Program Akuntansi INNi</h2>
+            <div class="relative max-w-4xl mx-auto">
+                <div class="overflow-hidden">
+                    <div id="carousel" class="flex transition-transform duration-500 ease-in-out" role="region"
+                        aria-label="Client carousel">
+                        <div class="carousel-item min-w-full flex flex-col justify-center items-center">
+                            <img src="assets/img/Client_Training.jpg" alt="Pelatihan Klien"
+                                class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
+                                data-fullscreen-src="assets/img/Client_Training.jpg" loading="lazy">
+                            <p class="text-center mt-4 text-gray-600">Pelatihan Klien</p>
+                        </div>
+                        <div class="carousel-item min-w-full flex flex-col justify-center items-center">
+                            <img src="assets/img/Client_Visit.jpg" alt="Kunjungan Klien"
+                                class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
+                                data-fullscreen-src="assets/img/Client_Visit.jpg" loading="lazy">
+                            <p class="text-center mt-4 text-gray-600">Kunjungan Klien</p>
+                        </div>
+                        <div class="carousel-item min-w-full flex flex-col justify-center items-center">
+                            <img src="assets/img/Admin_Create_Voucher.jpg" alt="Penggunaan Aplikasi oleh Admin"
+                                class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
+                                data-fullscreen-src="assets/img/Admin_Create_Voucher.jpg" loading="lazy">
+                            <p class="text-center mt-4 text-gray-600">Penggunaan Aplikasi oleh Admin</p>
+                        </div>
+                        <div class="carousel-item min-w-full flex flex-col justify-center items-center">
+                            <img src="assets/img/Admin_Create_Voucher2.jpg" alt="Penggunaan Aplikasi oleh Admin"
+                                class="w-[800px] h-[400px] object-cover rounded-lg shadow-md cursor-pointer"
+                                data-fullscreen-src="assets/img/Admin_Create_Voucher2.jpg" loading="lazy">
+                            <p class="text-center mt-4 text-gray-600">Penggunaan Aplikasi oleh Admin</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-btn"
+                    class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+                    aria-label="Previous slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button id="next-btn"
+                    class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+                    aria-label="Next slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                <div class="flex justify-center mt-4 space-x-2" role="tablist" aria-label="Carousel navigation">
+                    <button class="carousel-dot w-3 h-3 bg-blue-500 rounded-full" data-index="0" aria-label="Slide 1"
+                        role="tab" aria-selected="true"></button>
+                    <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="1" aria-label="Slide 2"
+                        role="tab" aria-selected="false"></button>
+                    <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="2" aria-label="Slide 3"
+                        role="tab" aria-selected="false"></button>
+                    <button class="carousel-dot w-3 h-3 bg-gray-300 rounded-full" data-index="3" aria-label="Slide 4"
+                        role="tab" aria-selected="false"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">Ayo Berkolaborasi</h2>
+            <ul class="text-gray-700 space-y-3">
+                <li class="flex items-center justify-center"><span class="font-semibold">S. Eric Dallan (Eric):</span>
+                    087725113689</li>
+                <li class="flex items-center justify-center"><span class="font-semibold">Heri Noviandana:</span>
+                    087702882986
+                </li>
+                <li class="flex items-center justify-center"><span class="font-semibold">Zaenal Abidin (Kepala
+                        Tim):</span>
+                    081932278584 | <a href="#" class="contact-email text-blue-500 hover:underline"
+                        data-email="zabidin_buf@yahoo.com">zabidin_buf@yahoo.com</a></li>
+            </ul>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-8">
+                Siap menyederhanakan akuntansi Anda? Hubungi kami untuk diskusi lebih lanjut atau jadwalkan demonstrasi
+                produk.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Program Akuntansi INNi. Seluruh hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Fitur -->
+    <div id="feature-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 modal"
+        aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full">
+            <h3 class="text-xl font-bold text-blue-900 mb-4" id="modal-title"></h3>
+            <p class="text-gray-600" id="modal-desc"></p>
+            <button id="modal-close"
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+                aria-label="Close feature modal">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Modal Gambar Penuh -->
+    <div id="image-modal"
+        class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50 modal"
+        aria-hidden="true" role="dialog" aria-labelledby="fullscreen-image-label">
+        <div class="relative max-w-4xl w-full">
+            <img id="fullscreen-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                aria-labelledby="fullscreen-image-label">
+            <span id="fullscreen-image-label" class="sr-only">Full screen image</span>
+            <button id="image-modal-close"
+                class="absolute top-2 right-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+                aria-label="Close image modal">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Carousel Fitur -->
+    <div id="feature-carousel-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-60 modal"
+        aria-hidden="true" role="dialog" aria-labelledby="feature-carousel-title">
+        <div class="bg-white p-6 rounded-lg max-w-4xl w-full">
+            <h3 class="text-2xl font-bold text-blue-900 mb-4 text-center" id="feature-carousel-title"></h3>
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div id="feature-carousel" class="flex transition-transform duration-500 ease-in-out" role="region"
+                        aria-label="Feature carousel"></div>
+                </div>
+                <button id="feature-prev-btn"
+                    class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+                    aria-label="Previous feature slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button id="feature-next-btn"
+                    class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
+                    aria-label="Next feature slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                <div id="feature-carousel-dots" class="flex justify-center mt-4 space-x-2" role="tablist"
+                    aria-label="Feature carousel navigation"></div>
+            </div>
+            <button id="feature-carousel-close"
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition w-full"
+                aria-label="Close feature carousel">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Modal Kontak -->
+    <div id="contact-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 modal"
+        aria-hidden="true" role="dialog" aria-labelledby="contact-modal-title">
+        <div
+            class="bg-white p-6 rounded-lg max-w-xl w-short transform transition duration-300 ease-in-out scale-95 hover:scale-100">
+            <h3 id="contact-modal-title" class="text-2xl font-bold text-blue-900 mb-4 text-center">Hubungi Kami
+                Sekarang!</h3>
+            <p id="contact-modal-text" class="text-gray-600 mb-4 text-center">Siap menyederhanakan akuntansi Anda? Mari
+                kita
+                bicara!</p>
+            <ul class="text-gray-600 space-y-3">
+                <li class="flex items-center"><span class="font-semibold">S. Eric Dallan (Eric):</span> 087725113689
+                </li>
+                <li class="flex items-center"><span class="font-semibold">Heri Noviandana:</span> 087702882986</li>
+                <li class="flex items-center"><span class="font-semibold">Zaenal Abidin (Kepala Tim):</span>
+                    081932278584 | <a href="#" class="contact-email text-blue-500 hover:underline"
+                        data-email="zabidin_buf@yahoo.com">zabidin_buf@yahoo.com</a></li>
+            </ul>
+            <button id="schedule-demo"
+                class="mt-6 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 w-full"
+                aria-label="Schedule a demo">Jadwalkan Demo</button>
+            <button id="contact-modal-close"
+                class="mt-2 text-gray-500 hover:text-gray-700 transition duration-300 w-full text-center"
+                aria-label="Close contact modal">Tutup</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/program.js"></script>
+    <noscript>
+        <style>
+            .modal {
+                display: none !important;
+            }
+
+            #mobile-menu {
+                display: none !important;
+            }
+
+            #nav-menu {
+                display: flex !important;
+            }
+        </style>
+        <div class="bg-yellow-100 p-4 text-center text-gray-800">
+            JavaScript is disabled. Some features, such as the mobile menu and modals, may not work as expected. Please
+            enable
+            JavaScript for the best experience.
+        </div>
+    </noscript>
+</body>
+
+</html>

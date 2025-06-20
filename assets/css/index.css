@@ -1,0 +1,18 @@
+/* index.css */
+body {
+  font-size: 16px; /* Matches Tailwind's text-base */
+}
+
+/* Optionally include styles from program.css if you add similar elements */
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.benefit-item i {
+  font-size: 2.5rem;
+  color: #1e40af;
+  margin-bottom: 1rem;
+}
