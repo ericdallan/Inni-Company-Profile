@@ -16,6 +16,10 @@
     max-height: 400px;
     object-fit: contain;
 }
+.carousel-dot:focus, .feature-carousel-dot:focus, #prev-btn:focus, #next-btn:focus, #feature-prev-btn:focus, #feature-next-btn:focus {
+    outline: 2px solid #1E90FF;
+    outline-offset: 2px;
+}
 
 .feature-carousel-item {
     width: 100%;
