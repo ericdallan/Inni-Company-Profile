@@ -939,7 +939,6 @@ td.yellow-pop .text-xs {
   padding: 20px 8px !important;
   min-height: 80px;
 }
-/* Modal Image Styling */
 .modal-image-container {
   min-height: 400px;
   max-height: 600px;
@@ -959,14 +958,12 @@ td.yellow-pop .text-xs {
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Untuk gambar horizontal */
 @media (min-width: 768px) {
   .modal-image-container {
     min-height: 500px;
   }
 }
 
-/* Responsive untuk mobile */
 @media (max-width: 767px) {
   .modal-image-container {
     min-height: 300px;
@@ -979,7 +976,6 @@ td.yellow-pop .text-xs {
   }
 }
 
-/* Pastikan modal backdrop bisa diklik */
 #feature-modal {
   z-index: 9999;
 }
@@ -987,4 +983,91 @@ td.yellow-pop .text-xs {
 #feature-modal > div {
   position: relative;
   z-index: 10000;
+}
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+}
+
+footer h3 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+footer h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  border-radius: 2px;
+}
+
+footer h3.text-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer a {
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  transform: translateX(5px);
+}
+
+.social-footer-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-footer-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.social-footer-icon i {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  footer h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  footer a:hover {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

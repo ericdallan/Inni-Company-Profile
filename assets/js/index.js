@@ -43,6 +43,18 @@ const translations = {
       "Kami siap membantu Anda! Jangan ragu untuk menghubungi tim kami",
     footerText:
       "© 2025 PT. Integrasindo Multi Kreasi (inni). Seluruh hak cipta dilindungi.",
+    footerCompany: "PT. Integrasindo Multi Kreasi",
+    footerTagline:
+      '"Solusi Praktis Laporan Keuangan & Pajak untuk UMKM dan Koperasi"',
+    footerDesc:
+      "Website akuntansi digital dengan fitur lengkap dan pelatihan on-site",
+    footerOffice: "Kantor Kami",
+    footerQuickLinks: "Tautan Cepat",
+    footerHome: "Beranda",
+    footerServices: "Layanan",
+    footerFeatures: "Fitur",
+    footerContact: "Kontak",
+    footerViewMap: "Lihat di Google Maps",
   },
   en: {
     headerTitle: "PT. Integrasindo Multi Kreasi (inni)",
@@ -88,6 +100,18 @@ const translations = {
     contactSubtitle: "We are ready to help you! Feel free to contact our team",
     footerText:
       "© 2025 PT. Integrasindo Multi Kreasi (inni). All rights reserved.",
+    footerCompany: "PT. Integrasindo Multi Kreasi",
+    footerTagline:
+      '"Practical Solutions for Financial Reports & Tax for SMEs and Cooperatives"',
+    footerDesc:
+      "Digital accounting website with complete features and on-site training",
+    footerOffice: "Our Office",
+    footerQuickLinks: "Quick Links",
+    footerHome: "Home",
+    footerServices: "Services",
+    footerFeatures: "Features",
+    footerContact: "Contact",
+    footerViewMap: "View on Google Maps",
   },
 };
 
@@ -794,7 +818,9 @@ function openFeatureModal(idx) {
       carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
         <img src="${src}" alt="${f.title} ${i + 1}" 
              class="modal-image" 
-             onerror="this.src='https://via.placeholder.com/800x600?text=${encodeURIComponent(f.title)}'">
+             onerror="this.src='https://via.placeholder.com/800x600?text=${encodeURIComponent(
+               f.title
+             )}'">
       </div>`;
       dots.innerHTML += `<button class="modal-carousel-dot w-3 h-3 rounded-full transition-all duration-200 ${
         i === 0 ? "bg-blue-600 w-8" : "bg-gray-300"
