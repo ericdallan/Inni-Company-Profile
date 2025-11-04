@@ -156,7 +156,7 @@ const featuresData = {
       title: "Hutang",
       desc: "Pantau dan kelola kewajiban pembayaran kepada pemasok dengan buku pembantu terorganisir.",
       color: "from-red-500 to-red-600",
-      images: ["assets/img/Ar.png", "assets/img/AP_Detail.png"],
+      images: ["assets/img/AP.png", "assets/img/AP_Detail.png"],
     },
     {
       icon: "fa-file-export",
