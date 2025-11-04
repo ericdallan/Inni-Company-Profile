@@ -690,7 +690,7 @@ function generateModelCards(lang) {
           ${
             m.recommended
               ? `<span class="px-3 py-1 text-sm rounded-full bg-yellow-400 text-white font-semibold">${
-                  lang === "id" ? "Direkomendasikan" : "Recommended"
+                  lang === "id" ? "Rekomendasi" : "Recommended"
                 }</span>`
               : ""
           }
