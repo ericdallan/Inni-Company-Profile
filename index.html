@@ -1,165 +1,487 @@
 <!DOCTYPE html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PT. Integrasindo Multi Kreasi</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    </head>
+    <body class="font-sans bg-gray-50">
+        <div id="loading-spinner"
+            class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+            <div
+                class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-600"></div>
+        </div>
+        <header
+            class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white py-4 sticky top-0 z-50 shadow-2xl backdrop-blur-sm bg-opacity-95 transition-all duration-300"
+            id="header">
+            <div
+                class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div>
+                        <h1 class="text-2xl font-bold tracking-tight"
+                            data-translate="headerTitle">PT. Integrasindo Multi
+                            Kreasi</h1>
+                        <p class="text-sm italic text-blue-200"
+                            data-translate="headerSlogan">"Mempermudah Keuangan Anda"</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="menu-toggle"
+                        class="md:hidden focus:outline-none hover:bg-blue-800 p-2 rounded-lg transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <nav id="nav-menu" class="hidden md:flex space-x-6">
+                        <a href="#intro"
+                            class="nav-item text-lg font-medium hover:text-blue-300 transition-colors pb-1"
+                            data-translate="navHome">Beranda</a>
+                        <a href="#services"
+                            class="nav-item text-lg font-medium hover:text-blue-300 transition-colors pb-1"
+                            data-translate="navServices">Layanan</a>
+                        <a href="#features"
+                            class="nav-item text-lg font-medium hover:text-blue-300 transition-colors pb-1"
+                            data-translate="navFeatures">Fitur</a>
+                        <a href="#model-comparison"
+                            class="nav-item text-lg font-medium hover:text-blue-300 transition-colors pb-1"
+                            data-translate="navComparison">Model</a>
+                        <a href="#contact"
+                            class="nav-item text-lg font-medium hover:text-blue-300 transition-colors pb-1"
+                            data-translate="navContact">Kontak</a>
+                    </nav>
+                    <div class="hidden md:flex space-x-2">
+                        <button
+                            class="lang-btn py-2 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl text-sm font-semibold min-w-[48px]"
+                            data-lang="id">ID</button>
+                        <button
+                            class="lang-btn py-2 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl text-sm font-semibold min-w-[48px]"
+                            data-lang="en">EN</button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-blue-800 shadow-md mt-4 rounded-lg mx-4 overflow-hidden">
+                <a href="#intro"
+                    class="block py-3 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300"
+                    data-translate="navHome">Beranda</a>
+                <a href="#services"
+                    class="block py-3 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300"
+                    data-translate="navServices">Layanan</a>
+                <a href="#features"
+                    class="block py-3 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300"
+                    data-translate="navFeatures">Fitur Website</a>
+                <a href="#model-comparison"
+                    class="block py-3 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300"
+                    data-translate="navComparison">Perbandingan Model</a>
+                <a href="#contact"
+                    class="block py-3 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300"
+                    data-translate="navContact">Kontak</a>
+                <div class="flex space-x-2 px-4 py-3 border-t border-blue-700">
+                    <button
+                        class="lang-btn flex-1 py-2 px-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl text-sm font-semibold"
+                        data-lang="id">ID</button>
+                    <button
+                        class="lang-btn flex-1 py-2 px-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl text-sm font-semibold"
+                        data-lang="en">EN</button>
+                </div>
+            </div>
+        </header>
+        <section id="intro"
+            class="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20 overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div
+                    class="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full filter blur-3xl"></div>
+                <div
+                    class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-2 text-center relative z-10">
+                <div class="mb-8 animate-fade-in">
+                    <div
+                        class="inline-block rounded-full overflow-hidden floating logo-wrapper">
+                        <img src="assets/img/Logo_inni.png" alt="Logo inni"
+                            class="h-40 w-70">
+                    </div>
+                </div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 animate-fade-in-up stagger-delay-1"
+                    data-translate="introTitle">
+                    Selamat Datang di PT. Integrasindo Multi Kreasi
+                </h2>
+                <p
+                    class="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-up stagger-delay-2"
+                    data-translate="introText">
+                    Kami adalah perusahaan yang menyediakan solusi keuangan
+                    terpercaya untuk UMKM dan Koperasi, dengan layanan inovatif
+                    untuk mendukung pengelolaan keuangan Anda.
+                </p>
+                <div class="mt-12 scroll-indicator"><i
+                        class="fas fa-chevron-down text-3xl text-blue-600"></i></div>
+            </div>
+        </section>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Profil Perusahaan PT. Integrasindo Multi Kreasi (INNi) - Solusi Keuangan Terpercaya untuk UMKM dan Koperasi.">
-  <meta name="keywords"
-    content="PT Integrasindo Multi Kreasi, INNi, solusi keuangan, UMKM, koperasi, konsultasi, pelatihan">
-  <title>PT. Integrasindo Multi Kreasi (INNi) - Profil Perusahaan</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/index.css">
-</head>
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 animate-fade-in"
+                        data-translate="servicesTitle">Layanan Kami</h2>
+                    <p
+                        class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up stagger-delay-1"
+                        data-translate="servicesSubtitle">Dukungan komprehensif
+                        untuk kesuksesan bisnis Anda</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="service-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up stagger-delay-1">
+                        <div
+                            class="service-icon text-5xl mb-4 text-blue-900 flex justify-center">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3
+                            class="text-xl text-center font-bold text-blue-900 mb-3"
+                            data-translate="service1Title">Website Laporan
+                            Keuangan</h3>
+                        <p class="text-gray-600"
+                            data-translate="service1Desc">Penyediaan website
+                            digital untuk laporan keuangan yang akurat.</p>
+                    </div>
+                    <div
+                        class="service-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up stagger-delay-2">
+                        <div
+                            class="service-icon text-5xl mb-4 text-blue-900 flex justify-center">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3
+                            class="text-xl text-center font-bold text-blue-900 mb-3"
+                            data-translate="service2Title">Pelaporan Pajak</h3>
+                        <p class="text-gray-600"
+                            data-translate="service2Desc">Pelaporan pajak
+                            pribadi dan usaha dengan mudah.</p>
+                    </div>
+                    <div
+                        class="service-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up stagger-delay-3">
+                        <div
+                            class="service-icon text-5xl mb-4 text-blue-900 flex justify-center">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3
+                            class="text-xl text-center font-bold text-blue-900 mb-3"
+                            data-translate="service3Title">Konsultasi &
+                            Pelatihan</h3>
+                        <p class="text-gray-600"
+                            data-translate="service3Desc">Konsultasi dan
+                            pelatihan akuntansi serta pajak.</p>
+                    </div>
+                    <div
+                        class="service-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up stagger-delay-4">
+                        <div
+                            class="service-icon text-5xl mb-4 text-blue-900 flex justify-center">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3
+                            class="text-xl text-center font-bold text-blue-900 mb-3"
+                            data-translate="service4Title">Legalitas Usaha</h3>
+                        <p class="text-gray-600"
+                            data-translate="service4Desc">Pendaftaran merk dan
+                            legalitas usaha (NIB, NPWP, dll).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<body class="font-sans text-base m-0">
-  <!-- Header -->
-  <header class="bg-blue-900 text-white py-4 sticky top-0 z-50" aria-label="Main navigation">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <div>
-        <h1 class="text-2xl font-bold">PT. Integrasindo Multi Kreasi (INNi)</h1>
-        <p class="text-sm">"Mempermudah Keuangan Anda"</p>
-      </div>
-      <div class="flex items-center space-x-4">
-        <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu"
-          aria-expanded="false">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 gradient-text animate-fade-in"
+                        data-translate="featuresTitle">Fitur Website inni Akun
+                        Digi</h2>
+                    <p
+                        class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up stagger-delay-1"
+                        data-translate="featuresSubtitle">Solusi lengkap untuk
+                        semua kebutuhan akuntansi bisnis Anda</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    id="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="model-comparison"
+            class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 gradient-text animate-fade-in"
+                        data-translate="comparisonTitle">Perbandingan Model
+                        Website</h2>
+                    <p
+                        class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up stagger-delay-1"
+                        data-translate="comparisonSubtitle">Pilih model yang
+                        sesuai dengan kebutuhan bisnis Anda</p>
+                </div>
+                <div class="max-w-6xl mx-auto overflow-x-auto">
+                    <div id="model-cards"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6"></div>
+                    <table
+                        class="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+                        <thead
+                            class="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+                            <tr>
+                                <th class="py-4 px-6 text-left font-bold"
+                                    data-translate="featureColumn">Fitur</th>
+                                <th
+                                    class="py-4 px-6 text-center font-bold">Basic</th>
+                                <th class="py-4 px-6 text-center font-bold"
+                                    data-translate="completeColumn">Lengkap</th>
+                                <th
+                                    class="py-4 px-6 text-center font-bold">Retail</th>
+                                <th class="py-4 px-6 text-center font-bold"
+                                    data-translate="manufacturingColumn">Manufaktur</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparison-table-body"
+                            class="divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+                <div
+                    class="mt-12 max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6"
+                        data-translate="notesTitle">Keterangan:</h3>
+                    <ul class="space-y-3 text-gray-600" id="model-notes"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 gradient-text animate-fade-in"
+                        data-translate="benefitsTitle">Mengapa Memilih
+                        inni?</h2>
+                    <p
+                        class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up stagger-delay-1"
+                        data-translate="benefitsSubtitle">Keunggulan yang
+                        membuat kami berbeda</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="benefit-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-1">
+                        <div
+                            class="benefit-icon inline-block p-4 bg-blue-100 rounded-full mb-4"><i
+                                class="fas fa-check-circle text-4xl text-blue-900"></i></div>
+                        <p class="text-gray-600 font-medium"
+                            data-translate="benefit1">Mudah digunakan, bahkan
+                            untuk pemula.</p>
+                    </div>
+                    <div
+                        class="benefit-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-2">
+                        <div
+                            class="benefit-icon inline-block p-4 bg-blue-100 rounded-full mb-4"><i
+                                class="fas fa-chart-line text-4xl text-blue-900"></i></div>
+                        <p class="text-gray-600 font-medium"
+                            data-translate="benefit2">Data keuangan yang akurat
+                            dan terorganisasi.</p>
+                    </div>
+                    <div
+                        class="benefit-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-3">
+                        <div
+                            class="benefit-icon inline-block p-4 bg-blue-100 rounded-full mb-4"><i
+                                class="fas fa-clock text-4xl text-blue-900"></i></div>
+                        <p class="text-gray-600 font-medium"
+                            data-translate="benefit3">Solusi yang hemat waktu
+                            dan biaya.</p>
+                    </div>
+                    <div
+                        class="benefit-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-4">
+                        <div
+                            class="benefit-icon inline-block p-4 bg-blue-100 rounded-full mb-4"><i
+                                class="fas fa-users text-4xl text-blue-900"></i></div>
+                        <p class="text-gray-600 font-medium"
+                            data-translate="benefit4">Pelatihan di lokasi untuk
+                            adopsi yang mulus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact"
+            class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2
+                            class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 gradient-text animate-fade-in"
+                            data-translate="contactTitle">Hubungi Kami</h2>
+                        <p
+                            class="text-xl text-gray-600 animate-fade-in-up stagger-delay-1"
+                            data-translate="contactSubtitle">Kami siap membantu
+                            Anda! Jangan ragu untuk menghubungi tim kami</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Eric's Card -->
+                        <div
+                            class="contact-person-card bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in-up stagger-delay-1 transform hover:-translate-y-2 hover:scale-105">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-500 hover:rotate-12">
+                                        <i
+                                            class="fas fa-user text-2xl text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-2xl font-bold text-gray-800 mb-2">S.
+                                        Eric Dallan (Eric)</h3>
+                                    <div class="space-y-3">
+                                        <div
+                                            class="contact-item flex items-center space-x-3 group">
+                                            <div
+                                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                                <i
+                                                    class="fas fa-phone text-blue-600"></i>
+                                            </div>
+                                            <a href="tel:087725113689"
+                                                class="text-gray-600 hover:text-blue-600 transition-colors">087725113689</a>
+                                        </div>
+                                        <div
+                                            class="contact-item flex items-center space-x-3 group">
+                                            <div
+                                                class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                                                <i
+                                                    class="fab fa-whatsapp text-green-600"></i>
+                                            </div>
+                                            <a
+                                                href="https://api.whatsapp.com/send?phone=6287725113689"
+                                                target="_blank"
+                                                class="text-gray-600 hover:text-green-600 transition-colors">WhatsApp</a>
+                                        </div>
+                                        <div
+                                            class="contact-item flex items-center space-x-3 group">
+                                            <div
+                                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                                <i
+                                                    class="fas fa-envelope text-blue-600"></i>
+                                            </div>
+                                            <a href="mailto:inni.eric@gmail.com"
+                                                class="text-gray-600 hover:text-blue-600 transition-colors">inni.eric@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Heri's Card -->
+                        <div
+                            class="contact-person-card bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 animate-fade-in-up stagger-delay-2 transform hover:-translate-y-2 hover:scale-105">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-500 hover:rotate-12">
+                                        <i
+                                            class="fas fa-user text-2xl text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-2xl font-bold text-gray-800 mb-2">Heri
+                                        Noviandana</h3>
+                                    <div class="space-y-3">
+                                        <div
+                                            class="contact-item flex items-center space-x-3 group">
+                                            <div
+                                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                                <i
+                                                    class="fas fa-phone text-blue-600"></i>
+                                            </div>
+                                            <a href="tel:087702882986"
+                                                class="text-gray-600 hover:text-blue-600 transition-colors">087702882986</a>
+                                        </div>
+                                        <div
+                                            class="contact-item flex items-center space-x-3 group">
+                                            <div
+                                                class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                                                <i
+                                                    class="fab fa-whatsapp text-green-600"></i>
+                                            </div>
+                                            <a
+                                                href="https://api.whatsapp.com/send?phone=6287702882986"
+                                                target="_blank"
+                                                class="text-gray-600 hover:text-green-600 transition-colors">WhatsApp</a>
+                                        </div>
+                                        <div
+                                            class="contact-item flex items-center space-x-3 group">
+                                            <div
+                                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                                <i
+                                                    class="fas fa-envelope text-blue-600"></i>
+                                            </div>
+                                            <a
+                                                href="mailto:inni.heri13@gmail.com"
+                                                class="text-gray-600 hover:text-blue-600 transition-colors">inni.heri13@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white py-8">
+            <div class="container mx-auto px-4 text-center">
+                <p data-translate="footerText">© 2025 PT. Integrasindo Multi
+                    Kreasi. Seluruh hak cipta dilindungi.</p>
+            </div>
+        </footer>
+
+        <!-- MODAL -->
+        <div id="feature-modal"
+            class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300"
+            aria-hidden="true">
+            <div
+                class="bg-white p-8 rounded-2xl max-w-5xl w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-3xl font-bold text-blue-900"
+                        id="modal-feature-title"></h3>
+                    <button id="feature-modal-close"
+                        class="text-gray-500 hover:text-gray-700 transition-colors"><i
+                            class="fas fa-times text-2xl"></i></button>
+                </div>
+                <p class="text-gray-600 mb-8 text-lg"
+                    id="modal-feature-desc"></p>
+                <div class="relative">
+                    <div class="overflow-hidden rounded-xl shadow-2xl">
+                        <div id="modal-carousel"
+                            class="flex transition-transform duration-500 ease-in-out"></div>
+                    </div>
+                    <button id="modal-prev-btn"
+                        class="absolute top-1/2 left-4 -translate-y-1/2 bg-white bg-opacity-90 text-blue-900 p-3 rounded-full hover:bg-opacity-100 shadow-lg transition-all duration-200"><i
+                            class="fas fa-chevron-left text-xl"></i></button>
+                    <button id="modal-next-btn"
+                        class="absolute top-1/2 right-4 -translate-y-1/2 bg-white bg-opacity-90 text-blue-900 p-3 rounded-full hover:bg-opacity-100 shadow-lg transition-all duration-200"><i
+                            class="fas fa-chevron-right text-xl"></i></button>
+                    <div class="flex justify-center mt-6 space-x-2"
+                        id="modal-carousel-dots"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="back-to-top"
+            class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 text-white rounded-full shadow-2xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none z-40">
+            <i class="fas fa-arrow-up"></i>
         </button>
-        <nav id="nav-menu" class="hidden md:flex space-x-4" aria-label="Primary navigation">
-          <a href="#intro" class="hover:text-blue-300 transition">Beranda</a>
-          <a href="#services" class="hover:text-blue-300 transition">Layanan</a>
-          <a href="#contact" class="hover:text-blue-300 transition">Kontak</a>
-        </nav>
-        <div class="flex space-x-2">
-          <button id="btn-id"
-            class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition bg-blue-700 text-white"
-            aria-label="Switch to Indonesian">ID</button>
-          <button id="btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition"
-            aria-label="Switch to English">EN</button>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-800" aria-hidden="true">
-      <a href="#intro" class="block py-2 px-4 hover:bg-blue-700 transition">Beranda</a>
-      <a href="#services" class="block py-2 px-4 hover:bg-blue-700 transition">Layanan</a>
-      <a href="#contact" class="block py-2 px-4 hover:bg-blue-700 transition">Kontak</a>
-      <div class="flex space-x-2 px-4 py-2">
-        <button id="mobile-btn-id"
-          class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition bg-blue-700 text-white"
-          aria-label="Switch to Indonesian">ID</button>
-        <button id="mobile-btn-en" class="py-1 px-3 rounded hover:bg-blue-600 hover:text-white transition"
-          aria-label="Switch to English">EN</button>
-      </div>
-    </div>
-  </header>
 
-  <!-- Pengantar -->
-  <section id="intro" class="bg-white py-12">
-    <div class="container mx-auto px-4 text-center">
-      <img src="assets/img/Logo_Inni.png" alt="Logo PT. Integrasindo Multi Kreasi (INNi)"
-        class="mx-auto w-[400px] h-[200px]" data-fullscreen-src="assets/img/Logo_Inni.jpg" loading="lazy">
-      <h2 class="text-3xl font-semibold text-gray-800 mt-6">Selamat Datang di PT. Integrasindo Multi Kreasi (INNi)</h2>
-      <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-        Kami adalah perusahaan yang menyediakan solusi keuangan terpercaya untuk UMKM dan Koperasi, dengan layanan
-        inovatif untuk mendukung pengelolaan keuangan Anda.
-      </p>
-      <div class="mt-6">
-        <a href="program.html"
-          class="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 hover:shadow-xl transition duration-300 transform hover:scale-105"
-          aria-label="Lihat Program Kami">Lihat Program Kami</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Layanan -->
-  <section id="services" class="py-12 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Layanan Kami</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900">Software Laporan Keuangan</h3>
-          <p class="mt-2 text-gray-600">Penyediaan software digital untuk laporan keuangan yang akurat.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900">Pelaporan Pajak</h3>
-          <p class="mt-2 text-gray-600">Pelaporan pajak pribadi dan usaha dengan mudah.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900">Konsultasi & Pelatihan</h3>
-          <p class="mt-2 text-gray-600">Konsultasi dan pelatihan akuntansi serta pajak.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900">Legalitas Usaha</h3>
-          <p class="mt-2 text-gray-600">Pendaftaran merk dan legalitas usaha (NIB, NPWP, dll).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak -->
-  <section id="contact" class="py-12 bg-gray-100">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-semibold text-gray-800 mb-8">Hubungi Kami</h2>
-      <ul class="text-gray-700 space-y-3">
-        <li class="flex items-center justify-center"><span class="font-semibold">S. Eric Dallan (Eric):</span>
-          087725113689 | <a href="#" class="text-blue-500 hover:underline"
-            data-email="inni.eric@gmail.com"> inni.eric@gmail.com</a>
-        </li>
-        <li class="flex items-center justify-center"><span class="font-semibold">Heri Noviandana:</span>
-          087702882986 | <a href="#" class="text-blue-500 hover:underline"
-            data-email="inni.heri13@gmail.com"> inni.heri13@gmail.com</a>
-        </li>
-        <li class="flex items-center justify-center"><span class="font-semibold">Zaenal Abidin:</span>
-          081932278584 | <a href="#" class="text-blue-500 hover:underline"
-            data-email="inni.zaenal@gmail.com"> inni.zaenal@gmail.com</a>
-        </li>
-      </ul>
-      <button id="contact-modal-btn"
-        class="mt-6 bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 hover:shadow-xl transition duration-300 transform hover:scale-105"
-        aria-label="Open contact modal">
-        Hubungi Kami
-      </button>
-    </div>
-  </section>
-  <!-- Modals -->
-  <div id="contact-modal"
-    class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 modal" aria-hidden="true"
-    role="dialog" aria-labelledby="contact-modal-title">
-    <div
-      class="bg-white p-6 rounded-lg max-w-xl w-full transform transition duration-300 ease-in-out scale-95 hover:scale-100">
-      <h3 id="contact-modal-title" class="text-2xl font-bold text-blue-900 mb-4 text-center">Hubungi Kami Sekarang!</h3>
-      <ul class="text-gray-600 space-y-3">
-        <li class="flex items-center"><span class="font-semibold">S. Eric Dallan (Eric):</span> 087725113689 | <a href="#"
-            class="contact-email text-blue-500 hover:underline" data-email="inni.eric@gmail.com"> inni.eric@gmail.com</a>
-        </li>
-        <li class="flex items-center"><span class="font-semibold">Heri Noviandana:</span> 087702882986 | <a href="#"
-            class="contact-email text-blue-500 hover:underline" data-email=" inni.heri13@gmail.com">
-            inni.heri13@gmail.com</a></li>
-        </li>
-        <li class="flex items-center"><span class="font-semibold">Zaenal Abidin:</span> 081932278584 | <a href="#"
-            class="contact-email text-blue-500 hover:underline"
-            data-email="inni.zaenal@gmail.com"> inni.zaenal@gmail.com</a></li>
-      </ul>
-      <button id="use-jasa"
-        class="mt-6 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 w-full"
-        aria-label="Send email">Kirim Email</button>
-      <button id="contact-modal-close"
-        class="mt-2 text-gray-500 hover:text-gray-700 transition duration-300 w-full text-center"
-        aria-label="Close contact modal">Tutup</button>
-    </div>
-  </div>
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <p>© 2025 PT. Integrasindo Multi Kreasi (INNi). Seluruh hak cipta dilindungi.</p>
-    </div>
-  </footer>
-  <script src="assets/js/index.js"></script>
-</body>
-
+    </body>
+    <script src="assets/js/index.js"></script>
 </html>
