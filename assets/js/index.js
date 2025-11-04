@@ -1,13 +1,14 @@
 const translations = {
   id: {
-    headerTitle: "PT. Integrasindo Multi Kreasi (inni)",
-    headerSlogan: '"Mempermudah Keuangan Anda"',
+    headerTitle: "PT. Integrasindo Multi Kreasi",
+    headerSlogan:
+      '"Laporan Keuangan & Pajak Praktis untuk Semua Skala Bisnis & Organisasi"',
     navHome: "Beranda",
     navServices: "Layanan",
     navContact: "Kontak",
-    introTitle: "Selamat Datang di PT. Integrasindo Multi Kreasi (inni)",
+    introTitle: "Selamat Datang di PT. Integrasindo Multi Kreasi",
     introText:
-      "Kami adalah perusahaan yang menyediakan solusi keuangan terpercaya untuk UMKM dan Koperasi, dengan layanan inovatif untuk mendukung pengelolaan keuangan Anda.",
+      "Kami menyediakan solusi keuangan dan pajak yang praktis dan terpercaya bagi UMKM, Koperasi, serta berbagai organisasi untuk mendukung pengelolaan keuangan yang lebih efisien.",
     viewPrograms: "Lihat Program Kami",
     contactUs: "Hubungi Kami",
     servicesTitle: "Layanan Kami",
@@ -42,12 +43,12 @@ const translations = {
     contactSubtitle:
       "Kami siap membantu Anda! Jangan ragu untuk menghubungi tim kami",
     footerText:
-      "© 2025 PT. Integrasindo Multi Kreasi (inni). Seluruh hak cipta dilindungi.",
+      "© 2025 PT. Integrasindo Multi Kreasi. Seluruh hak cipta dilindungi.",
     footerCompany: "PT. Integrasindo Multi Kreasi",
     footerTagline:
-      '"Solusi Praktis Laporan Keuangan & Pajak untuk UMKM dan Koperasi"',
+      '"Laporan Keuangan & Pajak Praktis untuk Semua Skala Bisnis & Organisasi"',
     footerDesc:
-      "Website akuntansi digital dengan fitur lengkap dan pelatihan on-site",
+      "Penyedia layanan akuntansi digital terintegrasi dengan fitur lengkap serta pelatihan langsung di tempat.",
     footerOffice: "Kantor Kami",
     footerQuickLinks: "Tautan Cepat",
     footerHome: "Beranda",
@@ -57,14 +58,15 @@ const translations = {
     footerViewMap: "Lihat di Google Maps",
   },
   en: {
-    headerTitle: "PT. Integrasindo Multi Kreasi (inni)",
-    headerSlogan: '"Simplifying Your Finances"',
+    headerTitle: "PT. Integrasindo Multi Kreasi",
+    headerSlogan:
+      '"Practical Financial Reports & Tax Solutions for All Business and Organization Scales"',
     navHome: "Home",
     navServices: "Services",
     navContact: "Contact",
-    introTitle: "Welcome to PT. Integrasindo Multi Kreasi (inni)",
+    introTitle: "Welcome to PT. Integrasindo Multi Kreasi",
     introText:
-      "We are a company providing trusted financial solutions for SMEs and Cooperatives, with innovative services to support your financial management.",
+      "We deliver practical and trusted financial and tax solutions for MSMEs, cooperatives, and all types of organizations—empowering more efficient financial management.",
     viewPrograms: "View Our Programs",
     contactUs: "Contact Us",
     servicesTitle: "Our Services",
@@ -98,13 +100,12 @@ const translations = {
     notesTitle: "Notes:",
     contactTitle: "Contact Us",
     contactSubtitle: "We are ready to help you! Feel free to contact our team",
-    footerText:
-      "© 2025 PT. Integrasindo Multi Kreasi (inni). All rights reserved.",
+    footerText: "© 2025 PT. Integrasindo Multi Kreasi. All rights reserved.",
     footerCompany: "PT. Integrasindo Multi Kreasi",
     footerTagline:
-      '"Practical Solutions for Financial Reports & Tax for SMEs and Cooperatives"',
+      '"Practical Financial Reports & Tax Solutions for All Business and Organization Scales"',
     footerDesc:
-      "Digital accounting website with complete features and on-site training",
+      "A provider of integrated digital accounting services with comprehensive features and on-site training.",
     footerOffice: "Our Office",
     footerQuickLinks: "Quick Links",
     footerHome: "Home",
@@ -573,7 +574,7 @@ const modelSummaries = {
     {
       key: "basic",
       title: "Basic",
-      price: "Mulai Rp 1.200.000",
+      price: "Mulai Rp 2.500.000",
       tagline: "Pencatatan sederhana",
     },
     {
@@ -586,7 +587,7 @@ const modelSummaries = {
     {
       key: "retail",
       title: "Retail",
-      price: "Mulai Rp 4.200.000",
+      price: "Mulai Rp 4.750.000",
       tagline: "Manajemen stok dagang",
     },
     {
@@ -600,7 +601,7 @@ const modelSummaries = {
     {
       key: "basic",
       title: "Basic",
-      price: "From IDR 1.200.000",
+      price: "From IDR 2.500.000",
       tagline: "Simple recording",
     },
     {
@@ -613,7 +614,7 @@ const modelSummaries = {
     {
       key: "retail",
       title: "Retail",
-      price: "From IDR 4.200.000",
+      price: "From IDR 4.750.000",
       tagline: "Inventory for trading",
     },
     {
@@ -667,9 +668,9 @@ function formatPriceAndNote(priceStr, lang = "id") {
     const juta = num / 1000000;
     const short =
       (juta % 1 === 0 ? juta.toFixed(0) : juta.toFixed(1)) +
-      (lang === "id" ? " Jt" : " M");
+      (lang === "id" ? " Jt (Rupiah)" : " M (IDR)");
     const note =
-      lang === "id" ? "Harga dapat dinegosiasikan" : "Price negotiable";
+      lang === "id" ? "* Harga dapat dinegosiasikan" : "* Price negotiable";
     return { display: short, note };
   }
   return { display: priceStr, note: "" };
@@ -816,11 +817,12 @@ function openFeatureModal(idx) {
   if (f.images && f.images.length) {
     f.images.forEach((src, i) => {
       carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
-        <img src="${src}" alt="${f.title} ${i + 1}" 
-             class="modal-image" 
-             onerror="this.src='https://via.placeholder.com/800x600?text=${encodeURIComponent(
-               f.title
-             )}'">
+       <img src="${src}" 
+     alt="${f.title} ${i + 1}" 
+     class="modal-image max-w-full h-auto rounded-lg shadow-lg"
+     onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/3498db/ffffff?text=${encodeURIComponent(
+       f.title
+     )}'">
       </div>`;
       dots.innerHTML += `<button class="modal-carousel-dot w-3 h-3 rounded-full transition-all duration-200 ${
         i === 0 ? "bg-blue-600 w-8" : "bg-gray-300"
