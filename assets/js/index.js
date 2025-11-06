@@ -22,6 +22,16 @@ const translations = {
     service3Desc: "Konsultasi dan pelatihan akuntansi serta pajak.",
     service4Title: "Legalitas Usaha",
     service4Desc: "Pendaftaran merk dan legalitas usaha (NIB, NPWP, dll).",
+    previewBadge: "Pratinjau Aplikasi",
+    videoTitle:
+      "Lihat <span class='gradient-text'>2 Menit 30 Detik</span><br>yang Mengubah Cara Anda Mengelola Keuangan",
+    videoSubtitle:
+      "Arahkan kursor ke video → tombol <strong class='text-blue-800'>PLAY</strong> muncul. Klik sekali, lalu saksikan <strong>40+ fitur premium</strong> bekerja secara real-time.",
+    videoDuration: "2:35",
+    scrollHint:
+      "Setelah menonton, scroll ke <strong class='text-blue-800'>Perbandingan Model</strong> dan pilih paket Anda sekarang.",
+    watchMoreVideos: "Ingin melihat lebih lanjut? Kunjungi",
+    ourYouTubeChannel: "channel YouTube kami",
     featuresTitle: "Fitur Website inni Akun Digi",
     featuresSubtitle:
       "Solusi lengkap untuk semua kebutuhan akuntansi bisnis Anda",
@@ -87,6 +97,16 @@ const translations = {
     service4Title: "Business Legalization",
     service4Desc:
       "Registration of trademarks and business legalization (NIB, NPWP, etc.).",
+    previewBadge: "App Preview",
+    videoTitle:
+      "Watch <span class='gradient-text'>2 Minutes 30 Seconds</span><br>That Will Change How You Manage Finance",
+    videoSubtitle:
+      "Hover over the video → <strong class='text-blue-800'>PLAY</strong> button appears. Click once, then see <strong>40+ premium features</strong> work in real-time.",
+    videoDuration: "2:35",
+    scrollHint:
+      "After watching, scroll to <strong class='text-blue-800'>Model Comparison</strong> and choose your package now.",
+    watchMoreVideos: "Want to see more? Visit",
+    ourYouTubeChannel: "our YouTube channel",
     featuresTitle: "inni Akun Digi Website Features",
     featuresSubtitle:
       "Complete solutions for all your business accounting needs",
@@ -885,7 +905,13 @@ function updateLanguage(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-translate]").forEach((el) => {
     const key = el.dataset.translate;
-    if (translations[lang][key]) el.textContent = translations[lang][key];
+    if (translations[lang][key]) {
+      if (translations[lang][key].includes("<")) {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
+    }
   });
   document.querySelectorAll(".lang-btn").forEach((b) => {
     if (b.dataset.lang === lang) {
@@ -1019,18 +1045,49 @@ document.querySelectorAll('a[href^="#"]').forEach((a) =>
     }
   })
 );
+function updateActiveNav() {
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav-item");
+
+  let currentSection = "";
+  const scrollPos = window.pageYOffset + 120;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.id;
+
+    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+      currentSection = sectionId;
+    }
+  });
+
+  // Special case: video-demo should activate features nav
+  if (currentSection === "video-demo") {
+    currentSection = "features";
+  }
+
+  navItems.forEach((navItem) => {
+    const href = navItem.getAttribute("href");
+    navItem.classList.remove("active");
+
+    if (href === `#${currentSection}`) {
+      navItem.classList.add("active");
+    }
+  });
+}
+
+// Event listener untuk scroll
 window.addEventListener("scroll", () => {
-  let cur = "";
-  document.querySelectorAll("section").forEach((s) => {
-    if (window.pageYOffset >= s.offsetTop - 120) cur = s.id;
-  });
-  document.querySelectorAll(".nav-item").forEach((n) => {
-    n.classList.toggle("active", n.getAttribute("href") === `#${cur}`);
-  });
+  updateActiveNav();
+
+  // Back to top button
   document.getElementById("back-to-top").style.opacity =
     window.pageYOffset > 300 ? "1" : "0";
   document.getElementById("back-to-top").style.pointerEvents =
     window.pageYOffset > 300 ? "auto" : "none";
+
+  // Header shadow
   document
     .getElementById("header")
     .classList.toggle("shadow-2xl", window.pageYOffset > 100);
@@ -1103,4 +1160,11 @@ document.querySelectorAll(".compare-cta").forEach((btn) => {
       pop.play();
     }
   });
+});
+document.getElementById("video-card").addEventListener("click", () => {
+  const iframe = document.getElementById("demo-iframe");
+  const overlay = document.getElementById("play-overlay");
+  overlay.style.opacity = "0";
+  setTimeout(() => (overlay.style.display = "none"), 500);
+  iframe.src += "?autoplay=1";
 });
