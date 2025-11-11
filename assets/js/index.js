@@ -11,6 +11,25 @@ const translations = {
       "Kami menyediakan solusi keuangan dan pajak yang praktis dan terpercaya bagi UMKM, Koperasi, serta berbagai organisasi untuk mendukung pengelolaan keuangan yang lebih efisien.",
     viewPrograms: "Lihat Program Kami",
     contactUs: "Hubungi Kami",
+    tryDemoButton: "COBA DEMO SEKARANG",
+    tryDemoButton2: "Gratis & Tanpa Registrasi",
+    demoDescription:
+      "Rasakan pengalaman menggunakan sistem kami secara langsung",
+    demoCtaTitle: "🎯 Jangan Hanya Menonton—",
+    demoCtaSecTitle: "Rasakan Sendiri!",
+    demoCtaSubtitle: "Coba semua fitur premium tanpa bayar sepeser pun",
+    demoFeature1: "100% Gratis",
+    demoFeature1Desc: "Tidak perlu kartu kredit",
+    demoFeature2: "Akses Instan",
+    demoFeature2Desc: "Tanpa registrasi/login",
+    demoFeature3: "Fitur Lengkap",
+    demoFeature3Desc: "Semua menu bisa dicoba*",
+    demoDisclaimer:
+      "*Demo memiliki batasan: data tidak tersimpan permanen & beberapa fitur dibatasi. Versi penuh memberikan akses unlimited + support selamanya.",
+    afterDemo: "Sudah puas mencoba?",
+    compareModels: "Bandingkan paket & pilih yang sesuai",
+    scrollHintNew:
+      "<span class='inline-block animate-bounce text-3xl'>👇</span> <strong class='text-blue-800'>Siap mencoba langsung?</strong> Coba demo gratis di bawah ini!",
     servicesTitle: "Layanan Kami",
     servicesSubtitle: "Dukungan komprehensif untuk kesuksesan bisnis Anda",
     service1Title: "Website Laporan Keuangan",
@@ -29,7 +48,7 @@ const translations = {
       "Arahkan kursor ke video → tombol <strong class='text-blue-800'>PLAY</strong> muncul. Klik sekali, lalu saksikan <strong>40+ fitur premium</strong> bekerja secara real-time.",
     videoDuration: "2:35",
     scrollHint:
-      "Setelah menonton, scroll ke <strong class='text-blue-800'>Perbandingan Model</strong> dan pilih paket Anda sekarang.",
+      "<strong class='text-blue-800'>Siap mencoba langsung?</strong> Coba demo gratis di bawah ini!.",
     watchMoreVideos: "Ingin melihat lebih lanjut? Kunjungi",
     ourYouTubeChannel: "channel YouTube kami",
     featuresTitle: "Fitur Website inni Akun Digi",
@@ -85,6 +104,25 @@ const translations = {
       "We deliver practical and trusted financial and tax solutions for MSMEs, cooperatives, and all types of organizations—empowering more efficient financial management.",
     viewPrograms: "View Our Programs",
     contactUs: "Contact Us",
+    tryDemoButton: "TRY DEMO NOW",
+    tryDemoButton2: "Free & No Registration",
+    demoDescription: "Experience our system directly",
+    demoCtaTitle: "🎯 Don't Just Watch—",
+    demoCtaSecTitle: "Feel It Yourself!",
+    demoCtaSubtitle: "Try all premium features without paying a dime",
+    demoFeature1: "100% Free",
+    demoFeature1Desc: "No credit card needed",
+    demoFeature2: "Instant Access",
+    demoFeature2Desc: "No registration/login",
+    demoFeature3: "Full Features",
+    demoFeature3Desc: "All menus available*",
+    demoDisclaimer:
+      "*Demo has limitations: data is not permanently saved & some features are limited. Full version provides unlimited access + lifetime support.",
+    afterDemo: "Satisfied with the demo?",
+    compareModels: "Compare packages & choose yours",
+    scrollHintNew:
+      "<span class='inline-block animate-bounce text-3xl'>👇</span> <strong class='text-blue-800'>Ready to try it?</strong> Try free demo below!",
+
     servicesTitle: "Our Services",
     servicesSubtitle: "Comprehensive support for your business success",
     service1Title: "Financial Reporting Website",
@@ -104,7 +142,7 @@ const translations = {
       "Hover over the video → <strong class='text-blue-800'>PLAY</strong> button appears. Click once, then see <strong>40+ premium features</strong> work in real-time.",
     videoDuration: "2:35",
     scrollHint:
-      "After watching, scroll to <strong class='text-blue-800'>Model Comparison</strong> and choose your package now.",
+      "<strong class='text-blue-800'>Ready to try it out? </strong> Try the free demo below!.",
     watchMoreVideos: "Want to see more? Visit",
     ourYouTubeChannel: "our YouTube channel",
     featuresTitle: "inni Akun Digi Website Features",
@@ -851,7 +889,7 @@ function openFeatureModal(idx) {
       carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
        <img src="${src}" 
      alt="${f.title} ${i + 1}" 
-     class="modal-image max-w-full h-auto rounded-lg shadow-lg"
+     class="modal-image max-w-full h-auto rounded-lg shadow-lg" loading="lazy"
      onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/3498db/ffffff?text=${encodeURIComponent(
        f.title
      )}'">
@@ -1062,8 +1100,9 @@ function updateActiveNav() {
     }
   });
 
-  // Special case: video-demo should activate features nav
   if (currentSection === "video-demo") {
+    currentSection = "features";
+  } else if (currentSection === "demo-cta") {
     currentSection = "features";
   }
 
@@ -1077,17 +1116,14 @@ function updateActiveNav() {
   });
 }
 
-// Event listener untuk scroll
 window.addEventListener("scroll", () => {
   updateActiveNav();
 
-  // Back to top button
   document.getElementById("back-to-top").style.opacity =
     window.pageYOffset > 300 ? "1" : "0";
   document.getElementById("back-to-top").style.pointerEvents =
     window.pageYOffset > 300 ? "auto" : "none";
 
-  // Header shadow
   document
     .getElementById("header")
     .classList.toggle("shadow-2xl", window.pageYOffset > 100);
@@ -1168,3 +1204,99 @@ document.getElementById("video-card").addEventListener("click", () => {
   setTimeout(() => (overlay.style.display = "none"), 500);
   iframe.src += "?autoplay=1";
 });
+
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxmVazpB1t-P-TeIYYuBMERr7K_7EmUDmLff_wacxKZ3CjxRoQL6O9N8envUwEyJv3X/exec";
+
+const whatsappInput = document.querySelector('input[name="whatsapp"]');
+if (whatsappInput) {
+  whatsappInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+    if (this.value.startsWith("0")) {
+      this.value = this.value.substring(1);
+    }
+    if (this.value.length > 13) {
+      this.value = this.value.substring(0, 13);
+    }
+  });
+}
+
+document
+  .getElementById("interestForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById("submitBtn");
+    const originalHTML = submitBtn.innerHTML;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML =
+      '<i class="fas fa-spinner fa-spin mr-2"></i> Mengirim...';
+
+    const nama = this.nama.value.trim();
+    const email = this.email.value.trim().toLowerCase();
+    const whatsappRaw = this.whatsapp.value.trim();
+    const whatsapp = whatsappRaw ? "+62" + whatsappRaw : "";
+
+    if (!nama || !email) {
+      alert("Nama dan Email wajib diisi!");
+      resetBtn();
+      return;
+    }
+    if (!email.endsWith("@gmail.com")) {
+      alert("Harap gunakan alamat Gmail yang valid!");
+      resetBtn();
+      return;
+    }
+    if (whatsappRaw && (whatsappRaw.length < 9 || whatsappRaw.length > 13)) {
+      alert("Nomor WhatsApp tidak valid (9-13 digit)!");
+      resetBtn();
+      return;
+    }
+    
+    const payload = `nama=${encodeURIComponent(
+      nama
+    )}&email=${encodeURIComponent(email)}&whatsapp=${encodeURIComponent(
+      whatsapp
+    )}`;
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: payload,
+        redirect: "follow",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const result = await response.text(); 
+      const parsedResult = JSON.parse(result); 
+
+      if (parsedResult.result === "success") {
+        this.classList.add("hidden");
+        document.getElementById("successMessage").classList.remove("hidden");
+        this.reset();
+        console.log(
+          "Data berhasil dikirim ke Sheets! Baris:",
+          parsedResult.row
+        );
+      } else {
+        throw new Error(parsedResult.message || "Respons tidak valid");
+      }
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      alert(
+        `Gagal mengirim data. Coba lagi atau hubungi kami via WhatsApp.\n\nError: ${error.message}`
+      );
+    } finally {
+      resetBtn();
+    }
+
+    function resetBtn() {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
+    }
+  });
