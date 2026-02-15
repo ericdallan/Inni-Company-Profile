@@ -1,3 +1,8 @@
+/* ============================================================
+   inni Akun Digi — Main JS (Revisi UX)
+   ============================================================ */
+
+// ── Translations ──────────────────────────────────────────
 const translations = {
   id: {
     headerTitle: "PT. Integrasindo Multi Kreasi",
@@ -6,15 +11,16 @@ const translations = {
     navHome: "Beranda",
     navServices: "Layanan",
     navContact: "Kontak",
+    appsLabel: "Produk",
+    navComparison: "Model",
     introTitle: "Selamat Datang di PT. Integrasindo Multi Kreasi",
     introText:
       "Kami menyediakan solusi keuangan dan pajak yang praktis dan terpercaya bagi UMKM, Koperasi, serta berbagai organisasi untuk mendukung pengelolaan keuangan yang lebih efisien.",
-    viewPrograms: "Lihat Program Kami",
-    contactUs: "Hubungi Kami",
+    ctaDemoAcct: "Coba Demo Akun Digi",
+    ctaDemoPos: "Coba Demo POS",
+    heroproof: "100% Gratis · Tanpa Registrasi · Akses Instan",
     tryDemoButton: "COBA DEMO SEKARANG",
     tryDemoButton2: "Gratis & Tanpa Registrasi",
-    demoDescription:
-      "Rasakan pengalaman menggunakan sistem kami secara langsung",
     demoCtaTitle: "🎯 Jangan Hanya Menonton—",
     demoCtaSecTitle: "Rasakan Sendiri!",
     demoCtaSubtitle: "Coba semua fitur premium tanpa bayar sepeser pun",
@@ -28,8 +34,6 @@ const translations = {
       "*Demo memiliki batasan: data tidak tersimpan permanen & beberapa fitur dibatasi. Versi penuh memberikan akses unlimited + support selamanya.",
     afterDemo: "Sudah puas mencoba?",
     compareModels: "Bandingkan paket & pilih yang sesuai",
-    scrollHintNew:
-      "<span class='inline-block animate-bounce text-3xl'>👇</span> <strong class='text-blue-800'>Siap mencoba langsung?</strong> Coba demo gratis di bawah ini!",
     servicesTitle: "Layanan Kami",
     servicesSubtitle: "Dukungan komprehensif untuk kesuksesan bisnis Anda",
     service1Title: "Website Laporan Keuangan",
@@ -41,19 +45,12 @@ const translations = {
     service3Desc: "Konsultasi dan pelatihan akuntansi serta pajak.",
     service4Title: "Legalitas Usaha",
     service4Desc: "Pendaftaran merk dan legalitas usaha (NIB, NPWP, dll).",
-    service5Title: "Kursus Penyusunan SPT PPh Badan",
+    service5Title: "Kursus SPT PPh Badan",
     service5Desc:
       "Kursus profesional untuk penyusunan SPT PPh Badan yang tepat dan efisien.",
     previewBadge: "Pratinjau Aplikasi",
-    videoTitle:
-      "Lihat <span class='gradient-text'>2 Menit 30 Detik</span><br>yang Mengubah Cara Anda Mengelola Keuangan",
-    videoSubtitle:
-      "Arahkan kursor ke video → tombol <strong class='text-blue-800'>PLAY</strong> muncul. Klik sekali, lalu saksikan <strong>40+ fitur premium</strong> bekerja secara real-time.",
-    videoDuration: "2:35",
-    scrollHint:
-      "<strong class='text-blue-800'>Siap mencoba langsung?</strong> Coba demo gratis di bawah ini!.",
-    watchMoreVideos: "Ingin melihat lebih lanjut? Kunjungi",
-    ourYouTubeChannel: "channel YouTube kami",
+    watchMoreVideos: "Ingin lihat lebih?",
+    ourYouTubeChannel: "Channel YouTube kami",
     featuresTitle: "Fitur Website inni Akun Digi",
     featuresSubtitle:
       "Solusi lengkap untuk semua kebutuhan akuntansi bisnis Anda",
@@ -73,39 +70,29 @@ const translations = {
     benefitSupport: "Support Selamanya",
     featureColumn: "Fitur",
     completeColumn: "Lengkap",
-    navFeatures: "Fitur Website",
-    navComparison: "Perbandingan Model",
     manufacturingColumn: "Manufaktur",
     notesTitle: "Keterangan:",
-    contactTitle: "Hubungi Kami",
-    contactSubtitle:
-      "Kami siap membantu Anda! Jangan ragu untuk menghubungi tim kami",
     footerText:
       "© 2025 PT. Integrasindo Multi Kreasi. Seluruh hak cipta dilindungi.",
     footerCompany: "PT. Integrasindo Multi Kreasi",
     footerTagline:
       '"Laporan Keuangan & Pajak Praktis untuk Semua Skala Bisnis & Organisasi"',
     footerDesc:
-      "Penyedia layanan akuntansi digital terintegrasi dengan fitur lengkap serta pelatihan langsung di tempat.",
+      "Website akuntansi digital dengan fitur lengkap dan pelatihan on-site",
     footerOffice: "Kantor Kami",
     footerQuickLinks: "Tautan Cepat",
     footerHome: "Beranda",
     footerServices: "Layanan",
-    footerFeatures: "Fitur",
     footerContact: "Kontak",
     footerViewMap: "Lihat di Google Maps",
-    posDemoTitle: "Demo POS inni",
-    posDemoSubtitle: "Sistem kasir modern untuk bisnis retail Anda",
-    posDemoBadge: "Point of Sale",
-    posDemoDesc: "Kelola toko Anda lebih mudah dengan sistem POS terintegrasi",
-    posDemoCtaButton: "COBA DEMO POS SEKARANG",
     posDemoFeatureTitle: "Fitur POS inni",
     posDemoFeatureSubtitle: "Semua yang Anda butuhkan untuk kasir modern",
     posDemoDisclaimer:
-      "*Demo POS memiliki batasan: data tidak tersimpan permanen & beberapa fitur dibatasi.",
+      "*Demo POS memiliki batasan: data tidak tersimpan permanen & beberapa fitur dibatasi. Versi penuh memberikan akses unlimited + support selamanya.",
     posDemoCta: "🛒 Coba Langsung—",
     posDemoCtaSec: "Gratis Tanpa Registrasi!",
-    appsLabel: "2 Produk Unggulan Kami",
+    posDemoSubtitle: "Sistem kasir modern untuk bisnis retail Anda",
+    posDemoCtaButton: "COBA DEMO POS SEKARANG",
     appsTitle: "Satu Ekosistem, Dua Solusi Bisnis",
     appsSubtitle:
       "Pilih sesuai kebutuhan, atau gunakan keduanya untuk bisnis yang lebih lengkap",
@@ -126,11 +113,11 @@ const translations = {
     app2Feature2: "QRIS, Tunai, Transfer & Kartu",
     app2Feature3: "Stok Real-time + Retur Penjualan",
     app2Feature4: "Laporan Penjualan & Arus Kas",
-    app2Price: "Hubungi kami untuk harga", // ← GANTI dengan harga asli nanti
+    app2Price: "Hubungi kami untuk harga",
     app2DemoBtn: "Coba Demo",
     app2FeaturesBtn: "Lihat Fitur",
     appsCombineNote:
-      "💡 Gunakan keduanya — inni Accounting + inni POS terintegrasi untuk pengelolaan bisnis yang lebih lengkap",
+      "💡 <strong>Gunakan keduanya</strong> — inni Accounting + inni POS terintegrasi untuk pengelolaan bisnis yang lebih lengkap",
     oneTimeLabel: "Investasi sekali",
     posModelSingle: "1 Model — All Inclusive",
     posModelDesc:
@@ -153,14 +140,16 @@ const translations = {
     navHome: "Home",
     navServices: "Services",
     navContact: "Contact",
+    appsLabel: "Products",
+    navComparison: "Models",
     introTitle: "Welcome to PT. Integrasindo Multi Kreasi",
     introText:
       "We deliver practical and trusted financial and tax solutions for MSMEs, cooperatives, and all types of organizations—empowering more efficient financial management.",
-    viewPrograms: "View Our Programs",
-    contactUs: "Contact Us",
+    ctaDemoAcct: "Try Akun Digi Demo",
+    ctaDemoPos: "Try POS Demo",
+    heroproof: "100% Free · No Registration · Instant Access",
     tryDemoButton: "TRY DEMO NOW",
     tryDemoButton2: "Free & No Registration",
-    demoDescription: "Experience our system directly",
     demoCtaTitle: "🎯 Don't Just Watch—",
     demoCtaSecTitle: "Feel It Yourself!",
     demoCtaSubtitle: "Try all premium features without paying a dime",
@@ -174,9 +163,6 @@ const translations = {
       "*Demo has limitations: data is not permanently saved & some features are limited. Full version provides unlimited access + lifetime support.",
     afterDemo: "Satisfied with the demo?",
     compareModels: "Compare packages & choose yours",
-    scrollHintNew:
-      "<span class='inline-block animate-bounce text-3xl'>👇</span> <strong class='text-blue-800'>Ready to try it?</strong> Try free demo below!",
-
     servicesTitle: "Our Services",
     servicesSubtitle: "Comprehensive support for your business success",
     service1Title: "Financial Reporting Website",
@@ -189,18 +175,11 @@ const translations = {
     service4Title: "Business Legalization",
     service4Desc:
       "Registration of trademarks and business legalization (NIB, NPWP, etc.).",
-    service5Title: "SPT PPh Badan Training Course",
+    service5Title: "SPT PPh Badan Course",
     service5Desc:
-      "Comprehensive course on preparing and filing Corporate Income Tax Returns accurately and efficiently.",
+      "Comprehensive course on preparing Corporate Income Tax Returns accurately and efficiently.",
     previewBadge: "App Preview",
-    videoTitle:
-      "Watch <span class='gradient-text'>2 Minutes 30 Seconds</span><br>That Will Change How You Manage Finance",
-    videoSubtitle:
-      "Hover over the video → <strong class='text-blue-800'>PLAY</strong> button appears. Click once, then see <strong>40+ premium features</strong> work in real-time.",
-    videoDuration: "2:35",
-    scrollHint:
-      "<strong class='text-blue-800'>Ready to try it out? </strong> Try the free demo below!.",
-    watchMoreVideos: "Want to see more? Visit",
+    watchMoreVideos: "Want to see more?",
     ourYouTubeChannel: "our YouTube channel",
     featuresTitle: "inni Akun Digi Website Features",
     featuresSubtitle:
@@ -221,12 +200,8 @@ const translations = {
     benefitSupport: "Lifetime Support",
     featureColumn: "Feature",
     completeColumn: "Complete",
-    navFeatures: "Website Features",
-    navComparison: "Model Comparison",
     manufacturingColumn: "Manufacturing",
     notesTitle: "Notes:",
-    contactTitle: "Contact Us",
-    contactSubtitle: "We are ready to help you! Feel free to contact our team",
     footerText: "© 2025 PT. Integrasindo Multi Kreasi. All rights reserved.",
     footerCompany: "PT. Integrasindo Multi Kreasi",
     footerTagline:
@@ -237,21 +212,16 @@ const translations = {
     footerQuickLinks: "Quick Links",
     footerHome: "Home",
     footerServices: "Services",
-    footerFeatures: "Features",
     footerContact: "Contact",
     footerViewMap: "View on Google Maps",
-    posDemoTitle: "inni POS Demo",
-    posDemoSubtitle: "Modern cashier system for your retail business",
-    posDemoBadge: "Point of Sale",
-    posDemoDesc: "Manage your store more easily with integrated POS system",
-    posDemoCtaButton: "TRY POS DEMO NOW",
     posDemoFeatureTitle: "inni POS Features",
     posDemoFeatureSubtitle: "Everything you need for a modern cashier",
     posDemoDisclaimer:
-      "*POS Demo has limitations: data is not permanently saved & some features are limited.",
+      "*POS Demo has limitations: data is not permanently saved & some features are limited. Full version provides unlimited access + lifetime support.",
     posDemoCta: "🛒 Try It Now—",
     posDemoCtaSec: "Free, No Registration!",
-    appsLabel: "Our 2 Flagship Products",
+    posDemoSubtitle: "Modern cashier system for your retail business",
+    posDemoCtaButton: "TRY POS DEMO NOW",
     appsTitle: "One Ecosystem, Two Business Solutions",
     appsSubtitle:
       "Choose what you need, or use both for a more complete business",
@@ -272,11 +242,11 @@ const translations = {
     app2Feature2: "QRIS, Cash, Transfer & Cards",
     app2Feature3: "Real-time Stock + Sales Returns",
     app2Feature4: "Sales & Cash Flow Reports",
-    app2Price: "Contact us for pricing", // ← GANTI dengan harga asli nanti
+    app2Price: "Contact us for pricing",
     app2DemoBtn: "Try Demo",
     app2FeaturesBtn: "View Features",
     appsCombineNote:
-      "💡 Use both — inni Accounting + inni POS integrated for more complete business management",
+      "💡 <strong>Use both</strong> — inni Accounting + inni POS integrated for more complete business management",
     oneTimeLabel: "One-time investment",
     posModelSingle: "1 Model — All Inclusive",
     posModelDesc:
@@ -294,6 +264,7 @@ const translations = {
   },
 };
 
+// ── Features Data ─────────────────────────────────────────
 const featuresData = {
   id: [
     {
@@ -339,7 +310,7 @@ const featuresData = {
     {
       icon: "fa-file-export",
       title: "Impor & Ekspor Data",
-      desc: "Import data awal (COA, saldo awal, pelanggan, supplier) melalui Excel/CSV. Ekspor semua laporan ke PDF atau Excel dengan satu klik.",
+      desc: "Import data awal melalui Excel/CSV. Ekspor semua laporan ke PDF atau Excel dengan satu klik.",
       color: "from-indigo-500 to-indigo-600",
       images: [
         "assets/img/Import_Data(1).png",
@@ -401,88 +372,92 @@ const featuresData = {
       title: "Chart of Accounts",
       desc: "Organize and categorize your financial accounts with a clear structure for assets, liabilities, and equity.",
       color: "from-blue-500 to-blue-600",
-      images: ["assets/img/coa1.jpg", "assets/img/coa2.jpg"],
+      images: ["assets/img/COA.png"],
     },
     {
       icon: "fa-ticket-alt",
       title: "Voucher Management",
       desc: "Create, edit, and track transaction vouchers such as purchases, sales, and transfers with automatic validation.",
       color: "from-purple-500 to-purple-600",
-      images: ["assets/img/voucher1.jpg", "assets/img/voucher2.jpg"],
+      images: ["assets/img/Voucher_Page.png", "assets/img/Voucher_Form.png"],
     },
     {
       icon: "fa-book-open",
       title: "General Ledger",
       desc: "Record all financial transactions in detail for accurate and organized reporting.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/ledger1.jpg"],
+      images: ["assets/img/GeneralLedger.png"],
     },
     {
       icon: "fa-money-bill-wave",
       title: "Accounts Receivable",
       desc: "Manage customer receivables with real-time tracking of invoices and payments.",
       color: "from-yellow-500 to-yellow-600",
-      images: ["assets/img/receivable1.jpg"],
+      images: ["assets/img/AR.png", "assets/img/AR_Detail.png"],
     },
     {
       icon: "fa-hand-holding-usd",
       title: "Accounts Payable",
       desc: "Monitor and manage payment obligations to suppliers with an organized ledger.",
       color: "from-red-500 to-red-600",
-      images: ["assets/img/payable1.jpg"],
+      images: ["assets/img/AP.png", "assets/img/AP_Detail.png"],
     },
     {
       icon: "fa-file-export",
-      title: "Import & Eksport Data",
-      desc: "Import initial data (COA, opening balances, customers, suppliers) via Excel/CSV. Export any report to PDF or Excel in one click.",
+      title: "Import & Export Data",
+      desc: "Import initial data via Excel/CSV. Export any report to PDF or Excel in one click.",
       color: "from-indigo-500 to-indigo-600",
-      images: ["assets/img/export1.jpg"],
+      images: ["assets/img/Export_Data(1).png"],
     },
     {
       icon: "fa-balance-scale",
       title: "Trial Balance",
       desc: "Review account balances comprehensively to ensure accurate financial balancing.",
       color: "from-pink-500 to-pink-600",
-      images: ["assets/img/trial1.jpg"],
+      images: ["assets/img/Trial_Balance.png"],
     },
     {
       icon: "fa-chart-pie",
       title: "Financial Overview",
       desc: "View your business's cash flow and financial position in real-time.",
       color: "from-teal-500 to-teal-600",
-      images: ["assets/img/balance1.jpg"],
+      images: ["assets/img/Balance_Sheet.png"],
     },
     {
       icon: "fa-chart-bar",
       title: "Profit and Loss",
       desc: "Analyze revenue and expenses with profit and loss reports to evaluate business performance.",
       color: "from-orange-500 to-orange-600",
-      images: ["assets/img/profit1.jpg"],
+      images: ["assets/img/Income_Statement.png"],
     },
     {
       icon: "fa-boxes",
       title: "Stock",
       desc: "Manage and track your inventory easily, including stock inflows, outflows, and inter-warehouse transfers.",
       color: "from-cyan-500 to-cyan-600",
-      images: ["assets/img/stock1.jpg", "assets/img/stock2.jpg"],
+      images: ["assets/img/Stok.png", "assets/img/Stock_Detail.png"],
     },
     {
       icon: "fa-industry",
       title: "Production",
-      desc: "Manage production processes from raw materials to finished goods with material tracking and production cost management.",
+      desc: "Manage production processes from raw materials to finished goods with material tracking and cost management.",
       color: "from-amber-500 to-amber-600",
-      images: ["assets/img/production1.jpg"],
+      images: ["assets/img/Production.png"],
     },
     {
       icon: "fa-tachometer-alt",
       title: "Dashboard",
       desc: "Monitor your financial performance with real-time data visualizations, including profit, sales, and stock composition.",
       color: "from-violet-500 to-violet-600",
-      images: ["assets/img/dashboard1.jpg", "assets/img/dashboard2.jpg"],
+      images: [
+        "assets/img/DashboardFinance.png",
+        "assets/img/DashboardStock.png",
+      ],
     },
   ],
 };
 
+// ── Comparison Data ───────────────────────────────────────
 const comparisonData = {
   id: [
     {
@@ -779,26 +754,26 @@ const modelSummaries = {
     {
       key: "basic",
       title: "Basic",
-      price: "From IDR 2.500.000",
+      price: "From IDR 2,500,000",
       tagline: "Simple recording",
     },
     {
       key: "lengkap",
       title: "Complete",
-      price: "From IDR 3.500.000",
+      price: "From IDR 3,500,000",
       tagline: "Full reporting & analytics",
       recommended: true,
     },
     {
       key: "retail",
       title: "Retail",
-      price: "From IDR 4.750.000",
+      price: "From IDR 4,750,000",
       tagline: "Inventory for trading",
     },
     {
       key: "manufaktur",
       title: "Manufacturing",
-      price: "From IDR 5.800.000",
+      price: "From IDR 5,800,000",
       tagline: "Production & BOM",
     },
   ],
@@ -813,88 +788,106 @@ const posFeatures = {
         "Antarmuka kasir yang intuitif untuk memproses transaksi penjualan dengan cepat. Mendukung input produk manual maupun scan barcode, hitung diskon, PPN, kembalian otomatis, dan cetak struk langsung.",
       icon: "fas fa-shopping-cart",
       color: "green",
-      images: ["POS_Transaction.png", "POS_Transaction_Detail.png"],
+      images: [
+        "assets/img/POS_Transaction.png",
+        "assets/img/POS_Transaction_Detail.png",
+      ],
     },
     {
       title: "Scan Barcode",
       subtitle: "Input produk instan via barcode",
       description:
-        "Dukung berbagai format barcode: CODE128, EAN-13, EAN-8, QRCODE, dan lainnya. Generate label barcode otomatis, cetak label massal, dan scan langsung di halaman kasir untuk mempercepat proses transaksi.",
+        "Dukung berbagai format barcode: CODE128, EAN-13, EAN-8, QRCODE, dan lainnya. Generate label barcode otomatis dan cetak label massal.",
       icon: "fas fa-barcode",
       color: "teal",
-      images: ["POS_Barcode.png", "POS_Barcode_Print.png"],
+      images: [
+        "assets/img/POS_Barcode.png",
+        "assets/img/POS_Barcode_Print.png",
+      ],
     },
     {
       title: "Multi Metode Pembayaran",
       subtitle: "Tunai, QRIS, Transfer, Kartu",
       description:
-        "Terima pembayaran dari berbagai metode: Tunai, QRIS, Transfer Bank, Kartu Debit, Kartu Kredit, dan E-Wallet. Hitung kembalian otomatis untuk pembayaran tunai. Setiap metode tercatat rapi di laporan keuangan.",
+        "Terima pembayaran dari berbagai metode: Tunai, QRIS, Transfer Bank, Kartu Debit, Kartu Kredit, dan E-Wallet. Hitung kembalian otomatis untuk pembayaran tunai.",
       icon: "fas fa-wallet",
       color: "emerald",
-      images: ["POS_Payment.png", "POS_Payment_QRIS.png"],
+      images: ["assets/img/POS_Payment.png", "assets/img/POS_Payment_QRIS.png"],
     },
     {
       title: "Manajemen Stok & Gudang",
       subtitle: "Kontrol inventori multi-gudang",
       description:
-        "Pantau stok produk secara real-time per gudang. Sistem otomatis mengurangi stok saat transaksi POS selesai. Notifikasi stok menipis, laporan stok lengkap, dan dukungan transfer antar gudang.",
+        "Pantau stok produk secara real-time per gudang. Sistem otomatis mengurangi stok saat transaksi POS selesai. Notifikasi stok menipis dan laporan stok lengkap.",
       icon: "fas fa-boxes",
       color: "green",
-      images: ["POS_Stock.png", "POS_Stock_Alert.png"],
+      images: ["assets/img/POS_Stock.png", "assets/img/POS_Stock_Alert.png"],
     },
     {
       title: "Manajemen Pelanggan",
       subtitle: "Data & riwayat transaksi pelanggan",
       description:
-        "Simpan data pelanggan lengkap: nama, alamat, nomor telepon, email, dan contact person. Dukung transaksi Walk-in Customer tanpa perlu mendaftarkan pelanggan. Lacak riwayat pembelian per pelanggan.",
+        "Simpan data pelanggan lengkap: nama, alamat, nomor telepon, email, dan contact person. Lacak riwayat pembelian per pelanggan.",
       icon: "fas fa-user-friends",
       color: "teal",
-      images: ["POS_Customer.png", "POS_Customer_History.png"],
+      images: [
+        "assets/img/POS_Customer.png",
+        "assets/img/POS_Customer_History.png",
+      ],
     },
     {
       title: "Retur Penjualan",
       subtitle: "Proses retur dari POS & Sales Order",
       description:
-        "Kelola retur barang dari transaksi POS maupun Sales Order. Proses approval retur, stok otomatis bertambah setelah retur disetujui, dan pencatatan alasan retur untuk evaluasi bisnis.",
+        "Kelola retur barang dari transaksi POS maupun Sales Order. Proses approval retur dan stok otomatis bertambah setelah retur disetujui.",
       icon: "fas fa-undo-alt",
       color: "emerald",
-      images: ["POS_Return.png", "POS_Return_Detail.png"],
+      images: ["assets/img/POS_Return.png", "assets/img/POS_Return_Detail.png"],
     },
     {
       title: "Laporan Penjualan",
       subtitle: "Analitik penjualan harian hingga tahunan",
       description:
-        "Laporan penjualan komprehensif: top produk terlaris, breakdown per pelanggan, analisis metode pembayaran (tunai vs non-tunai), dan tren penjualan harian/bulanan/tahunan. Filter berdasarkan tanggal, gudang, dan status.",
+        "Laporan penjualan komprehensif: top produk terlaris, breakdown per pelanggan, analisis metode pembayaran, dan tren penjualan harian/bulanan/tahunan.",
       icon: "fas fa-chart-bar",
       color: "green",
-      images: ["POS_Report.png", "POS_Report_Chart.png"],
+      images: ["assets/img/POS_Report.png", "assets/img/POS_Report_Chart.png"],
     },
     {
       title: "Laporan Arus Kas",
       subtitle: "Pantau cash flow dari transaksi POS",
       description:
-        "Semua transaksi POS otomatis masuk ke laporan arus kas (cash in). Lihat ringkasan kas masuk dari POS, Sales Order, dan pelunasan piutang. Laporan tersedia dalam tampilan harian, bulanan, dan tahunan.",
+        "Semua transaksi POS otomatis masuk ke laporan arus kas (cash in). Laporan tersedia dalam tampilan harian, bulanan, dan tahunan.",
       icon: "fas fa-stream",
       color: "teal",
-      images: ["POS_CashFlow.png", "POS_CashFlow_Trend.png"],
+      images: [
+        "assets/img/POS_CashFlow.png",
+        "assets/img/POS_CashFlow_Trend.png",
+      ],
     },
     {
       title: "Manajemen Supplier",
       subtitle: "Data supplier terintegrasi",
       description:
-        "Kelola data supplier lengkap dengan nama, alamat, telepon, email, dan contact person. Filter supplier berdasarkan bulan dan tahun pendaftaran. Terintegrasi dengan Purchase Order untuk pengisian stok toko.",
+        "Kelola data supplier lengkap dengan nama, alamat, telepon, email, dan contact person. Terintegrasi dengan Purchase Order untuk pengisian stok toko.",
       icon: "fas fa-truck",
       color: "emerald",
-      images: ["POS_Supplier.png", "POS_Supplier_Detail.png"],
+      images: [
+        "assets/img/POS_Supplier.png",
+        "assets/img/POS_Supplier_Detail.png",
+      ],
     },
     {
       title: "Transfer Antar Gudang",
       subtitle: "Pindah stok antar lokasi bisnis",
       description:
-        "Pindahkan stok produk antar gudang dengan mudah. Buat transfer, approval oleh admin, dan stok otomatis diperbarui di kedua gudang. Lengkap dengan riwayat transfer dan cetak dokumen transfer.",
+        "Pindahkan stok produk antar gudang dengan mudah. Stok otomatis diperbarui di kedua gudang setelah approval.",
       icon: "fas fa-exchange-alt",
       color: "green",
-      images: ["POS_Transfer.png", "POS_Transfer_Detail.png"],
+      images: [
+        "assets/img/POS_Transfer.png",
+        "assets/img/POS_Transfer_Detail.png",
+      ],
     },
   ],
   en: [
@@ -902,143 +895,286 @@ const posFeatures = {
       title: "Cashier Transaction",
       subtitle: "Fast & accurate sales processing",
       description:
-        "Intuitive cashier interface to process sales transactions quickly. Supports manual product input or barcode scanning, discount calculation, VAT, automatic change calculation, and instant receipt printing.",
+        "Intuitive cashier interface to process sales transactions quickly. Supports manual product input or barcode scanning, discount calculation, VAT, automatic change, and instant receipt printing.",
       icon: "fas fa-shopping-cart",
       color: "green",
-      images: ["POS_Transaction.png", "POS_Transaction_Detail.png"],
+      images: ["assets/img/POS_Transaction.png"],
     },
     {
       title: "Barcode Scanning",
       subtitle: "Instant product input via barcode",
       description:
-        "Supports multiple barcode formats: CODE128, EAN-13, EAN-8, QR Code, and more. Auto-generate barcodes, bulk label printing, and scan directly at the cashier screen to speed up transactions.",
+        "Supports multiple barcode formats: CODE128, EAN-13, EAN-8, QR Code, and more. Auto-generate barcodes and bulk label printing.",
       icon: "fas fa-barcode",
       color: "teal",
-      images: ["POS_Barcode.png", "POS_Barcode_Print.png"],
+      images: ["assets/img/POS_Barcode.png"],
     },
     {
       title: "Multi Payment Methods",
       subtitle: "Cash, QRIS, Transfer, Cards",
       description:
-        "Accept payments via Cash, QRIS, Bank Transfer, Debit Card, Credit Card, and E-Wallet. Automatic change calculation for cash payments. Every payment method is recorded neatly in financial reports.",
+        "Accept payments via Cash, QRIS, Bank Transfer, Debit Card, Credit Card, and E-Wallet. Automatic change calculation for cash payments.",
       icon: "fas fa-wallet",
       color: "emerald",
-      images: ["POS_Payment.png", "POS_Payment_QRIS.png"],
+      images: ["assets/img/POS_Payment.png"],
     },
     {
       title: "Stock & Warehouse Management",
       subtitle: "Real-time multi-warehouse inventory",
       description:
-        "Monitor product stock in real-time per warehouse. System automatically deducts stock when a POS transaction is completed. Low-stock alerts, full inventory reports, and inter-warehouse transfer support.",
+        "Monitor product stock in real-time per warehouse. System automatically deducts stock when a POS transaction is completed. Low-stock alerts and full inventory reports.",
       icon: "fas fa-boxes",
       color: "green",
-      images: ["POS_Stock.png", "POS_Stock_Alert.png"],
+      images: ["assets/img/POS_Stock.png"],
     },
     {
       title: "Customer Management",
       subtitle: "Customer data & transaction history",
       description:
-        "Store complete customer data: name, address, phone, email, and contact person. Support Walk-in Customer transactions without registration. Track purchase history per customer.",
+        "Store complete customer data: name, address, phone, email, and contact person. Track purchase history per customer.",
       icon: "fas fa-user-friends",
       color: "teal",
-      images: ["POS_Customer.png", "POS_Customer_History.png"],
+      images: ["assets/img/POS_Customer.png"],
     },
     {
       title: "Sales Returns",
       subtitle: "Process returns from POS & Sales Orders",
       description:
-        "Manage product returns from POS transactions or Sales Orders. Approval-based return process, stock automatically restocked after approval, and return reason tracking for business evaluation.",
+        "Manage product returns from POS transactions or Sales Orders. Approval-based return process, stock automatically restocked after approval.",
       icon: "fas fa-undo-alt",
       color: "emerald",
-      images: ["POS_Return.png", "POS_Return_Detail.png"],
+      images: ["assets/img/POS_Return.png"],
     },
     {
       title: "Sales Reports",
       subtitle: "Daily to yearly sales analytics",
       description:
-        "Comprehensive sales reports: top-selling products, per-customer breakdown, payment method analysis (cash vs non-cash), and daily/monthly/yearly trends. Filter by date, warehouse, and status.",
+        "Comprehensive sales reports: top-selling products, per-customer breakdown, payment method analysis, and daily/monthly/yearly trends.",
       icon: "fas fa-chart-bar",
       color: "green",
-      images: ["POS_Report.png", "POS_Report_Chart.png"],
+      images: ["assets/img/POS_Report.png"],
     },
     {
       title: "Cash Flow Report",
       subtitle: "Monitor cash flow from POS transactions",
       description:
-        "All POS transactions automatically appear in the cash flow report (cash in). View a summary of cash in from POS, Sales Orders, and receivable payments. Available in daily, monthly, and yearly views.",
+        "All POS transactions automatically appear in the cash flow report. Available in daily, monthly, and yearly views.",
       icon: "fas fa-stream",
       color: "teal",
-      images: ["POS_CashFlow.png", "POS_CashFlow_Trend.png"],
+      images: ["assets/img/POS_CashFlow.png"],
     },
     {
       title: "Supplier Management",
       subtitle: "Integrated supplier data",
       description:
-        "Manage complete supplier data: name, address, phone, email, and contact person. Filter suppliers by registration month and year. Integrated with Purchase Orders for restocking inventory.",
+        "Manage complete supplier data: name, address, phone, email, and contact person. Integrated with Purchase Orders for restocking inventory.",
       icon: "fas fa-truck",
       color: "emerald",
-      images: ["POS_Supplier.png", "POS_Supplier_Detail.png"],
+      images: ["assets/img/POS_Supplier.png"],
     },
     {
       title: "Inter-Warehouse Transfer",
       subtitle: "Move stock between locations",
       description:
-        "Easily transfer products between warehouses. Create a transfer, admin approval, and stock is automatically updated at both warehouses. Complete with transfer history and printable transfer documents.",
+        "Easily transfer products between warehouses. Stock is automatically updated at both warehouses after approval.",
       icon: "fas fa-exchange-alt",
       color: "green",
-      images: ["POS_Transfer.png", "POS_Transfer_Detail.png"],
+      images: ["assets/img/POS_Transfer.png"],
     },
   ],
 };
 
+// ── State ─────────────────────────────────────────────────
 let currentLang = "id";
 let currentFeatureIndex = 0;
 let currentModalCarouselIndex = 0;
+let currentTabContext = "acct"; // 'acct' or 'pos'
 
+// ── Tab Switcher ──────────────────────────────────────────
+function switchTab(tab) {
+  currentTabContext = tab;
+  document.getElementById("tab-acct").classList.remove("active");
+  document.getElementById("tab-pos").classList.remove("active");
+  document
+    .getElementById("tab-acct-btn")
+    .classList.remove("active-acct", "active-pos");
+  document
+    .getElementById("tab-pos-btn")
+    .classList.remove("active-acct", "active-pos");
+
+  if (tab === "acct") {
+    document.getElementById("tab-acct").classList.add("active");
+    document.getElementById("tab-acct-btn").classList.add("active-acct");
+  } else {
+    document.getElementById("tab-pos").classList.add("active");
+    document.getElementById("tab-pos-btn").classList.add("active-pos");
+  }
+}
+
+// ── Generate features (accounting) ───────────────────────
 function generateFeatures(lang) {
   const grid = document.getElementById("features-grid");
+  if (!grid) return;
   grid.innerHTML = "";
   featuresData[lang].forEach((f, i) => {
     const delay = (i % 3) + 1;
     grid.innerHTML += `
-                    <div class="feature-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${delay}">
-                        <div class="w-16 h-16 bg-gradient-to-r ${
-                          f.color
-                        } rounded-xl flex items-center justify-center mb-4 shadow-lg">
-                            <i class="fas ${f.icon} text-3xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">${
-                          f.title
-                        }</h3>
-                        <p class="text-gray-600 mb-4">${f.desc}</p>
-                        <button class="view-feature-btn text-blue-600 hover:text-blue-800 font-semibold flex items-center space-x-2 transition-colors" data-index="${i}">
-                            <span>${
-                              lang === "id" ? "Lihat Visual" : "View Interface"
-                            }</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>`;
+      <div class="feature-card bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${delay}">
+        <div class="w-12 h-12 bg-gradient-to-r ${
+          f.color
+        } rounded-xl flex items-center justify-center mb-3 shadow-lg">
+          <i class="fas ${f.icon} text-2xl text-white"></i>
+        </div>
+        <h3 class="text-base font-bold text-gray-800 mb-2">${f.title}</h3>
+        <p class="text-gray-600 text-sm mb-3">${f.desc}</p>
+        <button class="view-feature-btn text-blue-600 hover:text-blue-800 font-semibold flex items-center space-x-1.5 transition-colors text-sm" data-index="${i}">
+          <span>${lang === "id" ? "Lihat Visual" : "View Interface"}</span>
+          <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+      </div>`;
   });
-
   document.querySelectorAll(".view-feature-btn").forEach((btn) => {
-    btn.addEventListener("click", () => openFeatureModal(+btn.dataset.index));
+    btn.addEventListener("click", () =>
+      openFeatureModal(+btn.dataset.index, "acct")
+    );
   });
 }
 
-function formatPriceAndNote(priceStr, lang = "id") {
-  const num = parseInt((priceStr || "").replace(/\D/g, ""), 10);
-  if (!num || isNaN(num)) return { display: priceStr, note: "" };
+// ── Generate POS features ─────────────────────────────────
+function generatePosFeatures(lang) {
+  const grid = document.getElementById("pos-features-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const colorMap = {
+    green: "from-green-500 to-green-600",
+    teal: "from-teal-500 to-teal-600",
+    emerald: "from-emerald-500 to-emerald-600",
+  };
+  posFeatures[lang].forEach((f, i) => {
+    const delay = (i % 3) + 1;
+    const grad = colorMap[f.color] || "from-green-500 to-green-600";
+    const icon = f.icon.replace(/^fas\s+/, "");
+    grid.innerHTML += `
+      <div class="feature-card bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${delay}">
+        <div class="w-12 h-12 bg-gradient-to-r ${grad} rounded-xl flex items-center justify-center mb-3 shadow-lg">
+          <i class="fas ${icon} text-2xl text-white"></i>
+        </div>
+        <h3 class="text-base font-bold text-gray-800 mb-1">${f.title}</h3>
+        <p class="text-sm text-gray-400 font-medium mb-2">${f.subtitle}</p>
+        <p class="text-gray-600 text-sm mb-3">${f.description}</p>
+        <button class="view-pos-feature-btn text-green-600 hover:text-green-800 font-semibold flex items-center space-x-1.5 transition-colors text-sm" data-pos-index="${i}">
+          <span>${lang === "id" ? "Lihat Visual" : "View Interface"}</span>
+          <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+      </div>`;
+  });
+  document.querySelectorAll(".view-pos-feature-btn").forEach((btn) => {
+    btn.addEventListener("click", () =>
+      openFeatureModal(+btn.dataset.posIndex, "pos")
+    );
+  });
+}
 
-  if (num >= 1000000) {
-    const juta = num / 1000000;
-    const short =
-      (juta % 1 === 0 ? juta.toFixed(0) : juta.toFixed(1)) +
-      (lang === "id" ? " Jt (Rupiah)" : " M (IDR)");
-    const note =
-      lang === "id" ? "* Harga dapat dinegosiasikan" : "* Price negotiable";
-    return { display: short, note };
+// ── Modal ─────────────────────────────────────────────────
+function openFeatureModal(idx, context) {
+  currentFeatureIndex = idx;
+  currentModalCarouselIndex = 0;
+  currentTabContext = context;
+
+  const f =
+    context === "pos"
+      ? posFeatures[currentLang][idx]
+      : featuresData[currentLang][idx];
+
+  document.getElementById("modal-feature-title").textContent = f.title;
+  document.getElementById("modal-feature-desc").textContent =
+    context === "pos" ? f.description : f.desc;
+
+  const carousel = document.getElementById("modal-carousel");
+  const dots = document.getElementById("modal-carousel-dots");
+  carousel.innerHTML = "";
+  dots.innerHTML = "";
+
+  if (f.images && f.images.length) {
+    f.images.forEach((src, i) => {
+      carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
+        <img src="${src}" alt="${f.title} ${
+        i + 1
+      }" class="modal-image max-w-full h-auto rounded-lg shadow-lg" loading="lazy"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/800x500/3b82f6/ffffff?text=${encodeURIComponent(
+               f.title
+             )}'">
+      </div>`;
+      dots.innerHTML += `<button class="modal-carousel-dot w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+        i === 0 ? "bg-blue-600 w-7" : "bg-gray-300"
+      }" data-index="${i}"></button>`;
+    });
+    dots.querySelectorAll(".modal-carousel-dot").forEach((d) =>
+      d.addEventListener("click", () => {
+        currentModalCarouselIndex = +d.dataset.index;
+        updateModalCarousel();
+      })
+    );
+  } else {
+    carousel.innerHTML = `<div class="min-w-full flex items-center justify-center bg-gray-100 rounded-lg" style="min-height:360px;">
+      <div class="text-center text-gray-500"><i class="fas ${
+        f.icon || "fa-image"
+      } text-5xl mb-3"></i>
+      <p>${
+        currentLang === "id"
+          ? "Visual akan segera tersedia"
+          : "Screenshots coming soon"
+      }</p></div></div>`;
   }
-  return { display: priceStr, note: "" };
+
+  document.getElementById("feature-modal").classList.remove("hidden");
+  document.getElementById("feature-modal").classList.add("flex");
+  document.body.style.overflow = "hidden";
+  updateModalCarousel();
+}
+
+function updateModalCarousel() {
+  document.getElementById("modal-carousel").style.transform = `translateX(-${
+    currentModalCarouselIndex * 100
+  }%)`;
+  document.querySelectorAll(".modal-carousel-dot").forEach((d, i) => {
+    d.classList.toggle("bg-blue-600", i === currentModalCarouselIndex);
+    d.classList.toggle("w-7", i === currentModalCarouselIndex);
+    d.classList.toggle("bg-gray-300", i !== currentModalCarouselIndex);
+    d.classList.toggle("w-2.5", i !== currentModalCarouselIndex);
+  });
+}
+
+function closeFeatureModal() {
+  document.getElementById("feature-modal").classList.add("hidden");
+  document.getElementById("feature-modal").classList.remove("flex");
+  document.body.style.overflow = "auto";
+}
+
+function getModalImagesLength() {
+  const f =
+    currentTabContext === "pos"
+      ? posFeatures[currentLang][currentFeatureIndex]
+      : featuresData[currentLang][currentFeatureIndex];
+  return f && f.images ? f.images.length : 0;
+}
+
+// ── Model cards ───────────────────────────────────────────
+function formatPrice(price, lang) {
+  const n = parseInt((price || "").replace(/\D/g, ""), 10);
+  if (!n || isNaN(n)) return { display: price, note: "" };
+  if (n >= 1000000) {
+    const jt = n / 1000000;
+    const s =
+      (jt % 1 === 0 ? jt.toFixed(0) : jt.toFixed(1)) +
+      (lang === "id" ? " Jt (Rp)" : " M (IDR)");
+    return {
+      display: s,
+      note:
+        lang === "id" ? "* Harga dapat dinegosiasikan" : "* Price negotiable",
+    };
+  }
+  return { display: price, note: "" };
 }
 
 function generateModelCards(lang) {
@@ -1046,114 +1182,77 @@ function generateModelCards(lang) {
   if (!container) return;
   container.innerHTML = "";
   modelSummaries[lang].forEach((m) => {
-    const { display: priceShort, note } = formatPriceAndNote(m.price, lang);
+    const { display, note } = formatPrice(m.price, lang);
     container.innerHTML += `
-      <div class="model-card p-6 rounded-2xl shadow-lg bg-white border transition-all hover:shadow-2xl ${
+      <div class="model-card p-5 rounded-2xl shadow-lg bg-white transition-all hover:shadow-2xl ${
         m.recommended ? "recommended" : ""
       }">
-        <div class="flex items-center justify-between mb-4">
-          <h4 class="text-xl font-semibold">${m.title}</h4>
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="text-lg font-bold">${m.title}</h4>
           ${
             m.recommended
-              ? `<span class="px-3 py-1 text-sm rounded-full bg-yellow-400 text-white font-semibold">${
+              ? `<span class="px-2.5 py-0.5 text-xs rounded-full bg-blue-600 text-white font-semibold">${
                   lang === "id" ? "Rekomendasi" : "Recommended"
                 }</span>`
               : ""
           }
         </div>
-        <div class="mb-2">
-          <div class="text-2xl font-bold text-blue-800">${priceShort}</div>
-          <div class="text-sm text-gray-500">${m.tagline}</div>
+        <div class="mb-3">
+          <div class="text-xl font-bold text-blue-800">${display}</div>
+          <div class="text-xs text-gray-500">${m.tagline}</div>
           ${
             note
-              ? `<div class="text-xs text-gray-500 mt-1 price-note">${note}</div>`
+              ? `<div class="text-xs text-gray-400 mt-0.5">${note}</div>`
               : ""
           }
         </div>
-        <div class="flex items-center justify-between mt-4">
-          <a href="#contact" class="text-sm text-blue-600 font-medium hover:underline">${
+        <div class="flex items-center justify-between mt-3">
+          <a href="#contact" class="text-xs text-blue-600 font-medium hover:underline">${
             lang === "id" ? "Hubungi Sales" : "Contact Sales"
           }</a>
-          <button class="compare-cta bg-blue-600 text-white px-4 py-2 rounded-lg text-sm" data-model="${
+          <button class="compare-cta bg-blue-600 text-white px-3.5 py-1.5 rounded-lg text-xs font-bold" data-model="${
             m.key
           }">${lang === "id" ? "Pilih" : "Choose"}</button>
         </div>
-      </div>
-    `;
+      </div>`;
   });
-
   container.querySelectorAll(".compare-cta").forEach((btn) =>
     btn.addEventListener("click", (ev) => {
       ev.stopPropagation();
-      const modelKey = btn.dataset.model;
-      const compSection = document.getElementById("model-comparison");
-      if (compSection) {
-        const table = compSection.querySelector("table");
-        const header = document.getElementById("header");
-        const headerHeight = header ? header.offsetHeight : 80;
-        if (table) {
-          const rect = table.getBoundingClientRect();
-          const targetTop = window.pageYOffset + rect.top - headerHeight - 16;
-          window.scrollTo({
-            top: Math.max(0, Math.round(targetTop)),
-            behavior: "smooth",
-          });
-          setTimeout(() => highlightModelColumn(modelKey), 420);
-        } else {
-          const rect = compSection.getBoundingClientRect();
-          const targetTop = window.pageYOffset + rect.top - headerHeight - 16;
-          window.scrollTo({
-            top: Math.max(0, Math.round(targetTop)),
-            behavior: "smooth",
-          });
-          setTimeout(() => highlightModelColumn(modelKey), 420);
-        }
-      } else {
-        highlightModelColumn(modelKey);
-      }
+      highlightModelColumn(btn.dataset.model);
     })
   );
 }
 
 function generateComparisonTable(lang) {
   const tbody = document.getElementById("comparison-table-body");
+  const check = `<span class="feature-badge included" title="${
+    lang === "id" ? "Termasuk" : "Included"
+  }"><i class="fas fa-check"></i></span>`;
+  const cross = `<span class="feature-badge excluded" title="${
+    lang === "id" ? "Tidak termasuk" : "Not included"
+  }"><i class="fas fa-times"></i></span>`;
   tbody.innerHTML = "";
-  const check =
-    '<span class="feature-badge included" title="' +
-    (lang === "id" ? "Termasuk" : "Included") +
-    '"><i class="fas fa-check"></i></span>';
-  const cross =
-    '<span class="feature-badge excluded" title="' +
-    (lang === "id" ? "Tidak termasuk" : "Not included") +
-    '"><i class="fas fa-times"></i></span>';
   comparisonData[lang].forEach((r, i) => {
     const bg = i % 2 === 0 ? "bg-gray-50" : "bg-white";
     tbody.innerHTML += `
-                    <tr class="${bg} hover:bg-blue-50 transition-colors">
-                        <td class="py-4 px-6 text-gray-700 font-medium sticky-col">${
-                          r.feature
-                        }</td>
-                        <td class="py-4 px-6 text-center">${
-                          r.basic ? check : cross
-                        }</td>
-                        <td class="py-4 px-6 text-center">${
-                          r.lengkap ? check : cross
-                        }</td>
-                        <td class="py-4 px-6 text-center">${
-                          r.retail ? check : cross
-                        }${
+      <tr class="${bg} hover:bg-blue-50 transition-colors">
+        <td class="py-3 px-5 text-gray-700 font-medium sticky-col text-sm">${
+          r.feature
+        }</td>
+        <td class="py-3 px-5 text-center">${r.basic ? check : cross}</td>
+        <td class="py-3 px-5 text-center">${r.lengkap ? check : cross}</td>
+        <td class="py-3 px-5 text-center">${r.retail ? check : cross}${
       r.retailNote
-        ? `<div class="text-xs text-gray-500 mt-1" title="${r.retailNote}">${r.retailNote}</div>`
+        ? `<div class="text-xs text-gray-500 mt-0.5">${r.retailNote}</div>`
         : ""
     }</td>
-                        <td class="py-4 px-6 text-center">${
-                          r.manufaktur ? check : cross
-                        }${
+        <td class="py-3 px-5 text-center">${r.manufaktur ? check : cross}${
       r.manufakturNote
-        ? `<div class="text-xs text-gray-500 mt-1" title="${r.manufakturNote}">${r.manufakturNote}</div>`
+        ? `<div class="text-xs text-gray-500 mt-0.5">${r.manufakturNote}</div>`
         : ""
     }</td>
-                    </tr>`;
+      </tr>`;
   });
 }
 
@@ -1161,307 +1260,122 @@ function generateModelNotes(lang) {
   const ul = document.getElementById("model-notes");
   ul.innerHTML = "";
   modelNotes[lang].forEach((note) => {
-    ul.innerHTML += `<li class="flex items-start space-x-3">
-                    <i class="fas fa-check text-blue-600 mt-1 flex-shrink-0"></i>
-                    <span>${note}</span>
-                </li>`;
+    ul.innerHTML += `<li class="flex items-start space-x-2"><i class="fas fa-check text-blue-600 mt-0.5 flex-shrink-0 text-sm"></i><span>${note}</span></li>`;
   });
 }
 
-function generatePosFeatures(lang) {
-  const grid = document.getElementById("pos-features-grid");
-  if (!grid) return;
-  grid.innerHTML = "";
-
-  // Map color shorthand → full Tailwind gradient classes
-  const colorMap = {
-    green: "from-green-500 to-green-600",
-    teal: "from-teal-500 to-teal-600",
-    emerald: "from-emerald-500 to-emerald-600",
-  };
-
-  posFeatures[lang].forEach((f, i) => {
-    const delay = (i % 3) + 1;
-    const gradientClass = colorMap[f.color] || "from-green-500 to-green-600";
-
-    // icon: strip "fas " prefix jika ada, karena template sudah tambah "fas"
-    const iconClass = f.icon.replace(/^fas\s+/, "");
-
-    grid.innerHTML += `
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${delay}">
-        <div class="w-16 h-16 bg-gradient-to-r ${gradientClass} rounded-xl flex items-center justify-center mb-4 shadow-lg">
-          <i class="fas ${iconClass} text-3xl text-white"></i>
-        </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-1">${f.title}</h3>
-        <p class="text-sm text-gray-400 font-medium mb-3">${f.subtitle}</p>
-        <p class="text-gray-600 mb-4">${f.description}</p>
-        <button class="view-pos-feature-btn text-green-600 hover:text-green-800 font-semibold flex items-center space-x-2 transition-colors" data-pos-index="${i}">
-          <span>${lang === "id" ? "Lihat Visual" : "View Interface"}</span>
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>`;
-  });
-
-  document.querySelectorAll(".view-pos-feature-btn").forEach((btn) => {
-    btn.addEventListener("click", () =>
-      openPosFeatureModal(+btn.dataset.posIndex)
-    );
-  });
-}
-
-function openPosFeatureModal(idx) {
-  // Gunakan modal yang sama dengan accounting, cukup ganti data source
-  currentFeatureIndex = idx;
-  currentModalCarouselIndex = 0;
-  const f = posFeatures[currentLang][idx];
-
-  document.getElementById("modal-feature-title").textContent = f.title;
-  document.getElementById("modal-feature-desc").textContent = f.description;
-
-  const carousel = document.getElementById("modal-carousel");
-  const dots = document.getElementById("modal-carousel-dots");
-  carousel.innerHTML = "";
-  dots.innerHTML = "";
-
-  if (f.images && f.images.length) {
-    f.images.forEach((src, i) => {
-      carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
-        <img src="${src}" alt="${f.title} ${i + 1}"
-          class="modal-image max-w-full h-auto rounded-lg shadow-lg" loading="lazy"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/3498db/ffffff?text=${encodeURIComponent(
-            f.title
-          )}'">
-      </div>`;
-      dots.innerHTML += `<button class="modal-carousel-dot w-3 h-3 rounded-full transition-all duration-200 ${
-        i === 0 ? "bg-blue-600 w-8" : "bg-gray-300"
-      }" data-index="${i}"></button>`;
-    });
-    dots.querySelectorAll(".modal-carousel-dot").forEach((d) =>
-      d.addEventListener("click", () => {
-        currentModalCarouselIndex = +d.dataset.index;
-        updateModalCarousel();
-      })
-    );
-  } else {
-    carousel.innerHTML = `<div class="min-w-full flex items-center justify-center bg-gray-100 rounded-lg" style="min-height:400px;">
-      <div class="text-center text-gray-500">
-        <i class="fas ${f.icon} text-6xl mb-4"></i>
-        <p>${
-          currentLang === "id"
-            ? "Visual akan segera tersedia"
-            : "Screenshots coming soon"
-        }</p>
-      </div>
-    </div>`;
+function highlightModelColumn(modelKey) {
+  const map = { basic: 1, lengkap: 2, retail: 3, manufaktur: 4 };
+  const col = map[modelKey];
+  if (!col) return;
+  document
+    .querySelectorAll(".highlighted-col")
+    .forEach((el) => el.classList.remove("highlighted-col"));
+  const table = document.querySelector("#model-comparison table");
+  if (!table) return;
+  const th = table.querySelector(`thead th:nth-child(${col + 1})`);
+  if (th) th.classList.add("highlighted-col");
+  table
+    .querySelectorAll(`tbody td:nth-child(${col + 1})`)
+    .forEach((td) => td.classList.add("highlighted-col"));
+  const wrapper = document.querySelector("#model-comparison .max-w-5xl");
+  if (wrapper && th) {
+    const left = th.offsetLeft + th.offsetWidth / 2 - wrapper.clientWidth / 2;
+    wrapper.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
   }
-
-  document.getElementById("feature-modal").classList.remove("hidden");
-  document.getElementById("feature-modal").classList.add("flex");
-  document.body.style.overflow = "hidden";
-  updateModalCarousel();
-}
-function openFeatureModal(idx) {
-  currentFeatureIndex = idx;
-  currentModalCarouselIndex = 0;
-  const f = featuresData[currentLang][idx];
-  document.getElementById("modal-feature-title").textContent = f.title;
-  document.getElementById("modal-feature-desc").textContent = f.desc;
-
-  const carousel = document.getElementById("modal-carousel");
-  const dots = document.getElementById("modal-carousel-dots");
-  carousel.innerHTML = "";
-  dots.innerHTML = "";
-
-  if (f.images && f.images.length) {
-    f.images.forEach((src, i) => {
-      carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
-       <img src="${src}" 
-     alt="${f.title} ${i + 1}" 
-     class="modal-image max-w-full h-auto rounded-lg shadow-lg" loading="lazy"
-     onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/3498db/ffffff?text=${encodeURIComponent(
-       f.title
-     )}'">
-      </div>`;
-      dots.innerHTML += `<button class="modal-carousel-dot w-3 h-3 rounded-full transition-all duration-200 ${
-        i === 0 ? "bg-blue-600 w-8" : "bg-gray-300"
-      }" data-index="${i}"></button>`;
-    });
-    dots.querySelectorAll(".modal-carousel-dot").forEach((d) =>
-      d.addEventListener("click", () => {
-        currentModalCarouselIndex = +d.dataset.index;
-        updateModalCarousel();
-      })
-    );
-  } else {
-    carousel.innerHTML = `<div class="min-w-full flex items-center justify-center bg-gray-100 rounded-lg" style="min-height:400px;">
-                    <div class="text-center text-gray-500"><i class="fas ${
-                      f.icon
-                    } text-6xl mb-4"></i>
-                    <p>${
-                      currentLang === "id"
-                        ? "Visual akan segera tersedia"
-                        : "Screenshots coming soon"
-                    }</p></div></div>`;
-  }
-
-  document.getElementById("feature-modal").classList.remove("hidden");
-  document.getElementById("feature-modal").classList.add("flex");
-  document.body.style.overflow = "hidden";
-  updateModalCarousel();
-}
-function updateModalCarousel() {
-  const carousel = document.getElementById("modal-carousel");
-  const f = featuresData[currentLang][currentFeatureIndex];
-  const x = -currentModalCarouselIndex * 100;
-  carousel.style.transform = `translateX(${x}%)`;
-  document.querySelectorAll(".modal-carousel-dot").forEach((d, i) => {
-    d.classList.toggle("bg-blue-600", i === currentModalCarouselIndex);
-    d.classList.toggle("w-8", i === currentModalCarouselIndex);
-    d.classList.toggle("bg-gray-300", i !== currentModalCarouselIndex);
-  });
-}
-function closeFeatureModal() {
-  document.getElementById("feature-modal").classList.add("hidden");
-  document.getElementById("feature-modal").classList.remove("flex");
-  document.body.style.overflow = "auto";
+  // Scroll ke section comparison + highlight visual
+  const section = document.getElementById("model-comparison");
+  if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// ── Language update ───────────────────────────────────────
 function updateLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
+
   document.querySelectorAll("[data-translate]").forEach((el) => {
     const key = el.dataset.translate;
-    if (translations[lang][key]) {
-      if (translations[lang][key].includes("<")) {
+    if (translations[lang][key] !== undefined) {
+      if (String(translations[lang][key]).includes("<")) {
         el.innerHTML = translations[lang][key];
       } else {
         el.textContent = translations[lang][key];
       }
     }
   });
+
   document.querySelectorAll(".lang-btn").forEach((b) => {
-    if (b.dataset.lang === lang) {
-      b.classList.add("bg-blue-600", "text-white", "scale-110");
-      b.classList.remove(
-        "bg-white",
-        "text-blue-600",
-        "scale-100",
-        "border-2",
-        "border-blue-600"
-      );
-    } else {
-      b.classList.add(
-        "bg-white",
-        "text-blue-600",
-        "scale-100",
-        "border-2",
-        "border-blue-600"
-      );
-      b.classList.remove("bg-blue-600", "text-white", "scale-110");
-    }
+    b.classList.toggle("active", b.dataset.lang === lang);
   });
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    if (btn.dataset.lang === lang) {
-      btn.classList.add("active");
-    } else {
-      btn.classList.remove("active");
-    }
-  });
+
   generateModelCards(lang);
   generateFeatures(lang);
   generateComparisonTable(lang);
   generateModelNotes(lang);
   generatePosFeatures(lang);
-}
 
-document.getElementById("menu-toggle").addEventListener("click", () => {
-  const mobileMenu = document.getElementById("mobile-menu");
-  mobileMenu.classList.toggle("hidden");
-  mobileMenu.classList.toggle("show");
-});
-document.addEventListener("click", (e) => {
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuToggle = document.getElementById("menu-toggle");
+  // Update accounting badge & flow steps
+  const badge = document.getElementById("accounting-badge-text");
+  if (badge)
+    badge.textContent =
+      lang === "id"
+        ? "inni Akun Digi — Perbandingan Model Akuntansi"
+        : "inni Akun Digi — Accounting Model Comparison";
 
-  if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-    mobileMenu.classList.add("hidden");
-    mobileMenu.classList.remove("show");
-  }
-});
-let touchStartX = 0;
-let touchEndX = 0;
-
-document
-  .getElementById("modal-carousel")
-  .addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+  const steps = {
+    id: ["Pilih Model", "Bandingkan Fitur", 'Klik "Pilih"', "Hubungi Sales"],
+    en: ["Choose Model", "Compare Features", 'Click "Choose"', "Contact Sales"],
+  };
+  ["flow-step1", "flow-step2", "flow-step3", "flow-step4"].forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = steps[lang][i];
   });
 
-document.getElementById("modal-carousel").addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-});
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  }
-);
-
-document.querySelectorAll("section").forEach((section) => {
-  section.classList.add("scroll-section");
-  observer.observe(section);
-});
-
-window.addEventListener("load", () => {
-  document.getElementById("loading-spinner").style.display = "none";
-});
-function handleSwipe() {
-  if (touchEndX < touchStartX) {
-    document.getElementById("modal-next-btn").click();
-  }
-  if (touchEndX > touchStartX) {
-    document.getElementById("modal-prev-btn").click();
-  }
+  // Sticky CTA text
+  const sAcct = document.getElementById("sticky-acct-text");
+  const sWa = document.getElementById("sticky-wa-text");
+  if (sAcct)
+    sAcct.textContent = lang === "id" ? "Demo Akun Digi" : "Akun Digi Demo";
+  if (sWa) sWa.textContent = lang === "id" ? "WhatsApp Kami" : "WhatsApp Us";
 }
-document
-  .getElementById("feature-modal-close")
-  .addEventListener("click", closeFeatureModal);
-document.getElementById("feature-modal").addEventListener("click", (e) => {
-  if (e.target === e.currentTarget) closeFeatureModal();
+
+// ── Scroll & active nav ───────────────────────────────────
+function updateActiveNav() {
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav-item");
+  const scrollPos = window.pageYOffset + 100;
+  let current = "";
+  sections.forEach((s) => {
+    if (scrollPos >= s.offsetTop && scrollPos < s.offsetTop + s.offsetHeight)
+      current = s.id;
+  });
+  navItems.forEach((n) => {
+    n.classList.toggle("active", n.getAttribute("href") === `#${current}`);
+  });
+}
+
+// ── Event listeners ───────────────────────────────────────
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  const m = document.getElementById("mobile-menu");
+  m.classList.toggle("hidden");
+  m.classList.toggle("show");
 });
-document.getElementById("modal-prev-btn").addEventListener("click", () => {
-  const f = featuresData[currentLang][currentFeatureIndex];
-  if (f.images && f.images.length > 1) {
-    currentModalCarouselIndex =
-      (currentModalCarouselIndex - 1 + f.images.length) % f.images.length;
-    updateModalCarousel();
+
+document.addEventListener("click", (e) => {
+  const m = document.getElementById("mobile-menu");
+  const t = document.getElementById("menu-toggle");
+  if (!m.contains(e.target) && !t.contains(e.target)) {
+    m.classList.add("hidden");
+    m.classList.remove("show");
   }
 });
-document.getElementById("modal-next-btn").addEventListener("click", () => {
-  const f = featuresData[currentLang][currentFeatureIndex];
-  if (f.images && f.images.length > 1) {
-    currentModalCarouselIndex =
-      (currentModalCarouselIndex + 1) % f.images.length;
-    updateModalCarousel();
-  }
-});
-document
-  .getElementById("back-to-top")
-  .addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  );
+
 document
   .querySelectorAll(".lang-btn")
   .forEach((b) =>
     b.addEventListener("click", () => updateLanguage(b.dataset.lang))
   );
+
 document.querySelectorAll('a[href^="#"]').forEach((a) =>
   a.addEventListener("click", (e) => {
     e.preventDefault();
@@ -1469,66 +1383,89 @@ document.querySelectorAll('a[href^="#"]').forEach((a) =>
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       document.getElementById("mobile-menu").classList.add("hidden");
+      document.getElementById("mobile-menu").classList.remove("show");
     }
   })
 );
-function updateActiveNav() {
-  const sections = document.querySelectorAll("section");
-  const navItems = document.querySelectorAll(".nav-item");
 
-  let currentSection = "";
-  const scrollPos = window.pageYOffset + 120;
+document
+  .getElementById("feature-modal-close")
+  .addEventListener("click", closeFeatureModal);
+document.getElementById("feature-modal").addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) closeFeatureModal();
+});
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.id;
-
-    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-      currentSection = sectionId;
-    }
-  });
-
-  if (currentSection === "video-demo") {
-    currentSection = "features";
-  } else if (currentSection === "demo-cta") {
-    currentSection = "features";
-  } else if (currentSection === "pos-features") {
-    currentSection = "features";
-  } else if (currentSection === "pos-demo-cta") {
-    currentSection = "features";
-  } else if (currentSection === "our-apps") {
-    currentSection = "our-apps";
+document.getElementById("modal-prev-btn").addEventListener("click", () => {
+  const len = getModalImagesLength();
+  if (len > 1) {
+    currentModalCarouselIndex = (currentModalCarouselIndex - 1 + len) % len;
+    updateModalCarousel();
   }
+});
+document.getElementById("modal-next-btn").addEventListener("click", () => {
+  const len = getModalImagesLength();
+  if (len > 1) {
+    currentModalCarouselIndex = (currentModalCarouselIndex + 1) % len;
+    updateModalCarousel();
+  }
+});
 
-  navItems.forEach((navItem) => {
-    const href = navItem.getAttribute("href");
-    navItem.classList.remove("active");
-
-    if (href === `#${currentSection}`) {
-      navItem.classList.add("active");
-    }
+// Touch swipe modal
+let touchStartX = 0;
+document
+  .getElementById("modal-carousel")
+  .addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
   });
-}
+document.getElementById("modal-carousel").addEventListener("touchend", (e) => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(dx) > 40) {
+    if (dx < 0) document.getElementById("modal-next-btn").click();
+    else document.getElementById("modal-prev-btn").click();
+  }
+});
+
+document
+  .getElementById("back-to-top")
+  .addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  );
+
+document.getElementById("video-card").addEventListener("click", () => {
+  const iframe = document.getElementById("demo-iframe");
+  const overlay = document.getElementById("play-overlay");
+  overlay.style.opacity = "0";
+  setTimeout(() => (overlay.style.display = "none"), 400);
+  if (!iframe.src.includes("autoplay")) iframe.src += "&autoplay=1";
+});
+
+// Scroll observer
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  },
+  { threshold: 0.08 }
+);
+document.querySelectorAll("section").forEach((s) => {
+  s.classList.add("scroll-section");
+  observer.observe(s);
+});
 
 window.addEventListener("scroll", () => {
   updateActiveNav();
-
-  document.getElementById("back-to-top").style.opacity =
-    window.pageYOffset > 300 ? "1" : "0";
-  document.getElementById("back-to-top").style.pointerEvents =
-    window.pageYOffset > 300 ? "auto" : "none";
-
-  document
-    .getElementById("header")
-    .classList.toggle("shadow-2xl", window.pageYOffset > 100);
+  const y = window.pageYOffset;
+  const btn = document.getElementById("back-to-top");
+  btn.style.opacity = y > 300 ? "1" : "0";
+  btn.style.pointerEvents = y > 300 ? "auto" : "none";
+  document.getElementById("header").classList.toggle("shadow-2xl", y > 100);
 });
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    if (!document.getElementById("mobile-menu").classList.contains("hidden")) {
-      document.getElementById("mobile-menu").classList.add("hidden");
-    }
+    document.getElementById("mobile-menu").classList.add("hidden");
+    document.getElementById("mobile-menu").classList.remove("show");
     if (!document.getElementById("feature-modal").classList.contains("hidden"))
       closeFeatureModal();
   }
@@ -1539,68 +1476,8 @@ document.addEventListener("keydown", (e) => {
       document.getElementById("modal-next-btn").click();
   }
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const langButtons = document.querySelectorAll(".lang-btn");
-  langButtons.forEach((btn) => {
-    if (btn.dataset.lang === "id") {
-      btn.classList.add("active");
-    } else {
-      btn.classList.remove("active");
-    }
-  });
-  generateModelCards(currentLang);
-  generateFeatures(currentLang);
-  generateComparisonTable(currentLang);
-  generateModelNotes(currentLang);
-  generatePosFeatures(currentLang);
-});
 
-function highlightModelColumn(modelKey) {
-  const map = { basic: 1, lengkap: 2, retail: 3, manufaktur: 4 };
-  const col = map[modelKey];
-  if (!col) return;
-
-  document
-    .querySelectorAll(".highlighted-col, .yellow-pop")
-    .forEach((el) =>
-      el.classList.remove("highlighted-col", "yellow", "yellow-pop")
-    );
-
-  const table = document.querySelector("#model-comparison table");
-  if (!table) return;
-
-  const th = table.querySelector(`thead th:nth-child(${col + 1})`);
-  if (th) th.classList.add("highlighted-col", "yellow", "yellow-pop");
-
-  table
-    .querySelectorAll(`tbody td:nth-child(${col + 1})`)
-    .forEach((td) =>
-      td.classList.add("highlighted-col", "yellow", "yellow-pop")
-    );
-
-  const wrapper = document.querySelector("#model-comparison .max-w-6xl");
-  if (wrapper && th) {
-    const left = th.offsetLeft + th.offsetWidth / 2 - wrapper.clientWidth / 2;
-    wrapper.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
-  }
-}
-document.querySelectorAll(".compare-cta").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const pop = document.getElementById("pop-sfx");
-    if (pop) {
-      pop.currentTime = 0;
-      pop.play();
-    }
-  });
-});
-document.getElementById("video-card").addEventListener("click", () => {
-  const iframe = document.getElementById("demo-iframe");
-  const overlay = document.getElementById("play-overlay");
-  overlay.style.opacity = "0";
-  setTimeout(() => (overlay.style.display = "none"), 500);
-  iframe.src += "?autoplay=1";
-});
-
+// ── Form submit ───────────────────────────────────────────
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxmVazpB1t-P-TeIYYuBMERr7K_7EmUDmLff_wacxKZ3CjxRoQL6O9N8envUwEyJv3X/exec";
 
@@ -1608,12 +1485,8 @@ const whatsappInput = document.querySelector('input[name="whatsapp"]');
 if (whatsappInput) {
   whatsappInput.addEventListener("input", function () {
     this.value = this.value.replace(/\D/g, "");
-    if (this.value.startsWith("0")) {
-      this.value = this.value.substring(1);
-    }
-    if (this.value.length > 13) {
-      this.value = this.value.substring(0, 13);
-    }
+    if (this.value.startsWith("0")) this.value = this.value.substring(1);
+    if (this.value.length > 13) this.value = this.value.substring(0, 13);
   });
 }
 
@@ -1621,10 +1494,8 @@ document
   .getElementById("interestForm")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-
     const submitBtn = document.getElementById("submitBtn");
-    const originalHTML = submitBtn.innerHTML;
-
+    const origHTML = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML =
       '<i class="fas fa-spinner fa-spin mr-2"></i> Mengirim...';
@@ -1636,17 +1507,17 @@ document
 
     if (!nama || !email) {
       alert("Nama dan Email wajib diisi!");
-      resetBtn();
+      reset();
       return;
     }
     if (!email.endsWith("@gmail.com")) {
       alert("Harap gunakan alamat Gmail yang valid!");
-      resetBtn();
+      reset();
       return;
     }
     if (whatsappRaw && (whatsappRaw.length < 9 || whatsappRaw.length > 13)) {
       alert("Nomor WhatsApp tidak valid (9-13 digit)!");
-      resetBtn();
+      reset();
       return;
     }
 
@@ -1663,36 +1534,30 @@ document
         body: payload,
         redirect: "follow",
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const result = await response.text();
-      const parsedResult = JSON.parse(result);
-
-      if (parsedResult.result === "success") {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const parsed = JSON.parse(await response.text());
+      if (parsed.result === "success") {
         this.classList.add("hidden");
         document.getElementById("successMessage").classList.remove("hidden");
         this.reset();
-        console.log(
-          "Data berhasil dikirim ke Sheets! Baris:",
-          parsedResult.row
-        );
-      } else {
-        throw new Error(parsedResult.message || "Respons tidak valid");
-      }
-    } catch (error) {
-      console.error("Fetch Error:", error);
-      alert(
-        `Gagal mengirim data. Coba lagi atau hubungi kami via WhatsApp.\n\nError: ${error.message}`
-      );
+      } else throw new Error(parsed.message || "Error");
+    } catch (err) {
+      alert(`Gagal mengirim data. Coba via WhatsApp.\n\nError: ${err.message}`);
     } finally {
-      resetBtn();
+      reset();
     }
 
-    function resetBtn() {
+    function reset() {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = originalHTML;
+      submitBtn.innerHTML = origHTML;
     }
   });
+
+// ── Init ──────────────────────────────────────────────────
+window.addEventListener("load", () => {
+  document.getElementById("loading-spinner").style.display = "none";
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateLanguage("id");
+});
