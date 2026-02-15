@@ -9,11 +9,15 @@
         <meta name="description"
             content="Aplikasi Desktop Laporan Keuangan & Pajak 100% Offline untuk UMKM: install sekali pakai selamanya, data lokal aman, tidak butuh internet. Hub: 0877-2511-3689">
         <meta name="keywords"
-            content="aplikasi akuntansi desktop, software keuangan offline, aplikasi pajak umkm, akuntansi tanpa internet, PHPExeDesktop, Sukaresmi">
+            content="aplikasi akuntansi desktop, software keuangan offline, aplikasi pajak umkm, akuntansi tanpa internet">
         <meta name="author" content="PT. Integrasindo Multi Kreasi">
         <meta name="robots" content="index, follow">
+
+        <!-- Favicon -->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link rel="canonical" href="https://inniakundigi.co.id/">
+
+        <!-- Open Graph -->
         <meta property="og:title"
             content="PT. Integrasindo Multi Kreasi – Aplikasi Desktop Keuangan & Pajak 100% Offline">
         <meta property="og:description"
@@ -23,23 +27,61 @@
         <meta property="og:url" content="https://inniakundigi.co.id/">
         <meta property="og:type" content="website">
         <meta property="og:locale" content="id_ID">
+
+        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
+
+        <!-- Preconnect -->
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
         <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+        <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Font Awesome -->
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
             crossorigin="anonymous">
+
+        <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/index.css">
-        <script
-            type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PT. Integrasindo Multi Kreasi","url":"https://inni.co.id","address":{"@type":"PostalAddress","streetAddress":"Jln. Mariwati, Kp. Ciwalen Pasar, RT.003/009","addressLocality":"Ds. Kawung Luwuk","addressRegion":"Jawa Barat","postalCode":"43254","addressCountry":"ID"},"contactPoint":[{"@type":"ContactPoint","telephone":"+6287725113689","contactType":"customer service"},{"@type":"ContactPoint","telephone":"+6287702882986","contactType":"sales"}]}</script>
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PT. Integrasindo Multi Kreasi",
+        "url": "https://inniakundigi.co.id",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jln. Mariwati, Kp. Ciwalen Pasar, RT.003/009",
+            "addressLocality": "Ds. Kawung Luwuk",
+            "addressRegion": "Jawa Barat",
+            "postalCode": "43254",
+            "addressCountry": "ID"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+6287725113689",
+                "contactType": "customer service"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+6287702882986",
+                "contactType": "sales"
+            }
+        ]
+    }
+    </script>
     </head>
     <body class="font-sans bg-gray-50">
 
         <!-- ══ SCROLL PROGRESS BAR ══════════════════════════════════ -->
         <div id="scroll-progress"></div>
 
-        <!-- Loading -->
+        <!-- Loading Spinner -->
         <div id="loading-spinner"
             class="fixed inset-0 bg-white z-50 flex items-center justify-center">
             <div
@@ -72,16 +114,16 @@
                             data-translate="navHome">Beranda</a>
                         <a href="#layanan"
                             class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1"
-                            data-translate="navServices">Layanan</a>
+                            data-translate="navLayanan">Layanan</a>
                         <a href="#produk-tabs"
                             class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1"
-                            data-translate="appsLabel">Produk</a>
+                            data-translate="navProducts">Produk</a>
                         <a href="#how-it-works"
                             class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1"
                             data-translate="navHowItWorks">Cara Kerja</a>
                         <a href="#model-comparison"
                             class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1"
-                            data-translate="navComparison">Model</a>
+                            data-translate="navPricing">Harga</a>
                         <a href="#faq"
                             class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1"
                             data-translate="navFaq">FAQ</a>
@@ -99,24 +141,22 @@
                     </div>
                 </div>
             </div>
+
             <!-- Mobile menu -->
             <div id="mobile-menu"
                 class="hidden md:hidden bg-blue-800 shadow-md mt-3 rounded-lg mx-4 overflow-hidden">
                 <a href="#intro"
                     class="block py-2.5 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300 text-sm"
                     data-translate="navHome">Beranda</a>
-                <a href="#layanan"
-                    class="block py-2.5 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300 text-sm"
-                    data-translate="navServices">Layanan</a>
                 <a href="#produk-tabs"
                     class="block py-2.5 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300 text-sm"
-                    data-translate="appsLabel">Produk</a>
+                    data-translate="navProducts">Produk</a>
                 <a href="#how-it-works"
                     class="block py-2.5 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300 text-sm"
                     data-translate="navHowItWorks">Cara Kerja</a>
                 <a href="#model-comparison"
                     class="block py-2.5 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300 text-sm"
-                    data-translate="navComparison">Model</a>
+                    data-translate="navPricing">Harga</a>
                 <a href="#faq"
                     class="block py-2.5 px-4 hover:bg-blue-700 transition-colors border-l-4 border-transparent hover:border-blue-300 text-sm"
                     data-translate="navFaq">FAQ</a>
@@ -137,7 +177,7 @@
 
         <!-- ══ HERO SECTION ════════════════════════════════════════════════════ -->
         <section id="intro"
-            class="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 py-10 overflow-hidden">
+            class="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 overflow-hidden">
             <div class="absolute inset-0 opacity-10 pointer-events-none">
                 <div
                     class="absolute top-8 left-8 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
@@ -205,6 +245,7 @@
                             POS</span>
                     </a>
                 </div>
+
                 <!-- Social proof -->
                 <div class="animate-fade-in-up stagger-delay-5">
                     <span class="hero-proof">
@@ -216,102 +257,280 @@
             </div>
         </section>
 
-        <!-- Wave divider hero → layanan -->
+        <!-- Wave divider -->
         <div class="wave-divider wave-down bg-blue-50">
             <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M0,32 C360,0 1080,48 1440,16 L1440,48 L0,48 Z"
-                    fill="#f3f4f6" />
+                    fill="#ffffff" />
             </svg>
         </div>
 
-        <!-- ══ LAYANAN ══════════════════════════════════════════════════════════ -->
-        <section id="layanan" class="py-8 bg-gray-100">
+        <!-- ══ MENGAPA MEMILIH INNI (MOVED UP) ════════════════════════════════ -->
+        <section id="benefits" class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
+                <div class="text-center mb-12">
+                    <span
+                        class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        <i class="fas fa-star"></i>
+                        <span data-translate="benefitsLabel">Keunggulan
+                            Kami</span>
+                    </span>
                     <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-800 mb-3 animate-fade-in"
-                        data-translate="servicesTitle">Layanan Kami</h2>
+                        class="text-3xl md:text-4xl font-bold text-gray-800 mb-3 gradient-text animate-fade-in"
+                        data-translate="benefitsTitle">
+                        Mengapa Memilih inni?
+                    </h2>
                     <p
-                        class="text-gray-600 max-w-xl mx-auto animate-fade-in-up stagger-delay-1"
-                        data-translate="servicesSubtitle">Dukungan komprehensif
-                        untuk kesuksesan bisnis Anda</p>
+                        class="text-gray-600 max-w-xl mx-auto text-sm animate-fade-in-up stagger-delay-1"
+                        data-translate="benefitsSubtitle">
+                        Keunggulan yang membuat kami berbeda
+                    </p>
                 </div>
-                <!-- Grid 3+2 -->
-                <div class="max-w-5xl mx-auto">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+                <!-- Benefit Cards -->
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+                    <div
+                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-1">
                         <div
-                            class="service-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform animate-fade-in-up stagger-delay-1 text-center">
-                            <div
-                                class="service-icon text-4xl mb-3 text-blue-900 flex justify-center"><i
-                                    class="fas fa-laptop-code"></i></div>
-                            <h3 class="text-base font-bold text-blue-900 mb-2"
-                                data-translate="service1Title">Aplikasi Desktop
-                                Keuangan</h3>
-                            <p class="text-gray-600 text-sm"
-                                data-translate="service1Desc">Aplikasi desktop
-                                offline untuk laporan keuangan yang akurat dan
-                                aman.</p>
+                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3">
+                            <i
+                                class="fas fa-check-circle text-3xl text-blue-900"></i>
                         </div>
-                        <div
-                            class="service-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform animate-fade-in-up stagger-delay-2 text-center">
-                            <div
-                                class="service-icon text-4xl mb-3 text-blue-900 flex justify-center"><i
-                                    class="fas fa-calculator"></i></div>
-                            <h3 class="text-base font-bold text-blue-900 mb-2"
-                                data-translate="service2Title">Pelaporan
-                                Pajak</h3>
-                            <p class="text-gray-600 text-sm"
-                                data-translate="service2Desc">Pelaporan pajak
-                                pribadi dan usaha dengan mudah.</p>
-                        </div>
-                        <div
-                            class="service-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform animate-fade-in-up stagger-delay-3 text-center">
-                            <div
-                                class="service-icon text-4xl mb-3 text-blue-900 flex justify-center"><i
-                                    class="fas fa-users"></i></div>
-                            <h3 class="text-base font-bold text-blue-900 mb-2"
-                                data-translate="service3Title">Konsultasi &
-                                Pelatihan</h3>
-                            <p class="text-gray-600 text-sm"
-                                data-translate="service3Desc">Konsultasi dan
-                                pelatihan akuntansi serta pajak.</p>
-                        </div>
+                        <p class="text-gray-600 font-medium text-sm"
+                            data-translate="benefit1">Mudah digunakan, bahkan
+                            untuk pemula.</p>
                     </div>
                     <div
-                        class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-2">
                         <div
-                            class="service-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform animate-fade-in-up stagger-delay-4 text-center">
-                            <div
-                                class="service-icon text-4xl mb-3 text-blue-900 flex justify-center"><i
-                                    class="fas fa-certificate"></i></div>
-                            <h3 class="text-base font-bold text-blue-900 mb-2"
-                                data-translate="service4Title">Legalitas
-                                Usaha</h3>
-                            <p class="text-gray-600 text-sm"
-                                data-translate="service4Desc">Pendaftaran merk
-                                dan legalitas usaha (NIB, NPWP, dll).</p>
+                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3">
+                            <i
+                                class="fas fa-chart-line text-3xl text-blue-900"></i>
                         </div>
+                        <p class="text-gray-600 font-medium text-sm"
+                            data-translate="benefit2">Data keuangan yang akurat
+                            dan terorganisasi.</p>
+                    </div>
+                    <div
+                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-3">
                         <div
-                            class="service-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform animate-fade-in-up stagger-delay-5 text-center">
-                            <div
-                                class="service-icon text-4xl mb-3 text-blue-900 flex justify-center"><i
-                                    class="fas fa-book-open"></i></div>
-                            <h3 class="text-base font-bold text-blue-900 mb-2"
-                                data-translate="service5Title">Kursus SPT PPh
-                                Badan</h3>
-                            <p class="text-gray-600 text-sm"
-                                data-translate="service5Desc">Kursus profesional
-                                untuk penyusunan SPT PPh Badan yang tepat dan
-                                efisien.</p>
+                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3">
+                            <i class="fas fa-clock text-3xl text-blue-900"></i>
                         </div>
+                        <p class="text-gray-600 font-medium text-sm"
+                            data-translate="benefit3">Solusi yang hemat waktu
+                            dan biaya.</p>
+                    </div>
+                    <div
+                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-4">
+                        <div
+                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3">
+                            <i class="fas fa-users text-3xl text-blue-900"></i>
+                        </div>
+                        <p class="text-gray-600 font-medium text-sm"
+                            data-translate="benefit4">Pelatihan di lokasi untuk
+                            adopsi yang mulus.</p>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Wave divider (from benefits to layanan) -->
+        <div class="wave-divider wave-down bg-white">
+            <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,32 C240,8 720,48 1440,20 L1440,48 L0,48 Z"
+                    fill="#0f172a" />
+            </svg>
+        </div>
+
+        <!-- ══ LAYANAN KAMI ══════════════════════════════════════════ -->
+        <section id="layanan" class="py-16">
+            <div class="container mx-auto px-4 relative z-10">
+
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-4"
+                        style="background:rgba(255,255,255,0.1);color:#93c5fd;border:1px solid rgba(147,197,253,0.3);">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span data-translate="layananLabel">Layanan Kami</span>
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3"
+                        data-translate="layananTitle">
+                        Dukungan Komprehensif untuk<br>
+                        <span
+                            style="background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                            Kesuksesan Bisnis Anda
+                        </span>
+                    </h2>
+                    <p class="text-slate-400 max-w-xl mx-auto text-sm"
+                        data-translate="layananSubtitle">
+                        Lebih dari sekadar aplikasi — kami hadir sebagai mitra
+                        digital lengkap untuk UMKM dan organisasi Anda
+                    </p>
+                </div>
+
+                <!-- Cards Grid -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+
+                    <!-- 1. Aplikasi Desktop (produk utama) -->
+                    <div class="layanan-card"
+                        style="--card-accent:linear-gradient(90deg,#3b82f6,#60a5fa);">
+                        <div class="layanan-icon-wrap"
+                            style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <div class="layanan-title"
+                            data-translate="layanan1Title">Aplikasi Desktop
+                            Keuangan & POS</div>
+                        <div class="layanan-desc" data-translate="layanan1Desc">
+                            Software akuntansi & kasir 100% offline untuk UMKM,
+                            koperasi, dan organisasi. Install sekali, pakai
+                            selamanya tanpa biaya langganan.
+                        </div>
+                        <div class="layanan-badge badge-main">
+                            <i class="fas fa-star"></i> <span
+                                data-translate="layanan1Badge">Produk
+                                Utama</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Website Laporan Keuangan -->
+                    <div class="layanan-card"
+                        style="--card-accent:linear-gradient(90deg,#8b5cf6,#a78bfa);">
+                        <div class="layanan-icon-wrap"
+                            style="background:linear-gradient(135deg,#7c3aed,#8b5cf6);">
+                            <i class="fas fa-globe text-white"></i>
+                        </div>
+                        <div class="layanan-title"
+                            data-translate="layanan2Title">Website Laporan
+                            Keuangan</div>
+                        <div class="layanan-desc" data-translate="layanan2Desc">
+                            Penyediaan website digital untuk laporan keuangan
+                            yang akurat, terstruktur, dan mudah diakses kapan
+                            saja oleh manajemen.
+                        </div>
+                        <div class="layanan-badge badge-main">
+                            <i class="fas fa-code"></i> <span>Web Service</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Pelaporan Pajak -->
+                    <div class="layanan-card"
+                        style="--card-accent:linear-gradient(90deg,#f59e0b,#fbbf24);">
+                        <div class="layanan-icon-wrap"
+                            style="background:linear-gradient(135deg,#d97706,#f59e0b);">
+                            <i
+                                class="fas fa-file-invoice-dollar text-white"></i>
+                        </div>
+                        <div class="layanan-title"
+                            data-translate="layanan3Title">Pelaporan Pajak</div>
+                        <div class="layanan-desc" data-translate="layanan3Desc">
+                            Pelaporan pajak pribadi dan usaha (PPh, PPN) dengan
+                            mudah, tepat waktu, dan sesuai regulasi DJP terbaru.
+                        </div>
+                        <div class="layanan-badge badge-main">
+                            <i class="fas fa-shield-alt"></i> <span>Pajak &
+                                Compliance</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Konsultasi & Pelatihan -->
+                    <div class="layanan-card"
+                        style="--card-accent:linear-gradient(90deg,#10b981,#34d399);">
+                        <div class="layanan-icon-wrap"
+                            style="background:linear-gradient(135deg,#059669,#10b981);">
+                            <i class="fas fa-chalkboard-teacher text-white"></i>
+                        </div>
+                        <div class="layanan-title"
+                            data-translate="layanan4Title">Konsultasi &
+                            Pelatihan</div>
+                        <div class="layanan-desc" data-translate="layanan4Desc">
+                            Konsultasi akuntansi dan pajak langsung dengan ahli.
+                            Termasuk pelatihan on-site agar tim Anda mahir
+                            mengelola keuangan.
+                        </div>
+                        <div class="layanan-badge badge-new">
+                            <i class="fas fa-users"></i> <span>On-Site
+                                Training</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Legalitas Usaha -->
+                    <div class="layanan-card"
+                        style="--card-accent:linear-gradient(90deg,#ef4444,#f87171);">
+                        <div class="layanan-icon-wrap"
+                            style="background:linear-gradient(135deg,#dc2626,#ef4444);">
+                            <i class="fas fa-stamp text-white"></i>
+                        </div>
+                        <div class="layanan-title"
+                            data-translate="layanan5Title">Legalitas Usaha</div>
+                        <div class="layanan-desc" data-translate="layanan5Desc">
+                            Pendaftaran merek, NIB, NPWP usaha, dan berbagai
+                            kebutuhan legalitas bisnis Anda — cepat, tepat, dan
+                            terpercaya.
+                        </div>
+                        <div class="layanan-badge badge-main">
+                            <i class="fas fa-certificate"></i> <span>NIB · NPWP
+                                · Merek</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Kursus SPT PPh Badan -->
+                    <div class="layanan-card"
+                        style="--card-accent:linear-gradient(90deg,#06b6d4,#67e8f9);">
+                        <div class="layanan-icon-wrap"
+                            style="background:linear-gradient(135deg,#0891b2,#06b6d4);">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <div class="layanan-title"
+                            data-translate="layanan6Title">Kursus SPT PPh
+                            Badan</div>
+                        <div class="layanan-desc" data-translate="layanan6Desc">
+                            Kursus profesional penyusunan SPT PPh Badan yang
+                            tepat dan efisien. Cocok untuk akuntan, manajer
+                            keuangan, dan pemilik usaha.
+                        </div>
+                        <div class="layanan-badge badge-new">
+                            <i class="fas fa-award"></i> <span>Kursus
+                                Profesional</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA konsultasi -->
+                <div class="text-center mt-10">
+                    <p class="text-slate-400 text-sm mb-4"
+                        data-translate="layananCtaDesc">
+                        Butuh layanan di atas? Konsultasikan kebutuhan Anda
+                        dengan tim kami — gratis!
+                    </p>
+                    <a
+                        href="https://wa.me/6287725113689?text=Halo%2C%20saya%20ingin%20konsultasi%20layanan%20PT.%20Integrasindo%20Multi%20Kreasi"
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-400 text-white font-bold px-7 py-3 rounded-full shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300 text-sm">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span data-translate="layananCtaBtn">Konsultasi Gratis
+                            via WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wave divider -->
+        <div class="wave-divider wave-down bg-white">
+            <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,32 C240,8 720,48 1440,20 L1440,48 L0,48 Z"
+                    fill="#f8fafc" />
+            </svg>
+        </div>
 
         <!-- ══ PRODUK TABS ══════════════════════════════════════════════════════ -->
-        <section id="produk-tabs" class="py-10 bg-white">
+        <section id="produk-tabs" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-8">
                     <div
@@ -322,12 +541,14 @@
                     </div>
                     <h2
                         class="text-3xl md:text-4xl font-bold text-gray-800 mb-2"
-                        data-translate="appsTitle">Satu Ekosistem, Dua Solusi
-                        Bisnis</h2>
+                        data-translate="appsTitle">
+                        Satu Ekosistem, Dua Solusi Bisnis
+                    </h2>
                     <p class="text-gray-500 max-w-xl mx-auto text-sm"
-                        data-translate="appsSubtitle">Pilih sesuai kebutuhan,
-                        atau gunakan keduanya untuk bisnis yang lebih
-                        lengkap</p>
+                        data-translate="appsSubtitle">
+                        Pilih sesuai kebutuhan, atau gunakan keduanya untuk
+                        bisnis yang lebih lengkap
+                    </p>
                 </div>
 
                 <!-- Tab switcher -->
@@ -349,13 +570,11 @@
                     </div>
                 </div>
 
-                <!-- ── TAB: Akun Digi ──────────────────────────────────── -->
+                <!-- Tab Content: Akun Digi -->
                 <div id="tab-acct" class="tab-panel active">
-
-                    <!-- App card + features summary -->
                     <div
                         class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                        <!-- Card kiri -->
+                        <!-- App Card -->
                         <div
                             class="app-card acct-card bg-white rounded-2xl shadow-lg border-2 border-blue-100 overflow-hidden">
                             <div
@@ -376,32 +595,44 @@
                                     Digi</h3>
                                 <p
                                     class="text-gray-500 text-sm mb-4 leading-relaxed"
-                                    data-translate="app1Desc">Aplikasi desktop
-                                    akuntansi lengkap untuk UMKM, koperasi, dan
-                                    organisasi. 100% offline, install sekali
-                                    pakai selamanya.</p>
+                                    data-translate="app1Desc">
+                                    Aplikasi desktop akuntansi lengkap untuk
+                                    UMKM, koperasi, dan organisasi. 100%
+                                    offline, install sekali pakai selamanya.
+                                </p>
                                 <ul class="space-y-1.5 mb-5">
                                     <li
-                                        class="flex items-center gap-2 text-gray-600 text-sm"><i
-                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i><span
+                                        class="flex items-center gap-2 text-gray-600 text-sm">
+                                        <i
+                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i>
+                                        <span
                                             data-translate="app1Feature1">Laporan
-                                            Keuangan Otomatis</span></li>
+                                            Keuangan Otomatis</span>
+                                    </li>
                                     <li
-                                        class="flex items-center gap-2 text-gray-600 text-sm"><i
-                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i><span
+                                        class="flex items-center gap-2 text-gray-600 text-sm">
+                                        <i
+                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i>
+                                        <span
                                             data-translate="app1Feature2">Piutang
-                                            & Hutang Terintegrasi</span></li>
+                                            & Hutang Terintegrasi</span>
+                                    </li>
                                     <li
-                                        class="flex items-center gap-2 text-gray-600 text-sm"><i
-                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i><span
-                                            data-translate="app1Feature3">4
+                                        class="flex items-center gap-2 text-gray-600 text-sm">
+                                        <i
+                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i>
+                                        <span data-translate="app1Feature3">4
                                             Model: Basic, Lengkap, Retail,
-                                            Manufaktur</span></li>
+                                            Manufaktur</span>
+                                    </li>
                                     <li
-                                        class="flex items-center gap-2 text-gray-600 text-sm"><i
-                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i><span
+                                        class="flex items-center gap-2 text-gray-600 text-sm">
+                                        <i
+                                            class="fas fa-check-circle text-blue-500 flex-shrink-0"></i>
+                                        <span
                                             data-translate="app1Feature4">Export
-                                            PDF & Excel</span></li>
+                                            PDF & Excel</span>
+                                    </li>
                                 </ul>
                                 <div
                                     class="bg-blue-50 rounded-xl px-4 py-2.5 mb-4 flex items-center justify-between">
@@ -419,17 +650,19 @@
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         class="flex-1 text-center bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bold py-2.5 rounded-xl hover:from-blue-800 hover:to-blue-600 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
-                                        data-translate="app1DemoBtn">Preview
-                                        Demo</a>
+                                        data-translate="app1DemoBtn">
+                                        Preview Demo
+                                    </a>
                                     <a href="#model-comparison"
                                         class="flex-1 text-center border-2 border-blue-400 text-blue-600 font-bold py-2.5 rounded-xl hover:bg-blue-50 transition-all duration-300 text-sm"
-                                        data-translate="app1ModelBtn">Lihat
-                                        Model</a>
+                                        data-translate="app1ModelBtn">
+                                        Lihat Model
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Video preview kanan -->
+                        <!-- Video Preview -->
                         <div>
                             <div class="mb-3 text-center">
                                 <span class="preview-badge text-sm px-4 py-1.5"
@@ -446,10 +679,14 @@
                                             allow="autoplay" allowfullscreen
                                             loading="lazy"></iframe>
                                         <div id="play-overlay">
-                                            <div class="play-glow"><div><i
-                                                        class="fas fa-play"></i></div></div>
-                                            <div class="video-duration"><i
-                                                    class="fas fa-stopwatch"></i><span>2:35</span></div>
+                                            <div class="play-glow">
+                                                <div><i
+                                                        class="fas fa-play"></i></div>
+                                            </div>
+                                            <div class="video-duration">
+                                                <i class="fas fa-stopwatch"></i>
+                                                <span>2:35</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -460,24 +697,26 @@
                                 <a href="https://www.youtube.com/@InniAkunDigi"
                                     target="_blank" rel="noopener noreferrer"
                                     class="text-blue-600 hover:text-blue-800 font-semibold underline ml-1"
-                                    data-translate="ourYouTubeChannel">Channel
-                                    YouTube kami</a>
+                                    data-translate="ourYouTubeChannel">
+                                    Channel YouTube kami
+                                </a>
                             </p>
                         </div>
                     </div>
 
-                    <!-- Feature grid Akun Digi -->
+                    <!-- Features Grid -->
                     <div class="max-w-5xl mx-auto">
                         <h3
                             class="text-xl font-bold text-gray-800 mb-5 text-center"
-                            data-translate="featuresTitle">Fitur Aplikasi inni
-                            Akun Digi</h3>
+                            data-translate="featuresTitle">
+                            Fitur Aplikasi inni Akun Digi
+                        </h3>
                         <div
                             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
                             id="features-grid"></div>
                     </div>
 
-                    <!-- CTA Akun Digi -->
+                    <!-- Demo CTA -->
                     <div
                         class="mt-10 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-2xl p-8 relative overflow-hidden max-w-5xl mx-auto">
                         <div
@@ -504,34 +743,42 @@
                                     Sendiri!</span>
                             </h2>
                             <p class="text-blue-100 mb-5 font-semibold"
-                                data-translate="demoCtaSubtitle">Preview semua
-                                fitur aplikasi desktop secara gratis</p>
+                                data-translate="demoCtaSubtitle">
+                                Preview semua fitur aplikasi desktop secara
+                                gratis
+                            </p>
                             <div
                                 class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 max-w-2xl mx-auto">
-                                <div class="demo-feature-card"><i
-                                        class="fas fa-check-circle text-green-400 text-xl mb-1"></i><p
-                                        class="font-bold text-white text-sm"
+                                <div class="demo-feature-card">
+                                    <i
+                                        class="fas fa-check-circle text-green-400 text-xl mb-1"></i>
+                                    <p class="font-bold text-white text-sm"
                                         data-translate="demoFeature1">100%
-                                        Gratis</p><p
-                                        class="text-xs text-blue-200"
+                                        Gratis</p>
+                                    <p class="text-xs text-blue-200"
                                         data-translate="demoFeature1Desc">Tidak
-                                        perlu kartu kredit</p></div>
-                                <div class="demo-feature-card"><i
-                                        class="fas fa-clock text-yellow-300 text-xl mb-1"></i><p
-                                        class="font-bold text-white text-sm"
+                                        perlu kartu kredit</p>
+                                </div>
+                                <div class="demo-feature-card">
+                                    <i
+                                        class="fas fa-clock text-yellow-300 text-xl mb-1"></i>
+                                    <p class="font-bold text-white text-sm"
                                         data-translate="demoFeature2">Akses
-                                        Instan</p><p
-                                        class="text-xs text-blue-200"
+                                        Instan</p>
+                                    <p class="text-xs text-blue-200"
                                         data-translate="demoFeature2Desc">Tanpa
-                                        registrasi/login</p></div>
-                                <div class="demo-feature-card"><i
-                                        class="fas fa-star text-yellow-300 text-xl mb-1"></i><p
-                                        class="font-bold text-white text-sm"
+                                        registrasi/login</p>
+                                </div>
+                                <div class="demo-feature-card">
+                                    <i
+                                        class="fas fa-star text-yellow-300 text-xl mb-1"></i>
+                                    <p class="font-bold text-white text-sm"
                                         data-translate="demoFeature3">Fitur
-                                        Lengkap</p><p
-                                        class="text-xs text-blue-200"
+                                        Lengkap</p>
+                                    <p class="text-xs text-blue-200"
                                         data-translate="demoFeature3Desc">Semua
-                                        menu bisa dicoba*</p></div>
+                                        menu bisa dicoba*</p>
+                                </div>
                             </div>
                             <a href="https://www.demo.inniakundigi.co.id/"
                                 target="_blank" rel="noopener noreferrer"
@@ -545,25 +792,18 @@
                             </a>
                             <div class="demo-disclaimer">
                                 <i class="fas fa-info-circle mr-1"></i>
-                                <span data-translate="demoDisclaimer">*Demo
-                                    ONLINE ini hanya untuk preview fitur.
+                                <span data-translate="demoDisclaimer">
+                                    *Demo ONLINE ini hanya untuk preview fitur.
                                     Aplikasi ASLI adalah desktop app yang 100%
                                     offline — data tersimpan permanen di
                                     komputer, tidak ada batasan fitur, dan bisa
-                                    backup/restore kapan saja.</span>
+                                    backup/restore kapan saja.
+                                </span>
                             </div>
-                            <p class="text-blue-100 mt-4 text-sm">
-                                <span data-translate="afterDemo">Sudah puas
-                                    mencoba?</span>
-                                <a href="#model-comparison"
-                                    class="text-yellow-300 font-bold hover:text-yellow-200 underline ml-1"
-                                    data-translate="compareModels">Bandingkan
-                                    paket & pilih yang sesuai →</a>
-                            </p>
                         </div>
                     </div>
 
-                    <!-- Demo vs Full App Comparison -->
+                    <!-- Demo vs Full Comparison -->
                     <div class="mt-8 max-w-5xl mx-auto">
                         <div
                             class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 border-2 border-blue-100">
@@ -580,19 +820,15 @@
                                         <tr>
                                             <th
                                                 class="py-3 px-4 text-left font-bold text-gray-700 rounded-tl-xl"
-                                                data-translate="demoVsAspect">
-                                                Aspek
-                                            </th>
+                                                data-translate="demoVsAspect">Aspek</th>
                                             <th
                                                 class="py-3 px-4 text-center font-bold text-orange-600"
-                                                data-translate="demoVsOnlineHeader">
-                                                Demo Online (Preview)
-                                            </th>
+                                                data-translate="demoVsOnlineHeader">Demo
+                                                Online (Preview)</th>
                                             <th
                                                 class="py-3 px-4 text-center font-bold text-green-600 rounded-tr-xl"
-                                                data-translate="demoVsDesktopHeader">
-                                                Aplikasi Desktop Asli
-                                            </th>
+                                                data-translate="demoVsDesktopHeader">Aplikasi
+                                                Desktop Asli</th>
                                         </tr>
                                     </thead>
                                     <tbody
@@ -600,123 +836,102 @@
                                         <tr>
                                             <td
                                                 class="py-3 px-4 font-medium text-gray-700"
-                                                data-translate="demoVsInternet">
-                                                Koneksi Internet
-                                            </td>
+                                                data-translate="demoVsInternet">Koneksi
+                                                Internet</td>
                                             <td class="py-3 px-4 text-center">
                                                 <span class="text-orange-600"
-                                                    data-translate="demoVsInternetOnline">
-                                                    ✓ Wajib online
-                                                </span>
+                                                    data-translate="demoVsInternetOnline">✓
+                                                    Wajib online</span>
                                             </td>
                                             <td class="py-3 px-4 text-center">
                                                 <span
                                                     class="text-green-600 font-bold"
-                                                    data-translate="demoVsInternetOffline">
-                                                    ✓ 100% offline
-                                                </span>
+                                                    data-translate="demoVsInternetOffline">✓
+                                                    100% offline</span>
                                             </td>
                                         </tr>
                                         <tr class="bg-gray-50">
                                             <td
                                                 class="py-3 px-4 font-medium text-gray-700"
-                                                data-translate="demoVsDataStorage">
-                                                Penyimpanan Data
-                                            </td>
+                                                data-translate="demoVsDataStorage">Penyimpanan
+                                                Data</td>
                                             <td class="py-3 px-4 text-center">
                                                 <span class="text-orange-600"
-                                                    data-translate="demoVsDataNotPermanent">
-                                                    Tidak permanen
-                                                </span>
+                                                    data-translate="demoVsDataNotPermanent">Tidak
+                                                    permanen</span>
                                             </td>
                                             <td class="py-3 px-4 text-center">
                                                 <span
                                                     class="text-green-600 font-bold"
-                                                    data-translate="demoVsDataPermanent">
-                                                    ✓ Permanen di PC
-                                                </span>
+                                                    data-translate="demoVsDataPermanent">✓
+                                                    Permanen di PC</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td
                                                 class="py-3 px-4 font-medium text-gray-700"
-                                                data-translate="demoVsFullFeatures">
-                                                Fitur Lengkap
-                                            </td>
+                                                data-translate="demoVsFullFeatures">Fitur
+                                                Lengkap</td>
                                             <td class="py-3 px-4 text-center">
                                                 <span class="text-orange-600"
-                                                    data-translate="demoVsFeaturesLimited">
-                                                    Sebagian dibatasi
-                                                </span>
+                                                    data-translate="demoVsFeaturesLimited">Sebagian
+                                                    dibatasi</span>
                                             </td>
                                             <td class="py-3 px-4 text-center">
                                                 <span
                                                     class="text-green-600 font-bold"
-                                                    data-translate="demoVsFeaturesFull">
-                                                    ✓ 100% aktif
-                                                </span>
+                                                    data-translate="demoVsFeaturesFull">✓
+                                                    100% aktif</span>
                                             </td>
                                         </tr>
                                         <tr class="bg-gray-50">
                                             <td
                                                 class="py-3 px-4 font-medium text-gray-700"
-                                                data-translate="demoVsBackupRestore">
-                                                Backup/Restore
-                                            </td>
+                                                data-translate="demoVsBackupRestore">Backup/Restore</td>
                                             <td class="py-3 px-4 text-center">
                                                 <span class="text-orange-600"
-                                                    data-translate="demoVsBackupNo">
-                                                    ✗ Tidak bisa
-                                                </span>
+                                                    data-translate="demoVsBackupNo">✗
+                                                    Tidak bisa</span>
                                             </td>
                                             <td class="py-3 px-4 text-center">
                                                 <span
                                                     class="text-green-600 font-bold"
-                                                    data-translate="demoVsBackupYes">
-                                                    ✓ 1-click backup
-                                                </span>
+                                                    data-translate="demoVsBackupYes">✓
+                                                    1-click backup</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td
                                                 class="py-3 px-4 font-medium text-gray-700"
-                                                data-translate="demoVsSpeed">
-                                                Kecepatan
-                                            </td>
+                                                data-translate="demoVsSpeed">Kecepatan</td>
                                             <td class="py-3 px-4 text-center">
                                                 <span class="text-orange-600"
-                                                    data-translate="demoVsSpeedInternet">
-                                                    Tergantung internet
-                                                </span>
+                                                    data-translate="demoVsSpeedInternet">Tergantung
+                                                    internet</span>
                                             </td>
                                             <td class="py-3 px-4 text-center">
                                                 <span
                                                     class="text-green-600 font-bold"
-                                                    data-translate="demoVsSpeedFast">
-                                                    ✓ Super cepat
-                                                </span>
+                                                    data-translate="demoVsSpeedFast">✓
+                                                    Super cepat</span>
                                             </td>
                                         </tr>
                                         <tr class="bg-gray-50">
                                             <td
                                                 class="py-3 px-4 font-medium text-gray-700 rounded-bl-xl"
-                                                data-translate="demoVsCost">
-                                                Biaya
-                                            </td>
+                                                data-translate="demoVsCost">Biaya</td>
                                             <td class="py-3 px-4 text-center">
                                                 <span
                                                     class="text-green-600 font-bold"
-                                                    data-translate="demoVsCostFree">
-                                                    ✓ Gratis
-                                                </span>
+                                                    data-translate="demoVsCostFree">✓
+                                                    Gratis</span>
                                             </td>
                                             <td
                                                 class="py-3 px-4 text-center rounded-br-xl">
                                                 <span
                                                     class="text-blue-600 font-bold"
-                                                    data-translate="demoVsCostOneTime">
-                                                    Investasi 1x
-                                                </span>
+                                                    data-translate="demoVsCostOneTime">Investasi
+                                                    1x</span>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -725,21 +940,19 @@
                             <p class="text-center text-xs text-gray-500 mt-4">
                                 <i
                                     class="fas fa-lightbulb text-yellow-500 mr-1"></i>
-                                <span data-translate="demoVsFullNote">Demo
-                                    online ini HANYA untuk melihat tampilan &
-                                    fitur. Untuk pemakaian bisnis sebenarnya,
+                                <span data-translate="demoVsFullNote">
+                                    Demo online ini HANYA untuk melihat tampilan
+                                    & fitur. Untuk pemakaian bisnis sebenarnya,
                                     gunakan aplikasi desktop yang 100% offline &
-                                    unlimited.</span>
+                                    unlimited.
+                                </span>
                             </p>
                         </div>
                     </div>
+                </div>
 
-                </div><!-- /tab-acct -->
-
-                <!-- ── TAB: POS ─────────────────────────────────────────── -->
+                <!-- Tab Content: POS -->
                 <div id="tab-pos" class="tab-panel">
-
-                    <!-- POS info card -->
                     <div class="max-w-5xl mx-auto mb-8">
                         <div
                             class="pos-info-card bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-green-200">
@@ -768,61 +981,79 @@
                                                 POS</h3>
                                             <span
                                                 class="inline-flex items-center gap-1 bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full">
-                                                <i class="fas fa-bolt"></i><span
+                                                <i class="fas fa-bolt"></i>
+                                                <span
                                                     data-translate="posModelSingle">1
                                                     Model — All Inclusive</span>
                                             </span>
                                         </div>
                                         <p
                                             class="text-gray-500 mb-4 text-sm leading-relaxed max-w-xl"
-                                            data-translate="posModelDesc">inni
-                                            POS hadir dalam satu paket lengkap —
-                                            tidak ada pilihan model yang
-                                            membingungkan. Semua fitur kasir,
-                                            stok, dan laporan sudah tersedia
-                                            dalam satu harga.</p>
+                                            data-translate="posModelDesc">
+                                            inni POS hadir dalam satu paket
+                                            lengkap — tidak ada pilihan model
+                                            yang membingungkan. Semua fitur
+                                            kasir, stok, dan laporan sudah
+                                            tersedia dalam satu harga.
+                                        </p>
                                         <div
                                             class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-shopping-cart text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-shopping-cart text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill1">Transaksi
-                                                    Kasir</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-barcode text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    Kasir</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-barcode text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill2">Scan
-                                                    Barcode</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-wallet text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    Barcode</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-wallet text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill3">Multi
-                                                    Payment</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-boxes text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    Payment</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-boxes text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill4">Stok
-                                                    & Gudang</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-user-friends text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    & Gudang</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-user-friends text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill5">Data
-                                                    Pelanggan</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-undo-alt text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    Pelanggan</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-undo-alt text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill6">Retur
-                                                    Penjualan</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-chart-bar text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    Penjualan</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-chart-bar text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill7">Laporan
-                                                    Penjualan</span></div>
-                                            <div class="pos-feature-pill"><i
-                                                    class="fas fa-stream text-green-500 mr-1.5"></i><span
-                                                    class="text-xs"
+                                                    Penjualan</span>
+                                            </div>
+                                            <div class="pos-feature-pill">
+                                                <i
+                                                    class="fas fa-stream text-green-500 mr-1.5"></i>
+                                                <span class="text-xs"
                                                     data-translate="posPill8">Laporan
-                                                    Arus Kas</span></div>
+                                                    Arus Kas</span>
+                                            </div>
                                         </div>
                                         <div
                                             class="flex flex-col sm:flex-row items-center gap-3">
@@ -846,15 +1077,16 @@
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     class="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-green-300 hover:scale-105 transition-all text-sm">
-                                                    <i
-                                                        class="fas fa-eye"></i><span
+                                                    <i class="fas fa-eye"></i>
+                                                    <span
                                                         data-translate="app2DemoBtn">Preview
                                                         Demo</span>
                                                 </a>
                                                 <a href="#contact"
                                                     class="inline-flex items-center gap-2 border-2 border-green-400 text-green-600 font-bold px-5 py-2.5 rounded-xl hover:bg-green-50 transition-all text-sm">
                                                     <i
-                                                        class="fas fa-headset"></i><span
+                                                        class="fas fa-headset"></i>
+                                                    <span
                                                         data-translate="contactSales">Hubungi
                                                         Sales</span>
                                                 </a>
@@ -866,19 +1098,19 @@
                         </div>
                     </div>
 
-                    <!-- POS feature grid -->
+                    <!-- POS Features Grid -->
                     <div class="max-w-5xl mx-auto mb-8">
                         <h3
                             class="text-xl font-bold text-gray-800 mb-5 text-center"
-                            data-translate="posDemoFeatureTitle">Fitur Aplikasi
-                            POS
-                            inni</h3>
+                            data-translate="posDemoFeatureTitle">
+                            Fitur Aplikasi POS inni
+                        </h3>
                         <div
                             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
                             id="pos-features-grid"></div>
                     </div>
 
-                    <!-- CTA POS -->
+                    <!-- POS Demo CTA -->
                     <div
                         class="mt-6 bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 rounded-2xl p-8 relative overflow-hidden max-w-5xl mx-auto">
                         <div
@@ -906,33 +1138,41 @@
                                     Registrasi!</span>
                             </h2>
                             <p class="text-green-100 mb-5 font-semibold"
-                                data-translate="posDemoSubtitle">Preview
-                                aplikasi kasir desktop untuk bisnis retail
-                                Anda</p>
+                                data-translate="posDemoSubtitle">
+                                Preview aplikasi kasir desktop untuk bisnis
+                                retail Anda
+                            </p>
                             <div
                                 class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 max-w-2xl mx-auto">
-                                <div class="demo-feature-card"><i
-                                        class="fas fa-check-circle text-green-400 text-xl mb-1"></i><p
-                                        class="font-bold text-white text-sm"
+                                <div class="demo-feature-card">
+                                    <i
+                                        class="fas fa-check-circle text-green-400 text-xl mb-1"></i>
+                                    <p class="font-bold text-white text-sm"
                                         data-translate="demoFeature1">100%
-                                        Gratis</p><p
-                                        class="text-xs text-green-200"
+                                        Gratis</p>
+                                    <p class="text-xs text-green-200"
                                         data-translate="demoFeature1Desc">Tidak
-                                        perlu kartu kredit</p></div>
-                                <div class="demo-feature-card"><i
-                                        class="fas fa-bolt text-yellow-300 text-xl mb-1"></i><p
-                                        class="font-bold text-white text-sm"
+                                        perlu kartu kredit</p>
+                                </div>
+                                <div class="demo-feature-card">
+                                    <i
+                                        class="fas fa-bolt text-yellow-300 text-xl mb-1"></i>
+                                    <p class="font-bold text-white text-sm"
                                         data-translate="demoFeature2">Akses
-                                        Instan</p><p
-                                        class="text-xs text-green-200"
+                                        Instan</p>
+                                    <p class="text-xs text-green-200"
                                         data-translate="demoFeature2Desc">Tanpa
-                                        registrasi/login</p></div>
-                                <div class="demo-feature-card"><i
-                                        class="fas fa-cash-register text-yellow-300 text-xl mb-1"></i><p
+                                        registrasi/login</p>
+                                </div>
+                                <div class="demo-feature-card">
+                                    <i
+                                        class="fas fa-cash-register text-yellow-300 text-xl mb-1"></i>
+                                    <p
                                         class="font-bold text-white text-sm">Kasir
-                                        Lengkap</p><p
-                                        class="text-xs text-green-200">Transaksi,
-                                        stok, laporan*</p></div>
+                                        Lengkap</p>
+                                    <p class="text-xs text-green-200">Transaksi,
+                                        stok, laporan*</p>
+                                </div>
                             </div>
                             <a href="https://demo-pos.inniakundigi.co.id/"
                                 target="_blank" rel="noopener noreferrer"
@@ -946,18 +1186,19 @@
                             </a>
                             <div class="demo-disclaimer">
                                 <i class="fas fa-info-circle mr-1"></i>
-                                <span data-translate="posDemoDisclaimer">*Demo
-                                    ONLINE ini hanya untuk preview fitur.
+                                <span data-translate="posDemoDisclaimer">
+                                    *Demo ONLINE ini hanya untuk preview fitur.
                                     Aplikasi ASLI adalah desktop app yang 100%
                                     offline — data tersimpan permanen di
                                     komputer, tidak ada batasan fitur, dan bisa
-                                    backup/restore kapan saja.</span>
+                                    backup/restore kapan saja.
+                                </span>
                             </div>
                         </div>
                     </div>
-                </div><!-- /tab-pos -->
+                </div>
 
-                <!-- Combine note -->
+                <!-- Combine Note -->
                 <div class="mt-8 text-center max-w-5xl mx-auto">
                     <div
                         class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 via-white to-green-50 border border-gray-200 rounded-2xl px-5 py-3 shadow-sm">
@@ -970,23 +1211,22 @@
                         </p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Wave divider produk → how it works -->
-        <div class="wave-divider wave-down bg-white">
+        <!-- Wave divider -->
+        <div class="wave-divider wave-down bg-gray-50">
             <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M0,16 C480,48 960,0 1440,32 L1440,48 L0,48 Z"
-                    fill="#f8fafc" />
+                    fill="#ffffff" />
             </svg>
         </div>
 
-        <!-- ══ HOW IT WORKS ═════════════════════════════════════════════════════ -->
-        <section id="how-it-works" class="py-10 bg-gray-50">
+        <!-- ══ HOW IT WORKS + REQUIREMENTS (COMBINED) ══════════════════════════ -->
+        <section id="how-it-works" class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
+                <div class="text-center mb-12">
                     <div
                         class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200 text-blue-800 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-3">
                         <i class="fas fa-question-circle"></i>
@@ -1007,421 +1247,347 @@
                 </div>
 
                 <div
-                    class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <!-- Step 1 -->
-                    <div
-                        class="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <span
-                                class="text-2xl font-black text-white">1</span>
+                    class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- LEFT: Steps + Info Cards (2 cols) -->
+                    <div class="lg:col-span-2 space-y-6">
+
+                        <!-- 3 Steps -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-100 hover:border-blue-300 transition-all hover:shadow-lg">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span
+                                        class="text-2xl font-black text-white">1</span>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <i
+                                        class="fas fa-download text-2xl text-blue-600"></i>
+                                </div>
+                                <h3 class="font-bold text-gray-800 mb-2"
+                                    data-translate="step1Title">Download
+                                    Installer</h3>
+                                <p class="text-sm text-gray-600"
+                                    data-translate="step1Desc">
+                                    Setelah pembayaran, terima link download
+                                    file .exe (150-300 MB) + license key via
+                                    email
+                                </p>
+                            </div>
+
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border-2 border-purple-100 hover:border-purple-300 transition-all hover:shadow-lg">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span
+                                        class="text-2xl font-black text-white">2</span>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <i
+                                        class="fas fa-laptop-code text-2xl text-purple-600"></i>
+                                </div>
+                                <h3 class="font-bold text-gray-800 mb-2"
+                                    data-translate="step2Title">Install di
+                                    Windows</h3>
+                                <p class="text-sm text-gray-600"
+                                    data-translate="step2Desc">
+                                    Double-click installer → Next → Next →
+                                    Finish. Seperti install software biasa, 5-10
+                                    menit selesai
+                                </p>
+                            </div>
+
+                            <div
+                                class="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-100 hover:border-green-300 transition-all hover:shadow-lg">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                    <span
+                                        class="text-2xl font-black text-white">3</span>
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                    <i
+                                        class="fas fa-rocket text-2xl text-green-600"></i>
+                                </div>
+                                <h3 class="font-bold text-gray-800 mb-2"
+                                    data-translate="step3Title">Langsung
+                                    Pakai!</h3>
+                                <p class="text-sm text-gray-600"
+                                    data-translate="step3Desc">
+                                    Buka aplikasi dari desktop shortcut, input
+                                    license key, dan mulai kelola keuangan —
+                                    100% offline!
+                                </p>
+                            </div>
                         </div>
-                        <div
-                            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                            <i
-                                class="fas fa-download text-2xl text-blue-600"></i>
+
+                        <!-- 6 Info Cards (2 rows x 3 cols) -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div
+                                class="flex items-start gap-3 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+                                <i
+                                    class="fas fa-check-circle text-blue-600 text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="text-sm">
+                                    <p class="font-bold text-blue-900 mb-1"
+                                        data-translate="howItWorksCard1Title">Data
+                                        100% Lokal</p>
+                                    <p class="text-blue-700"
+                                        data-translate="howItWorksCard1Desc">Semua
+                                        data tersimpan di komputer Anda, tidak
+                                        ada yang dikirim ke cloud atau internet.
+                                        Privacy & security maksimal.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-3 p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
+                                <i
+                                    class="fas fa-wifi-slash text-green-600 text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="text-sm">
+                                    <p class="font-bold text-green-900 mb-1"
+                                        data-translate="howItWorksCard2Title">Tidak
+                                        Butuh Internet</p>
+                                    <p class="text-green-700"
+                                        data-translate="howItWorksCard2Desc">Aplikasi
+                                        jalan normal tanpa koneksi internet.
+                                        Cocok untuk area dengan internet tidak
+                                        stabil atau kantor tanpa WiFi.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-3 p-4 bg-purple-50 border-l-4 border-purple-500 rounded-lg">
+                                <i
+                                    class="fas fa-infinity text-purple-600 text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="text-sm">
+                                    <p class="font-bold text-purple-900 mb-1"
+                                        data-translate="howItWorksCard3Title">Pakai
+                                        Selamanya</p>
+                                    <p class="text-purple-700"
+                                        data-translate="howItWorksCard3Desc">Bayar
+                                        sekali, pakai selamanya. Tidak ada biaya
+                                        bulanan/tahunan. Update aplikasi gratis
+                                        & opsional.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-3 p-4 bg-orange-50 border-l-4 border-orange-500 rounded-lg">
+                                <i
+                                    class="fas fa-network-wired text-orange-600 text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="text-sm">
+                                    <p class="font-bold text-orange-900 mb-1"
+                                        data-translate="howItWorksCard4Title">Multi-Komputer</p>
+                                    <p class="text-orange-700"
+                                        data-translate="howItWorksCard4Desc">1
+                                        lisensi untuk 1 komputer server.
+                                        Komputer lain di kantor bisa akses via
+                                        LAN tanpa perlu install ulang atau
+                                        lisensi tambahan.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-3 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-lg">
+                                <i
+                                    class="fas fa-shield-alt text-amber-600 text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="text-sm">
+                                    <p
+                                        class="font-bold text-amber-900 mb-1">License
+                                        Protection</p>
+                                    <p class="text-amber-700">License key
+                                        terikat dengan Machine ID komputer Anda
+                                        untuk mencegah pembajakan. Admin dapat
+                                        membantu transfer license saat ganti
+                                        PC.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-3 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-lg">
+                                <i
+                                    class="fas fa-database text-indigo-600 text-xl mt-0.5 flex-shrink-0"></i>
+                                <div class="text-sm">
+                                    <p class="font-bold text-indigo-900 mb-1"
+                                        data-translate="howItWorksCard6Title">Backup
+                                        Mudah</p>
+                                    <p class="text-indigo-700"
+                                        data-translate="howItWorksCard6Desc">Fitur
+                                        backup 1-click untuk export semua data
+                                        ke file .sql. Restore kapan saja tanpa
+                                        ribet.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-bold text-gray-800 mb-2"
-                            data-translate="step1Title">Download Installer</h3>
-                        <p class="text-sm text-gray-600"
-                            data-translate="step1Desc">
-                            Setelah pembayaran, terima link download file .exe
-                            (150-300 MB) + license key via email
-                        </p>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div
-                        class="text-center p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border-2 border-purple-100 hover:border-purple-300 transition-all hover:shadow-lg">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <span
-                                class="text-2xl font-black text-white">2</span>
-                        </div>
-                        <div
-                            class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                            <i
-                                class="fas fa-laptop-code text-2xl text-purple-600"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-800 mb-2"
-                            data-translate="step2Title">Install di Windows</h3>
-                        <p class="text-sm text-gray-600"
-                            data-translate="step2Desc">
-                            Double-click installer → Next → Next → Finish.
-                            Seperti install software biasa, 5-10 menit selesai
-                        </p>
-                    </div>
+                    <!-- RIGHT: System Requirements (Sticky Side Card) -->
+                    <div class="lg:sticky lg:top-24 h-fit space-y-4">
 
-                    <!-- Step 3 -->
-                    <div
-                        class="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-100 hover:border-green-300 transition-all hover:shadow-lg">
+                        <!-- Requirements Card -->
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <span
-                                class="text-2xl font-black text-white">3</span>
-                        </div>
-                        <div
-                            class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                            <i
-                                class="fas fa-rocket text-2xl text-green-600"></i>
-                        </div>
-                        <h3 class="font-bold text-gray-800 mb-2"
-                            data-translate="step3Title">Langsung Pakai!</h3>
-                        <p class="text-sm text-gray-600"
-                            data-translate="step3Desc">
-                            Buka aplikasi dari desktop shortcut, input license
-                            key, dan mulai kelola keuangan — 100% offline!
-                        </p>
-                    </div>
-                </div>
+                            class="bg-white rounded-2xl shadow-xl p-6 border-2 border-blue-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-lg">
+                                    <i
+                                        class="fas fa-server text-blue-600 mr-2"></i>
+                                    <span
+                                        data-translate="requirementsLabel">Spesifikasi
+                                        Sistem</span>
+                                </h3>
+                                <button
+                                    class="text-blue-600 hover:text-blue-800 transition-colors"
+                                    onclick="toggleRequirements()">
+                                    <i
+                                        class="fas fa-chevron-down transition-transform"
+                                        id="req-chevron"></i>
+                                </button>
+                            </div>
 
-                <!-- Info Cards -->
-                <div
-                    class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div
-                        class="flex items-start gap-3 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
-                        <i
-                            class="fas fa-check-circle text-blue-600 text-xl mt-0.5 flex-shrink-0"></i>
-                        <div class="text-sm">
-                            <p class="font-bold text-blue-900 mb-1"
-                                data-translate="howItWorksCard1Title">Data 100%
-                                Lokal</p>
-                            <p class="text-blue-700"
-                                data-translate="howItWorksCard1Desc">Semua data
-                                tersimpan di komputer Anda, tidak ada yang
-                                dikirim ke cloud atau internet. Privacy &
-                                security maksimal.</p>
+                            <div id="requirements-content" class="space-y-4">
+                                <!-- Minimal Specs -->
+                                <div
+                                    class="p-4 bg-orange-50 rounded-xl border border-orange-100">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <i
+                                            class="fas fa-laptop text-orange-600 text-lg"></i>
+                                        <h4 class="font-bold text-sm"
+                                            data-translate="minSpecs">Spesifikasi
+                                            Minimal</h4>
+                                    </div>
+                                    <ul
+                                        class="space-y-1.5 text-xs text-gray-700">
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>OS:</strong> Windows
+                                                7/8/10/11 (32-bit atau
+                                                64-bit)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>RAM:</strong> 2
+                                                GB</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>Processor:</strong>
+                                                Dual Core (Intel Celeron/AMD
+                                                Athlon)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>Storage:</strong> 500
+                                                MB space kosong</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>Resolusi:</strong>
+                                                1024x768 atau lebih</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Recommended Specs -->
+                                <div
+                                    class="p-4 bg-green-50 rounded-xl border border-green-100">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <i
+                                            class="fas fa-rocket text-green-600 text-lg"></i>
+                                        <h4 class="font-bold text-sm"
+                                            data-translate="recSpecs">Spesifikasi
+                                            Rekomendasi</h4>
+                                    </div>
+                                    <ul
+                                        class="space-y-1.5 text-xs text-gray-700">
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>OS:</strong> Windows
+                                                10/11 (64-bit)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>RAM:</strong> 4 GB
+                                                atau lebih</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>Processor:</strong>
+                                                Intel Core i3/i5 atau AMD
+                                                Ryzen</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>Storage:</strong> SSD
+                                                (untuk performa lebih
+                                                cepat)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i
+                                                class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
+                                            <span><strong>Resolusi:</strong>
+                                                1366x768 atau Full HD</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Info -->
+                                <div
+                                    class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                                    <p class="text-xs text-blue-700">
+                                        <i class="fas fa-info-circle mr-1"></i>
+                                        <span data-translate="reqNote2">
+                                            Aplikasi sudah include PHP &
+                                            database built-in — tidak perlu
+                                            install XAMPP/server terpisah
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        class="flex items-start gap-3 p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
-                        <i
-                            class="fas fa-wifi-slash text-green-600 text-xl mt-0.5 flex-shrink-0"></i>
-                        <div class="text-sm">
-                            <p class="font-bold text-green-900 mb-1"
-                                data-translate="howItWorksCard2Title">Tidak
-                                Butuh Internet</p>
-                            <p class="text-green-700"
-                                data-translate="howItWorksCard2Desc">Aplikasi
-                                jalan normal tanpa koneksi internet. Cocok untuk
-                                area dengan internet tidak stabil atau kantor
-                                tanpa WiFi.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex items-start gap-3 p-4 bg-purple-50 border-l-4 border-purple-500 rounded-lg">
-                        <i
-                            class="fas fa-infinity text-purple-600 text-xl mt-0.5 flex-shrink-0"></i>
-                        <div class="text-sm">
-                            <p class="font-bold text-purple-900 mb-1"
-                                data-translate="howItWorksCard3Title">Pakai
-                                Selamanya</p>
-                            <p class="text-purple-700"
-                                data-translate="howItWorksCard3Desc">Bayar
-                                sekali, pakai selamanya. Tidak ada biaya
-                                bulanan/tahunan. Update aplikasi gratis &
-                                opsional.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex items-start gap-3 p-4 bg-orange-50 border-l-4 border-orange-500 rounded-lg">
-                        <i
-                            class="fas fa-network-wired text-orange-600 text-xl mt-0.5 flex-shrink-0"></i>
-                        <div class="text-sm">
-                            <p class="font-bold text-orange-900 mb-1"
-                                data-translate="howItWorksCard4Title">Multi-Komputer</p>
-                            <p class="text-orange-700"
-                                data-translate="howItWorksCard4Desc">1 lisensi
-                                untuk 1 komputer server. Komputer lain di kantor
-                                bisa akses via LAN tanpa perlu install ulang
-                                atau lisensi tambahan.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex items-start gap-3 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-lg">
-                        <i
-                            class="fas fa-shield-alt text-amber-600 text-xl mt-0.5 flex-shrink-0"></i>
-                        <div class="text-sm">
-                            <p class="font-bold text-amber-900 mb-1">License
-                                Protection</p>
-                            <p class="text-amber-700">License key terikat dengan
-                                Machine ID komputer Anda untuk mencegah
-                                pembajakan. Admin dapat membantu transfer
-                                license saat ganti PC.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex items-start gap-3 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-lg">
-                        <i
-                            class="fas fa-database text-indigo-600 text-xl mt-0.5 flex-shrink-0"></i>
-                        <div class="text-sm">
-                            <p class="font-bold text-indigo-900 mb-1"
-                                data-translate="howItWorksCard6Title">Backup
-                                Mudah</p>
-                            <p class="text-indigo-700"
-                                data-translate="howItWorksCard6Desc">Fitur
-                                backup 1-click untuk export semua data ke file
-                                .sql. Restore kapan saja tanpa ribet.</p>
+
+                        <!-- License Transfer CTA -->
+                        <div
+                            class="p-4 bg-yellow-50 border-2 border-yellow-300 rounded-xl">
+                            <div class="flex items-start gap-3">
+                                <i
+                                    class="fas fa-key text-yellow-600 text-xl flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-bold text-sm mb-1"
+                                        data-translate="licenseTransferTitle">Butuh
+                                        Transfer License?</h4>
+                                    <p class="text-xs text-gray-600 mb-2"
+                                        data-translate="licenseTransferDesc">
+                                        Jika Anda perlu mengaktifkan license di
+                                        komputer baru (upgrade PC, komputer
+                                        rusak, dll), hubungi admin kami:
+                                    </p>
+                                    <a
+                                        href="https://wa.me/6287725113689?text=Halo%2C%20saya%20perlu%20bantuan%20transfer%20license%20ke%20komputer%20baru"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center gap-1 text-xs font-bold text-yellow-700 hover:text-yellow-900 transition">
+                                        <span
+                                            data-translate="licenseTransferBtn">Request
+                                            Transfer License</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- License Transfer Contact -->
-        <div class="max-w-4xl mx-auto mt-8">
-            <div
-                class="bg-yellow-50 border-2 border-yellow-300 rounded-xl p-5 shadow-md">
-                <div class="flex items-start gap-4">
-                    <div
-                        class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-key text-white text-xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-lg font-bold text-yellow-900 mb-2"
-                            data-translate="licenseTransferTitle">
-                            Butuh Transfer License?
-                        </h4>
-                        <p class="text-sm text-yellow-800 mb-3"
-                            data-translate="licenseTransferDesc">
-                            Jika Anda perlu mengaktifkan license di komputer
-                            baru (upgrade PC, komputer rusak, dll), hubungi
-                            admin kami:
-                        </p>
-                        <a
-                            href="https://wa.me/6287725113689?text=Halo%2C%20saya%20perlu%20bantuan%20transfer%20license%20ke%20komputer%20baru"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 bg-yellow-600 text-white px-5 py-2.5 rounded-lg hover:bg-yellow-700 transition font-medium text-sm">
-                            <i class="fab fa-whatsapp text-lg"></i>
-                            <span data-translate="licenseTransferBtn">Request
-                                Transfer License</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Wave divider how it works → benefits -->
-        <div class="wave-divider wave-down bg-gray-50">
-            <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,28 C360,4 1080,48 1440,14 L1440,48 L0,48 Z"
-                    fill="#fff" />
-            </svg>
-        </div>
 
-        <!-- ══ WHY INNI ══════════════════════════════════════════════════════════ -->
-        <section id="benefits" class="py-8 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-8">
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-800 mb-3 gradient-text animate-fade-in"
-                        data-translate="benefitsTitle">Mengapa Memilih
-                        inni?</h2>
-                    <p
-                        class="text-gray-600 max-w-xl mx-auto text-sm animate-fade-in-up stagger-delay-1"
-                        data-translate="benefitsSubtitle">Keunggulan yang
-                        membuat kami berbeda</p>
-                </div>
-                <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
-                    <div
-                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-1">
-                        <div
-                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3"><i
-                                class="fas fa-check-circle text-3xl text-blue-900"></i></div>
-                        <p class="text-gray-600 font-medium text-sm"
-                            data-translate="benefit1">Mudah digunakan, bahkan
-                            untuk pemula.</p>
-                    </div>
-                    <div
-                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-2">
-                        <div
-                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3"><i
-                                class="fas fa-chart-line text-3xl text-blue-900"></i></div>
-                        <p class="text-gray-600 font-medium text-sm"
-                            data-translate="benefit2">Data keuangan yang akurat
-                            dan terorganisasi.</p>
-                    </div>
-                    <div
-                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-3">
-                        <div
-                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3"><i
-                                class="fas fa-clock text-3xl text-blue-900"></i></div>
-                        <p class="text-gray-600 font-medium text-sm"
-                            data-translate="benefit3">Solusi yang hemat waktu
-                            dan biaya.</p>
-                    </div>
-                    <div
-                        class="benefit-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center animate-fade-in-up stagger-delay-4">
-                        <div
-                            class="benefit-icon inline-block p-3.5 bg-blue-100 rounded-full mb-3"><i
-                                class="fas fa-users text-3xl text-blue-900"></i></div>
-                        <p class="text-gray-600 font-medium text-sm"
-                            data-translate="benefit4">Pelatihan di lokasi untuk
-                            adopsi yang mulus.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Wave divider benefits → requirements -->
+        <!-- Wave divider -->
         <div class="wave-divider wave-down bg-white">
-            <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,32 C240,8 720,48 1440,20 L1440,48 L0,48 Z"
-                    fill="#f8fafc" />
-            </svg>
-        </div>
-
-        <!-- ══ SYSTEM REQUIREMENTS ══════════════════════════════════════════════ -->
-        <section id="requirements"
-            class="py-8 bg-gradient-to-br from-gray-50 to-blue-50">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
-                    <div class="text-center mb-8">
-                        <div
-                            class="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase mb-3">
-                            <i class="fas fa-server"></i>
-                            <span data-translate="requirementsLabel">Spesifikasi
-                                Sistem</span>
-                        </div>
-                        <h2
-                            class="text-2xl md:text-3xl font-bold text-gray-800 mb-2"
-                            data-translate="requirementsTitle">
-                            Bisa Jalan di Laptop/PC Lawas Anda!
-                        </h2>
-                        <p class="text-gray-600 text-sm"
-                            data-translate="requirementsSubtitle">
-                            Aplikasi sudah dioptimasi untuk performa ringan &
-                            cepat
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-                        <!-- Minimum -->
-                        <div
-                            class="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-200">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div
-                                    class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                                    <i
-                                        class="fas fa-laptop text-orange-600"></i>
-                                </div>
-                                <h3 class="font-bold text-gray-800"
-                                    data-translate="minSpecs">Spesifikasi
-                                    Minimal</h3>
-                            </div>
-                            <ul class="space-y-2.5 text-sm text-gray-700">
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>OS:</strong> Windows 7/8/10/11
-                                        (32-bit atau 64-bit)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>RAM:</strong> 2 GB</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>Processor:</strong> Dual Core
-                                        (Intel Celeron/AMD Athlon)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>Storage:</strong> 500 MB space
-                                        kosong</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-check-circle text-orange-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>Resolusi:</strong> 1024x768
-                                        atau lebih</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Recommended -->
-                        <div
-                            class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 shadow-lg border-2 border-green-300">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div
-                                    class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-rocket text-green-600"></i>
-                                </div>
-                                <h3 class="font-bold text-gray-800"
-                                    data-translate="recSpecs">Spesifikasi
-                                    Rekomendasi</h3>
-                            </div>
-                            <ul class="space-y-2.5 text-sm text-gray-700">
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>OS:</strong> Windows 10/11
-                                        (64-bit)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>RAM:</strong> 4 GB atau
-                                        lebih</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>Processor:</strong> Intel Core
-                                        i3/i5 atau AMD Ryzen</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>Storage:</strong> SSD (untuk
-                                        performa lebih cepat)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i
-                                        class="fas fa-star text-green-500 mt-0.5 flex-shrink-0"></i>
-                                    <span><strong>Resolusi:</strong> 1366x768
-                                        atau Full HD</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
-                        <div class="flex items-start gap-3">
-                            <i
-                                class="fas fa-info-circle text-blue-600 text-xl mt-0.5"></i>
-                            <div class="text-sm text-blue-800">
-                                <p class="font-bold mb-1"
-                                    data-translate="reqNote1">Catatan
-                                    Penting:</p>
-                                <ul class="space-y-1 text-blue-700">
-                                    <li data-translate="reqNote2">• Aplikasi
-                                        sudah include PHP & database built-in —
-                                        tidak perlu install XAMPP/server
-                                        terpisah</li>
-                                    <li data-translate="reqNote3">• Tidak perlu
-                                        install Microsoft Office — aplikasi
-                                        sudah bisa export PDF & Excel
-                                        langsung</li>
-                                    <li data-translate="reqNote4">• Untuk
-                                        multi-user dalam 1 kantor, cukup setup
-                                        LAN biasa (tidak perlu internet)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Wave divider requirements → model comparison -->
-        <div class="wave-divider wave-down bg-blue-50">
             <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M0,32 C240,8 720,48 1440,20 L1440,48 L0,48 Z"
@@ -1429,130 +1595,145 @@
             </svg>
         </div>
 
-        <!-- ══ MODEL COMPARISON ════════════════════════════════════════════════ -->
+        <!-- ══ MODEL COMPARISON (REDESIGNED) ═════════════════════════════════ -->
         <section id="model-comparison"
-            class="py-10 bg-gradient-to-br from-gray-50 to-blue-50">
+            class="py-16 bg-gradient-to-br from-blue-50 to-gray-50">
             <div class="container mx-auto px-4">
 
-                <!-- Header dengan badge accounting -->
-                <div class="flex flex-col items-center gap-3 mb-8">
-                    <div class="accounting-badge">
-                        <i class="fas fa-chart-line"></i>
-                        <span id="accounting-badge-text">inni Akun Digi —
-                            Perbandingan Model Akuntansi</span>
-                    </div>
-                    <!-- Flow steps -->
-                    <div class="flow-steps">
-                        <div class="flow-step"><div
-                                class="flow-step-icon accounting"><i
-                                    class="fas fa-search"></i></div><div
-                                class="flow-step-label" id="flow-step1">Pilih
-                                Model</div></div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step"><div
-                                class="flow-step-icon accounting"><i
-                                    class="fas fa-table"></i></div><div
-                                class="flow-step-label"
-                                id="flow-step2">Bandingkan Fitur</div></div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step"><div
-                                class="flow-step-icon accounting"><i
-                                    class="fas fa-mouse-pointer"></i></div><div
-                                class="flow-step-label" id="flow-step3">Klik
-                                "Pilih"</div></div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step"><div
-                                class="flow-step-icon accounting"><i
-                                    class="fas fa-headset"></i></div><div
-                                class="flow-step-label" id="flow-step4">Hubungi
-                                Sales</div></div>
-                    </div>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-800 text-center gradient-text animate-fade-in"
-                        data-translate="comparisonTitle">Perbandingan Model
-                        Aplikasi</h2>
-                    <p
-                        class="text-gray-600 max-w-xl mx-auto text-center text-sm animate-fade-in-up stagger-delay-1"
-                        data-translate="comparisonSubtitle">Pilih model yang
-                        sesuai dengan kebutuhan bisnis Anda</p>
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <span
+                        class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        <i class="fas fa-layer-group"></i>
+                        <span data-translate="comparisonLabel">Pilih Paket yang
+                            Tepat</span>
+                    </span>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-3"
+                        data-translate="comparisonTitle">
+                        Perbandingan Model Aplikasi
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-sm"
+                        data-translate="comparisonSubtitle">
+                        Semua model menggunakan installer yang sama. Perbedaan
+                        hanya di fitur yang diaktifkan.
+                    </p>
                 </div>
 
-                <div class="max-w-5xl mx-auto overflow-x-auto">
-                    <div id="model-cards"
-                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5"></div>
-                    <div class="global-investment-banner">
-                        <div class="banner-icon-container"><i
-                                class="fas fa-hand-holding-usd text-2xl"></i></div>
-                        <h2 class="banner-title"><span class="highlight"
-                                data-translate="bannerTitle">Investasi
-                                Sekali</span><span
-                                data-translate="bannerSubtitle">, Pakai
-                                Selamanya!</span><span
-                                class="emoji-float ml-1">🎉</span></h2>
-                        <div class="benefits-list">
-                            <div class="benefit-item"><i
-                                    class="fas fa-check-circle"></i><span
-                                    data-translate="benefitNoSubscription">Tanpa
-                                    Biaya Langganan</span></div>
-                            <div class="benefit-item"><i
-                                    class="fas fa-infinity"></i><span
-                                    data-translate="benefitLifetime">Akses
-                                    Selamanya</span></div>
-                            <div class="benefit-item"><i
-                                    class="fas fa-sync-alt"></i><span
-                                    data-translate="benefitUpdates">Update
-                                    Gratis</span></div>
-                            <div class="benefit-item"><i
-                                    class="fas fa-headset"></i><span
-                                    data-translate="benefitSupport">Support
-                                    Selamanya</span></div>
+                <!-- Model Comparison Cards -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12"
+                    id="model-cards-container">
+                    <!-- Cards will be generated by JS -->
+                </div>
+
+                <!-- Investment Banner -->
+                <div class="global-investment-banner max-w-5xl mx-auto mb-8">
+                    <div class="banner-icon-container">
+                        <i class="fas fa-hand-holding-usd text-2xl"></i>
+                    </div>
+                    <h2 class="banner-title">
+                        <span class="highlight"
+                            data-translate="bannerTitle">Investasi Sekali</span>
+                        <span data-translate="bannerSubtitle">, Pakai
+                            Selamanya!</span>
+                        <span class="emoji-float ml-1">🎉</span>
+                    </h2>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="benefitNoSubscription">Tanpa
+                                Biaya Langganan</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-infinity"></i>
+                            <span data-translate="benefitLifetime">Akses
+                                Selamanya</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span data-translate="benefitUpdates">Update
+                                Gratis</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-headset"></i>
+                            <span data-translate="benefitSupport">Support
+                                Selamanya</span>
                         </div>
                     </div>
-                    <table
-                        class="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
-                        <thead
-                            class="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-                            <tr>
-                                <th
-                                    class="py-3.5 px-5 text-left font-bold text-sm"
-                                    data-translate="featureColumn">Fitur</th>
-                                <th
-                                    class="py-3.5 px-5 text-center font-bold text-sm">Basic</th>
-                                <th
-                                    class="py-3.5 px-5 text-center font-bold text-sm"
-                                    data-translate="completeColumn">Lengkap</th>
-                                <th
-                                    class="py-3.5 px-5 text-center font-bold text-sm">Retail</th>
-                                <th
-                                    class="py-3.5 px-5 text-center font-bold text-sm"
-                                    data-translate="manufacturingColumn">Manufaktur</th>
-                            </tr>
-                        </thead>
-                        <tbody id="comparison-table-body"
-                            class="divide-y divide-gray-200"></tbody>
-                    </table>
                 </div>
+
+                <!-- Accordion: Detailed Comparison -->
+                <div class="max-w-5xl mx-auto">
+                    <button
+                        class="w-full bg-white border-2 border-blue-200 rounded-xl p-4 flex items-center justify-between hover:border-blue-400 transition-all"
+                        onclick="toggleDetailedComparison()">
+                        <span class="font-bold text-gray-800">
+                            <i class="fas fa-table mr-2 text-blue-600"></i>
+                            <span
+                                data-translate="detailedComparisonToggle">Lihat
+                                Perbandingan Fitur Detail</span>
+                        </span>
+                        <i
+                            class="fas fa-chevron-down text-gray-400 transition-transform"
+                            id="comparison-chevron"></i>
+                    </button>
+
+                    <div id="detailed-comparison-table"
+                        class="hidden mt-4 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table
+                                class="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+                                <thead
+                                    class="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+                                    <tr>
+                                        <th
+                                            class="py-3.5 px-5 text-left font-bold text-sm"
+                                            data-translate="featureColumn">Fitur</th>
+                                        <th
+                                            class="py-3.5 px-5 text-center font-bold text-sm">Basic</th>
+                                        <th
+                                            class="py-3.5 px-5 text-center font-bold text-sm"
+                                            data-translate="completeColumn">Lengkap</th>
+                                        <th
+                                            class="py-3.5 px-5 text-center font-bold text-sm">Retail</th>
+                                        <th
+                                            class="py-3.5 px-5 text-center font-bold text-sm"
+                                            data-translate="manufacturingColumn">Manufaktur</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="comparison-table-body"
+                                    class="divide-y divide-gray-200">
+                                    <!-- Table rows will be generated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Notes -->
                 <div
                     class="mt-8 max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
                     <h3 class="text-lg font-bold text-gray-800 mb-4"
                         data-translate="notesTitle">Keterangan:</h3>
                     <ul class="space-y-2 text-gray-600 text-sm"
-                        id="model-notes"></ul>
+                        id="model-notes">
+                        <!-- Notes will be generated by JS -->
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Wave divider model → FAQ -->
+        <!-- Wave divider -->
         <div class="wave-divider wave-down bg-blue-50">
             <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M0,20 C480,48 960,8 1440,36 L1440,48 L0,48 Z"
-                    fill="#fff" />
+                    fill="#ffffff" />
             </svg>
         </div>
 
         <!-- ══ FAQ ════════════════════════════════════════════════════════════ -->
-        <section id="faq" class="py-10 bg-white">
+        <section id="faq" class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-8">
                     <div
@@ -1562,12 +1743,17 @@
                     </div>
                     <h2
                         class="text-3xl md:text-4xl font-bold text-gray-800 mb-2 gradient-text"
-                        id="faq-title">Frequently Asked Questions</h2>
+                        id="faq-title">
+                        Frequently Asked Questions
+                    </h2>
                     <p class="text-gray-500 max-w-xl mx-auto text-sm"
-                        id="faq-subtitle">Jawaban dari pertanyaan yang paling
-                        sering ditanyakan</p>
+                        id="faq-subtitle">
+                        Jawaban dari pertanyaan yang paling sering ditanyakan
+                    </p>
                 </div>
-                <div class="max-w-3xl mx-auto space-y-3" id="faq-list"></div>
+                <div class="max-w-3xl mx-auto space-y-3" id="faq-list">
+                    <!-- FAQ items will be generated by JS -->
+                </div>
                 <div class="text-center mt-8">
                     <p class="text-gray-500 text-sm mb-3"
                         id="faq-more-text">Masih ada pertanyaan lain?</p>
@@ -1581,7 +1767,7 @@
             </div>
         </section>
 
-        <!-- Wave divider FAQ → contact -->
+        <!-- Wave divider -->
         <div class="wave-divider wave-down bg-white">
             <svg viewBox="0 0 1440 48" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -1592,19 +1778,22 @@
 
         <!-- ══ KONTAK ══════════════════════════════════════════════════════════ -->
         <section id="contact"
-            class="py-10 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+            class="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-10">
                     <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-800 mb-3 gradient-text animate-fade-in">Hubungi
-                        Kami</h2>
+                        class="text-3xl md:text-4xl font-bold text-gray-800 mb-3 gradient-text animate-fade-in">
+                        Hubungi Kami
+                    </h2>
                     <p
-                        class="text-gray-600 max-w-xl mx-auto text-sm animate-fade-in-up stagger-delay-1">Kami
-                        siap membantu Anda! Jangan ragu untuk menghubungi tim
-                        kami</p>
+                        class="text-gray-600 max-w-xl mx-auto text-sm animate-fade-in-up stagger-delay-1">
+                        Kami siap membantu Anda! Jangan ragu untuk menghubungi
+                        tim kami
+                    </p>
                 </div>
                 <div
                     class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
                     <!-- Form -->
                     <div
                         class="bg-white rounded-2xl shadow-xl p-6 md:p-8 order-2 lg:order-1">
@@ -1614,10 +1803,10 @@
                                 <i
                                     class="fas fa-headset text-xl text-blue-600"></i>
                             </div>
-                            <h3
-                                class="text-xl font-bold text-gray-800 mb-1">Tertarik
-                                dengan <span class="text-blue-600">inni Akun
-                                    Digi?</span></h3>
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">
+                                Tertarik dengan <span class="text-blue-600">inni
+                                    Akun Digi?</span>
+                            </h3>
                             <p class="text-gray-600 text-sm">Tinggalkan data
                                 Anda, kami akan segera menghubungi!</p>
                         </div>
@@ -1626,8 +1815,8 @@
                                 <label
                                     class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
                                     <i
-                                        class="fas fa-user text-blue-600 mr-2"></i>Nama
-                                    Lengkap <span
+                                        class="fas fa-user text-blue-600 mr-2"></i>
+                                    Nama Lengkap <span
                                         class="text-red-500 ml-1">*</span>
                                 </label>
                                 <input type="text" name="nama" required
@@ -1638,24 +1827,25 @@
                                 <label
                                     class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
                                     <i
-                                        class="fas fa-envelope text-blue-600 mr-2"></i>Email
-                                    (Gmail) <span
+                                        class="fas fa-envelope text-blue-600 mr-2"></i>
+                                    Email (Gmail) <span
                                         class="text-red-500 ml-1">*</span>
                                 </label>
                                 <input type="email" name="email" required
                                     pattern="[a-z0-9._%+-]+@gmail\.com"
                                     class="input-field w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-all text-sm"
                                     placeholder="nama@gmail.com">
-                                <p class="text-xs text-gray-500 mt-1"><i
-                                        class="fas fa-info-circle mr-1"></i>Hanya
-                                    Gmail yang diterima</p>
+                                <p class="text-xs text-gray-500 mt-1">
+                                    <i class="fas fa-info-circle mr-1"></i>Hanya
+                                    Gmail yang diterima
+                                </p>
                             </div>
                             <div>
                                 <label
                                     class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
                                     <i
-                                        class="fab fa-whatsapp text-green-600 mr-2"></i>No.
-                                    WhatsApp <span
+                                        class="fab fa-whatsapp text-green-600 mr-2"></i>
+                                    No. WhatsApp <span
                                         class="text-gray-400 font-normal ml-1">(Opsional)</span>
                                 </label>
                                 <div class="flex gap-2">
@@ -1671,15 +1861,17 @@
                                 class="submit-btn w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-3 rounded-xl hover:from-blue-700 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 text-sm">
                                 <i class="fas fa-paper-plane"></i>Kirim Sekarang
                             </button>
-                            <p class="text-center text-xs text-gray-500"><i
-                                    class="fas fa-lock mr-1"></i>Data Anda aman
-                                & hanya untuk komunikasi</p>
+                            <p class="text-center text-xs text-gray-500">
+                                <i class="fas fa-lock mr-1"></i>Data Anda aman &
+                                hanya untuk komunikasi
+                            </p>
                         </form>
                         <div id="successMessage"
                             class="hidden mt-5 p-5 bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-xl text-center">
                             <div
-                                class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2"><i
-                                    class="fas fa-check text-white text-lg"></i></div>
+                                class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-check text-white text-lg"></i>
+                            </div>
                             <h3
                                 class="text-lg font-bold text-green-800 mb-1">Terima
                                 Kasih!</h3>
@@ -1692,7 +1884,8 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Kontak person -->
+
+                    <!-- Contact Persons -->
                     <div class="space-y-5 order-1 lg:order-2">
                         <div
                             class="contact-person-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-start gap-4 border border-gray-100">
@@ -1711,8 +1904,10 @@
                                     <a href="tel:087725113689"
                                         class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition group">
                                         <div
-                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition"><i
-                                                class="fas fa-phone text-blue-600 text-sm"></i></div>
+                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition">
+                                            <i
+                                                class="fas fa-phone text-blue-600 text-sm"></i>
+                                        </div>
                                         <span
                                             class="font-medium">0877-2511-3689</span>
                                     </a>
@@ -1720,17 +1915,20 @@
                                         target="_blank"
                                         class="flex items-center gap-2 text-gray-700 hover:text-green-600 transition group">
                                         <div
-                                            class="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-100 transition"><i
-                                                class="fab fa-whatsapp text-green-600 text-sm"></i></div>
+                                            class="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-100 transition">
+                                            <i
+                                                class="fab fa-whatsapp text-green-600 text-sm"></i>
+                                        </div>
                                         <span
                                             class="font-medium">WhatsApp</span>
                                     </a>
-                                    <a
-                                        href="mailto:eric@inni.co.id"
+                                    <a href="mailto:eric@inni.co.id"
                                         class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition group">
                                         <div
-                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition"><i
-                                                class="fas fa-envelope text-blue-600 text-sm"></i></div>
+                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition">
+                                            <i
+                                                class="fas fa-envelope text-blue-600 text-sm"></i>
+                                        </div>
                                         <span
                                             class="font-medium break-all">eric@inni.co.id</span>
                                     </a>
@@ -1754,8 +1952,10 @@
                                     <a href="tel:087702882986"
                                         class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition group">
                                         <div
-                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition"><i
-                                                class="fas fa-phone text-blue-600 text-sm"></i></div>
+                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition">
+                                            <i
+                                                class="fas fa-phone text-blue-600 text-sm"></i>
+                                        </div>
                                         <span
                                             class="font-medium">0877-0288-2986</span>
                                     </a>
@@ -1763,17 +1963,20 @@
                                         target="_blank"
                                         class="flex items-center gap-2 text-gray-700 hover:text-green-600 transition group">
                                         <div
-                                            class="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-100 transition"><i
-                                                class="fab fa-whatsapp text-green-600 text-sm"></i></div>
+                                            class="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center group-hover:bg-green-100 transition">
+                                            <i
+                                                class="fab fa-whatsapp text-green-600 text-sm"></i>
+                                        </div>
                                         <span
                                             class="font-medium">WhatsApp</span>
                                     </a>
-                                    <a
-                                        href="mailto:heri@inni.co.id"
+                                    <a href="mailto:heri@inni.co.id"
                                         class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition group">
                                         <div
-                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition"><i
-                                                class="fas fa-envelope text-blue-600 text-sm"></i></div>
+                                            class="w-9 h-9 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition">
+                                            <i
+                                                class="fas fa-envelope text-blue-600 text-sm"></i>
+                                        </div>
                                         <span
                                             class="font-medium break-all">heri@inni.co.id</span>
                                     </a>
@@ -1793,23 +1996,26 @@
                     <div class="text-center md:text-left">
                         <h3
                             class="text-lg font-bold mb-3 flex items-center justify-center md:justify-start">
-                            <i class="fas fa-building mr-2"></i><span
-                                data-translate="footerCompany">PT. Integrasindo
-                                Multi Kreasi</span>
+                            <i class="fas fa-building mr-2"></i>
+                            <span data-translate="footerCompany">PT.
+                                Integrasindo Multi Kreasi</span>
                         </h3>
                         <p class="text-blue-200 mb-1.5 text-sm"
-                            data-translate="footerTagline">"Aplikasi Desktop Laporan Keuangan & Pajak untuk Semua Skala Bisnis & Organisasi"</p>
+                            data-translate="footerTagline">
+                            "Laporan Keuangan & Pajak Praktis untuk Semua Skala Bisnis & Organisasi"
+                        </p>
                         <p class="text-blue-100 text-xs"
-                            data-translate="footerDesc">Aplikasi desktop
-                            akuntansi
-                            100% offline dengan fitur lengkap dan pelatihan
-                            on-site</p>
+                            data-translate="footerDesc">
+                            Aplikasi desktop akuntansi 100% offline dengan fitur
+                            lengkap dan pelatihan on-site
+                        </p>
                     </div>
                     <div class="text-center md:text-left">
                         <h3
                             class="text-lg font-bold mb-3 flex items-center justify-center md:justify-start">
-                            <i class="fas fa-map-marker-alt mr-2"></i><span
-                                data-translate="footerOffice">Kantor Kami</span>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span data-translate="footerOffice">Kantor
+                                Kami</span>
                         </h3>
                         <div class="text-blue-100 space-y-1.5 text-sm">
                             <p
@@ -1827,35 +2033,65 @@
                                     href="https://maps.app.goo.gl/uzBkYSa4SdjwST3k6"
                                     target="_blank"
                                     class="text-blue-400 hover:text-blue-300 underline transition"
-                                    data-translate="footerViewMap">Lihat di
-                                    Google Maps</a>
+                                    data-translate="footerViewMap">
+                                    Lihat di Google Maps
+                                </a>
                             </p>
                         </div>
                     </div>
                     <div class="text-center md:text-left">
                         <h3
                             class="text-lg font-bold mb-3 flex items-center justify-center md:justify-start">
-                            <i class="fas fa-link mr-2"></i><span
-                                data-translate="footerQuickLinks">Tautan
+                            <i class="fas fa-link mr-2"></i>
+                            <span data-translate="footerQuickLinks">Tautan
                                 Cepat</span>
                         </h3>
                         <ul class="text-blue-100 space-y-1.5 text-sm">
-                            <li><a href="#intro"
-                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start"><i
-                                        class="fas fa-chevron-right mr-2 text-xs"></i><span
-                                        data-translate="footerHome">Beranda</span></a></li>
-                            <li><a href="#layanan"
-                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start"><i
-                                        class="fas fa-chevron-right mr-2 text-xs"></i><span
-                                        data-translate="footerServices">Layanan</span></a></li>
-                            <li><a href="#produk-tabs"
-                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start"><i
-                                        class="fas fa-chevron-right mr-2 text-xs"></i><span
-                                        data-translate="appsLabel">Produk</span></a></li>
-                            <li><a href="#contact"
-                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start"><i
-                                        class="fas fa-chevron-right mr-2 text-xs"></i><span
-                                        data-translate="footerContact">Kontak</span></a></li>
+                            <li>
+                                <a href="#intro"
+                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start">
+                                    <i
+                                        class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span
+                                        data-translate="footerHome">Beranda</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#layanan-tabs"
+                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start">
+                                    <i
+                                        class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span
+                                        data-translate="navLayanan">Layanan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#produk-tabs"
+                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start">
+                                    <i
+                                        class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span
+                                        data-translate="navProducts">Produk</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#how-it-works"
+                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start">
+                                    <i
+                                        class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span data-translate="navHowItWorks">Cara
+                                        Kerja</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact"
+                                    class="hover:text-white transition-colors flex items-center justify-center md:justify-start">
+                                    <i
+                                        class="fas fa-chevron-right mr-2 text-xs"></i>
+                                    <span
+                                        data-translate="footerContact">Kontak</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1864,27 +2100,31 @@
                         class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center text-center md:text-left">
                         <div class="order-3 md:order-1">
                             <p class="text-blue-200 text-xs"
-                                data-translate="footerText">© 2025 PT.
-                                Integrasindo Multi Kreasi.<br
+                                data-translate="footerText">
+                                © 2025 PT. Integrasindo Multi Kreasi.<br
                                     class="md:hidden">Seluruh hak cipta
-                                dilindungi.</p>
+                                dilindungi.
+                            </p>
                         </div>
                         <div
                             class="order-1 md:order-2 flex justify-center space-x-5">
                             <a href="https://www.facebook.com/share/1EEh8stC7m/"
                                 class="social-footer-icon"
-                                aria-label="Facebook"><i
-                                    class="fab fa-facebook-f text-base"></i></a>
+                                aria-label="Facebook">
+                                <i class="fab fa-facebook-f text-base"></i>
+                            </a>
                             <a href="https://www.youtube.com/@InniAkunDigi"
-                                class="social-footer-icon"
-                                aria-label="Youtube"><i
-                                    class="fab fa-youtube text-base"></i></a>
+                                class="social-footer-icon" aria-label="Youtube">
+                                <i class="fab fa-youtube text-base"></i>
+                            </a>
                             <a href="#" class="social-footer-icon"
-                                aria-label="Instagram"><i
-                                    class="fab fa-instagram text-base"></i></a>
+                                aria-label="Instagram">
+                                <i class="fab fa-instagram text-base"></i>
+                            </a>
                             <a href="#" class="social-footer-icon"
-                                aria-label="LinkedIn"><i
-                                    class="fab fa-linkedin-in text-base"></i></a>
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in text-base"></i>
+                            </a>
                         </div>
                         <div
                             class="order-2 md:order-3 text-blue-300 text-xs italic text-center md:text-right">
@@ -1907,8 +2147,9 @@
                     <h3 class="text-2xl font-bold text-blue-900"
                         id="modal-feature-title"></h3>
                     <button id="feature-modal-close"
-                        class="text-gray-500 hover:text-gray-700 transition-colors"><i
-                            class="fas fa-times text-xl"></i></button>
+                        class="text-gray-500 hover:text-gray-700 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
                 </div>
                 <p class="text-gray-600 mb-5 text-sm"
                     id="modal-feature-desc"></p>
@@ -1918,11 +2159,13 @@
                             class="flex transition-transform duration-500 ease-in-out"></div>
                     </div>
                     <button id="modal-prev-btn"
-                        class="absolute top-1/2 left-3 -translate-y-1/2 bg-white bg-opacity-90 text-blue-900 p-2.5 rounded-full hover:bg-opacity-100 shadow-lg transition-all"><i
-                            class="fas fa-chevron-left text-lg"></i></button>
+                        class="absolute top-1/2 left-3 -translate-y-1/2 bg-white bg-opacity-90 text-blue-900 p-2.5 rounded-full hover:bg-opacity-100 shadow-lg transition-all">
+                        <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
                     <button id="modal-next-btn"
-                        class="absolute top-1/2 right-3 -translate-y-1/2 bg-white bg-opacity-90 text-blue-900 p-2.5 rounded-full hover:bg-opacity-100 shadow-lg transition-all"><i
-                            class="fas fa-chevron-right text-lg"></i></button>
+                        class="absolute top-1/2 right-3 -translate-y-1/2 bg-white bg-opacity-90 text-blue-900 p-2.5 rounded-full hover:bg-opacity-100 shadow-lg transition-all">
+                        <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
                     <div class="flex justify-center mt-4 space-x-2"
                         id="modal-carousel-dots"></div>
                 </div>
@@ -1966,10 +2209,12 @@
                     <span id="exit-cta-text">Chat via WhatsApp →</span>
                 </a>
             </div>
-            <button class="exit-close" id="exit-close-btn" aria-label="Tutup"><i
-                    class="fas fa-times"></i></button>
+            <button class="exit-close" id="exit-close-btn" aria-label="Tutup">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
 
+        <!-- Custom JavaScript -->
         <script src="assets/js/index.js"></script>
     </body>
 </html>
