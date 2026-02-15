@@ -41,6 +41,9 @@ const translations = {
     service3Desc: "Konsultasi dan pelatihan akuntansi serta pajak.",
     service4Title: "Legalitas Usaha",
     service4Desc: "Pendaftaran merk dan legalitas usaha (NIB, NPWP, dll).",
+    service5Title: "Kursus Penyusunan SPT PPh Badan",
+    service5Desc:
+      "Kursus profesional untuk penyusunan SPT PPh Badan yang tepat dan efisien.",
     previewBadge: "Pratinjau Aplikasi",
     videoTitle:
       "Lihat <span class='gradient-text'>2 Menit 30 Detik</span><br>yang Mengubah Cara Anda Mengelola Keuangan",
@@ -91,6 +94,57 @@ const translations = {
     footerFeatures: "Fitur",
     footerContact: "Kontak",
     footerViewMap: "Lihat di Google Maps",
+    posDemoTitle: "Demo POS inni",
+    posDemoSubtitle: "Sistem kasir modern untuk bisnis retail Anda",
+    posDemoBadge: "Point of Sale",
+    posDemoDesc: "Kelola toko Anda lebih mudah dengan sistem POS terintegrasi",
+    posDemoCtaButton: "COBA DEMO POS SEKARANG",
+    posDemoFeatureTitle: "Fitur POS inni",
+    posDemoFeatureSubtitle: "Semua yang Anda butuhkan untuk kasir modern",
+    posDemoDisclaimer:
+      "*Demo POS memiliki batasan: data tidak tersimpan permanen & beberapa fitur dibatasi.",
+    posDemoCta: "🛒 Coba Langsung—",
+    posDemoCtaSec: "Gratis Tanpa Registrasi!",
+    appsLabel: "2 Produk Unggulan Kami",
+    appsTitle: "Satu Ekosistem, Dua Solusi Bisnis",
+    appsSubtitle:
+      "Pilih sesuai kebutuhan, atau gunakan keduanya untuk bisnis yang lebih lengkap",
+    app1Name: "inni Akun Digi",
+    app1Desc:
+      "Sistem akuntansi digital lengkap untuk UMKM, koperasi, dan organisasi. Dari jurnal hingga laporan keuangan otomatis.",
+    app1Feature1: "Laporan Keuangan Otomatis",
+    app1Feature2: "Piutang & Hutang Terintegrasi",
+    app1Feature3: "4 Model: Basic, Lengkap, Retail, Manufaktur",
+    app1Feature4: "Export PDF & Excel",
+    app1Price: "Mulai dari Rp 2.500.000",
+    app1DemoBtn: "Coba Demo",
+    app1ModelBtn: "Lihat Model",
+    app2Name: "inni POS",
+    app2Desc:
+      "Sistem kasir modern untuk bisnis retail. Transaksi cepat, stok terkontrol, laporan penjualan real-time.",
+    app2Feature1: "Kasir Cepat dengan Scan Barcode",
+    app2Feature2: "QRIS, Tunai, Transfer & Kartu",
+    app2Feature3: "Stok Real-time + Retur Penjualan",
+    app2Feature4: "Laporan Penjualan & Arus Kas",
+    app2Price: "Hubungi kami untuk harga", // ← GANTI dengan harga asli nanti
+    app2DemoBtn: "Coba Demo",
+    app2FeaturesBtn: "Lihat Fitur",
+    appsCombineNote:
+      "💡 Gunakan keduanya — inni Accounting + inni POS terintegrasi untuk pengelolaan bisnis yang lebih lengkap",
+    oneTimeLabel: "Investasi sekali",
+    posModelSingle: "1 Model — All Inclusive",
+    posModelDesc:
+      "inni POS hadir dalam satu paket lengkap — tidak ada pilihan model yang membingungkan. Semua fitur kasir, stok, dan laporan sudah tersedia dalam satu harga.",
+    posModelPriceLabel: "Harga",
+    posPill1: "Transaksi Kasir",
+    posPill2: "Scan Barcode",
+    posPill3: "Multi Payment",
+    posPill4: "Stok & Gudang",
+    posPill5: "Data Pelanggan",
+    posPill6: "Retur Penjualan",
+    posPill7: "Laporan Penjualan",
+    posPill8: "Laporan Arus Kas",
+    contactSales: "Hubungi Sales",
   },
   en: {
     headerTitle: "PT. Integrasindo Multi Kreasi",
@@ -135,6 +189,9 @@ const translations = {
     service4Title: "Business Legalization",
     service4Desc:
       "Registration of trademarks and business legalization (NIB, NPWP, etc.).",
+    service5Title: "SPT PPh Badan Training Course",
+    service5Desc:
+      "Comprehensive course on preparing and filing Corporate Income Tax Returns accurately and efficiently.",
     previewBadge: "App Preview",
     videoTitle:
       "Watch <span class='gradient-text'>2 Minutes 30 Seconds</span><br>That Will Change How You Manage Finance",
@@ -183,6 +240,57 @@ const translations = {
     footerFeatures: "Features",
     footerContact: "Contact",
     footerViewMap: "View on Google Maps",
+    posDemoTitle: "inni POS Demo",
+    posDemoSubtitle: "Modern cashier system for your retail business",
+    posDemoBadge: "Point of Sale",
+    posDemoDesc: "Manage your store more easily with integrated POS system",
+    posDemoCtaButton: "TRY POS DEMO NOW",
+    posDemoFeatureTitle: "inni POS Features",
+    posDemoFeatureSubtitle: "Everything you need for a modern cashier",
+    posDemoDisclaimer:
+      "*POS Demo has limitations: data is not permanently saved & some features are limited.",
+    posDemoCta: "🛒 Try It Now—",
+    posDemoCtaSec: "Free, No Registration!",
+    appsLabel: "Our 2 Flagship Products",
+    appsTitle: "One Ecosystem, Two Business Solutions",
+    appsSubtitle:
+      "Choose what you need, or use both for a more complete business",
+    app1Name: "inni Akun Digi",
+    app1Desc:
+      "Complete digital accounting system for MSMEs, cooperatives, and organizations. From journals to automatic financial reports.",
+    app1Feature1: "Automatic Financial Reports",
+    app1Feature2: "Integrated Receivables & Payables",
+    app1Feature3: "4 Models: Basic, Complete, Retail, Manufacturing",
+    app1Feature4: "Export PDF & Excel",
+    app1Price: "Starting from IDR 2,500,000",
+    app1DemoBtn: "Try Demo",
+    app1ModelBtn: "View Models",
+    app2Name: "inni POS",
+    app2Desc:
+      "Modern cashier system for retail businesses. Fast transactions, controlled inventory, real-time sales reports.",
+    app2Feature1: "Fast Cashier with Barcode Scan",
+    app2Feature2: "QRIS, Cash, Transfer & Cards",
+    app2Feature3: "Real-time Stock + Sales Returns",
+    app2Feature4: "Sales & Cash Flow Reports",
+    app2Price: "Contact us for pricing", // ← GANTI dengan harga asli nanti
+    app2DemoBtn: "Try Demo",
+    app2FeaturesBtn: "View Features",
+    appsCombineNote:
+      "💡 Use both — inni Accounting + inni POS integrated for more complete business management",
+    oneTimeLabel: "One-time investment",
+    posModelSingle: "1 Model — All Inclusive",
+    posModelDesc:
+      "inni POS comes in one complete package — no confusing model choices. All cashier, inventory, and report features are included in one price.",
+    posModelPriceLabel: "Price",
+    posPill1: "Cashier Transaction",
+    posPill2: "Barcode Scan",
+    posPill3: "Multi Payment",
+    posPill4: "Stock & Warehouse",
+    posPill5: "Customer Data",
+    posPill6: "Sales Returns",
+    posPill7: "Sales Reports",
+    posPill8: "Cash Flow Report",
+    contactSales: "Contact Sales",
   },
 };
 
@@ -696,6 +804,193 @@ const modelSummaries = {
   ],
 };
 
+const posFeatures = {
+  id: [
+    {
+      title: "Transaksi Kasir",
+      subtitle: "Proses penjualan cepat & akurat",
+      description:
+        "Antarmuka kasir yang intuitif untuk memproses transaksi penjualan dengan cepat. Mendukung input produk manual maupun scan barcode, hitung diskon, PPN, kembalian otomatis, dan cetak struk langsung.",
+      icon: "fas fa-shopping-cart",
+      color: "green",
+      images: ["POS_Transaction.png", "POS_Transaction_Detail.png"],
+    },
+    {
+      title: "Scan Barcode",
+      subtitle: "Input produk instan via barcode",
+      description:
+        "Dukung berbagai format barcode: CODE128, EAN-13, EAN-8, QRCODE, dan lainnya. Generate label barcode otomatis, cetak label massal, dan scan langsung di halaman kasir untuk mempercepat proses transaksi.",
+      icon: "fas fa-barcode",
+      color: "teal",
+      images: ["POS_Barcode.png", "POS_Barcode_Print.png"],
+    },
+    {
+      title: "Multi Metode Pembayaran",
+      subtitle: "Tunai, QRIS, Transfer, Kartu",
+      description:
+        "Terima pembayaran dari berbagai metode: Tunai, QRIS, Transfer Bank, Kartu Debit, Kartu Kredit, dan E-Wallet. Hitung kembalian otomatis untuk pembayaran tunai. Setiap metode tercatat rapi di laporan keuangan.",
+      icon: "fas fa-wallet",
+      color: "emerald",
+      images: ["POS_Payment.png", "POS_Payment_QRIS.png"],
+    },
+    {
+      title: "Manajemen Stok & Gudang",
+      subtitle: "Kontrol inventori multi-gudang",
+      description:
+        "Pantau stok produk secara real-time per gudang. Sistem otomatis mengurangi stok saat transaksi POS selesai. Notifikasi stok menipis, laporan stok lengkap, dan dukungan transfer antar gudang.",
+      icon: "fas fa-boxes",
+      color: "green",
+      images: ["POS_Stock.png", "POS_Stock_Alert.png"],
+    },
+    {
+      title: "Manajemen Pelanggan",
+      subtitle: "Data & riwayat transaksi pelanggan",
+      description:
+        "Simpan data pelanggan lengkap: nama, alamat, nomor telepon, email, dan contact person. Dukung transaksi Walk-in Customer tanpa perlu mendaftarkan pelanggan. Lacak riwayat pembelian per pelanggan.",
+      icon: "fas fa-user-friends",
+      color: "teal",
+      images: ["POS_Customer.png", "POS_Customer_History.png"],
+    },
+    {
+      title: "Retur Penjualan",
+      subtitle: "Proses retur dari POS & Sales Order",
+      description:
+        "Kelola retur barang dari transaksi POS maupun Sales Order. Proses approval retur, stok otomatis bertambah setelah retur disetujui, dan pencatatan alasan retur untuk evaluasi bisnis.",
+      icon: "fas fa-undo-alt",
+      color: "emerald",
+      images: ["POS_Return.png", "POS_Return_Detail.png"],
+    },
+    {
+      title: "Laporan Penjualan",
+      subtitle: "Analitik penjualan harian hingga tahunan",
+      description:
+        "Laporan penjualan komprehensif: top produk terlaris, breakdown per pelanggan, analisis metode pembayaran (tunai vs non-tunai), dan tren penjualan harian/bulanan/tahunan. Filter berdasarkan tanggal, gudang, dan status.",
+      icon: "fas fa-chart-bar",
+      color: "green",
+      images: ["POS_Report.png", "POS_Report_Chart.png"],
+    },
+    {
+      title: "Laporan Arus Kas",
+      subtitle: "Pantau cash flow dari transaksi POS",
+      description:
+        "Semua transaksi POS otomatis masuk ke laporan arus kas (cash in). Lihat ringkasan kas masuk dari POS, Sales Order, dan pelunasan piutang. Laporan tersedia dalam tampilan harian, bulanan, dan tahunan.",
+      icon: "fas fa-stream",
+      color: "teal",
+      images: ["POS_CashFlow.png", "POS_CashFlow_Trend.png"],
+    },
+    {
+      title: "Manajemen Supplier",
+      subtitle: "Data supplier terintegrasi",
+      description:
+        "Kelola data supplier lengkap dengan nama, alamat, telepon, email, dan contact person. Filter supplier berdasarkan bulan dan tahun pendaftaran. Terintegrasi dengan Purchase Order untuk pengisian stok toko.",
+      icon: "fas fa-truck",
+      color: "emerald",
+      images: ["POS_Supplier.png", "POS_Supplier_Detail.png"],
+    },
+    {
+      title: "Transfer Antar Gudang",
+      subtitle: "Pindah stok antar lokasi bisnis",
+      description:
+        "Pindahkan stok produk antar gudang dengan mudah. Buat transfer, approval oleh admin, dan stok otomatis diperbarui di kedua gudang. Lengkap dengan riwayat transfer dan cetak dokumen transfer.",
+      icon: "fas fa-exchange-alt",
+      color: "green",
+      images: ["POS_Transfer.png", "POS_Transfer_Detail.png"],
+    },
+  ],
+  en: [
+    {
+      title: "Cashier Transaction",
+      subtitle: "Fast & accurate sales processing",
+      description:
+        "Intuitive cashier interface to process sales transactions quickly. Supports manual product input or barcode scanning, discount calculation, VAT, automatic change calculation, and instant receipt printing.",
+      icon: "fas fa-shopping-cart",
+      color: "green",
+      images: ["POS_Transaction.png", "POS_Transaction_Detail.png"],
+    },
+    {
+      title: "Barcode Scanning",
+      subtitle: "Instant product input via barcode",
+      description:
+        "Supports multiple barcode formats: CODE128, EAN-13, EAN-8, QR Code, and more. Auto-generate barcodes, bulk label printing, and scan directly at the cashier screen to speed up transactions.",
+      icon: "fas fa-barcode",
+      color: "teal",
+      images: ["POS_Barcode.png", "POS_Barcode_Print.png"],
+    },
+    {
+      title: "Multi Payment Methods",
+      subtitle: "Cash, QRIS, Transfer, Cards",
+      description:
+        "Accept payments via Cash, QRIS, Bank Transfer, Debit Card, Credit Card, and E-Wallet. Automatic change calculation for cash payments. Every payment method is recorded neatly in financial reports.",
+      icon: "fas fa-wallet",
+      color: "emerald",
+      images: ["POS_Payment.png", "POS_Payment_QRIS.png"],
+    },
+    {
+      title: "Stock & Warehouse Management",
+      subtitle: "Real-time multi-warehouse inventory",
+      description:
+        "Monitor product stock in real-time per warehouse. System automatically deducts stock when a POS transaction is completed. Low-stock alerts, full inventory reports, and inter-warehouse transfer support.",
+      icon: "fas fa-boxes",
+      color: "green",
+      images: ["POS_Stock.png", "POS_Stock_Alert.png"],
+    },
+    {
+      title: "Customer Management",
+      subtitle: "Customer data & transaction history",
+      description:
+        "Store complete customer data: name, address, phone, email, and contact person. Support Walk-in Customer transactions without registration. Track purchase history per customer.",
+      icon: "fas fa-user-friends",
+      color: "teal",
+      images: ["POS_Customer.png", "POS_Customer_History.png"],
+    },
+    {
+      title: "Sales Returns",
+      subtitle: "Process returns from POS & Sales Orders",
+      description:
+        "Manage product returns from POS transactions or Sales Orders. Approval-based return process, stock automatically restocked after approval, and return reason tracking for business evaluation.",
+      icon: "fas fa-undo-alt",
+      color: "emerald",
+      images: ["POS_Return.png", "POS_Return_Detail.png"],
+    },
+    {
+      title: "Sales Reports",
+      subtitle: "Daily to yearly sales analytics",
+      description:
+        "Comprehensive sales reports: top-selling products, per-customer breakdown, payment method analysis (cash vs non-cash), and daily/monthly/yearly trends. Filter by date, warehouse, and status.",
+      icon: "fas fa-chart-bar",
+      color: "green",
+      images: ["POS_Report.png", "POS_Report_Chart.png"],
+    },
+    {
+      title: "Cash Flow Report",
+      subtitle: "Monitor cash flow from POS transactions",
+      description:
+        "All POS transactions automatically appear in the cash flow report (cash in). View a summary of cash in from POS, Sales Orders, and receivable payments. Available in daily, monthly, and yearly views.",
+      icon: "fas fa-stream",
+      color: "teal",
+      images: ["POS_CashFlow.png", "POS_CashFlow_Trend.png"],
+    },
+    {
+      title: "Supplier Management",
+      subtitle: "Integrated supplier data",
+      description:
+        "Manage complete supplier data: name, address, phone, email, and contact person. Filter suppliers by registration month and year. Integrated with Purchase Orders for restocking inventory.",
+      icon: "fas fa-truck",
+      color: "emerald",
+      images: ["POS_Supplier.png", "POS_Supplier_Detail.png"],
+    },
+    {
+      title: "Inter-Warehouse Transfer",
+      subtitle: "Move stock between locations",
+      description:
+        "Easily transfer products between warehouses. Create a transfer, admin approval, and stock is automatically updated at both warehouses. Complete with transfer history and printable transfer documents.",
+      icon: "fas fa-exchange-alt",
+      color: "green",
+      images: ["POS_Transfer.png", "POS_Transfer_Detail.png"],
+    },
+  ],
+};
+
 let currentLang = "id";
 let currentFeatureIndex = 0;
 let currentModalCarouselIndex = 0;
@@ -872,6 +1167,99 @@ function generateModelNotes(lang) {
                 </li>`;
   });
 }
+
+function generatePosFeatures(lang) {
+  const grid = document.getElementById("pos-features-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  // Map color shorthand → full Tailwind gradient classes
+  const colorMap = {
+    green: "from-green-500 to-green-600",
+    teal: "from-teal-500 to-teal-600",
+    emerald: "from-emerald-500 to-emerald-600",
+  };
+
+  posFeatures[lang].forEach((f, i) => {
+    const delay = (i % 3) + 1;
+    const gradientClass = colorMap[f.color] || "from-green-500 to-green-600";
+
+    // icon: strip "fas " prefix jika ada, karena template sudah tambah "fas"
+    const iconClass = f.icon.replace(/^fas\s+/, "");
+
+    grid.innerHTML += `
+      <div class="feature-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${delay}">
+        <div class="w-16 h-16 bg-gradient-to-r ${gradientClass} rounded-xl flex items-center justify-center mb-4 shadow-lg">
+          <i class="fas ${iconClass} text-3xl text-white"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-1">${f.title}</h3>
+        <p class="text-sm text-gray-400 font-medium mb-3">${f.subtitle}</p>
+        <p class="text-gray-600 mb-4">${f.description}</p>
+        <button class="view-pos-feature-btn text-green-600 hover:text-green-800 font-semibold flex items-center space-x-2 transition-colors" data-pos-index="${i}">
+          <span>${lang === "id" ? "Lihat Visual" : "View Interface"}</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>`;
+  });
+
+  document.querySelectorAll(".view-pos-feature-btn").forEach((btn) => {
+    btn.addEventListener("click", () =>
+      openPosFeatureModal(+btn.dataset.posIndex)
+    );
+  });
+}
+
+function openPosFeatureModal(idx) {
+  // Gunakan modal yang sama dengan accounting, cukup ganti data source
+  currentFeatureIndex = idx;
+  currentModalCarouselIndex = 0;
+  const f = posFeatures[currentLang][idx];
+
+  document.getElementById("modal-feature-title").textContent = f.title;
+  document.getElementById("modal-feature-desc").textContent = f.description;
+
+  const carousel = document.getElementById("modal-carousel");
+  const dots = document.getElementById("modal-carousel-dots");
+  carousel.innerHTML = "";
+  dots.innerHTML = "";
+
+  if (f.images && f.images.length) {
+    f.images.forEach((src, i) => {
+      carousel.innerHTML += `<div class="min-w-full flex items-center justify-center modal-image-container">
+        <img src="${src}" alt="${f.title} ${i + 1}"
+          class="modal-image max-w-full h-auto rounded-lg shadow-lg" loading="lazy"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/3498db/ffffff?text=${encodeURIComponent(
+            f.title
+          )}'">
+      </div>`;
+      dots.innerHTML += `<button class="modal-carousel-dot w-3 h-3 rounded-full transition-all duration-200 ${
+        i === 0 ? "bg-blue-600 w-8" : "bg-gray-300"
+      }" data-index="${i}"></button>`;
+    });
+    dots.querySelectorAll(".modal-carousel-dot").forEach((d) =>
+      d.addEventListener("click", () => {
+        currentModalCarouselIndex = +d.dataset.index;
+        updateModalCarousel();
+      })
+    );
+  } else {
+    carousel.innerHTML = `<div class="min-w-full flex items-center justify-center bg-gray-100 rounded-lg" style="min-height:400px;">
+      <div class="text-center text-gray-500">
+        <i class="fas ${f.icon} text-6xl mb-4"></i>
+        <p>${
+          currentLang === "id"
+            ? "Visual akan segera tersedia"
+            : "Screenshots coming soon"
+        }</p>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById("feature-modal").classList.remove("hidden");
+  document.getElementById("feature-modal").classList.add("flex");
+  document.body.style.overflow = "hidden";
+  updateModalCarousel();
+}
 function openFeatureModal(idx) {
   currentFeatureIndex = idx;
   currentModalCarouselIndex = 0;
@@ -983,6 +1371,7 @@ function updateLanguage(lang) {
   generateFeatures(lang);
   generateComparisonTable(lang);
   generateModelNotes(lang);
+  generatePosFeatures(lang);
 }
 
 document.getElementById("menu-toggle").addEventListener("click", () => {
@@ -1104,6 +1493,12 @@ function updateActiveNav() {
     currentSection = "features";
   } else if (currentSection === "demo-cta") {
     currentSection = "features";
+  } else if (currentSection === "pos-features") {
+    currentSection = "features";
+  } else if (currentSection === "pos-demo-cta") {
+    currentSection = "features";
+  } else if (currentSection === "our-apps") {
+    currentSection = "our-apps";
   }
 
   navItems.forEach((navItem) => {
@@ -1157,6 +1552,7 @@ document.addEventListener("DOMContentLoaded", () => {
   generateFeatures(currentLang);
   generateComparisonTable(currentLang);
   generateModelNotes(currentLang);
+  generatePosFeatures(currentLang);
 });
 
 function highlightModelColumn(modelKey) {
@@ -1253,7 +1649,7 @@ document
       resetBtn();
       return;
     }
-    
+
     const payload = `nama=${encodeURIComponent(
       nama
     )}&email=${encodeURIComponent(email)}&whatsapp=${encodeURIComponent(
@@ -1272,8 +1668,8 @@ document
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
 
-      const result = await response.text(); 
-      const parsedResult = JSON.parse(result); 
+      const result = await response.text();
+      const parsedResult = JSON.parse(result);
 
       if (parsedResult.result === "success") {
         this.classList.add("hidden");
