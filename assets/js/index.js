@@ -655,7 +655,15 @@ const posFeatures = {
       description:
         "Antarmuka kasir yang intuitif untuk memproses transaksi penjualan dengan cepat. Mendukung input produk manual maupun scan barcode, hitung diskon, PPN, kembalian otomatis, dan cetak struk.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Transaction.png"],
+      images: [
+        "assets/img/POS_Transaction.png",
+        "assets/img/POS_Transaction(2).png",
+        "assets/img/POS_Transaction(3).png",
+        "assets/img/POS_Transaction(4).png",
+        "assets/img/POS_Transaction(5).png",
+        "assets/img/POS_Transaction(6).png",
+        "assets/img/POS_Transaction(7).png",
+      ],
       popular: true,
     },
     {
@@ -665,7 +673,14 @@ const posFeatures = {
       description:
         "Dukung berbagai format barcode: CODE128, EAN-13, EAN-8, QRCODE. Generate label barcode otomatis dan cetak label massal.",
       color: "from-teal-500 to-teal-600",
-      images: ["assets/img/POS_Barcode.png"],
+      images: [
+        "assets/img/POS_Barcode.png",
+        "assets/img/POS_Barcode(2).png",
+        "assets/img/POS_Barcode(3).png",
+        "assets/img/POS_Barcode(4).png",
+        "assets/img/POS_Barcode(5).png",
+        "assets/img/POS_Barcode(6).png",
+      ],
     },
     {
       icon: "fa-wallet",
@@ -684,7 +699,15 @@ const posFeatures = {
       description:
         "Pantau stok produk secara real-time per gudang. Sistem otomatis mengurangi stok saat transaksi POS selesai.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Stock.png"],
+      images: [
+        "assets/img/POS_Stock.png",
+        "assets/img/POS_Stock(2).png",
+        "assets/img/POS_Stock(3).png",
+        "assets/img/POS_Stock(4).png",
+        "assets/img/POS_Stock(5).png",
+        "assets/img/POS_Stock(6).png",
+        "assets/img/POS_Stock(7).png",
+      ],
     },
     {
       icon: "fa-user-friends",
@@ -711,7 +734,11 @@ const posFeatures = {
       description:
         "Laporan komprehensif: top produk terlaris, breakdown per pelanggan, analisis metode pembayaran, dan tren penjualan.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Report.png"],
+      images: [
+        "assets/img/POS_Report.png",
+        "assets/img/POS_Report(2).png",
+        "assets/img/POS_Report(3).png",
+      ],
       popular: true,
     },
     {
@@ -721,7 +748,15 @@ const posFeatures = {
       description:
         "Semua transaksi POS otomatis masuk ke laporan arus kas. Tersedia tampilan harian, bulanan, dan tahunan.",
       color: "from-teal-500 to-teal-600",
-      images: ["assets/img/POS_CashFlow.png"],
+      images: [
+        "assets/img/POS_CashFlow.png",
+        "assets/img/POS_CashFlow(2).png",
+        "assets/img/POS_CashFlow(3).png",
+        "assets/img/POS_CashFlow(4).png",
+        "assets/img/POS_CashFlow(5).png",
+        "assets/img/POS_CashFlow(6).png",
+        "assets/img/POS_CashFlow(7).png",
+      ],
     },
     {
       icon: "fa-truck",
@@ -739,7 +774,11 @@ const posFeatures = {
       description:
         "Pindahkan stok produk antar gudang dengan mudah. Stok otomatis diperbarui di kedua gudang setelah approval.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Transfer.png"],
+      images: [
+        "assets/img/POS_Transfer.png",
+        "assets/img/POS_Transfer(2).png",
+        "assets/img/POS_Transfer(3).png",
+      ],
     },
   ],
   en: [
