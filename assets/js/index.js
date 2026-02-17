@@ -14,8 +14,10 @@ const translations = {
     headerSlogan:
       '"Laporan Keuangan & Pajak Praktis untuk Semua Skala Bisnis & Organisasi"',
     navHome: "Beranda",
+    navBenefits: "Keunggulan",
+    navServices: "Layanan",
     navProducts: "Produk",
-    navLayanan: "Layanan",
+    navProductApps: "Aplikasi Kami",
     navContact: "Kontak",
     navFaq: "FAQ",
     navPricing: "Harga",
@@ -38,32 +40,7 @@ const translations = {
     tryDemoButton: "PREVIEW DEMO SEKARANG",
     demoDisclaimer:
       "*Demo ONLINE ini hanya untuk preview fitur. Aplikasi ASLI adalah desktop app yang 100% offline — data tersimpan permanen di komputer, tidak ada batasan fitur, dan bisa backup/restore kapan saja.",
-    layananLabel: "Layanan Kami",
-    layananTitle: "Dukungan Komprehensif untuk Kesuksesan Bisnis Anda",
-    layananSubtitle:
-      "Lebih dari sekadar aplikasi — kami hadir sebagai mitra digital lengkap untuk UMKM dan organisasi Anda",
-    layanan1Title: "Aplikasi Desktop Keuangan & POS",
-    layanan1Desc:
-      "Software akuntansi & kasir 100% offline untuk UMKM, koperasi, dan organisasi. Install sekali, pakai selamanya tanpa biaya langganan.",
-    layanan1Badge: "Produk Utama",
-    layanan2Title: "Website Laporan Keuangan",
-    layanan2Desc:
-      "Penyediaan website digital untuk laporan keuangan yang akurat, terstruktur, dan mudah diakses kapan saja oleh manajemen.",
-    layanan3Title: "Pelaporan Pajak",
-    layanan3Desc:
-      "Pelaporan pajak pribadi dan usaha (PPh, PPN) dengan mudah, tepat waktu, dan sesuai regulasi DJP terbaru.",
-    layanan4Title: "Konsultasi & Pelatihan",
-    layanan4Desc:
-      "Konsultasi akuntansi dan pajak langsung dengan ahli. Termasuk pelatihan on-site agar tim Anda mahir mengelola keuangan.",
-    layanan5Title: "Legalitas Usaha",
-    layanan5Desc:
-      "Pendaftaran merek, NIB, NPWP usaha, dan berbagai kebutuhan legalitas bisnis Anda — cepat, tepat, dan terpercaya.",
-    layanan6Title: "Kursus SPT PPh Badan",
-    layanan6Desc:
-      "Kursus profesional penyusunan SPT PPh Badan yang tepat dan efisien. Cocok untuk akuntan, manajer keuangan, dan pemilik usaha.",
-    layananCtaDesc:
-      "Butuh layanan di atas? Konsultasikan kebutuhan Anda dengan tim kami — gratis!",
-    layananCtaBtn: "Konsultasi Gratis via WhatsApp",
+
     // Benefits
     benefitsLabel: "Keunggulan Kami",
     benefitsTitle: "Mengapa Memilih inni?",
@@ -72,6 +49,46 @@ const translations = {
     benefit2: "Data keuangan yang akurat dan terorganisasi.",
     benefit3: "Solusi yang hemat waktu dan biaya.",
     benefit4: "Pelatihan di lokasi untuk adopsi yang mulus.",
+
+    // Services
+    servicesLabel: "Layanan Lengkap",
+    servicesMainTitle: "Dukungan Komprehensif untuk Kesuksesan Bisnis Anda",
+    servicesMainSubtitle:
+      "Lebih dari sekadar aplikasi — kami hadir sebagai mitra digital lengkap untuk UMKM dan organisasi Anda",
+    servicesTitle: "Layanan Kami",
+    servicesSubtitle: "Dukungan komprehensif untuk kesuksesan bisnis Anda",
+    service1Title: "Aplikasi Desktop Akuntansi & POS",
+    service1Desc:
+      "Aplikasi desktop offline untuk laporan keuangan yang akurat dan aman.",
+    service1DescNew:
+      "Software akuntansi dan kasir 100% offline untuk UMKM, koperasi, dan organisasi. Install sekali, pakai selamanya tanpa biaya bulanan.",
+    service1Cta: "Produk Utama",
+    service2Title: "Pelaporan Pajak",
+    service2Desc: "Pelaporan pajak pribadi dan usaha dengan mudah.",
+    service2DescNew:
+      "Pelaporan pajak pribadi dan usaha (PPh, PPN) dengan mudah, lengkap dengan asistensi pengisian SPT tahunan.",
+    service2Cta: "Pajak & Compliance",
+    service3Title: "Konsultasi & Pelatihan",
+    service3Desc: "Konsultasi dan pelatihan akuntansi serta pajak.",
+    service3DescNew:
+      "Konsultasi akuntansi dan pajak langsung dengan ahli. Termasuk pelatihan on-site agar tim Anda mahir menggunakan sistem.",
+    service3Cta: "Mau Sesi Training",
+    service4Title: "Legalitas Usaha",
+    service4Desc: "Pendaftaran merk dan legalitas usaha (NIB, NPWP, dll).",
+    service4DescNew:
+      "Pendaftaran merek, NIB, NPWP usaha, dan berbagai kebutuhan legalitas bisnis Anda — cepat, tepat, dan terpercaya.",
+    service4Cta: "Urus - Bisnis",
+    service5Title: "Kursus SPT PPh Badan",
+    service5Desc:
+      "Kursus profesional untuk penyusunan SPT PPh Badan yang tepat dan efisien.",
+    service5DescNew:
+      "Kursus profesional untuk penyusunan SPT PPh Badan yang tepat dan efisien. Cocok untuk akuntan dan manajer keuangan.",
+    service5Cta: "Kursus Profesional",
+    service5WebTitle: "Website Laporan Keuangan",
+    service5WebDesc:
+      "Penyediaan website digital untuk laporan keuangan yang akurat, terstruktur, dan mudah diakses oleh manajemen.",
+    service5WebCta: "Web Service",
+    servicesCtaBottom: "Konsultasi Gratis via WhatsApp",
 
     // Apps
     appsLabel: "2 Produk Unggulan Kami",
@@ -158,6 +175,8 @@ const translations = {
     // Comparison
     comparisonLabel: "Pilih Paket yang Tepat",
     comparisonTitle: "Perbandingan Model Aplikasi",
+    comparisonAppName: "Untuk: inni Akun Digi (Aplikasi Akuntansi)",
+    comparisonAppNote: "inni POS memiliki 1 paket lengkap tanpa model terpisah",
     comparisonSubtitle:
       "Semua model menggunakan installer yang sama. Perbedaan hanya di fitur yang diaktifkan.",
     bannerTitle: "Investasi Sekali",
@@ -233,8 +252,10 @@ const translations = {
     headerSlogan:
       '"Practical Financial Reports & Tax Solutions for All Business and Organization Scales"',
     navHome: "Home",
+    navBenefits: "Benefits",
+    navServices: "Services",
     navProducts: "Products",
-    navLayanan: "Services",
+    navProductApps: "Our Applications",
     navContact: "Contact",
     navFaq: "FAQ",
     navPricing: "Pricing",
@@ -258,32 +279,6 @@ const translations = {
     demoDisclaimer:
       "*This ONLINE demo is only for feature preview. The REAL application is a desktop app that's 100% offline — data stored permanently on computer, no feature limitations, and can backup/restore anytime.",
 
-    layananLabel: "Our Services",
-    layananTitle: "Comprehensive Support for Your Business Success",
-    layananSubtitle:
-      "More than just an app — we are your complete digital partner for MSMEs and organizations",
-    layanan1Title: "Desktop Finance & POS Application",
-    layanan1Desc:
-      "100% offline accounting & cashier software for MSMEs, cooperatives, and organizations. Install once, use forever with no subscription fees.",
-    layanan1Badge: "Main Product",
-    layanan2Title: "Financial Report Website",
-    layanan2Desc:
-      "Digital website for accurate, structured financial reports, easily accessible anytime by management.",
-    layanan3Title: "Tax Reporting",
-    layanan3Desc:
-      "Personal and business tax reporting (PPh, VAT) made easy, timely, and in compliance with the latest regulations.",
-    layanan4Title: "Consultation & Training",
-    layanan4Desc:
-      "Direct accounting and tax consultation with experts. Includes on-site training so your team can confidently manage finances.",
-    layanan5Title: "Business Legality",
-    layanan5Desc:
-      "Business registration: NIB, NPWP, trademark, and all your business legality needs — fast, precise, and trusted.",
-    layanan6Title: "Corporate Tax Return Course",
-    layanan6Desc:
-      "Professional course for accurate and efficient Corporate Income Tax Return filing. Ideal for accountants, finance managers, and business owners.",
-    layananCtaDesc:
-      "Need any of these services? Consult with our team for free!",
-    layananCtaBtn: "Free WhatsApp Consultation",
     // Benefits
     benefitsLabel: "Our Advantages",
     benefitsTitle: "Why Choose inni?",
@@ -292,6 +287,46 @@ const translations = {
     benefit2: "Accurate and organized financial data.",
     benefit3: "Time and cost-efficient solutions.",
     benefit4: "On-site training for seamless adoption.",
+
+    // Services
+    servicesLabel: "Complete Services",
+    servicesMainTitle: "Comprehensive Support for Your Business Success",
+    servicesMainSubtitle:
+      "More than just applications — we are here as your complete digital partner for SMEs and organizations",
+    servicesTitle: "Our Services",
+    servicesSubtitle: "Comprehensive support for your business success",
+    service1Title: "Desktop Accounting & POS Applications",
+    service1Desc:
+      "Offline desktop application for accurate and secure financial reports.",
+    service1DescNew:
+      "100% offline accounting and POS software for SMEs, cooperatives, and organizations. Install once, use forever without monthly fees.",
+    service1Cta: "Main Products",
+    service2Title: "Tax Reporting",
+    service2Desc: "Personal and business tax reporting made easy.",
+    service2DescNew:
+      "Easy personal and business tax reporting (PPh, VAT) complete with annual tax return filing assistance.",
+    service2Cta: "Tax & Compliance",
+    service3Title: "Consultation & Training",
+    service3Desc: "Accounting and tax consultation and training.",
+    service3DescNew:
+      "Direct accounting and tax consultation with experts. Includes on-site training to ensure your team masters the system.",
+    service3Cta: "Get Training Session",
+    service4Title: "Business Legality",
+    service4Desc: "Brand registration and business legality (NIB, NPWP, etc).",
+    service4DescNew:
+      "Brand registration, NIB, business NPWP, and various business legality needs — fast, accurate, and reliable.",
+    service4Cta: "Handle - Business",
+    service5Title: "Corporate Tax Return Course",
+    service5Desc:
+      "Professional course for accurate and efficient corporate tax return preparation.",
+    service5DescNew:
+      "Professional course for accurate and efficient corporate tax return preparation. Suitable for accountants and financial managers.",
+    service5Cta: "Professional Course",
+    service5WebTitle: "Financial Report Website",
+    service5WebDesc:
+      "Providing digital websites for accurate, structured, and easily accessible financial reports for management.",
+    service5WebCta: "Web Service",
+    servicesCtaBottom: "Free Consultation via WhatsApp",
 
     // Apps
     appsLabel: "2 Featured Products",
@@ -378,6 +413,9 @@ const translations = {
     // Comparison
     comparisonLabel: "Choose the Right Package",
     comparisonTitle: "Application Model Comparison",
+    comparisonAppName: "For: inni Akun Digi (Accounting Application)",
+    comparisonAppNote:
+      "inni POS has 1 complete package with no separate models",
     comparisonSubtitle:
       "All models use the same installer. The difference is only in the features activated.",
     bannerTitle: "One-Time Investment",
@@ -789,7 +827,15 @@ const posFeatures = {
       description:
         "Intuitive cashier interface to process sales transactions quickly. Supports manual input or barcode scanning, discount calculation, VAT, automatic change, and receipt printing.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Transaction.png"],
+      images: [
+        "assets/img/POS_Transaction.png",
+        "assets/img/POS_Transaction(2).png",
+        "assets/img/POS_Transaction(3).png",
+        "assets/img/POS_Transaction(4).png",
+        "assets/img/POS_Transaction(5).png",
+        "assets/img/POS_Transaction(6).png",
+        "assets/img/POS_Transaction(7).png",
+      ],
       popular: true,
     },
     {
@@ -799,7 +845,14 @@ const posFeatures = {
       description:
         "Supports CODE128, EAN-13, EAN-8, QR Code, and more. Auto-generate barcodes and bulk label printing.",
       color: "from-teal-500 to-teal-600",
-      images: ["assets/img/POS_Barcode.png"],
+      images: [
+        "assets/img/POS_Barcode.png",
+        "assets/img/POS_Barcode(2).png",
+        "assets/img/POS_Barcode(3).png",
+        "assets/img/POS_Barcode(4).png",
+        "assets/img/POS_Barcode(5).png",
+        "assets/img/POS_Barcode(6).png",
+      ],
     },
     {
       icon: "fa-wallet",
@@ -818,7 +871,15 @@ const posFeatures = {
       description:
         "Monitor product stock in real-time per warehouse. Stock automatically deducted when a POS transaction completes.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Stock.png"],
+      images: [
+        "assets/img/POS_Stock.png",
+        "assets/img/POS_Stock(2).png",
+        "assets/img/POS_Stock(3).png",
+        "assets/img/POS_Stock(4).png",
+        "assets/img/POS_Stock(5).png",
+        "assets/img/POS_Stock(6).png",
+        "assets/img/POS_Stock(7).png",
+      ],
     },
     {
       icon: "fa-user-friends",
@@ -845,7 +906,11 @@ const posFeatures = {
       description:
         "Comprehensive sales reports: top products, per-customer breakdown, payment method analysis, and trends.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Report.png"],
+      images: [
+        "assets/img/POS_Report.png",
+        "assets/img/POS_Report(2).png",
+        "assets/img/POS_Report(3).png",
+      ],
       popular: true,
     },
     {
@@ -855,7 +920,15 @@ const posFeatures = {
       description:
         "All POS transactions automatically appear in the cash flow report. Available in daily, monthly, and yearly views.",
       color: "from-teal-500 to-teal-600",
-      images: ["assets/img/POS_CashFlow.png"],
+      images: [
+        "assets/img/POS_CashFlow.png",
+        "assets/img/POS_CashFlow(2).png",
+        "assets/img/POS_CashFlow(3).png",
+        "assets/img/POS_CashFlow(4).png",
+        "assets/img/POS_CashFlow(5).png",
+        "assets/img/POS_CashFlow(6).png",
+        "assets/img/POS_CashFlow(7).png",
+      ],
     },
     {
       icon: "fa-truck",
@@ -873,7 +946,11 @@ const posFeatures = {
       description:
         "Easily transfer products between warehouses. Stock automatically updated at both warehouses after approval.",
       color: "from-green-500 to-green-600",
-      images: ["assets/img/POS_Transfer.png"],
+      images: [
+        "assets/img/POS_Transfer.png",
+        "assets/img/POS_Transfer(2).png",
+        "assets/img/POS_Transfer(3).png",
+      ],
     },
   ],
 };
@@ -1367,11 +1444,25 @@ function updateActiveNav() {
     if (scrollPos >= s.offsetTop && scrollPos < s.offsetTop + s.offsetHeight)
       current = s.id;
   });
-  document
-    .querySelectorAll(".nav-item")
-    .forEach((n) =>
-      n.classList.toggle("active", n.getAttribute("href") === "#" + current)
-    );
+
+  document.querySelectorAll(".nav-item").forEach((n) => {
+    const href = n.getAttribute("href");
+    if (!href) return;
+
+    // Handle direct matches
+    if (href === "#" + current) {
+      n.classList.add("active");
+    }
+    // Handle Products dropdown - active if on produk-tabs or how-it-works
+    else if (
+      href === "#produk-tabs" &&
+      (current === "produk-tabs" || current === "how-it-works")
+    ) {
+      n.classList.add("active");
+    } else {
+      n.classList.remove("active");
+    }
+  });
 }
 
 // ══ TAB SWITCHER ═════════════════════════════════════════════
@@ -1476,6 +1567,12 @@ function generateModelCards(lang) {
         ? m.price
         : (n / 1e6).toFixed(1).replace(/\.0$/, "") +
           (lang === "id" ? " Jt" : " M");
+    const note =
+      !n || isNaN(n)
+        ? ""
+        : lang === "id"
+        ? "* Harga dapat dinegosiasikan"
+        : "* Price negotiable";
     const isChosen = chosenModel === m.key;
     const isRecommended = m.recommended;
 
@@ -1483,21 +1580,20 @@ function generateModelCards(lang) {
     card.className = `model-comparison-card ${
       isRecommended ? "recommended" : ""
     }`;
-
-    // Badge sekarang DALAM card, bukan absolute overflow ke atas
-    const badgeHTML = isRecommended
-      ? `<div class="model-popular-badge">
-           <i class="fas fa-star"></i>
-           ${lang === "id" ? "TERPOPULER" : "MOST POPULAR"}
-         </div>`
-      : "";
-
     card.innerHTML = `
-      ${badgeHTML}
+      ${
+        isRecommended
+          ? `
+        <span class="badge-popular-model">
+          ⭐ ${lang === "id" ? "TERPOPULER" : "MOST POPULAR"}
+        </span>
+      `
+          : ""
+      }
       
       <div class="text-center mb-4">
-        <h3 class="text-xl font-bold text-gray-800 mb-1">${m.title}</h3>
-        <div class="text-3xl font-black text-blue-600 mb-1">${display}</div>
+        <h3 class="text-lg font-bold text-gray-800 mb-1">${m.title}</h3>
+        <div class="text-2xl md:text-3xl font-black text-blue-600 mb-1">${display}</div>
         <p class="text-xs text-gray-500">${
           lang === "id" ? "Investasi Sekali" : "One-time Investment"
         }</p>
@@ -1754,30 +1850,22 @@ window.toggleRequirements = toggleRequirements;
 
 // ══ FEATURES ═════════════════════════════════════════════════
 function generateFeatures(lang) {
-  const grid = document.getElementById("features-grid");
-  if (!grid) return;
+  const gridPopular = document.getElementById("features-grid-popular");
+  const gridRest = document.getElementById("features-grid-rest");
+  if (!gridPopular || !gridRest) return;
+
   const viewTxt = lang === "id" ? "Lihat Visual" : "View Interface";
-  const showMoreTxt = lang === "id" ? "Lihat semua fitur" : "See all features";
-  const showLessTxt = lang === "id" ? "Sembunyikan" : "Show less";
+  gridPopular.innerHTML = "";
+  gridRest.innerHTML = "";
 
-  // Tentukan indeks fitur "populer" yang tampil by default (6 pertama yang popular atau 6 pertama)
-  const allFeatures = featuresData[lang];
-  const MAX_DEFAULT = 6;
+  featuresData[lang].forEach((f, i) => {
+    const isPopular = POPULAR_ACCT_IDX.includes(i);
+    const targetGrid = isPopular ? gridPopular : gridRest;
 
-  // Urutkan: popular dulu, lalu sisanya
-  const popularIdx = POPULAR_ACCT_IDX; // [1, 7, 11]
-  const otherIdx = allFeatures
-    .map((_, i) => i)
-    .filter((i) => !popularIdx.includes(i));
-  // Ambil popular dulu sampai MAX_DEFAULT
-  const defaultOrder = [...popularIdx, ...otherIdx].slice(0, MAX_DEFAULT);
-  const extraOrder = [...popularIdx, ...otherIdx].slice(MAX_DEFAULT);
-
-  function renderCard(f, i, extraClass = "") {
-    return `
+    targetGrid.innerHTML += `
       <div class="feature-card bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${
         (i % 3) + 1
-      } ${extraClass}">
+      }">
         ${f.popular ? '<span class="badge-popular">🔥 Populer</span>' : ""}
         <div class="w-12 h-12 bg-gradient-to-r ${
           f.color
@@ -1786,45 +1874,14 @@ function generateFeatures(lang) {
         </div>
         <h3 class="text-base font-bold text-gray-800 mb-2">${f.title}</h3>
         <p class="text-gray-600 text-sm mb-3">${f.desc}</p>
-        <button class="view-feature-btn text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1.5 transition-colors text-sm" data-index="${allFeatures.indexOf(
-          f
-        )}">
+        <button class="view-feature-btn text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1.5 transition-colors text-sm" data-index="${i}">
           <span>${viewTxt}</span><i class="fas fa-arrow-right text-xs"></i>
         </button>
       </div>`;
-  }
+  });
 
-  // Default visible cards
-  const defaultCardsHTML = defaultOrder
-    .map((idx, i) => renderCard(allFeatures[idx], i))
-    .join("");
-
-  // Extra (hidden) cards
-  const extraCardsHTML = extraOrder
-    .map((idx, i) => renderCard(allFeatures[idx], i))
-    .join("");
-
-  grid.innerHTML = `
-    <div class="contents" id="acct-features-default">
-      ${defaultCardsHTML}
-    </div>
-    <div class="col-span-full features-extra-grid" id="acct-features-extra">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-0">
-        ${extraCardsHTML}
-      </div>
-    </div>
-    <div class="col-span-full">
-      <button class="features-collapse-btn" id="acct-toggle-btn" onclick="toggleAcctFeatures()">
-        <i class="fas fa-th-large mr-1"></i>
-        <span id="acct-toggle-text">${showMoreTxt} (${
-    allFeatures.length - MAX_DEFAULT
-  } ${lang === "id" ? "lagi" : "more"})</span>
-        <i class="fas fa-chevron-down collapse-icon"></i>
-      </button>
-    </div>
-  `;
-
-  grid
+  // Add event listeners
+  document
     .querySelectorAll(".view-feature-btn")
     .forEach((btn) =>
       btn.addEventListener("click", () =>
@@ -1833,48 +1890,20 @@ function generateFeatures(lang) {
     );
 }
 
-// Toggle fungsi untuk acct features
-function toggleAcctFeatures() {
-  const extra = document.getElementById("acct-features-extra");
-  const btn = document.getElementById("acct-toggle-btn");
-  const txt = document.getElementById("acct-toggle-text");
-  if (!extra || !btn) return;
-  const isExpanded = extra.classList.toggle("expanded");
-  btn.classList.toggle("expanded", isExpanded);
-  const lang = currentLang;
-  if (isExpanded) {
-    txt.textContent = lang === "id" ? "Sembunyikan" : "Show less";
-  } else {
-    const allLen = featuresData[lang].length;
-    txt.textContent =
-      (lang === "id" ? "Lihat semua fitur" : "See all features") +
-      ` (${allLen - 6} ${lang === "id" ? "lagi" : "more"})`;
-    // Scroll back up to features section
-    document
-      .getElementById("features-grid")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-}
-window.toggleAcctFeatures = toggleAcctFeatures;
-
 function generatePosFeatures(lang) {
-  const grid = document.getElementById("pos-features-grid");
-  if (!grid) return;
+  const gridPopular = document.getElementById("pos-features-grid-popular");
+  const gridRest = document.getElementById("pos-features-grid-rest");
+  if (!gridPopular || !gridRest) return;
+
   const viewTxt = lang === "id" ? "Lihat Visual" : "View Interface";
-  const showMoreTxt = lang === "id" ? "Lihat semua fitur" : "See all features";
-  const showLessTxt = lang === "id" ? "Sembunyikan" : "Show less";
+  gridPopular.innerHTML = "";
+  gridRest.innerHTML = "";
 
-  const allFeatures = posFeatures[lang];
-  const MAX_DEFAULT = 6;
-  const popularIdx = POPULAR_POS_IDX; // [0, 2, 6]
-  const otherIdx = allFeatures
-    .map((_, i) => i)
-    .filter((i) => !popularIdx.includes(i));
-  const defaultOrder = [...popularIdx, ...otherIdx].slice(0, MAX_DEFAULT);
-  const extraOrder = [...popularIdx, ...otherIdx].slice(MAX_DEFAULT);
+  posFeatures[lang].forEach((f, i) => {
+    const isPopular = POPULAR_POS_IDX.includes(i);
+    const targetGrid = isPopular ? gridPopular : gridRest;
 
-  function renderPosCard(f, i) {
-    return `
+    targetGrid.innerHTML += `
       <div class="feature-card bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up stagger-delay-${
         (i % 3) + 1
       }">
@@ -1891,42 +1920,14 @@ function generatePosFeatures(lang) {
         <h3 class="text-base font-bold text-gray-800 mb-1">${f.title}</h3>
         <p class="text-sm text-gray-400 font-medium mb-2">${f.subtitle}</p>
         <p class="text-gray-600 text-sm mb-3">${f.description}</p>
-        <button class="view-pos-feature-btn text-green-600 hover:text-green-800 font-semibold flex items-center gap-1.5 transition-colors text-sm" data-pos-index="${allFeatures.indexOf(
-          f
-        )}">
+        <button class="view-pos-feature-btn text-green-600 hover:text-green-800 font-semibold flex items-center gap-1.5 transition-colors text-sm" data-pos-index="${i}">
           <span>${viewTxt}</span><i class="fas fa-arrow-right text-xs"></i>
         </button>
       </div>`;
-  }
+  });
 
-  const defaultCardsHTML = defaultOrder
-    .map((idx, i) => renderPosCard(allFeatures[idx], i))
-    .join("");
-  const extraCardsHTML = extraOrder
-    .map((idx, i) => renderPosCard(allFeatures[idx], i))
-    .join("");
-
-  grid.innerHTML = `
-    <div class="contents" id="pos-features-default">
-      ${defaultCardsHTML}
-    </div>
-    <div class="col-span-full features-extra-grid" id="pos-features-extra">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-0">
-        ${extraCardsHTML}
-      </div>
-    </div>
-    <div class="col-span-full">
-      <button class="features-collapse-btn pos-variant" id="pos-toggle-btn" onclick="togglePosFeatures()">
-        <i class="fas fa-th-large mr-1"></i>
-        <span id="pos-toggle-text">${showMoreTxt} (${
-    allFeatures.length - MAX_DEFAULT
-  } ${lang === "id" ? "lagi" : "more"})</span>
-        <i class="fas fa-chevron-down collapse-icon"></i>
-      </button>
-    </div>
-  `;
-
-  grid
+  // Add event listeners
+  document
     .querySelectorAll(".view-pos-feature-btn")
     .forEach((btn) =>
       btn.addEventListener("click", () =>
@@ -1935,27 +1936,73 @@ function generatePosFeatures(lang) {
     );
 }
 
-function togglePosFeatures() {
-  const extra = document.getElementById("pos-features-extra");
-  const btn = document.getElementById("pos-toggle-btn");
-  const txt = document.getElementById("pos-toggle-text");
-  if (!extra || !btn) return;
-  const isExpanded = extra.classList.toggle("expanded");
-  btn.classList.toggle("expanded", isExpanded);
-  const lang = currentLang;
-  if (isExpanded) {
-    txt.textContent = lang === "id" ? "Sembunyikan" : "Show less";
+// Toggle features visibility
+function toggleFeatures() {
+  const allFeaturesDiv = document.getElementById("features-grid-all");
+  const toggleBtn = document.getElementById("toggle-features-btn");
+  const toggleText = document.getElementById("toggle-features-text");
+  const toggleIcon = document.getElementById("toggle-features-icon");
+
+  if (!allFeaturesDiv) return;
+
+  const isHidden = allFeaturesDiv.classList.contains("hidden");
+
+  if (isHidden) {
+    allFeaturesDiv.classList.remove("hidden");
+    toggleText.textContent =
+      currentLang === "id" ? "Sembunyikan Fitur" : "Hide Features";
+    toggleIcon.style.transform = "rotate(180deg)";
   } else {
-    const allLen = posFeatures[lang].length;
-    txt.textContent =
-      (lang === "id" ? "Lihat semua fitur" : "See all features") +
-      ` (${allLen - 6} ${lang === "id" ? "lagi" : "more"})`;
-    document
-      .getElementById("pos-features-grid")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    allFeaturesDiv.classList.add("hidden");
+    toggleText.textContent =
+      currentLang === "id" ? "Lihat Semua Fitur" : "View All Features";
+    toggleIcon.style.transform = "rotate(0deg)";
   }
 }
+
+function togglePosFeatures() {
+  const allFeaturesDiv = document.getElementById("pos-features-grid-all");
+  const toggleBtn = document.getElementById("toggle-pos-features-btn");
+  const toggleText = document.getElementById("toggle-pos-features-text");
+  const toggleIcon = document.getElementById("toggle-pos-features-icon");
+
+  if (!allFeaturesDiv) return;
+
+  const isHidden = allFeaturesDiv.classList.contains("hidden");
+
+  if (isHidden) {
+    allFeaturesDiv.classList.remove("hidden");
+    toggleText.textContent =
+      currentLang === "id" ? "Sembunyikan Fitur" : "Hide Features";
+    toggleIcon.style.transform = "rotate(180deg)";
+  } else {
+    allFeaturesDiv.classList.add("hidden");
+    toggleText.textContent =
+      currentLang === "id" ? "Lihat Semua Fitur" : "View All Features";
+    toggleIcon.style.transform = "rotate(0deg)";
+  }
+}
+
+window.toggleFeatures = toggleFeatures;
 window.togglePosFeatures = togglePosFeatures;
+
+// Toggle mobile submenu
+function toggleMobileSubmenu(menu) {
+  const submenu = document.getElementById(`${menu}-submenu`);
+  const chevron = document.getElementById(`${menu}-chevron`);
+
+  if (!submenu || !chevron) return;
+
+  if (submenu.classList.contains("hidden")) {
+    submenu.classList.remove("hidden");
+    chevron.style.transform = "rotate(180deg)";
+  } else {
+    submenu.classList.add("hidden");
+    chevron.style.transform = "rotate(0deg)";
+  }
+}
+
+window.toggleMobileSubmenu = toggleMobileSubmenu;
 
 // ══ FAQ ══════════════════════════════════════════════════════
 function generateFaq(lang) {
@@ -2326,4 +2373,12 @@ document.addEventListener("DOMContentLoaded", () => {
   updateLanguage("id");
   applyDeepLink();
   updateScrollProgress();
+
+  // Add toggle features listeners
+  document
+    .getElementById("toggle-features-btn")
+    ?.addEventListener("click", toggleFeatures);
+  document
+    .getElementById("toggle-pos-features-btn")
+    ?.addEventListener("click", togglePosFeatures);
 });
