@@ -178,7 +178,7 @@ const translations = {
     comparisonAppName: "Untuk: inni Akun Digi (Aplikasi Akuntansi)",
     comparisonAppNote: "inni POS memiliki 1 paket lengkap tanpa model terpisah",
     comparisonSubtitle:
-      "Semua model menggunakan installer yang sama. Perbedaan hanya di fitur yang diaktifkan.",
+      "Setiap model memiliki installer dan struktur database yang berbeda sesuai kebutuhan bisnis Anda.",
     bannerTitle: "Investasi Sekali",
     bannerSubtitle: ", Pakai Selamanya!",
     benefitNoSubscription: "Tanpa Biaya Langganan",
@@ -417,7 +417,7 @@ const translations = {
     comparisonAppNote:
       "inni POS has 1 complete package with no separate models",
     comparisonSubtitle:
-      "All models use the same installer. The difference is only in the features activated.",
+      "Each model has different installers and database structures tailored to your business needs.",
     bannerTitle: "One-Time Investment",
     bannerSubtitle: ", Use Forever!",
     benefitNoSubscription: "No Subscription Fees",
@@ -996,7 +996,7 @@ const faqData = {
     },
     {
       q: "Apa perbedaan model Basic, Lengkap, Retail, dan Manufaktur?",
-      a: "Basic cocok untuk pencatatan jurnal dan buku besar sederhana. Lengkap menambahkan laporan keuangan lengkap (laba rugi & neraca). Retail menambahkan manajemen stok barang dagangan. Manufaktur adalah paket terlengkap dengan fitur produksi dari bahan mentah hingga barang jadi. Semua model menggunakan installer yang sama, perbedaan hanya di fitur yang diaktifkan.",
+      a: "Setiap model dirancang khusus dengan installer dan struktur database yang berbeda. Basic cocok untuk pencatatan jurnal dan buku besar sederhana dengan database minimal. Lengkap menambahkan laporan keuangan lengkap dengan struktur accounting yang lebih kompleks. Retail menambahkan manajemen stok barang dagangan dengan tabel inventory khusus. Manufaktur adalah paket terlengkap dengan fitur produksi, BOM, dan struktur database komprehensif untuk manajemen bahan mentah hingga barang jadi.",
       tags: ["acct"],
       icon: "fa-layer-group",
     },
@@ -1064,7 +1064,7 @@ const faqData = {
     },
     {
       q: "What is the difference between Basic, Complete, Retail, and Manufacturing models?",
-      a: "Basic is suitable for simple journal and ledger recording. Complete adds full financial reports (P&L & balance sheet). Retail adds trading goods inventory management. Manufacturing is the most complete package with production features from raw materials to finished goods. All models use the same installer, the difference is only in the features activated.",
+      a: "Each model is specially designed with different installers and database structures. Basic is suitable for simple journal and ledger recording with minimal database. Complete adds full financial reports with more complex accounting structure. Retail adds trading goods inventory management with specialized inventory tables. Manufacturing is the most complete package with production features, BOM, and comprehensive database structure for managing raw materials to finished goods.",
       tags: ["acct"],
       icon: "fa-layer-group",
     },
@@ -1427,6 +1427,7 @@ let exitDismissed = false;
 let timeOnPage = 0;
 let posBadgeHidden = false;
 let chosenModel = null;
+let lastModelToastId = null;
 
 // ══ UTILITY FUNCTIONS ════════════════════════════════════════
 function updateScrollProgress() {
@@ -1554,100 +1555,121 @@ window.dismissToast = dismissToast;
 
 // ══ MODEL COMPARISON ═════════════════════════════════════════
 
-// Generate model cards (NEW DESIGN)
+// Generate model cards (ENHANCED DESIGN)
 function generateModelCards(lang) {
   const container = document.getElementById("model-cards-container");
   if (!container) return;
-  container.innerHTML = "";
 
-  modelSummaries[lang].forEach((m) => {
-    const n = parseInt((m.price || "").replace(/\D/g, ""), 10);
-    const display =
-      !n || isNaN(n)
-        ? m.price
-        : (n / 1e6).toFixed(1).replace(/\.0$/, "") +
-          (lang === "id" ? " Jt" : " M");
-    const note =
-      !n || isNaN(n)
-        ? ""
-        : lang === "id"
-        ? "* Harga dapat dinegosiasikan"
-        : "* Price negotiable";
-    const isChosen = chosenModel === m.key;
-    const isRecommended = m.recommended;
+  // Show skeleton loading first
+  container.innerHTML = Array(4)
+    .fill(0)
+    .map(
+      () => `
+    <div class="skeleton-card">
+      <div class="skeleton-icon"></div>
+      <div class="skeleton-text" style="width: 70%;"></div>
+      <div class="skeleton-text" style="width: 100%;"></div>
+      <div class="skeleton-text" style="width: 60%;"></div>
+    </div>
+  `
+    )
+    .join("");
 
-    const card = document.createElement("div");
-    card.className = `model-comparison-card ${
-      isRecommended ? "recommended" : ""
-    }`;
-    card.innerHTML = `
-      ${
-        isRecommended
-          ? `
-        <span class="badge-popular-model">
-          ⭐ ${lang === "id" ? "TERPOPULER" : "MOST POPULAR"}
-        </span>
-      `
-          : ""
-      }
-      
-      <div class="text-center mb-4">
-        <h3 class="text-lg font-bold text-gray-800 mb-1">${m.title}</h3>
-        <div class="text-2xl md:text-3xl font-black text-blue-600 mb-1">${display}</div>
-        <p class="text-xs text-gray-500">${
-          lang === "id" ? "Investasi Sekali" : "One-time Investment"
-        }</p>
-      </div>
-      
-      <div class="space-y-2 mb-6 flex-1">
-        ${getModelFeatures(m.key, lang)
-          .map(
-            (f) => `
-          <div class="flex items-start gap-2 text-sm">
-            <i class="fas ${
-              f.included ? "fa-check text-green-500" : "fa-times text-gray-300"
-            } mt-1 flex-shrink-0"></i>
-            <span class="${f.included ? "" : "text-gray-400"}">${f.text}</span>
-          </div>
-        `
-          )
-          .join("")}
-      </div>
-      
-      <button class="compare-cta ${isChosen ? "chosen" : ""}" data-model="${
-      m.key
-    }">
-        ${
-          isChosen
-            ? lang === "id"
-              ? "✓ Dipilih"
-              : "✓ Chosen"
-            : lang === "id"
-            ? "Pilih"
-            : "Choose"
-        }
-      </button>
-      
-      <div class="mt-4 p-3 bg-${isRecommended ? "blue" : "gray"}-50 rounded-lg">
-        <p class="text-xs text-${
-          isRecommended ? "blue" : "gray"
-        }-700 font-semibold">
-          <i class="fas ${getModelIcon(m.key)} mr-1"></i>
-          ${lang === "id" ? "Cocok untuk:" : "Best for:"} ${m.tagline}
-        </p>
-      </div>
-    `;
+  // Render actual cards after short delay for visual effect
+  setTimeout(() => {
+    container.innerHTML = "";
 
-    container.appendChild(card);
-  });
+    modelSummaries[lang].forEach((m) => {
+      const n = parseInt((m.price || "").replace(/\D/g, ""), 10);
+      const display =
+        !n || isNaN(n)
+          ? m.price
+          : (n / 1e6).toFixed(1).replace(/\.0$/, "") +
+            (lang === "id" ? " Jt" : " M");
+      const isChosen = chosenModel === m.key;
+      const isRecommended = m.recommended;
+      const icon = getModelIcon(m.key);
+      const features = getModelFeatures(m.key, lang);
 
-  // Add event listeners
-  container.querySelectorAll(".compare-cta").forEach((btn) =>
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      highlightModelColumn(btn.dataset.model);
-    })
-  );
+      const card = document.createElement("div");
+      card.className = `model-comparison-card flex flex-col ${
+        isRecommended ? "recommended" : ""
+      }`;
+
+      card.innerHTML = `
+        <div class="text-center mb-6">
+          <i class="fas ${icon} model-icon"></i>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">${m.title}</h3>
+          <div class="model-price">${display}</div>
+          <p class="text-xs text-gray-500 font-semibold">${
+            lang === "id" ? "Investasi Sekali" : "One-time Investment"
+          }</p>
+        </div>
+        
+        <div class="model-features flex-1 mb-6">
+          ${features
+            .map(
+              (f, idx) => `
+            <div class="model-feature-item ${!f.included ? "excluded" : ""}">
+              <i class="fas ${
+                f.included ? "fa-check-circle" : "fa-circle-xmark"
+              }"></i>
+              <span>${f.text}</span>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+        
+        <button class="compare-cta ${isChosen ? "chosen" : ""}" data-model="${
+        m.key
+      }" title="${
+        isChosen
+          ? lang === "id"
+            ? "Model dipilih"
+            : "Model chosen"
+          : lang === "id"
+          ? "Pilih model ini"
+          : "Select this model"
+      }">
+          <i class="fas ${isChosen ? "fa-check" : "fa-arrow-right"}"></i>
+          <span>${
+            isChosen
+              ? lang === "id"
+                ? "Dipilih"
+                : "Chosen"
+              : lang === "id"
+              ? "Pilih"
+              : "Choose"
+          }</span>
+        </button>
+        
+        <div class="model-best-for ${isRecommended ? "recommended" : "normal"}">
+          <i class="fas ${icon}"></i>
+          <strong>${lang === "id" ? "Untuk:" : "For:"}</strong>
+          ${m.tagline}
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+    // Add event listeners
+    container.querySelectorAll(".compare-cta").forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        highlightModelColumn(this.dataset.model);
+      });
+
+      // Add ripple effect on hover
+      btn.addEventListener("mouseenter", function () {
+        this.style.position = "relative";
+      });
+    });
+
+    // Initialize progress indicator
+    updateModelComparisonProgress();
+  }, 300);
 }
 
 function getModelFeatures(modelKey, lang) {
@@ -1725,21 +1747,114 @@ function getModelIcon(modelKey) {
   return icons[modelKey] || "fa-star";
 }
 
+// Update model comparison progress indicator
+function updateModelComparisonProgress() {
+  const chosenCount = chosenModel ? 1 : 0;
+  const progressBar = document.getElementById("progress-bar");
+  const progressText = document.getElementById("progress-text");
+  const progressContainer = document.getElementById("progress-container");
+
+  if (!progressBar || !progressText) return;
+
+  const totalModels = 4;
+  const percentage = (chosenCount / totalModels) * 100;
+
+  progressBar.style.width = percentage + "%";
+  progressText.textContent = chosenCount + " / " + totalModels;
+
+  // Enhance text styling based on selection
+  if (chosenCount > 0) {
+    progressText.style.color = "#10b981";
+    progressText.style.fontSize = "1.125rem";
+  } else {
+    progressText.style.color = "#1d4ed8";
+    progressText.style.fontSize = "1rem";
+  }
+
+  // Add pulse animation when selection is made
+  if (progressContainer) {
+    progressContainer.classList.remove("pulse");
+    if (chosenCount > 0) {
+      setTimeout(() => {
+        progressContainer.classList.add("pulse");
+      }, 10);
+
+      // Remove pulse class after animation
+      setTimeout(() => {
+        progressContainer.classList.remove("pulse");
+      }, 620);
+    }
+  }
+}
+
 function highlightModelColumn(modelKey) {
   chosenModel = modelKey;
 
-  // Update buttons
+  // Map model keys to column indices (0-based: Basic=1, Lengkap=2, Retail=3, Manufaktur=4)
+  const modelColumnMap = {
+    basic: 1,
+    lengkap: 2,
+    retail: 3,
+    manufaktur: 4,
+  };
+  const columnIndex = modelColumnMap[modelKey];
+
+  // Update buttons with enhanced styling
   document.querySelectorAll(".compare-cta").forEach((btn) => {
-    btn.classList.toggle("chosen", btn.dataset.model === modelKey);
-    btn.textContent =
-      btn.dataset.model === modelKey
-        ? currentLang === "id"
-          ? "✓ Dipilih"
-          : "✓ Chosen"
-        : currentLang === "id"
-        ? "Pilih"
-        : "Choose";
+    const isChosen = btn.dataset.model === modelKey;
+    btn.classList.toggle("chosen", isChosen);
+
+    if (isChosen) {
+      btn.innerHTML = `<i class="fas fa-check"></i><span>${
+        currentLang === "id" ? "Dipilih" : "Chosen"
+      }</span>`;
+    } else {
+      btn.innerHTML = `<i class="fas fa-arrow-right"></i><span>${
+        currentLang === "id" ? "Pilih" : "Choose"
+      }</span>`;
+    }
   });
+
+  // Highlight table columns
+  const table = document.querySelector("#model-comparison table");
+  if (table) {
+    // Remove all highlighted classes
+    table.querySelectorAll(".highlighted-col").forEach((el) => {
+      el.classList.remove("highlighted-col");
+    });
+
+    // Add highlighted class to selected model column
+    if (columnIndex) {
+      // Highlight header
+      const headers = table.querySelectorAll("thead th");
+      if (headers[columnIndex]) {
+        headers[columnIndex].classList.add("highlighted-col");
+      }
+
+      // Highlight all cells in that column
+      const rows = table.querySelectorAll("tbody tr");
+      rows.forEach((row) => {
+        const cells = row.querySelectorAll("td");
+        if (cells[columnIndex]) {
+          cells[columnIndex].classList.add("highlighted-col");
+        }
+      });
+    }
+  }
+
+  // Update progress indicator
+  updateModelComparisonProgress();
+
+  // Open detailed comparison if closed
+  const detailedTable = document.getElementById("detailed-comparison-table");
+  const toggleBtn = document.getElementById("comparison-toggle");
+  if (detailedTable && detailedTable.classList.contains("hidden")) {
+    detailedTable.classList.remove("hidden");
+    if (toggleBtn) {
+      const chevron = toggleBtn.querySelector("#comparison-chevron");
+      if (chevron) chevron.classList.add("rotate-180");
+    }
+  }
 
   // Scroll to comparison
   document
@@ -1768,7 +1883,13 @@ function highlightModelColumn(modelKey) {
       : `Hello, I'm interested in the ${name} model of inni Akun Digi. Can I get pricing info and a consultation?`
   );
 
-  showToast({
+  // Dismiss previous model toast if exists
+  if (lastModelToastId) {
+    dismissToast(lastModelToastId);
+  }
+
+  // Show new toast with longer duration (10 seconds)
+  lastModelToastId = showToast({
     icon: "✅",
     title:
       currentLang === "id"
@@ -1776,11 +1897,12 @@ function highlightModelColumn(modelKey) {
         : `${name} model selected!`,
     msg:
       currentLang === "id"
-        ? `Installer aplikasi desktop akan dikirim setelah pembayaran. Support penuh dari tim kami!`
-        : `Desktop app installer will be sent after payment. Full support from our team!`,
+        ? `Kolom tabel ${name} sudah dihighlight. Lihat perbandingan detail di bawah!`
+        : `${name} column highlighted. Check detailed comparison below!`,
     actionText:
       currentLang === "id" ? "Chat WhatsApp sekarang" : "Chat on WhatsApp now",
     actionHref: `https://wa.me/6287725113689?text=${waMsg}`,
+    duration: 10000,
   });
 }
 
@@ -1790,40 +1912,97 @@ window.highlightModelColumn = highlightModelColumn;
 function toggleDetailedComparison() {
   const table = document.getElementById("detailed-comparison-table");
   const chevron = document.getElementById("comparison-chevron");
+  const toggleBtn = document.getElementById("comparison-toggle");
   if (!table || !chevron) return;
 
+  const isHidden = table.classList.contains("hidden");
   table.classList.toggle("hidden");
-  chevron.classList.toggle("rotate");
+  chevron.classList.toggle("rotate-180");
+
+  // Update ARIA attribute for accessibility
+  if (toggleBtn) {
+    toggleBtn.setAttribute("aria-expanded", isHidden);
+  }
+
+  // Save state to localStorage
+  localStorage.setItem("comparisonTableOpen", !isHidden);
+}
+
+// Restore detailed comparison state on load
+function restoreComparisonTableState() {
+  const isOpen = localStorage.getItem("comparisonTableOpen") === "true";
+  const table = document.getElementById("detailed-comparison-table");
+  const chevron = document.getElementById("comparison-chevron");
+  const toggleBtn = document.getElementById("comparison-toggle");
+
+  if (isOpen && table && chevron) {
+    table.classList.remove("hidden");
+    chevron.classList.add("rotate-180");
+    if (toggleBtn) {
+      toggleBtn.setAttribute("aria-expanded", "true");
+    }
+  } else {
+    if (toggleBtn) {
+      toggleBtn.setAttribute("aria-expanded", "false");
+    }
+  }
 }
 
 window.toggleDetailedComparison = toggleDetailedComparison;
 
-// Generate comparison table
+// Generate comparison table (ENHANCED WITH MOBILE SUPPORT)
 function generateComparisonTable(lang) {
   const tbody = document.getElementById("comparison-table-body");
   if (!tbody) return;
   const check = `<span class="feature-badge included"><i class="fas fa-check"></i></span>`;
   const cross = `<span class="feature-badge excluded"><i class="fas fa-times"></i></span>`;
+
+  const columnNames = {
+    id: {
+      basic: "Basic",
+      lengkap: "Lengkap",
+      retail: "Retail",
+      manufaktur: "Manufaktur",
+    },
+    en: {
+      basic: "Basic",
+      lengkap: "Complete",
+      retail: "Retail",
+      manufaktur: "Manufacturing",
+    },
+  };
+  const names = columnNames[lang] || columnNames.id;
+
   tbody.innerHTML = "";
   comparisonData[lang].forEach((r, i) => {
     const bg = i % 2 === 0 ? "bg-gray-50" : "bg-white";
-    tbody.innerHTML += `<tr class="${bg} hover:bg-blue-50 transition-colors">
-      <td class="py-3 px-5 text-gray-700 font-medium sticky-col text-sm">${
-        r.feature
-      }</td>
-      <td class="py-3 px-5 text-center">${r.basic ? check : cross}</td>
-      <td class="py-3 px-5 text-center">${r.lengkap ? check : cross}</td>
-      <td class="py-3 px-5 text-center">${r.retail ? check : cross}${
+    tbody.innerHTML += `
+      <tr class="${bg} hover:bg-blue-50 transition-colors">
+        <td class="py-3 px-5 text-gray-700 font-medium sticky-col text-sm" data-label="Fitur">
+          ${r.feature}
+        </td>
+        <td class="py-3 px-5 text-center" data-label="${names.basic}">
+          ${r.basic ? check : cross}
+        </td>
+        <td class="py-3 px-5 text-center" data-label="${names.lengkap}">
+          ${r.lengkap ? check : cross}
+        </td>
+        <td class="py-3 px-5 text-center" data-label="${names.retail}">
+          ${r.retail ? check : cross}${
       r.retailNote
         ? `<div class="text-xs text-gray-500 mt-0.5">${r.retailNote}</div>`
         : ""
-    }</td>
-      <td class="py-3 px-5 text-center">${r.manufaktur ? check : cross}${
+    }
+        </td>
+        <td class="py-3 px-5 text-center" data-label="${names.manufaktur}">
+          ${r.manufaktur ? check : cross}${
       r.manufakturNote
         ? `<div class="text-xs text-gray-500 mt-0.5">${r.manufakturNote}</div>`
         : ""
-    }</td>
-    </tr>`;
+    }
+        </td>
+      </tr>
+    `;
   });
 }
 
@@ -2136,22 +2315,25 @@ function showExitIntent() {
   if (exitShown || exitDismissed) return;
   exitShown = true;
   document.getElementById("exit-intent")?.classList.add("show");
-  setTimeout(hideExitIntent, 14000);
+  setTimeout(hideExitIntent, 18000); // Display for 18 seconds
 }
 
 function hideExitIntent() {
   document.getElementById("exit-intent")?.classList.remove("show");
 }
 
+// Show on mouse leave (only after 30+ seconds on page)
 document.addEventListener("mouseleave", (e) => {
-  if (e.clientY <= 10 && !exitDismissed && timeOnPage > 15) showExitIntent();
+  if (e.clientY <= 10 && !exitDismissed && timeOnPage > 30) showExitIntent();
 });
 
+// Show on timer (120 seconds = 2 minutes)
 setInterval(() => {
   timeOnPage++;
-  if (timeOnPage === 60 && !exitDismissed) showExitIntent();
+  if (timeOnPage === 120 && !exitDismissed) showExitIntent();
 }, 1000);
 
+// Close button handler
 document.getElementById("exit-close-btn")?.addEventListener("click", () => {
   exitDismissed = true;
   hideExitIntent();
@@ -2246,15 +2428,21 @@ document
   );
 
 document.getElementById("video-card")?.addEventListener("click", () => {
-  const iframe = document.getElementById("demo-iframe"),
-    overlay = document.getElementById("play-overlay");
+  const overlay = document.getElementById("play-overlay");
   if (overlay) {
     overlay.style.opacity = "0";
-    setTimeout(() => (overlay.style.display = "none"), 400);
+    overlay.style.pointerEvents = "none";
   }
-  if (iframe && !iframe.src.includes("autoplay")) iframe.src += "&autoplay=1";
 });
 
+// Video POS
+document.getElementById("pos-video-card")?.addEventListener("click", () => {
+  const overlay = document.getElementById("pos-play-overlay");
+  if (overlay) {
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+  }
+});
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     document.getElementById("mobile-menu")?.classList.add("hidden");
@@ -2373,6 +2561,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateLanguage("id");
   applyDeepLink();
   updateScrollProgress();
+  restoreComparisonTableState();
 
   // Add toggle features listeners
   document
@@ -2381,4 +2570,146 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("toggle-pos-features-btn")
     ?.addEventListener("click", togglePosFeatures);
+
+  // ══ FORM VALIDATION REAL-TIME FEEDBACK ═══════════════════════════
+  const form = document.getElementById("interestForm");
+  if (form) {
+    // Real-time validation on input
+    const inputs = form.querySelectorAll(".validation-input");
+    inputs.forEach((input) => {
+      input.addEventListener("input", () => {
+        validateInput(input);
+      });
+
+      input.addEventListener("blur", () => {
+        validateInput(input);
+      });
+    });
+
+    // Form submission with loading state
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Validate all inputs
+      let isValid = true;
+      inputs.forEach((input) => {
+        if (!validateInput(input)) {
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        showToast({
+          icon: "⚠️",
+          title: "Ada kesalahan",
+          msg: "Mohon periksa kembali form Anda",
+          duration: 4000,
+        });
+        return;
+      }
+
+      // Set loading state
+      const submitBtn = document.getElementById("submitBtn");
+      const submitText = submitBtn.querySelector(".submit-text");
+      const submitLoader = submitBtn.querySelector(".submit-loader");
+
+      submitBtn.disabled = true;
+      submitBtn.setAttribute("aria-busy", "true");
+      submitText.classList.add("hidden");
+      submitLoader.classList.remove("hidden");
+
+      // Simulate form submission (replace with actual API call)
+      setTimeout(() => {
+        // Reset form
+        form.reset();
+        inputs.forEach((input) => input.classList.remove("is-validated"));
+
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.setAttribute("aria-busy", "false");
+        submitText.classList.remove("hidden");
+        submitLoader.classList.add("hidden");
+
+        // Show success message
+        document
+          .getElementById("interestForm")
+          .parentElement.classList.add("hidden");
+        document.getElementById("successMessage").classList.remove("hidden");
+
+        showToast({
+          icon: "✅",
+          title: "Terima kasih!",
+          msg: "Data Anda telah diterima. Tim kami akan segera menghubungi Anda.",
+          actionText: "Chat WhatsApp",
+          actionHref: "https://wa.me/6287725113689",
+          duration: 6000,
+        });
+
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          document.getElementById("successMessage").classList.add("hidden");
+          document
+            .getElementById("interestForm")
+            .parentElement.classList.remove("hidden");
+        }, 5000);
+      }, 1500);
+    });
+  }
+
+  // ══ INPUT VALIDATION HELPER ══════════════════════════════════════
+  function validateInput(input) {
+    const errorMsg = input.parentElement.querySelector(".error-msg");
+    const successMsg = input.parentElement.querySelector(".success-msg");
+
+    if (input.validity.valid && input.value.trim() !== "") {
+      if (errorMsg) errorMsg.classList.add("hidden");
+      if (successMsg) {
+        successMsg.classList.remove("hidden");
+        successMsg.style.display = "flex";
+      }
+      return true;
+    } else if (input.value.trim() === "") {
+      if (errorMsg) errorMsg.classList.add("hidden");
+      if (successMsg) successMsg.classList.add("hidden");
+      return false;
+    } else {
+      if (successMsg) successMsg.classList.add("hidden");
+      if (errorMsg) {
+        errorMsg.classList.remove("hidden");
+        errorMsg.textContent = input.dataset.error || "Format tidak valid";
+      }
+      return false;
+    }
+  }
+
+  // ══ SCROLL REVEAL ANIMATIONS ════════════════════════════════════
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe scroll-section elements
+  document.querySelectorAll(".scroll-section").forEach((el) => {
+    revealObserver.observe(el);
+  });
+
+  // ══ TAB SMOOTH TRANSITIONS ═══════════════════════════════════════
+  window.switchTab = switchTab;
+  const originalSwitchTab = switchTab;
+  switchTab = function (tab) {
+    originalSwitchTab(tab);
+    const activePanel = document.querySelector(".tab-panel.active");
+    if (activePanel) {
+      activePanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  };
 });
