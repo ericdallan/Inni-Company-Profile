@@ -71,10 +71,10 @@ const translations = {
     servicesMainTitle: "Dukungan Komprehensif untuk Kesuksesan Bisnis Anda",
     servicesMainSubtitle:
       "Lebih dari sekadar aplikasi — kami hadir sebagai mitra digital lengkap untuk UMKM dan organisasi Anda",
-    service1Title: "Aplikasi Desktop Akuntansi & POS",
+    service1Title: "Solusi Software Bisnis",
     service1DescNew:
-      "Software akuntansi dan kasir 100% offline untuk UMKM, koperasi, dan organisasi. Install sekali, pakai selamanya tanpa biaya bulanan.",
-    service1Cta: "Produk Utama",
+      "Kami menyediakan aplikasi desktop akuntansi dan kasir (POS) 100% offline khusus untuk UMKM, koperasi, dan organisasi. Investasi sekali, pakai selamanya.",
+    service1Cta: "Lihat Produk",
     service2Title: "Pelaporan Pajak",
     service2DescNew:
       "Pelaporan pajak pribadi dan usaha (PPh, PPN) dengan mudah, lengkap dengan asistensi pengisian SPT tahunan.",
@@ -276,7 +276,7 @@ const translations = {
     workingTime: "08.00 – 17.00 WIB",
     workingNote:
       "Di luar jam kerja, silakan tinggalkan pesan via WhatsApp atau Email",
-    "sticky-acct-text": "Demo Akun Digi",
+    "sticky-acct-text": "Preview Demo",
     "sticky-wa-text": "WhatsApp Kami",
     navHowToBuy: "Cara Beli",
     navGuarantee: "Garansi",
@@ -336,10 +336,10 @@ const translations = {
     servicesMainTitle: "Comprehensive Support for Your Business Success",
     servicesMainSubtitle:
       "More than just applications — your complete digital partner",
-    service1Title: "Desktop Accounting & POS Applications",
+    service1Title: "Business Software Solutions",
     service1DescNew:
-      "100% offline accounting and POS software. Install once, use forever.",
-    service1Cta: "Main Products",
+      "We provide 100% offline desktop accounting and POS applications specifically for MSMEs, cooperatives, and organizations. One-time investment, use forever.",
+    service1Cta: "View Products",
     service2Title: "Tax Reporting",
     service2DescNew:
       "Easy personal and business tax reporting with annual return assistance.",
@@ -1517,16 +1517,17 @@ function updateActiveNav() {
     const isProductSection = [
       "produk-tabs",
       "how-it-works",
+      "testimonial",
       "garansi",
       "cara-beli",
     ].includes(current);
-    const isBenefitsSection = ["benefits", "testimonial"].includes(current);
-    if (href === "#" + current) n.classList.add("active");
-    else if (href === "#produk-tabs" && isProductSection)
+    if (href === "#" + current) {
       n.classList.add("active");
-    else if (href === "#benefits" && isBenefitsSection)
+    } else if (href === "#produk-tabs" && isProductSection) {
       n.classList.add("active");
-    else n.classList.remove("active");
+    } else {
+      n.classList.remove("active");
+    }
   });
 }
 
@@ -2020,6 +2021,14 @@ function generateComparisonTable(lang) {
     </tr>`;
   });
 }
+function toggleDemoDropup() {
+  const dropup = document.getElementById("sticky-demo-dropup");
+  const chevron = document.getElementById("sticky-demo-chevron");
+  if (!dropup || !chevron) return;
+  const isHidden = dropup.classList.toggle("hidden");
+  chevron.classList.toggle("rotate", !isHidden);
+}
+window.toggleDemoDropup = toggleDemoDropup;
 
 function generateModelNotes(lang) {
   const ul = document.getElementById("model-notes");
@@ -2406,7 +2415,7 @@ function roiSwitchTab(tab) {
     const btn = document.getElementById("roi-tab-" + t);
     if (!btn) return;
     btn.classList.remove("active-acct", "active-pos", "active-both");
-    btn.style.borderBottomWidth = "";
+    btn.removeAttribute("style");
   });
   const activeBtn = document.getElementById("roi-tab-" + tab);
   if (activeBtn) activeBtn.classList.add("active-" + tab);
@@ -2709,6 +2718,17 @@ document.addEventListener("click", (e) => {
   if (m && t && !m.contains(e.target) && !t.contains(e.target)) {
     m.classList.add("hidden");
     m.classList.remove("show");
+  }
+  const wrapper = document.getElementById("sticky-demo-btn");
+  const dropup = document.getElementById("sticky-demo-dropup");
+  if (
+    wrapper &&
+    dropup &&
+    !wrapper.contains(e.target) &&
+    !dropup.contains(e.target)
+  ) {
+    dropup.classList.add("hidden");
+    document.getElementById("sticky-demo-chevron")?.classList.remove("rotate");
   }
 });
 document

@@ -1343,11 +1343,59 @@ footer h3::after {
   background: linear-gradient(135deg, var(--acct-main), var(--acct-mid));
   color: #fff;
 }
+.sticky-mobile-cta .cta-pos {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+}
 .sticky-mobile-cta .cta-wa {
   background: linear-gradient(135deg, #16a34a, #22c55e);
   color: #fff;
 }
-
+.cta-demo-wrapper {
+  flex: 1;
+  position: relative;
+}
+.cta-demo-wrapper .cta-acct {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+.sticky-dropup {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 -4px 20px rgba(30, 58, 138, 0.15);
+  border: 1px solid rgba(30, 58, 138, 0.1);
+  overflow: hidden;
+  z-index: 50;
+}
+.sticky-dropup-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid #f3f4f6;
+}
+.sticky-dropup-item:last-child {
+  border-bottom: none;
+}
+.sticky-dropup-item:hover {
+  background: #f8fafc;
+}
+#sticky-demo-chevron {
+  transition: transform 0.25s ease;
+}
+#sticky-demo-chevron.rotate {
+  transform: rotate(180deg);
+}
 #back-to-top {
   transition: all 0.25s ease;
 }
@@ -1865,7 +1913,6 @@ input:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
 /* ── ROI Calculator v2 ────────────────────────────── */
 #roi-calculator .roi-header {
   background: linear-gradient(135deg, #1d4ed8, #3b82f6);
@@ -1881,21 +1928,36 @@ input:focus-visible {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  flex: 1;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+#roi-calculator .roi-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 #roi-calculator .roi-tab-btn.active-acct {
-  border-bottom: 2px solid #1d4ed8 !important;
+  background: #fff !important;
   color: #1d4ed8 !important;
-  background: #fff;
+  border-bottom: 2px solid transparent !important;
+  font-weight: 700;
 }
 #roi-calculator .roi-tab-btn.active-pos {
-  border-bottom: 2px solid #059669 !important;
+  background: #fff !important;
   color: #059669 !important;
-  background: #fff;
+  border-bottom: 2px solid transparent !important;
+  font-weight: 700;
 }
 #roi-calculator .roi-tab-btn.active-both {
-  border-bottom: 2px solid #7c3aed !important;
+  background: #fff !important;
   color: #7c3aed !important;
-  background: #fff;
+  border-bottom: 2px solid transparent !important;
+  font-weight: 700;
 }
 #roi-inni-card.acct-mode {
   background: #eff6ff;
