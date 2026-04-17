@@ -74,14 +74,18 @@
                         data-translate="navHome">Beranda</a>
                     <a href="#layanan" class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1"
                         data-translate="navServices">Layanan</a>
-                    <div class="relative group">
+                    <div class="relative group" id="nav-produk-group">
                         <a href="#produk-tabs"
-                            class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1 flex items-center gap-1"
-                            data-translate="navProducts">
-                            Produk <i class="fas fa-chevron-down text-xs"></i>
+                            class="nav-item text-sm font-medium hover:text-blue-300 transition-colors pb-1 flex items-center gap-1">
+                            <span data-translate="navProducts">Produk</span>
+                            <svg id="nav-produk-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                style="transition: transform 0.2s ease; flex-shrink:0; margin-left:2px;">
+                                <path d="M2 4L6 8L10 4" stroke="rgba(255,255,255,0.85)" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                         </a>
-                        <div
-                            class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible transition-all duration-200 z-50"
+                            id="nav-produk-dropdown">
                             <a href="#produk-tabs"
                                 class="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 text-sm rounded-t-lg"
                                 data-translate="navProductApps">Aplikasi Kami</a>
@@ -499,14 +503,12 @@
                                 </li>
                             </ul>
                             <div class="bg-blue-50 rounded-xl px-4 py-2.5 mb-4 flex items-center justify-between">
-                                <span class="text-sm text-blue-700 font-medium" data-translate="app1Price">
-                                    Mulai dari Rp
-                                    2.500.000
+                                <span class="text-sm text-blue-700 font-bold flex items-center gap-1.5"
+                                    data-translate="app1Price">
+                                    <i class="fas fa-tags"></i>Hubungi Tim Pemasaran
                                 </span>
-                                <span class="text-xs text-blue-500" data-translate="oneTimeLabel">
-                                    Investasi
-                                    sekali
-                                </span>
+                                <span class="text-xs text-green-600 font-semibold" data-translate="cicilLabel">Bisa
+                                    Dicicil*</span>
                             </div>
                             <div class="flex gap-2">
                                 <a href="https://www.demo.inniakundigi.co.id/" target="_blank" rel="noopener noreferrer"
@@ -758,14 +760,12 @@
                                 </div>
                             </div>
                             <div class="bg-green-50 rounded-xl px-4 py-2.5 mb-4 flex items-center justify-between">
-                                <span class="text-sm text-green-700 font-medium" data-translate="app2Price">
-                                    Rp
-                                    4.500.000
+                                <span class="text-sm text-green-700 font-bold flex items-center gap-1.5"
+                                    data-translate="app2Price">
+                                    <i class="fas fa-tags"></i>Hubungi Tim Pemasaran
                                 </span>
-                                <span class="text-xs text-green-500" data-translate="oneTimeLabel">
-                                    Investasi
-                                    sekali
-                                </span>
+                                <span class="text-xs text-green-600 font-semibold" data-translate="cicilLabel">Bisa
+                                    Dicicil*</span>
                             </div>
                             <div class="flex gap-2">
                                 <a href="https://demo-pos.inniakundigi.co.id/" target="_blank" rel="noopener noreferrer"
@@ -1211,7 +1211,7 @@
                             <span class="text-white font-bold text-sm">KU</span>
                         </div>
                         <div>
-                            <p class="font-bold text-gray-800 text-sm">Kang Udi</p>
+                            <p class="font-bold text-gray-800 text-sm">Kang Yanto</p>
                             <p class="text-gray-500 text-xs">Owner · PD. Sahudi</p>
                             <p class="text-gray-400 text-xs" data-translate="testimonial1Business">
                                 Mebel Kayu · inni
@@ -1516,231 +1516,57 @@
             <!-- Model Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-10 pt-4"
                 id="model-cards-container"></div>
-
-            <!-- ROI Calculator -->
-            <div class="max-w-5xl mx-auto mb-8" id="roi-calculator">
-                <div class="bg-white rounded-2xl shadow-lg border border-blue-100 overflow-hidden">
-
-                    <!-- Header 3 Tab -->
-                    <div id="roi-header" class="bg-gradient-to-r from-blue-700 to-blue-500 px-6 py-4">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div
-                                class="w-9 h-9 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-calculator text-white text-base"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-white font-bold text-base" id="roi-title">Kalkulator Perbandingan Biaya
-                                </h3>
-                                <p class="text-blue-100 text-xs" id="roi-subtitle">inni sekali bayar vs software cloud
-                                    berlangganan</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-1 bg-white bg-opacity-15 rounded-xl p-1">
-                            <button id="roi-tab-acct"
-                                class="roi-tab-btn flex-1 py-2 px-3 rounded-lg text-sm font-bold transition-all active-acct"
-                                onclick="roiSwitchTab('acct')">
-                                <i class="fas fa-chart-line mr-1"></i>Akun Digi
-                            </button>
-                            <button id="roi-tab-pos"
-                                class="roi-tab-btn flex-1 py-2 px-3 rounded-lg text-sm font-bold transition-all"
-                                onclick="roiSwitchTab('pos')">
-                                <i class="fas fa-cash-register mr-1"></i>POS
-                            </button>
-                            <button id="roi-tab-both"
-                                class="roi-tab-btn flex-1 py-2 px-3 rounded-lg text-sm font-bold transition-all"
-                                onclick="roiSwitchTab('both')">
-                                <i class="fas fa-link mr-1"></i><span id="roi-tab-both-label">Keduanya</span>
-                            </button>
-                        </div>
+            <div class="max-w-6xl mx-auto mb-6 text-center">
+                <p class="text-gray-500 text-sm">
+                    <i class="fas fa-arrow-down text-blue-400 mr-1"></i>
+                    <span data-translate="compareHintText">Ingin membandingkan fitur tiap model secara detail?</span>
+                    <button onclick="scrollToComparison()"
+                        class="text-blue-600 hover:text-blue-800 font-semibold underline ml-1 cursor-pointer bg-transparent border-none"
+                        data-translate="compareHintLink">Lihat perbandingan di bawah</button>
+                </p>
+            </div>
+            <!-- PRICE INFO BOX -->
+            <div class="max-w-5xl mx-auto mb-8" id="price-info">
+                <div
+                    class="bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl p-8 text-center shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 pointer-events-none opacity-10">
+                        <div class="absolute top-0 right-0 w-48 h-48 bg-white rounded-full filter blur-3xl"></div>
+                        <div class="absolute bottom-0 left-0 w-40 h-40 bg-blue-300 rounded-full filter blur-3xl"></div>
                     </div>
-                    <!-- /Header -->
-
-                    <!-- Body -->
-                    <div class="p-6">
-
-                        <!-- Model Selector -->
-                        <div id="roi-model-selector" class="mb-5">
-                            <p class="text-sm font-medium text-gray-700 mb-2">
-                                <i class="fas fa-layer-group text-blue-500 mr-1"></i>Pilih Model Akun Digi
-                            </p>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2" id="roi-model-pills">
-                                <button onclick="roiSelectModel('basic')" data-roi-model="basic"
-                                    class="roi-model-pill border-2 border-gray-200 rounded-xl py-2 px-3 text-center transition-all hover:border-blue-300">
-                                    <div class="text-sm font-bold text-gray-700" id="roi-pill-basic-name">Basic</div>
-                                    <div class="text-xs text-blue-600 font-semibold" id="roi-pill-basic-price">Rp
-                                        2.500.000</div>
-                                </button>
-                                <button onclick="roiSelectModel('lengkap')" data-roi-model="lengkap"
-                                    class="roi-model-pill border-2 border-gray-200 rounded-xl py-2 px-3 text-center transition-all hover:border-blue-300">
-                                    <div class="text-sm font-bold text-gray-700" id="roi-pill-lengkap-name">Lengkap
-                                    </div>
-                                    <div class="text-xs text-blue-600 font-semibold" id="roi-pill-lengkap-price">Rp
-                                        3.500.000</div>
-                                </button>
-                                <button onclick="roiSelectModel('retail')" data-roi-model="retail"
-                                    class="roi-model-pill border-2 border-gray-200 rounded-xl py-2 px-3 text-center transition-all hover:border-blue-300">
-                                    <div class="text-sm font-bold text-gray-700" id="roi-pill-retail-name">Retail</div>
-                                    <div class="text-xs text-blue-600 font-semibold" id="roi-pill-retail-price">Rp
-                                        4.750.000</div>
-                                </button>
-                                <button onclick="roiSelectModel('manufaktur')" data-roi-model="manufaktur"
-                                    class="roi-model-pill border-2 border-gray-200 rounded-xl py-2 px-3 text-center transition-all hover:border-blue-300">
-                                    <div class="text-sm font-bold text-gray-700" id="roi-pill-manufaktur-name">
-                                        Manufaktur</div>
-                                    <div class="text-xs text-blue-600 font-semibold" id="roi-pill-manufaktur-price">Rp
-                                        5.800.000</div>
-                                </button>
-                            </div>
+                    <div class="relative z-10">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-2xl mb-5 shadow-lg">
+                            <i class="fas fa-tags text-white text-2xl"></i>
                         </div>
-                        <!-- /Model Selector -->
-
-                        <!-- Sliders -->
-                        <div class="space-y-4 mb-6">
-                            <!-- Slider Tahun -->
-                            <div>
-                                <div class="flex justify-between items-center mb-1.5">
-                                    <label class="text-sm font-medium text-gray-700" id="roi-label-years">Lama rencana
-                                        pemakaian</label>
-                                    <span class="text-sm font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-lg"
-                                        id="roi-years-out">3 tahun</span>
-                                </div>
-                                <input type="range" min="1" max="10" step="1" value="3" id="roi-years"
-                                    class="w-full h-1.5 bg-gray-200 rounded-full appearance-none cursor-pointer roi-slider"
-                                    oninput="roiCalc()">
-                                <div class="flex justify-between text-xs text-gray-400 mt-1">
-                                    <span id="roi-min-years">1 thn</span>
-                                    <span id="roi-max-years">10 thn</span>
-                                </div>
-                            </div>
-                            <!-- Slider Cloud -->
-                            <div>
-                                <div class="flex justify-between items-center mb-1.5">
-                                    <label class="text-sm font-medium text-gray-700" id="roi-label-cloud">Biaya
-                                        langganan cloud rata-rata/bulan</label>
-                                    <span class="text-sm font-bold text-red-500 bg-red-50 px-2.5 py-0.5 rounded-lg"
-                                        id="roi-cloud-out">Rp 400rb</span>
-                                </div>
-                                <input type="range" min="200000" max="1000000" step="50000" value="400000"
-                                    id="roi-cloud"
-                                    class="w-full h-1.5 bg-gray-200 rounded-full appearance-none cursor-pointer roi-slider"
-                                    oninput="roiCalc()">
-                                <div class="flex justify-between text-xs text-gray-400 mt-1">
-                                    <span id="roi-min-cloud">200rb</span>
-                                    <span id="roi-max-cloud">1 jt</span>
-                                </div>
-                            </div>
-                            <!-- Slider Jam -->
-                            <div>
-                                <div class="flex justify-between items-center mb-1.5">
-                                    <label class="text-sm font-medium text-gray-700" id="roi-label-hours">Jam/bulan
-                                        untuk pembukuan manual saat ini</label>
-                                    <span
-                                        class="text-sm font-bold text-orange-500 bg-orange-50 px-2.5 py-0.5 rounded-lg"
-                                        id="roi-hours-out">20 jam</span>
-                                </div>
-                                <input type="range" min="4" max="80" step="4" value="20" id="roi-hours"
-                                    class="w-full h-1.5 bg-gray-200 rounded-full appearance-none cursor-pointer roi-slider"
-                                    oninput="roiCalc()">
-                                <div class="flex justify-between text-xs text-gray-400 mt-1">
-                                    <span id="roi-min-hours">4 jam</span>
-                                    <span id="roi-max-hours">80 jam</span>
-                                </div>
-                            </div>
+                        <h3 class="text-2xl font-black text-white mb-2" data-translate="priceInfoTitle">Informasi Harga
+                        </h3>
+                        <p class="text-blue-100 mb-3 text-sm max-w-lg mx-auto" data-translate="priceInfoDesc">
+                            Untuk informasi harga dapat menghubungi tim pemasaran kami. Harga disesuaikan dengan
+                            kebutuhan dan skala bisnis Anda.
+                        </p>
+                        <div
+                            class="inline-flex items-center gap-2 bg-white bg-opacity-15 text-white font-semibold text-sm px-4 py-2 rounded-full mb-6 border border-white border-opacity-20">
+                            <i class="fas fa-credit-card"></i>
+                            <span data-translate="priceInfoCicil">Biaya bisa dicicil — syarat &amp; ketentuan
+                                berlaku</span>
                         </div>
-                        <!-- /Sliders -->
-
-                        <!-- Result Cards -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                            <div class="bg-red-50 border border-red-100 rounded-xl p-3 text-center">
-                                <p class="text-xs text-red-500 font-medium mb-1" id="roi-r1-label">Biaya cloud</p>
-                                <p class="text-lg font-black text-red-600" id="roi-cloud-total">—</p>
-                                <p class="text-xs text-gray-400 mt-0.5" id="roi-r1-sub">selama 3 tahun</p>
-                            </div>
-                            <div id="roi-inni-card"
-                                class="acct-mode bg-blue-50 border border-blue-200 rounded-xl p-3 text-center">
-                                <p class="text-xs font-medium mb-1" id="roi-r2-label">inni Akun Digi</p>
-                                <p class="text-lg font-black" id="roi-inni-price">Rp 2,5 jt</p>
-                                <p class="text-xs text-gray-400 mt-0.5" id="roi-r2-sub">investasi sekali</p>
-                                <p class="text-xs text-gray-500 mt-1 hidden" id="roi-bundle-breakdown"></p>
-                            </div>
-                            <div class="bg-green-50 border border-green-200 rounded-xl p-3 text-center">
-                                <p class="text-xs text-green-600 font-medium mb-1" id="roi-r3-label">Hemat vs cloud</p>
-                                <p class="text-lg font-black text-green-600" id="roi-saving">—</p>
-                                <p class="text-xs text-gray-400 mt-0.5" id="roi-r3-sub">selama 3 tahun</p>
-                            </div>
-                            <div class="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
-                                <p class="text-xs text-purple-600 font-medium mb-1" id="roi-r4-label">Waktu dihemat</p>
-                                <p class="text-lg font-black text-purple-600" id="roi-time-saved">—</p>
-                                <p class="text-xs text-gray-400 mt-0.5" id="roi-r4-sub">est. 65% lebih efisien</p>
-                            </div>
-                        </div>
-                        <!-- /Result Cards -->
-
-                        <!-- Integration Banner -->
-                        <div id="roi-integration-banner"
-                            class="hidden mb-4 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl p-4">
-                            <div class="flex items-start gap-3">
-                                <div
-                                    class="w-10 h-10 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-link text-white"></i>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="font-bold text-purple-900 text-sm mb-1" id="roi-integ-title">Terintegrasi
-                                        dalam Satu PC yang Sama</h4>
-                                    <p class="text-purple-700 text-xs leading-relaxed mb-2" id="roi-integ-desc">Saat
-                                        diinstall di komputer yang sama, inni Akun Digi & inni POS bisa dihubungkan
-                                        dengan konfigurasi awal yang mudah.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full">
-                                            <i class="fas fa-check-circle text-purple-500"></i><span
-                                                id="roi-integ-f1">Berjalan dalam satu PC</span>
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full">
-                                            <i class="fas fa-check-circle text-purple-500"></i><span
-                                                id="roi-integ-f2">Tidak perlu input ganda</span>
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full">
-                                            <i class="fas fa-check-circle text-purple-500"></i><span
-                                                id="roi-integ-f3">Laporan keuangan lengkap dari POS</span>
-                                        </span>
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-purple-100 text-purple-700 text-xs font-semibold px-2 py-1 rounded-full">
-                                            <i class="fas fa-network-wired text-purple-500"></i><span
-                                                id="roi-integ-f4">Bisa diakses device lain via jaringan yang sama (file
-                                                server)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Integration Banner -->
-
-                        <!-- Conclusion + CTA -->
-                        <div id="roi-conclusion-bar"
-                            class="acct-mode flex flex-col sm:flex-row items-center justify-between gap-3 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl px-4 py-3 border border-blue-100">
-                            <p class="text-sm text-gray-600">
-                                <i class="fas fa-lightbulb text-yellow-500 mr-1"></i>
-                                <span id="roi-conclusion">Hemat lebih banyak dengan inni dibanding berlangganan
-                                    cloud!</span>
-                            </p>
-                            <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20inni%20Akun%20Digi"
-                                target="_blank" rel="noopener noreferrer" id="roi-wa-btn"
-                                class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap flex-shrink-0">
-                                <i class="fab fa-whatsapp"></i><span id="roi-cta-btn">Konsultasi Sekarang</span>
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20ingin%20mengetahui%20informasi%20harga%20inni%20Akun%20Digi%20%26%20POS"
+                                target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold px-7 py-3.5 rounded-full shadow-xl hover:scale-105 transition-all text-sm">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                                <span data-translate="priceInfoWa">Tanya Harga via WhatsApp</span>
+                            </a>
+                            <a href="#contact"
+                                class="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-blue-700 font-bold px-7 py-3.5 rounded-full shadow-xl hover:scale-105 transition-all text-sm">
+                                <i class="fas fa-envelope"></i>
+                                <span data-translate="priceInfoForm">Isi Form Kontak</span>
                             </a>
                         </div>
-                        <p class="text-xs text-gray-400 mt-3 text-center" id="roi-note">* Estimasi ilustratif. Biaya
-                            cloud mengacu rata-rata Accurate Online, Jurnal, Kledo, dll.</p>
-
                     </div>
-                    <!-- /Body -->
-
                 </div>
             </div>
-            <!-- /ROI Calculator -->
+            <!-- /PRICE INFO BOX -->
 
             <!-- Investment Banner -->
             <div class="global-investment-banner max-w-5xl mx-auto mb-8">
@@ -1758,6 +1584,7 @@
                             data-translate="benefitUpdates">Update Gratis</span></div>
                     <div class="benefit-item"><i class="fas fa-headset"></i><span
                             data-translate="benefitSupport">Support Selamanya</span></div>
+                    <div class="benefit-item"><i class="fas fa-credit-card"></i><span>Bisa Dicicil*</span></div>
                 </div>
             </div>
             <!-- /Investment Banner -->
@@ -1770,7 +1597,11 @@
                     aria-controls="detailed-comparison-table">
                     <span class="font-bold text-gray-800 flex items-center gap-2">
                         <i class="fas fa-table text-blue-600"></i>
-                        <span data-translate="detailedComparisonToggle">Lihat Perbandingan Detail</span>
+                        <div class="text-left">
+                            <div data-translate="detailedComparisonToggle">Lihat Perbandingan Detail</div>
+                            <div class="text-xs text-gray-400 font-normal" data-translate="detailedComparisonSubLabel">
+                                Perbandingan fitur lengkap antar model inni Akun Digi</div>
+                        </div>
                     </span>
                     <i class="fas fa-chevron-down text-gray-400" id="comparison-chevron"></i>
                 </button>
@@ -1781,15 +1612,62 @@
                                 <tr>
                                     <th class="py-3.5 px-4 text-left font-bold text-sm" data-translate="featureColumn">
                                         Fitur</th>
-                                    <th class="py-3.5 px-4 text-center font-bold text-sm">Basic</th>
-                                    <th class="py-3.5 px-4 text-center font-bold text-sm"
-                                        data-translate="completeColumn">Lengkap</th>
-                                    <th class="py-3.5 px-4 text-center font-bold text-sm">Retail</th>
-                                    <th class="py-3.5 px-4 text-center font-bold text-sm"
-                                        data-translate="manufacturingColumn">Manufaktur</th>
+                                    <th class="py-3.5 px-4 text-center font-bold text-sm">
+                                        <div>Basic</div>
+                                    </th>
+                                    <th class="py-3.5 px-4 text-center font-bold text-sm">
+                                        <div data-translate="completeColumn">Lengkap</div>
+                                    </th>
+                                    <th class="py-3.5 px-4 text-center font-bold text-sm">
+                                        <div>Retail</div>
+                                    </th>
+                                    <th class="py-3.5 px-4 text-center font-bold text-sm">
+                                        <div data-translate="manufacturingColumn">Manufaktur</div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody id="comparison-table-body" class="divide-y divide-gray-200"></tbody>
+                            <tfoot>
+                                <tr class="bg-blue-50 border-t-2 border-blue-100">
+                                    <td class="py-4 px-4 font-bold text-gray-700 text-sm sticky-col">
+                                        <span data-translate="chooseModelLabel">Mulai dengan model ini</span>
+                                    </td>
+                                    <td class="py-4 px-4 text-center">
+                                        <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20tertarik%20model%20Basic"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs hover:from-blue-700 transition-all shadow-sm whitespace-nowrap">
+                                            <i class="fab fa-whatsapp"></i><span
+                                                data-translate="chooseBtnLabel">Pilih</span> Basic
+                                        </a>
+                                    </td>
+                                    <td class="py-4 px-4 text-center">
+                                        <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20tertarik%20model%20Lengkap"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs hover:from-blue-700 transition-all shadow-sm whitespace-nowrap">
+                                            <i class="fab fa-whatsapp"></i><span
+                                                data-translate="chooseBtnLabel">Pilih</span> <span
+                                                data-translate="completeColumn">Lengkap</span>
+                                        </a>
+                                    </td>
+                                    <td class="py-4 px-4 text-center">
+                                        <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20tertarik%20model%20Retail"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs hover:from-blue-700 transition-all shadow-sm whitespace-nowrap">
+                                            <i class="fab fa-whatsapp"></i><span
+                                                data-translate="chooseBtnLabel">Pilih</span> Retail
+                                        </a>
+                                    </td>
+                                    <td class="py-4 px-4 text-center">
+                                        <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20tertarik%20model%20Manufaktur"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs hover:from-blue-700 transition-all shadow-sm whitespace-nowrap">
+                                            <i class="fab fa-whatsapp"></i><span
+                                                data-translate="chooseBtnLabel">Pilih</span> <span
+                                                data-translate="manufacturingColumn">Manufaktur</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <!-- Notes -->
@@ -1821,7 +1699,7 @@
                     sering ditanyakan
                 </p>
             </div>
-            <div class="max-w-3xl mx-auto space-y-3" id="faq-list"></div>
+            <div class="max-w-5xl mx-auto" id="faq-list"></div>
             <div class="text-center mt-8">
                 <p class="text-gray-500 text-sm mb-3" id="faq-more-text">Masih ada pertanyaan lain?</p>
                 <a href="https://wa.me/6287725113689" target="_blank" rel="noopener noreferrer"
@@ -1836,12 +1714,12 @@
     <section id="contact" class="py-14 bg-gradient-to-br from-gray-50 via-white to-blue-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 gradient-text animate-fade-in">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 gradient-text animate-fade-in"
+                    id="contact-title">
                     Hubungi Kami
                 </h2>
-                <p class="text-gray-600 max-w-md mx-auto text-sm">
-                    Kami siap membantu Anda! Jangan ragu untuk menghubungi
-                    tim kami
+                <p class="text-gray-600 max-w-md mx-auto text-sm" id="contact-subtitle">
+                    Kami siap membantu Anda! Jangan ragu untuk menghubungi tim kami
                 </p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -1852,18 +1730,18 @@
                             class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mb-3">
                             <i class="fas fa-headset text-lg text-blue-600"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-1">
-                            Tertarik dengan
-                            <span class="text-blue-600">inni Akun Digi?</span>
+                        <h3 id="contact-form-title" class="text-lg font-bold text-gray-800 mb-1">
+                            Tertarik dengan <span class="text-blue-600">inni Akun Digi?</span>
                         </h3>
-                        <p class="text-gray-600 text-sm">Tinggalkan data Anda, kami akan segera menghubungi!</p>
+                        <p id="contact-form-subtitle" class="text-gray-600 text-sm">
+                            Tinggalkan data Anda, kami akan segera menghubungi!
+                        </p>
                     </div>
                     <form id="interestForm" class="space-y-4">
                         <div>
-                            <label class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
+                            <label id="label-nama" class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
                                 <i class="fas fa-user text-blue-600 mr-2"></i>
-                                Nama Lengkap
-                                <span class="text-red-500 ml-1">*</span>
+                                Nama Lengkap <span class="text-red-500 ml-1">*</span>
                             </label>
                             <input type="text" name="nama" required
                                 class="input-field w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-all text-sm validation-input"
@@ -1871,34 +1749,31 @@
                                 data-error="Minimal 3 karakter, hanya huruf">
                             <div class="text-xs mt-1 hidden text-red-500 error-msg"></div>
                             <div class="text-xs mt-1 hidden text-green-500 success-msg" style="display:none;">
-                                <i class="fas fa-check-circle mr-1"></i>
-                                Valid
+                                <i class="fas fa-check-circle mr-1"></i>Valid
                             </div>
                         </div>
                         <div>
-                            <label class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
+                            <label id="label-email"
+                                class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
                                 <i class="fas fa-envelope text-blue-600 mr-2"></i>
-                                Email (Gmail)
-                                <span class="text-red-500 ml-1">*</span>
+                                Email (Gmail) <span class="text-red-500 ml-1">*</span>
                             </label>
                             <input type="email" name="email" required pattern="[a-z0-9._%+\-]+@gmail\.com"
                                 class="input-field w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-all text-sm validation-input"
                                 placeholder="nama@gmail.com" data-error="Email harus @gmail.com">
                             <div class="text-xs mt-1 hidden text-red-500 error-msg"></div>
                             <div class="text-xs mt-1 hidden text-green-500 success-msg" style="display:none;">
-                                <i class="fas fa-check-circle mr-1"></i>
-                                Email valid
+                                <i class="fas fa-check-circle mr-1"></i>Email valid
                             </div>
-                            <p class="text-xs text-gray-500 mt-1">
-                                <i class="fas fa-info-circle mr-1"></i>
-                                Hanya Gmail yang diterima
+                            <p id="gmail-note" class="text-xs text-gray-500 mt-1">
+                                <i class="fas fa-info-circle mr-1"></i>Hanya Gmail yang diterima
                             </p>
                         </div>
                         <div>
-                            <label class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
+                            <label id="label-whatsapp"
+                                class="flex items-center text-gray-700 font-semibold mb-1.5 text-sm">
                                 <i class="fab fa-whatsapp text-green-600 mr-2"></i>
-                                No. WhatsApp
-                                <span class="text-gray-400 font-normal ml-1">(Opsional)</span>
+                                No. WhatsApp <span class="text-gray-400 font-normal ml-1">(Opsional)</span>
                             </label>
                             <div class="flex gap-2">
                                 <span
@@ -1912,15 +1787,14 @@
                             class="submit-btn w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-3 rounded-xl hover:from-blue-700 hover:to-blue-600 transform hover:scale-105 transition-all shadow-lg flex items-center justify-center gap-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                             aria-busy="false">
                             <i class="fas fa-paper-plane"></i>
-                            <span class="submit-text">Kirim Sekarang</span>
+                            <span class="submit-text" id="submit-text">Kirim Sekarang</span>
                             <span class="submit-loader hidden">
                                 <i class="fas fa-spinner animate-spin"></i>
-                                Mengirim...
+                                <span id="submit-loader-text">Mengirim...</span>
                             </span>
                         </button>
-                        <p class="text-center text-xs text-gray-500">
-                            <i class="fas fa-lock mr-1"></i>
-                            Data Anda aman & hanya untuk komunikasi
+                        <p id="privacy-note" class="text-center text-xs text-gray-500">
+                            <i class="fas fa-lock mr-1"></i>Data Anda aman & hanya untuk komunikasi
                         </p>
                     </form>
                     <div id="successMessage"
@@ -1928,12 +1802,13 @@
                         <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
                             <i class="fas fa-check text-white text-lg"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-green-800 mb-1">Terima Kasih!</h3>
-                        <p class="text-green-700 text-sm mb-3">Tim kami akan segera menghubungi Anda.</p>
-                        <a href="https://wa.me/6287725113689" target="_blank"
+                        <h3 id="success-title" class="text-lg font-bold text-green-800 mb-1">Terima Kasih!</h3>
+                        <p id="success-msg" class="text-green-700 text-sm mb-3">Tim kami akan segera menghubungi Anda.
+                        </p>
+                        <a id="success-wa-btn" href="https://wa.me/6287725113689" target="_blank"
                             class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-medium">
                             <i class="fab fa-whatsapp"></i>
-                            Chat via WhatsApp
+                            <span id="success-wa-text">Chat via WhatsApp</span>
                         </a>
                     </div>
                 </div>

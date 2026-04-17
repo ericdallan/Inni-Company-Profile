@@ -1,11 +1,11 @@
 /* ============================================================
-   inni — Improved JavaScript v2
+   inni — Improved JavaScript v3
+   - Removed: all pricing display
+   - Removed: ROI calculator / simulasi harga
+   - Added: "Hubungi Tim Pemasaran" flow
    - Fixed: double submit handler (merged into one)
    - Fixed: exit intent double-trigger
    - Fixed: scroll padding dynamic header height
-   - Fixed: comparison table open by default
-   - Improved: model card design
-   - Improved: progress indicator
    ============================================================ */
 
 // ── CONFIG ────────────────────────────────────────────────
@@ -107,15 +107,18 @@ const translations = {
     app1Feature2: "Piutang & Hutang Terintegrasi",
     app1Feature3: "4 Model: Basic, Lengkap, Retail, Manufaktur",
     app1Feature4: "Export PDF & Excel",
-    app1Price: "Mulai dari Rp 2.500.000",
+    app1Price: "Hubungi Tim Pemasaran",
+    app1PriceSub: "Bisa Dicicil*",
     app1DemoBtn: "Preview Demo",
     app1ModelBtn: "Lihat Model",
     app2Name: "inni POS",
-    app2Price: "Rp 4.500.000",
+    app2Price: "Hubungi Tim Pemasaran",
+    app2PriceSub: "Bisa Dicicil*",
     app2DemoBtn: "Preview Demo",
     appsCombineNote:
-      "💡 <strong>Gunakan keduanya</strong> — inni Accounting + inni POS terintegrasi untuk pengelolaan bisnis yang lebih lengkap",
+      "💡 <strong>Gunakan keduanya</strong> — inni Akun Digi + inni POS dapat dihubungkan dalam satu PC untuk pengelolaan bisnis yang lebih lengkap",
     oneTimeLabel: "Investasi sekali",
+    cicilLabel: "Bisa Dicicil*",
     posModelSingle: "1 Model — All Inclusive",
     posModelDesc:
       "inni POS hadir dalam satu paket lengkap — tidak ada pilihan model yang membingungkan. Semua fitur kasir, stok, dan laporan sudah tersedia dalam satu harga.",
@@ -178,7 +181,7 @@ const translations = {
       "Tim kami memastikan instalasi berjalan lancar. Jika ada kendala, kami remote via TeamViewer hingga berjalan sempurna.",
     guarantee3Title: "Support Seumur Hidup",
     guarantee3Desc:
-      "Satu kali bayar, support teknis penggunaan aplikasi tidak berhenti. Tanya kapan saja via WhatsApp. Catatan: pemindahan lisensi ke perangkat baru dikenakan biaya administrasi sesuai ketentuan perjanjian.",
+      "Satu kali bayar, support teknis penggunaan aplikasi tidak berhenti. Tanya kapan saja via WhatsApp.",
     guarantee4Title: "Update Gratis Selamanya",
     guarantee4Desc:
       "Bug fixes dan fitur baru gratis selamanya. Cukup download dan install update-nya.",
@@ -214,6 +217,12 @@ const translations = {
     comparisonAppNote: "inni POS memiliki 1 paket lengkap tanpa model terpisah",
     comparisonSubtitle:
       "Setiap model memiliki installer dan struktur database yang berbeda sesuai kebutuhan bisnis Anda.",
+    chooseModelLabel: "Mulai dengan model ini",
+    chooseBtnLabel: "Pilih",
+    detailedComparisonSubLabel:
+      "Perbandingan fitur lengkap antar model inni Akun Digi",
+    compareHintText: "Ingin membandingkan fitur tiap model secara detail?",
+    compareHintLink: "Lihat perbandingan di bawah",
     bannerTitle: "Investasi Sekali",
     bannerSubtitle: ", Pakai Selamanya!",
     benefitNoSubscription: "Tanpa Biaya Langganan",
@@ -243,12 +252,16 @@ const translations = {
     demoVsBackupRestore: "Backup/Restore",
     demoVsBackupNo: "✗ Tidak bisa",
     demoVsBackupYes: "✓ 1-click backup",
-    demoVsSpeed: "Kecepatan",
-    demoVsSpeedInternet: "Tergantung internet",
-    demoVsSpeedFast: "✓ Super cepat",
     demoVsCost: "Biaya",
     demoVsCostFree: "✓ Gratis",
-    demoVsCostOneTime: "Investasi 1x",
+    demoVsCostOneTime: "Hubungi Kami",
+    // Price info section
+    priceInfoTitle: "Informasi Harga",
+    priceInfoDesc:
+      "Untuk informasi harga dapat menghubungi tim pemasaran kami. Harga disesuaikan dengan kebutuhan dan skala bisnis Anda.",
+    priceInfoCicil: "Biaya bisa dicicil — syarat & ketentuan berlaku",
+    priceInfoWa: "Tanya Harga via WhatsApp",
+    priceInfoForm: "Isi Form Kontak",
     footerText:
       "© 2025 PT. Integrasindo Multi Kreasi. Seluruh hak cipta dilindungi.",
     footerCompany: "PT. Integrasindo Multi Kreasi",
@@ -358,7 +371,7 @@ const translations = {
     service5Cta: "Professional Course",
     service5WebTitle: "Application Customization",
     service5WebDesc:
-      "The application can be tailored to your specific business workflow — from report formats and account structures to additional features as needed.",
+      "The application can be tailored to your specific business workflow.",
     service5WebCta: "Customization Consultation",
     servicesCtaBottom: "Free Consultation via WhatsApp",
     appsLabel: "2 Featured Products",
@@ -372,15 +385,18 @@ const translations = {
     app1Feature2: "Integrated Receivables & Payables",
     app1Feature3: "4 Models: Basic, Complete, Retail, Manufacturing",
     app1Feature4: "Export PDF & Excel",
-    app1Price: "Starting from IDR 2,500,000",
+    app1Price: "Contact Our Sales Team",
+    app1PriceSub: "Installment Available*",
     app1DemoBtn: "Preview Demo",
     app1ModelBtn: "View Models",
     app2Name: "inni POS",
-    app2Price: "IDR 4,500,000",
+    app2Price: "Contact Our Sales Team",
+    app2PriceSub: "Installment Available*",
     app2DemoBtn: "Preview Demo",
     appsCombineNote:
-      "💡 <strong>Use both</strong> — inni Accounting + inni POS integrated for complete business management",
+      "💡 <strong>Use both</strong> — inni Akun Digi + inni POS can be connected on one PC for complete business management",
     oneTimeLabel: "One-time investment",
+    cicilLabel: "Installment Available*",
     posModelSingle: "1 Model — All Inclusive",
     posModelDesc:
       "inni POS in one complete package. All cashier, inventory, and report features in one price.",
@@ -421,7 +437,7 @@ const translations = {
       "Pay once, use forever. No monthly fees. Updates free & optional.",
     howItWorksCard4Title: "Multi-Device",
     howItWorksCard4Desc:
-      "1 license for 1 main PC. Other devices on the same network can access via a file server running on the main PC, with a simple initial configuration.",
+      "1 license for 1 main PC. Other devices on the same network can access via a file server.",
     howItWorksCard6Title: "Easy Backup",
     howItWorksCard6Desc:
       "1-click backup to .sql file. Restore anytime hassle-free.",
@@ -441,12 +457,12 @@ const translations = {
       "Our team ensures installation succeeds. If issues arise, we remote via TeamViewer until perfect.",
     guarantee3Title: "Lifetime Support",
     guarantee3Desc:
-      "One-time payment, technical support for app usage never stops. Ask anytime via WhatsApp. Note: license transfer to a new device is subject to an administrative fee as per the agreement.",
+      "One-time payment, technical support for app usage never stops. Ask anytime via WhatsApp.",
     guarantee4Title: "Free Updates Forever",
     guarantee4Desc:
       "Bug fixes and new features are always free — just download and install.",
     guaranteeNote:
-      "All guarantees are active upon successful installation and license activation, as per the signed cooperation agreement.",
+      "All guarantees are active upon successful installation and license activation.",
     guaranteeCta: "Ask About Guarantee",
     howToBuyTitle: "From Consultation to",
     howToBuyTitleHighlight: "Ready to Use",
@@ -475,6 +491,12 @@ const translations = {
       "inni POS has 1 complete package with no separate models",
     comparisonSubtitle:
       "Each model has different installers and database structures.",
+    chooseModelLabel: "Start with this model",
+    chooseBtnLabel: "Choose",
+    detailedComparisonSubLabel:
+      "Full feature comparison between inni Akun Digi models",
+    compareHintText: "Want to compare features between each model in detail?",
+    compareHintLink: "View comparison below",
     bannerTitle: "One-Time Investment",
     bannerSubtitle: ", Use Forever!",
     benefitNoSubscription: "No Subscription Fees",
@@ -504,12 +526,16 @@ const translations = {
     demoVsBackupRestore: "Backup/Restore",
     demoVsBackupNo: "✗ Not possible",
     demoVsBackupYes: "✓ 1-click backup",
-    demoVsSpeed: "Speed",
-    demoVsSpeedInternet: "Depends on internet",
-    demoVsSpeedFast: "✓ Super fast",
     demoVsCost: "Cost",
     demoVsCostFree: "✓ Free",
-    demoVsCostOneTime: "One-time investment",
+    demoVsCostOneTime: "Contact Us",
+    // Price info section
+    priceInfoTitle: "Pricing Information",
+    priceInfoDesc:
+      "For pricing information, please contact our sales team. Prices are tailored to your business needs and scale.",
+    priceInfoCicil: "Installment payment available — terms & conditions apply",
+    priceInfoWa: "Ask Pricing via WhatsApp",
+    priceInfoForm: "Fill Contact Form",
     footerText: "© 2025 PT. Integrasindo Multi Kreasi. All rights reserved.",
     footerCompany: "PT. Integrasindo Multi Kreasi",
     footerTagline:
@@ -1040,7 +1066,7 @@ const faqData = {
     },
     {
       q: "Bisa diinstall di berapa komputer?",
-      a: "Satu lisensi untuk 1 komputer sebagai server utama. Komputer lain di kantor yang sama dapat mengakses via jaringan LAN tanpa install atau lisensi tambahan. Jika butuh install di lokasi/cabang berbeda, diperlukan lisensi terpisah.",
+      a: "Satu lisensi untuk 1 PC utama. Untuk penggunaan di perangkat lain, ke depannya dapat diakses melalui file server yang dijalankan di PC utama dalam jaringan yang sama. Jika butuh install di lokasi atau cabang berbeda, diperlukan lisensi terpisah.",
       tags: ["both"],
       icon: "fa-network-wired",
     },
@@ -1064,7 +1090,7 @@ const faqData = {
     },
     {
       q: "Apakah inni POS bisa diintegrasikan dengan inni Akun Digi?",
-      a: "Ya! Transaksi POS otomatis sync ke Akun Digi di komputer yang sama, atau bisa network sync jika di komputer berbeda dalam 1 jaringan LAN. Tidak perlu internet untuk sinkronisasi.",
+      a: "Ya! Saat diinstall di komputer yang sama, inni POS dan inni Akun Digi dapat dihubungkan dengan konfigurasi awal yang mudah. Setiap transaksi kasir di POS otomatis tercatat sebagai jurnal di Akun Digi — tidak perlu input ganda, tidak perlu internet.",
       tags: ["acct", "pos"],
       icon: "fa-link",
     },
@@ -1076,27 +1102,33 @@ const faqData = {
     },
     {
       q: "Bagaimana jika komputer rusak atau ganti komputer?",
-      a: "Tenang! Restore dari file backup Anda. Untuk pindah ke komputer baru: (1) Install aplikasi di komputer baru, (2) Hubungi admin kami untuk aktivasi license (approval 1-24 jam kerja), (3) Restore backup data Anda. License tetap valid selamanya.",
+      a: "Restore dari file backup Anda. Untuk pindah ke komputer baru: (1) Install aplikasi di komputer baru, (2) Hubungi admin kami untuk transfer license — dikenakan biaya administrasi sesuai ketentuan perjanjian, proses 1-24 jam kerja, (3) Restore backup data Anda. Data tetap aman selama Anda memiliki file backup.",
       tags: ["both"],
       icon: "fa-sync-alt",
+    },
+    {
+      q: "Bagaimana cara mengetahui informasi harga?",
+      a: "Untuk informasi harga dapat menghubungi tim pemasaran kami via WhatsApp di 0877-2511-3689 atau 0877-0288-2986, atau isi form kontak di website ini. Harga disesuaikan dengan kebutuhan dan skala bisnis Anda. Tersedia juga opsi cicilan dengan syarat & ketentuan berlaku.",
+      tags: ["both"],
+      icon: "fa-tags",
     },
   ],
   en: [
     {
       q: "Can inni Akun Digi be used offline?",
-      a: "Yes, 100% offline! inni Akun Digi is a desktop application installed like regular software on Windows. After installation, no internet required for daily operations. All data stored locally.",
+      a: "Yes, 100% offline! inni Akun Digi is a desktop application installed like regular software on Windows. After installation, no internet required for daily operations.",
       tags: ["acct"],
       icon: "fa-laptop-code",
     },
     {
       q: "How do I install the application?",
-      a: "Very easy! You receive an installer (.exe) around 150-300 MB. Double-click, follow the wizard (Next → Next → Finish), done. No server setup or technical configuration needed.",
+      a: "Very easy! You receive an installer (.exe) around 150-300 MB. Double-click, follow the wizard (Next → Next → Finish), done. No server setup needed.",
       tags: ["acct", "pos"],
       icon: "fa-download",
     },
     {
       q: "Is my financial data safe?",
-      a: "Very safe! All data stored 100% locally on your computer — nothing sent to our servers or internet. You have full control. Manual backup feature available to save to flash drive or external hard drive.",
+      a: "Very safe! All data stored 100% locally on your computer — nothing sent to our servers. Manual backup feature available to save to flash drive or external hard drive.",
       tags: ["both"],
       icon: "fa-shield-alt",
     },
@@ -1108,7 +1140,7 @@ const faqData = {
     },
     {
       q: "How many computers can I install it on?",
-      a: "One license for 1 server computer. Other computers in the same office can access via LAN without separate installation or license. Different locations/branches require separate licenses.",
+      a: "One license for 1 main PC. Other devices on the same network can access via a file server running on the main PC. Different locations require separate licenses.",
       tags: ["both"],
       icon: "fa-network-wired",
     },
@@ -1132,7 +1164,7 @@ const faqData = {
     },
     {
       q: "Can inni POS integrate with inni Akun Digi?",
-      a: "Yes! POS transactions auto-sync to Akun Digi on the same computer, or network sync if on different computers in 1 LAN. No internet needed for sync.",
+      a: "Yes! When installed on the same computer, inni POS and inni Akun Digi can be connected with a simple initial setup. Every POS transaction is automatically recorded as a journal entry — no double entry, no internet required.",
       tags: ["acct", "pos"],
       icon: "fa-link",
     },
@@ -1144,9 +1176,15 @@ const faqData = {
     },
     {
       q: "What if my computer breaks or I change computers?",
-      a: "Restore from your backup file. To move to a new computer: (1) Install on new computer, (2) Contact admin for license activation (1-24 business hours), (3) Restore your data. License valid forever.",
+      a: "Restore from your backup file. To move to a new computer: (1) Install on the new computer, (2) Contact our admin for license transfer — an administrative fee applies, process takes 1-24 business hours, (3) Restore your data.",
       tags: ["both"],
       icon: "fa-sync-alt",
+    },
+    {
+      q: "How do I get pricing information?",
+      a: "For pricing information, please contact our sales team via WhatsApp at 0877-2511-3689 or 0877-0288-2986, or fill the contact form on this website. Pricing is tailored to your business needs. Installment payment options are also available, subject to terms & conditions.",
+      tags: ["both"],
+      icon: "fa-tags",
     },
   ],
 };
@@ -1418,60 +1456,29 @@ const modelNotes = {
 
 const modelSummaries = {
   id: [
-    {
-      key: "basic",
-      title: "Basic",
-      price: "Rp 2.500.000",
-      tagline: "Pencatatan sederhana",
-    },
+    { key: "basic", title: "Basic", tagline: "Pencatatan sederhana" },
     {
       key: "lengkap",
       title: "Lengkap",
-      price: "Rp 3.500.000",
       tagline: "Laporan & analitik penuh",
       recommended: true,
     },
-    {
-      key: "retail",
-      title: "Retail",
-      price: "Rp 4.750.000",
-      tagline: "Manajemen stok dagang",
-    },
-    {
-      key: "manufaktur",
-      title: "Manufaktur",
-      price: "Rp 5.800.000",
-      tagline: "Produksi & BOM",
-    },
+    { key: "retail", title: "Retail", tagline: "Manajemen stok dagang" },
+    { key: "manufaktur", title: "Manufaktur", tagline: "Produksi & BOM" },
   ],
   en: [
-    {
-      key: "basic",
-      title: "Basic",
-      price: "IDR 2,500,000",
-      tagline: "Simple recording",
-    },
+    { key: "basic", title: "Basic", tagline: "Simple recording" },
     {
       key: "lengkap",
       title: "Complete",
-      price: "IDR 3,500,000",
       tagline: "Full reporting & analytics",
       recommended: true,
     },
-    {
-      key: "retail",
-      title: "Retail",
-      price: "IDR 4,750,000",
-      tagline: "Inventory for trading",
-    },
-    {
-      key: "manufaktur",
-      title: "Manufacturing",
-      price: "IDR 5,800,000",
-      tagline: "Production & BOM",
-    },
+    { key: "retail", title: "Retail", tagline: "Inventory for trading" },
+    { key: "manufaktur", title: "Manufacturing", tagline: "Production & BOM" },
   ],
 };
+
 // ── State ─────────────────────────────────────────────────
 let currentLang = "id";
 let currentTabCtx = "acct";
@@ -1493,7 +1500,6 @@ function updateScrollProgress() {
   bar.style.width = docHeight > 0 ? (scrollTop / docHeight) * 100 + "%" : "0%";
 }
 
-// Dynamic scroll padding based on actual header height
 function updateScrollPadding() {
   const header = document.getElementById("header");
   if (!header) return;
@@ -1673,6 +1679,7 @@ function getModelFeatures(modelKey, lang) {
   };
   return features[modelKey]?.[lang] || [];
 }
+
 function getModelIcon(key) {
   return (
     {
@@ -1697,15 +1704,12 @@ function generateModelCards(lang) {
   setTimeout(() => {
     container.innerHTML = "";
     modelSummaries[lang].forEach((m) => {
-      const isChosen = chosenModel === m.key;
       const card = document.createElement("div");
       card.className = `model-comparison-card flex flex-col ${m.recommended ? "recommended" : ""}`;
       card.innerHTML = `
         <div class="text-center mb-4">
           <i class="fas ${getModelIcon(m.key)} model-icon"></i>
           <h3 class="text-lg font-bold text-gray-800 mb-1">${m.title}</h3>
-          <div class="model-price">${m.price}</div>
-          <p class="text-xs text-gray-500 font-medium">${lang === "id" ? "Investasi Sekali" : "One-time Investment"}</p>
         </div>
         <div class="model-features flex-1 mb-4">
           ${getModelFeatures(m.key, lang)
@@ -1715,186 +1719,25 @@ function generateModelCards(lang) {
             )
             .join("")}
         </div>
-        <button class="compare-cta ${isChosen ? "chosen" : ""}" data-model="${m.key}">
-          <i class="fas ${isChosen ? "fa-check" : "fa-arrow-right"}"></i>
-          <span>${isChosen ? (lang === "id" ? "Dipilih" : "Chosen") : lang === "id" ? "Pilih Model Ini" : "Choose This Model"}</span>
-        </button>
         <div class="model-best-for ${m.recommended ? "recommended" : "normal"}">
           <i class="fas ${getModelIcon(m.key)}" style="font-size:0.65rem;margin-right:0.3rem"></i>
           <strong>${lang === "id" ? "Untuk:" : "For:"}</strong> ${m.tagline}
-        </div>`;
+        </div>
+        <a href="https://wa.me/6287725113689?text=Halo%2C%20saya%20ingin%20tahu%20harga%20model%20${encodeURIComponent(m.title)}%20inni%20Akun%20Digi"
+          target="_blank" rel="noopener noreferrer"
+          class="mt-3 text-center text-xs font-bold text-white bg-green-600 hover:bg-green-500 py-2 px-3 rounded-xl transition-all flex items-center justify-center gap-1">
+          <i class="fab fa-whatsapp"></i>
+          ${lang === "id" ? "Tanya Harga Model Ini" : "Ask for Pricing"}
+        </a>`;
       container.appendChild(card);
     });
-    container
-      .querySelectorAll(".compare-cta")
-      .forEach((btn) =>
-        btn.addEventListener("click", () =>
-          highlightModelColumn(btn.dataset.model),
-        ),
-      );
   }, 250);
 }
-function roiSelectModel(modelKey) {
-  const modelPriceMap = {
-    basic: 2500000,
-    lengkap: 3500000,
-    retail: 4750000,
-    manufaktur: 5800000,
-  };
 
-  // Update roiConfig
-  roiConfig.acct.price = modelPriceMap[modelKey];
-  roiConfig.both.price = modelPriceMap[modelKey] + 4500000;
-
-  // Update pill UI — highlight yang dipilih
-  document.querySelectorAll(".roi-model-pill").forEach((btn) => {
-    const isSelected = btn.dataset.roiModel === modelKey;
-    btn.classList.toggle("border-blue-500", isSelected);
-    btn.classList.toggle("bg-blue-50", isSelected);
-    btn.classList.toggle("border-gray-200", !isSelected);
-    btn.classList.toggle("bg-white", !isSelected);
-  });
-
-  // Sync ke model card di atas juga (opsional tapi bagus)
-  chosenModel = modelKey;
-  document.querySelectorAll(".compare-cta").forEach((btn) => {
-    const isChosen = btn.dataset.model === modelKey;
-    btn.classList.toggle("chosen", isChosen);
-    const icon = btn.querySelector("i");
-    const span = btn.querySelector("span");
-    if (icon)
-      icon.className = `fas ${isChosen ? "fa-check" : "fa-arrow-right"}`;
-    if (span)
-      span.textContent = isChosen
-        ? currentLang === "id"
-          ? "Dipilih"
-          : "Chosen"
-        : currentLang === "id"
-          ? "Pilih Model Ini"
-          : "Choose This Model";
-  });
-
-  // Update label di kartu hasil ROI
-  const modelNameMap = {
-    id: {
-      basic: "Basic",
-      lengkap: "Lengkap",
-      retail: "Retail",
-      manufaktur: "Manufaktur",
-    },
-    en: {
-      basic: "Basic",
-      lengkap: "Complete",
-      retail: "Retail",
-      manufaktur: "Manufacturing",
-    },
-  };
-  const modelPriceLabelMap = {
-    id: {
-      basic: "Rp 2.500.000",
-      lengkap: "Rp 3.500.000",
-      retail: "Rp 4.750.000",
-      manufaktur: "Rp 5.800.000",
-    },
-    en: {
-      basic: "IDR 2,500,000",
-      lengkap: "IDR 3,500,000",
-      retail: "IDR 4,750,000",
-      manufaktur: "IDR 5,800,000",
-    },
-  };
-  const r2Label = document.getElementById("roi-r2-label");
-  const inniPriceEl = document.getElementById("roi-inni-price");
-  if (r2Label)
-    r2Label.textContent =
-      "inni " + (modelNameMap[currentLang] || modelNameMap.id)[modelKey];
-  if (inniPriceEl)
-    inniPriceEl.textContent = (modelPriceLabelMap[currentLang] ||
-      modelPriceLabelMap.id)[modelKey];
-
-  roiCalc();
-}
-window.roiSelectModel = roiSelectModel;
 function highlightModelColumn(modelKey) {
   chosenModel = modelKey;
-  // Update harga inni di kalkulator sesuai model yang dipilih
-  const modelPriceMap = {
-    basic: 2500000,
-    lengkap: 3500000,
-    retail: 4750000,
-    manufaktur: 5800000,
-  };
-  roiConfig.acct.price = modelPriceMap[modelKey] || 2500000;
-  roiConfig.both.price = modelPriceMap[modelKey] + 4500000;
-
-  // Juga update label harga di kartu ROI
-  const modelPriceLabelMap = {
-    id: {
-      basic: "Rp 2.500.000",
-      lengkap: "Rp 3.500.000",
-      retail: "Rp 4.750.000",
-      manufaktur: "Rp 5.800.000",
-    },
-    en: {
-      basic: "IDR 2,500,000",
-      lengkap: "IDR 3,500,000",
-      retail: "IDR 4,750,000",
-      manufaktur: "IDR 5,800,000",
-    },
-  };
-  const priceLabel = (modelPriceLabelMap[currentLang] || modelPriceLabelMap.id)[
-    modelKey
-  ];
-  const inniPriceEl = document.getElementById("roi-inni-price");
-  if (inniPriceEl) inniPriceEl.textContent = priceLabel;
-
-  // Update label nama model di kartu ROI
-  const modelNameMap = {
-    id: {
-      basic: "Basic",
-      lengkap: "Lengkap",
-      retail: "Retail",
-      manufaktur: "Manufaktur",
-    },
-    en: {
-      basic: "Basic",
-      lengkap: "Complete",
-      retail: "Retail",
-      manufaktur: "Manufacturing",
-    },
-  };
-  const r2Label = document.getElementById("roi-r2-label");
-  if (r2Label)
-    r2Label.textContent =
-      "inni " + (modelNameMap[currentLang] || modelNameMap.id)[modelKey];
-
-  // Switch kalkulator ke tab Akun Digi dan recalculate
-  if (currentRoiTab !== "acct") roiSwitchTab("acct");
-  else roiCalc();
   const colMap = { basic: 1, lengkap: 2, retail: 3, manufaktur: 4 };
   const colIdx = colMap[modelKey];
-  const breakdownEl = document.getElementById("roi-bundle-breakdown");
-  if (breakdownEl) {
-    if (currentRoiTab !== "both") breakdownEl.classList.add("hidden");
-    else if (chosenModel) breakdownEl.classList.remove("hidden");
-  }
-  // Update card buttons
-  document.querySelectorAll(".compare-cta").forEach((btn) => {
-    const isChosen = btn.dataset.model === modelKey;
-    btn.classList.toggle("chosen", isChosen);
-    const icon = btn.querySelector("i");
-    const span = btn.querySelector("span");
-    if (icon)
-      icon.className = `fas ${isChosen ? "fa-check" : "fa-arrow-right"}`;
-    if (span)
-      span.textContent = isChosen
-        ? currentLang === "id"
-          ? "Dipilih"
-          : "Chosen"
-        : currentLang === "id"
-          ? "Pilih Model Ini"
-          : "Choose This Model";
-  });
 
   // Highlight table column
   const table = document.querySelector("#model-comparison table");
@@ -1924,7 +1767,8 @@ function highlightModelColumn(modelKey) {
       .getElementById("detailed-comparison-table")
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 150);
-  // Toast
+
+  // Toast with WhatsApp CTA
   const names = {
     id: {
       basic: "Basic",
@@ -1954,17 +1798,28 @@ function highlightModelColumn(modelKey) {
         : `${name} model selected!`,
     msg:
       currentLang === "id"
-        ? "Kolom tabel sudah di-highlight. Lihat detail di bawah!"
-        : "Table column highlighted. Check details below!",
+        ? "Hubungi tim pemasaran kami untuk informasi harga!"
+        : "Contact our sales team for pricing info!",
     actionText:
-      currentLang === "id" ? "Chat WhatsApp sekarang" : "Chat on WhatsApp now",
+      currentLang === "id"
+        ? "Tanya Harga via WhatsApp"
+        : "Ask Pricing via WhatsApp",
     actionHref: `https://wa.me/6287725113689?text=${waMsg}`,
     duration: 10000,
   });
 }
 window.highlightModelColumn = highlightModelColumn;
 
-// Comparison table toggle — OPEN by default
+function scrollToComparison() {
+  const dt = document.getElementById("detailed-comparison-table");
+  const btn = document.getElementById("comparison-toggle");
+  if (dt && dt.classList.contains("hidden")) toggleDetailedComparison();
+  setTimeout(() => {
+    btn?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 150);
+}
+window.scrollToComparison = scrollToComparison;
+
 function toggleDetailedComparison() {
   const table = document.getElementById("detailed-comparison-table");
   const chevron = document.getElementById("comparison-chevron");
@@ -1974,7 +1829,6 @@ function toggleDetailedComparison() {
   table.classList.toggle("hidden");
   chevron.classList.toggle("rotate");
   if (btn) btn.setAttribute("aria-expanded", String(isHidden));
-  // Update button text
   const textEl = btn?.querySelector(
     "[data-translate='detailedComparisonToggle']",
   );
@@ -2012,15 +1866,17 @@ function generateComparisonTable(lang) {
   tbody.innerHTML = "";
   comparisonData[lang].forEach((r, i) => {
     const bg = i % 2 === 0 ? "bg-gray-50" : "bg-white";
-    tbody.innerHTML += `<tr class="${bg} hover:bg-blue-50 transition-colors">
-      <td class="py-3 px-4 text-gray-700 font-medium sticky-col text-sm" data-label="Fitur">${r.feature}</td>
-      <td class="py-3 px-4 text-center" data-label="${names.basic}">${r.basic ? check : cross}</td>
-      <td class="py-3 px-4 text-center" data-label="${names.lengkap}">${r.lengkap ? check : cross}</td>
-      <td class="py-3 px-4 text-center" data-label="${names.retail}">${r.retail ? check : cross}${r.retailNote ? `<div class="text-xs text-gray-500 mt-0.5">${r.retailNote}</div>` : ""}</td>
-      <td class="py-3 px-4 text-center" data-label="${names.manufaktur}">${r.manufaktur ? check : cross}${r.manufakturNote ? `<div class="text-xs text-gray-500 mt-0.5">${r.manufakturNote}</div>` : ""}</td>
-    </tr>`;
+    tbody.innerHTML += `
+      <tr class="${bg} hover:bg-blue-50 transition-colors">
+        <td class="py-3 px-4 text-gray-700 font-medium sticky-col text-sm">${r.feature}</td>
+        <td class="py-3 px-4 text-center">${r.basic ? check : cross}</td>
+        <td class="py-3 px-4 text-center">${r.lengkap ? check : cross}</td>
+        <td class="py-3 px-4 text-center">${r.retail ? check : cross}${r.retailNote ? `<div class="text-xs text-gray-500 mt-0.5">${r.retailNote}</div>` : ""}</td>
+        <td class="py-3 px-4 text-center">${r.manufaktur ? check : cross}${r.manufakturNote ? `<div class="text-xs text-gray-500 mt-0.5">${r.manufakturNote}</div>` : ""}</td>
+      </tr>`;
   });
 }
+
 function toggleDemoDropup() {
   const dropup = document.getElementById("sticky-demo-dropup");
   const chevron = document.getElementById("sticky-demo-chevron");
@@ -2168,25 +2024,40 @@ function generateFaq(lang) {
     pos: { id: "POS", en: "POS" },
     both: { id: "Keduanya", en: "Both" },
   };
-  list.innerHTML = "";
-  faqData[lang].forEach((item, i) => {
+  const half = Math.ceil(faqData[lang].length / 2);
+  const col1 = faqData[lang].slice(0, half);
+  const col2 = faqData[lang].slice(half);
+  list.innerHTML = `
+    <div class="faq-two-col">
+      <div class="faq-col" id="faq-col-1"></div>
+      <div class="faq-col" id="faq-col-2"></div>
+    </div>`;
+  const renderItem = (item, i, colEl) => {
     const tags = item.tags
       .map(
         (t) =>
           `<span class="faq-tag ${t}"><i class="fas fa-tag"></i>${tagLabel[t][lang]}</span>`,
       )
       .join("");
-    list.innerHTML += `
+    colEl.innerHTML += `
       <div class="faq-item" data-faq="${i}">
         <button class="faq-question" onclick="toggleFaq(${i})" aria-expanded="false">
-          <span class="faq-question-text"><i class="fas ${item.icon} text-blue-400 mr-2 text-sm"></i>${item.q}</span>
+          <span class="faq-question-text">
+            <i class="fas ${item.icon} text-blue-400 mr-2 text-sm"></i>${item.q}
+          </span>
           <span class="faq-icon"><i class="fas fa-plus text-xs"></i></span>
         </button>
         <div class="faq-answer" id="faq-answer-${i}">
-          <div class="faq-answer-inner"><div class="mb-2">${tags}</div>${item.a}</div>
+          <div class="faq-answer-inner">
+            <div class="mb-2">${tags}</div>${item.a}
+          </div>
         </div>
       </div>`;
-  });
+  };
+  const col1El = document.getElementById("faq-col-1");
+  const col2El = document.getElementById("faq-col-2");
+  col1.forEach((item, i) => renderItem(item, i, col1El));
+  col2.forEach((item, i) => renderItem(item, i + half, col2El));
 }
 function toggleFaq(idx) {
   document.querySelectorAll(".faq-item").forEach((item, i) => {
@@ -2256,10 +2127,9 @@ function getImagesLen() {
   return f?.images?.length || 0;
 }
 
-// ── EXIT INTENT — FIXED: single trigger, localStorage guard ──
+// ── EXIT INTENT ───────────────────────────────────────────
 function showExitIntent() {
   if (exitShown || exitDismissed) return;
-  // Guard: don't show more than once per 24h
   const lastShown = localStorage.getItem("inni_exit_shown");
   if (lastShown && Date.now() - +lastShown < 86400000) return;
   exitShown = true;
@@ -2270,7 +2140,6 @@ function showExitIntent() {
 function hideExitIntent() {
   document.getElementById("exit-intent")?.classList.remove("show");
 }
-// Only one trigger: mouse leave (after 45s on page)
 document.addEventListener("mouseleave", (e) => {
   if (e.clientY <= 5 && !exitDismissed && timeOnPage > 45) showExitIntent();
 });
@@ -2280,397 +2149,6 @@ document.getElementById("exit-close-btn")?.addEventListener("click", () => {
   hideExitIntent();
 });
 
-// ── ROI CALCULATOR v2 — 3 tabs: Akun Digi / POS / Keduanya ──
-let currentRoiTab = "acct";
-
-// Per-tab config: inni price, cloud reference, WA message
-const roiConfig = {
-  acct: { price: 2500000, cloudDefault: 400000, waMsg: "inni%20Akun%20Digi" },
-  pos: { price: 4500000, cloudDefault: 300000, waMsg: "inni%20POS" },
-  both: {
-    price: 2500000 + 4500000,
-    cloudDefault: 700000,
-    waMsg: "inni%20Akun%20Digi%20%26%20POS%20(bundel)",
-  },
-};
-
-const roiStrings = {
-  id: {
-    acct: {
-      title: "Kalkulator Biaya — inni Akun Digi",
-      subtitle: "Sekali bayar vs langganan software akuntansi cloud",
-      prodLabel: "inni Akun Digi",
-      prodSub: "investasi sekali",
-      cloudRef: "Accurate Online, Jurnal, Kledo",
-      waText: "Halo%2C%20saya%20tertarik%20dengan%20inni%20Akun%20Digi",
-    },
-    pos: {
-      title: "Kalkulator Biaya — inni POS",
-      subtitle: "Sekali bayar vs langganan sistem kasir cloud",
-      prodLabel: "inni POS",
-      prodSub: "investasi sekali",
-      cloudRef: "Moka POS, Pawoon, iSeller",
-      waText: "Halo%2C%20saya%20tertarik%20dengan%20inni%20POS",
-    },
-    both: {
-      title: "Kalkulator Biaya — Bundel Akun Digi + POS",
-      subtitle: "Dua aplikasi terintegrasi, satu kali investasi",
-      prodLabel: "Akun Digi + POS",
-      prodSub: "bundel 2 aplikasi",
-      cloudRef: "paket akuntansi + kasir cloud",
-      waText:
-        "Halo%2C%20saya%20tertarik%20dengan%20bundel%20inni%20Akun%20Digi%20%26%20POS",
-    },
-    shared: {
-      tabBoth: "Keduanya",
-      labelYears: "Lama rencana pemakaian",
-      labelCloud: "Biaya langganan cloud/bulan",
-      labelHours: "Jam/bulan untuk proses manual",
-      r1: "Biaya cloud",
-      r3: "Hemat vs cloud",
-      r4: "Waktu dihemat",
-      r4sub: "est. 65% lebih efisien",
-      ctaBtn: "Konsultasi Sekarang",
-      note: "* Estimasi ilustratif. Bandingkan sesuai kebutuhan bisnis Anda.",
-      yearUnit: "tahun",
-      hourUnit: "jam",
-      integTitle: "Terintegrasi dalam Satu PC yang Sama",
-      integDesc:
-        "Saat diinstall di komputer yang sama, inni Akun Digi & inni POS bisa dihubungkan dengan konfigurasi awal yang mudah. Setiap transaksi kasir di POS otomatis tercatat sebagai jurnal di Akun Digi — cukup dalam satu PC, tidak perlu input ganda, tidak perlu internet. Ke depannya, dengan menjalankan file server yang tersedia, aplikasi juga dapat diakses oleh perangkat lain dalam jaringan yang sama.",
-      integF1: "Berjalan dalam satu PC",
-      integF2: "Tidak perlu input ganda",
-      integF3: "Laporan keuangan lengkap dari POS",
-      integF4: "Bisa diakses device lain via jaringan yang sama (file server)",
-      over: "selama",
-    },
-  },
-  en: {
-    acct: {
-      title: "Cost Calculator — inni Akun Digi",
-      subtitle: "One-time purchase vs cloud accounting subscription",
-      prodLabel: "inni Akun Digi",
-      prodSub: "one-time investment",
-      cloudRef: "Accurate Online, Jurnal, Kledo",
-      waText: "Hello%2C%20I%27m%20interested%20in%20inni%20Akun%20Digi",
-    },
-    pos: {
-      title: "Cost Calculator — inni POS",
-      subtitle: "One-time purchase vs cloud POS subscription",
-      prodLabel: "inni POS",
-      prodSub: "one-time investment",
-      cloudRef: "Moka POS, Pawoon, iSeller",
-      waText: "Hello%2C%20I%27m%20interested%20in%20inni%20POS",
-    },
-    both: {
-      title: "Cost Calculator — Akun Digi + POS Bundle",
-      subtitle: "Two integrated apps, one-time investment",
-      prodLabel: "Akun Digi + POS",
-      prodSub: "bundle 2 apps",
-      cloudRef: "accounting + POS cloud bundle",
-      waText:
-        "Hello%2C%20I%27m%20interested%20in%20inni%20Akun%20Digi%20%26%20POS%20bundle",
-    },
-    shared: {
-      tabBoth: "Both",
-      labelYears: "Planned usage duration",
-      labelCloud: "Cloud subscription/month",
-      labelHours: "Hours/month on manual processes",
-      r1: "Cloud total",
-      r3: "Savings vs cloud",
-      r4: "Time saved",
-      r4sub: "est. 65% more efficient",
-      ctaBtn: "Consult Now",
-      note: "* Illustrative estimate. Adjust based on your business needs.",
-      yearUnit: "yr",
-      hourUnit: "hrs",
-      integTitle: "Integrated on the Same PC",
-      integDesc:
-        "When installed on the same computer, inni Akun Digi & inni POS can be connected with a straightforward initial setup. Every POS transaction is automatically recorded as a journal entry in Akun Digi — all within one PC, no double entry, no internet required. In the future, by running the included file server, the application can also be accessed by other devices on the same network.",
-      integF1: "Runs on a single PC",
-      integF2: "No double entry",
-      integF3: "Full financial reports from POS",
-      integF4:
-        "Accessible from other devices on the same network (file server)",
-      over: "over",
-    },
-  },
-};
-
-function fmtRp(n) {
-  if (n >= 1000000) {
-    const jt = n / 1000000;
-    return "Rp " + (Number.isInteger(jt) ? jt : jt.toFixed(1)) + " jt";
-  }
-  if (n >= 1000) return "Rp " + Math.round(n / 1000) + "rb";
-  return "Rp " + n;
-}
-
-function roiSwitchTab(tab) {
-  currentRoiTab = tab;
-  const lang = currentLang || "id";
-  const cfg = roiConfig[tab];
-
-  // Tab button states
-  ["acct", "pos", "both"].forEach((t) => {
-    const btn = document.getElementById("roi-tab-" + t);
-    if (!btn) return;
-    btn.classList.remove("active-acct", "active-pos", "active-both");
-    btn.removeAttribute("style");
-  });
-  const activeBtn = document.getElementById("roi-tab-" + tab);
-  if (activeBtn) activeBtn.classList.add("active-" + tab);
-
-  // Header color
-  const header = document.getElementById("roi-header");
-  if (header) {
-    header.classList.remove("pos-mode", "both-mode");
-    if (tab === "pos") header.classList.add("pos-mode");
-    if (tab === "both") header.classList.add("both-mode");
-  }
-
-  // Inni card color
-  const inniCard = document.getElementById("roi-inni-card");
-  if (inniCard) {
-    inniCard.classList.remove("acct-mode", "pos-mode", "both-mode");
-    inniCard.classList.add(tab + "-mode");
-  }
-
-  // Conclusion bar color
-  const bar = document.getElementById("roi-conclusion-bar");
-  if (bar) {
-    bar.classList.remove("acct-mode", "pos-mode", "both-mode");
-    bar.classList.add(tab + "-mode");
-  }
-
-  // Integration banner
-  const banner = document.getElementById("roi-integration-banner");
-  if (banner) banner.classList.toggle("hidden", tab !== "both");
-
-  // ── TAMBAHKAN DI SINI ──
-  // Tampilkan/sembunyikan model selector sesuai tab
-  const selector = document.getElementById("roi-model-selector");
-  if (selector) selector.classList.toggle("hidden", tab === "pos");
-  // ── SAMPAI SINI ──
-
-  // Set default cloud value for this tab
-  const cloudSlider = document.getElementById("roi-cloud");
-  if (cloudSlider) cloudSlider.value = cfg.cloudDefault;
-
-  updateRoiTexts(lang);
-}
-window.roiSwitchTab = roiSwitchTab;
-
-function roiCalc() {
-  const lang = currentLang || "id";
-  const tab = currentRoiTab || "acct";
-  const s = roiStrings[lang] || roiStrings.id;
-  const ts = s.shared;
-  const cfg = roiConfig[tab];
-  // Bundle breakdown label
-  const breakdownEl = document.getElementById("roi-bundle-breakdown");
-  if (breakdownEl) {
-    if (currentRoiTab === "both" && chosenModel) {
-      const modelPriceLabelMap = {
-        id: {
-          basic: "Rp 2.500.000",
-          lengkap: "Rp 3.500.000",
-          retail: "Rp 4.750.000",
-          manufaktur: "Rp 5.800.000",
-        },
-        en: {
-          basic: "IDR 2,500,000",
-          lengkap: "IDR 3,500,000",
-          retail: "IDR 4,750,000",
-          manufaktur: "IDR 5,800,000",
-        },
-      };
-      const modelNameMap = {
-        id: {
-          basic: "Basic",
-          lengkap: "Lengkap",
-          retail: "Retail",
-          manufaktur: "Manufaktur",
-        },
-        en: {
-          basic: "Basic",
-          lengkap: "Complete",
-          retail: "Retail",
-          manufaktur: "Manufacturing",
-        },
-      };
-      const acctLabel = (modelPriceLabelMap[lang] || modelPriceLabelMap.id)[
-        chosenModel
-      ];
-      const posLabel = lang === "id" ? "Rp 4.500.000" : "IDR 4,500,000";
-      const modelName = (modelNameMap[lang] || modelNameMap.id)[chosenModel];
-      breakdownEl.textContent = acctLabel + " + " + posLabel;
-      breakdownEl.classList.remove("hidden");
-
-      // Update label judul kartu
-      const r2Label = document.getElementById("roi-r2-label");
-      if (r2Label) r2Label.textContent = "inni " + modelName + " + inni POS";
-    } else if (currentRoiTab === "both" && !chosenModel) {
-      breakdownEl.textContent =
-        lang === "id"
-          ? "Pilih model Akun Digi di atas"
-          : "Select Akun Digi model above";
-      breakdownEl.classList.remove("hidden");
-    } else {
-      breakdownEl.classList.add("hidden");
-    }
-  }
-  const years = parseInt(document.getElementById("roi-years")?.value || 3);
-  const cloudPerMonth = parseInt(
-    document.getElementById("roi-cloud")?.value || cfg.cloudDefault,
-  );
-  const hours = parseInt(document.getElementById("roi-hours")?.value || 20);
-  const months = years * 12;
-  const cloudTotal = cloudPerMonth * months;
-  const inniPrice = cfg.price;
-  const saving = cloudTotal - inniPrice;
-  const timeSaved = Math.round(hours * 0.65 * months);
-  const overLabel = ts.over + " " + years + " " + ts.yearUnit;
-
-  const set = (id, val) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = val;
-  };
-
-  set("roi-years-out", years + " " + ts.yearUnit);
-  set("roi-cloud-out", fmtRp(cloudPerMonth));
-  set("roi-hours-out", hours + " " + ts.hourUnit);
-  set("roi-cloud-total", fmtRp(cloudTotal));
-  set("roi-inni-price", fmtRp(inniPrice));
-  set("roi-saving", saving > 0 ? fmtRp(saving) : "—");
-  set("roi-time-saved", timeSaved + " " + ts.hourUnit);
-  set("roi-r1-sub", overLabel);
-  set("roi-r3-sub", overLabel);
-
-  // Conclusion
-  const conclusionEl = document.getElementById("roi-conclusion");
-  if (conclusionEl) {
-    if (saving > 0) {
-      conclusionEl.textContent =
-        lang === "id"
-          ? "Dalam " +
-            years +
-            " tahun, Anda hemat " +
-            fmtRp(saving) +
-            " dibanding berlangganan cloud!"
-          : "Over " +
-            years +
-            " years, you save " +
-            fmtRp(saving) +
-            " vs cloud subscription!";
-    } else {
-      conclusionEl.textContent =
-        lang === "id"
-          ? "Dengan pemakaian jangka panjang, inni jauh lebih hemat dari cloud!"
-          : "For long-term use, inni is far more cost-effective than cloud!";
-    }
-  }
-
-  // WA link
-  const waBtn = document.getElementById("roi-wa-btn");
-  if (waBtn) {
-    const ts2 = s[tab];
-    waBtn.href =
-      "https://wa.me/6287725113689?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20" +
-      ts2.waText;
-  }
-}
-window.roiCalc = roiCalc;
-
-function updateRoiTexts(lang) {
-  const s = roiStrings[lang] || roiStrings.id;
-  const tab = currentRoiTab || "acct";
-  const ts = s.shared;
-  const tp = s[tab];
-
-  // Deklarasi helper PERTAMA sebelum dipakai
-  const isId = lang === "id";
-  const set = (id, val) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = val;
-  };
-
-  // Pill data
-  const pillData = {
-    id: {
-      basic: { name: "Basic", price: "Rp 2.500.000" },
-      lengkap: { name: "Lengkap", price: "Rp 3.500.000" },
-      retail: { name: "Retail", price: "Rp 4.750.000" },
-      manufaktur: { name: "Manufaktur", price: "Rp 5.800.000" },
-    },
-    en: {
-      basic: { name: "Basic", price: "IDR 2,500,000" },
-      lengkap: { name: "Complete", price: "IDR 3,500,000" },
-      retail: { name: "Retail", price: "IDR 4,750,000" },
-      manufaktur: { name: "Manufacturing", price: "IDR 5,800,000" },
-    },
-  };
-
-  // Update slider range labels
-  set("roi-min-years", isId ? "1 thn" : "1 yr");
-  set("roi-max-years", isId ? "10 thn" : "10 yr");
-  set("roi-min-hours", isId ? "4 jam" : "4 hrs");
-  set("roi-max-hours", isId ? "80 jam" : "80 hrs");
-  set("roi-min-cloud", isId ? "200rb" : "IDR 200k");
-  set("roi-max-cloud", isId ? "1 jt" : "IDR 1M");
-
-  // Update pill model selector
-  const pd = pillData[lang] || pillData.id;
-  Object.keys(pd).forEach((key) => {
-    const nameEl = document.getElementById("roi-pill-" + key + "-name");
-    const priceEl = document.getElementById("roi-pill-" + key + "-price");
-    if (nameEl) nameEl.textContent = pd[key].name;
-    if (priceEl) priceEl.textContent = pd[key].price;
-  });
-
-  // Update teks ROI
-  set("roi-title", tp.title);
-  set("roi-subtitle", tp.subtitle);
-  set("roi-label-years", ts.labelYears);
-  set("roi-label-cloud", ts.labelCloud);
-  set("roi-label-hours", ts.labelHours);
-  set("roi-r1-label", ts.r1);
-  set("roi-r2-label", tp.prodLabel);
-  set("roi-r3-label", ts.r3);
-  set("roi-r4-label", ts.r4);
-  set("roi-r2-sub", tp.prodSub);
-  set("roi-r4-sub", ts.r4sub);
-  set("roi-cta-btn", ts.ctaBtn);
-  set("roi-note", ts.note + " (" + tp.cloudRef + ")");
-  set("roi-tab-both-label", ts.tabBoth);
-
-  // Integration banner
-  set("roi-integ-title", ts.integTitle);
-  set("roi-integ-desc", ts.integDesc);
-  set("roi-integ-f1", ts.integF1);
-  set("roi-integ-f2", ts.integF2);
-  set("roi-integ-f3", ts.integF3);
-  set("roi-integ-f4", ts.integF4);
-
-  roiCalc();
-}
-function fmtRp(n) {
-  const lang = currentLang || "id";
-  if (lang === "en") {
-    if (n >= 1000000) {
-      const m = n / 1000000;
-      return "IDR " + (Number.isInteger(m) ? m : m.toFixed(1)) + "M";
-    }
-    if (n >= 1000) return "IDR " + Math.round(n / 1000) + "K";
-    return "IDR " + n;
-  }
-  // ID format
-  if (n >= 1000000) {
-    const jt = n / 1000000;
-    return "Rp " + (Number.isInteger(jt) ? jt : jt.toFixed(1)) + " jt";
-  }
-  if (n >= 1000) return "Rp " + Math.round(n / 1000) + "rb";
-  return "Rp " + n;
-}
 // ── LANGUAGE ──────────────────────────────────────────────
 function updateLanguage(lang) {
   currentLang = lang;
@@ -2684,24 +2162,121 @@ function updateLanguage(lang) {
   document
     .querySelectorAll(".lang-btn")
     .forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
+
+  const isId = lang === "id";
+
+  // ── FAQ ──────────────────────────────────────────────────
+  const faqBadge = document.getElementById("faq-badge-text");
+  const faqTitle = document.getElementById("faq-title");
+  const faqSubtitle = document.getElementById("faq-subtitle");
+  const faqMoreText = document.getElementById("faq-more-text");
+  const faqWaText = document.getElementById("faq-wa-text");
+  if (faqBadge)
+    faqBadge.textContent = isId ? "Pertanyaan Umum" : "Common Questions";
+  if (faqTitle) faqTitle.textContent = "Frequently Asked Questions";
+  if (faqSubtitle)
+    faqSubtitle.textContent = isId
+      ? "Jawaban dari pertanyaan yang paling sering ditanyakan"
+      : "Answers to the most frequently asked questions";
+  if (faqMoreText)
+    faqMoreText.textContent = isId
+      ? "Masih ada pertanyaan lain?"
+      : "Still have questions?";
+  if (faqWaText)
+    faqWaText.textContent = isId ? "Tanya via WhatsApp" : "Ask via WhatsApp";
+
+  // ── KONTAK ────────────────────────────────────────────────
+  const contactHeading = document.getElementById("contact-title");
+  const contactDesc = document.getElementById("contact-subtitle");
+  if (contactHeading)
+    contactHeading.textContent = isId ? "Hubungi Kami" : "Contact Us";
+  if (contactDesc)
+    contactDesc.textContent = isId
+      ? "Kami siap membantu Anda! Jangan ragu untuk menghubungi tim kami"
+      : "We are ready to help you! Don't hesitate to contact our team";
+
+  // ── FORM KONTAK ───────────────────────────────────────────
+  const contactFormTitle = document.getElementById("contact-form-title");
+  const contactFormSubtitle = document.getElementById("contact-form-subtitle");
+  const labelNama = document.getElementById("label-nama");
+  const labelEmail = document.getElementById("label-email");
+  const labelWa = document.getElementById("label-whatsapp");
+  const gmailNote = document.getElementById("gmail-note");
+  const submitText = document.getElementById("submit-text");
+  const submitLoader = document.getElementById("submit-loader-text");
+  const privacyNote = document.getElementById("privacy-note");
+  const successTitle = document.getElementById("success-title");
+  const successMsg = document.getElementById("success-msg");
+  const successWaText = document.getElementById("success-wa-text");
+
+  if (contactFormTitle)
+    contactFormTitle.innerHTML = isId
+      ? `Tertarik dengan <span class="text-blue-600">inni Akun Digi?</span>`
+      : `Interested in <span class="text-blue-600">inni Akun Digi?</span>`;
+  if (contactFormSubtitle)
+    contactFormSubtitle.textContent = isId
+      ? "Tinggalkan data Anda, kami akan segera menghubungi!"
+      : "Leave your details, we will contact you shortly!";
+  if (labelNama)
+    labelNama.innerHTML = isId
+      ? `<i class="fas fa-user text-blue-600 mr-2"></i>Nama Lengkap <span class="text-red-500 ml-1">*</span>`
+      : `<i class="fas fa-user text-blue-600 mr-2"></i>Full Name <span class="text-red-500 ml-1">*</span>`;
+  if (labelEmail)
+    labelEmail.innerHTML = isId
+      ? `<i class="fas fa-envelope text-blue-600 mr-2"></i>Email (Gmail) <span class="text-red-500 ml-1">*</span>`
+      : `<i class="fas fa-envelope text-blue-600 mr-2"></i>Email (Gmail) <span class="text-red-500 ml-1">*</span>`;
+  if (labelWa)
+    labelWa.innerHTML = isId
+      ? `<i class="fab fa-whatsapp text-green-600 mr-2"></i>No. WhatsApp <span class="text-gray-400 font-normal ml-1">(Opsional)</span>`
+      : `<i class="fab fa-whatsapp text-green-600 mr-2"></i>WhatsApp Number <span class="text-gray-400 font-normal ml-1">(Optional)</span>`;
+  if (gmailNote)
+    gmailNote.innerHTML = isId
+      ? `<i class="fas fa-info-circle mr-1"></i>Hanya Gmail yang diterima`
+      : `<i class="fas fa-info-circle mr-1"></i>Only Gmail is accepted`;
+  if (submitText) submitText.textContent = isId ? "Kirim Sekarang" : "Send Now";
+  if (submitLoader)
+    submitLoader.textContent = isId ? "Mengirim..." : "Sending...";
+  if (privacyNote)
+    privacyNote.innerHTML = isId
+      ? `<i class="fas fa-lock mr-1"></i>Data Anda aman & hanya untuk komunikasi`
+      : `<i class="fas fa-lock mr-1"></i>Your data is safe & only used for communication`;
+  if (successTitle)
+    successTitle.textContent = isId ? "Terima Kasih!" : "Thank You!";
+  if (successMsg)
+    successMsg.textContent = isId
+      ? "Tim kami akan segera menghubungi Anda."
+      : "Our team will contact you shortly.";
+  if (successWaText)
+    successWaText.textContent = isId
+      ? "Chat via WhatsApp"
+      : "Chat via WhatsApp";
+
+  // ── STICKY CTA ────────────────────────────────────────────
+  const stickyAcct = document.getElementById("sticky-acct-text");
+  const stickyWa = document.getElementById("sticky-wa-text");
+  if (stickyAcct)
+    stickyAcct.textContent = isId ? "Preview Demo" : "Preview Demo";
+  if (stickyWa) stickyWa.textContent = isId ? "WhatsApp Kami" : "WhatsApp Us";
+
+  // ── GENERATE ULANG KONTEN DINAMIS ─────────────────────────
   generateFeatures(lang);
   generatePosFeatures(lang);
   generateModelCards(lang);
   generateComparisonTable(lang);
   generateModelNotes(lang);
   generateFaq(lang);
-  updateRoiTexts(lang);
-  // Update toggle button text
+
+  // ── TOGGLE BUTTON TEXT ────────────────────────────────────
   const dt = document.getElementById("detailed-comparison-table");
   const textEl = document.querySelector(
     "[data-translate='detailedComparisonToggle']",
   );
   if (textEl && dt)
     textEl.textContent = dt.classList.contains("hidden")
-      ? lang === "id"
+      ? isId
         ? "Lihat Perbandingan Detail"
         : "View Detailed Comparison"
-      : lang === "id"
+      : isId
         ? "Sembunyikan Perbandingan Detail"
         : "Hide Detailed Comparison";
 }
@@ -2823,12 +2398,12 @@ const sectionObserver = new IntersectionObserver(
   { threshold: 0.07 },
 );
 document.querySelectorAll("section").forEach((s) => {
-  if (s.id === "model-comparison") return; // always visible
+  if (s.id === "model-comparison") return;
   s.classList.add("scroll-section");
   sectionObserver.observe(s);
 });
 
-// ── FORM — SINGLE HANDLER (FIXED) ────────────────────────
+// ── FORM ──────────────────────────────────────────────────
 const waInput = document.querySelector('input[name="whatsapp"]');
 if (waInput) {
   waInput.addEventListener("input", function () {
@@ -2838,7 +2413,6 @@ if (waInput) {
   });
 }
 
-// Real-time validation
 function validateInput(input) {
   if (!input) return false;
   const isValid = input.validity.valid && input.value.trim() !== "";
@@ -2867,7 +2441,6 @@ function validateInput(input) {
   }
 }
 
-// Single submit handler
 document
   .getElementById("interestForm")
   ?.addEventListener("submit", async function (e) {
@@ -2875,8 +2448,6 @@ document
     const btn = document.getElementById("submitBtn");
     const submitText = btn?.querySelector(".submit-text");
     const submitLoader = btn?.querySelector(".submit-loader");
-
-    // Validate all required inputs
     const inputs = this.querySelectorAll(".validation-input");
     let allValid = true;
     inputs.forEach((inp) => {
@@ -2891,8 +2462,6 @@ document
       });
       return;
     }
-
-    // Set loading state
     if (btn) {
       btn.disabled = true;
       btn.setAttribute("aria-busy", "true");
@@ -2905,7 +2474,6 @@ document
     const waRaw = this.whatsapp.value.trim();
     const wa = waRaw ? "+62" + waRaw : "";
 
-    // Extra client-side checks
     if (!email.endsWith("@gmail.com")) {
       showToast({
         icon: "⚠️",
@@ -2980,9 +2548,39 @@ document.addEventListener("DOMContentLoaded", () => {
   applyDeepLink();
   updateScrollProgress();
   updateScrollPadding();
-  roiCalc(); // init calculator
 
-  // Comparison table HIDDEN by default — opens when model chosen or button clicked
+  // Dropdown navbar Produk
+  const navProdukGroup = document.getElementById("nav-produk-group");
+  const navProdukDropdown = document.getElementById("nav-produk-dropdown");
+  const navProdukChevron = document.getElementById("nav-produk-chevron");
+  if (navProdukGroup && navProdukDropdown) {
+    let dropdownTimeout;
+    navProdukGroup.addEventListener("mouseenter", () => {
+      clearTimeout(dropdownTimeout);
+      navProdukDropdown.classList.remove("opacity-0", "invisible");
+      navProdukDropdown.classList.add("opacity-100", "visible");
+      if (navProdukChevron) navProdukChevron.style.transform = "rotate(180deg)";
+    });
+    navProdukGroup.addEventListener("mouseleave", () => {
+      dropdownTimeout = setTimeout(() => {
+        navProdukDropdown.classList.add("opacity-0", "invisible");
+        navProdukDropdown.classList.remove("opacity-100", "visible");
+        if (navProdukChevron) navProdukChevron.style.transform = "rotate(0deg)";
+      }, 150);
+    });
+    navProdukDropdown.addEventListener("mouseenter", () =>
+      clearTimeout(dropdownTimeout),
+    );
+    navProdukDropdown.addEventListener("mouseleave", () => {
+      dropdownTimeout = setTimeout(() => {
+        navProdukDropdown.classList.add("opacity-0", "invisible");
+        navProdukDropdown.classList.remove("opacity-100", "visible");
+        if (navProdukChevron) navProdukChevron.style.transform = "rotate(0deg)";
+      }, 150);
+    });
+  }
+
+  // Comparison table HIDDEN by default
   const dt = document.getElementById("detailed-comparison-table");
   const chevron = document.getElementById("comparison-chevron");
   const toggleBtn = document.getElementById("comparison-toggle");

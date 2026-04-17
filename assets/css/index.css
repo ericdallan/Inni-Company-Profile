@@ -245,9 +245,33 @@ body {
 .nav-item.active::after {
   width: 100%;
 }
-
+nav .relative.group > a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
+}
 nav .relative.group .absolute {
+  margin-top: 0;
+  top: calc(100% + 4px);
+}
+#nav-produk-dropdown {
+  pointer-events: auto;
+}
+#nav-produk-dropdown.invisible {
   pointer-events: none;
+}
+nav .relative.group .absolute::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
 }
 nav .relative.group:hover .absolute {
   pointer-events: auto;
@@ -758,39 +782,6 @@ nav .relative.group:hover .absolute {
   border-left-color: #9ca3af;
   color: #6b7280;
 }
-
-/* CTA buttons in model cards */
-.compare-cta {
-  width: 100%;
-  padding: 0.7rem 1.1rem;
-  border: 1.5px solid #1d4ed8;
-  background: #fff;
-  color: #1d4ed8;
-  font-weight: 600;
-  font-size: 0.85rem;
-  border-radius: 0.7rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  margin-top: 0.65rem;
-}
-.compare-cta:hover {
-  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-  color: #fff;
-  border-color: #3b82f6;
-  box-shadow: 0 6px 18px rgba(29, 78, 216, 0.3);
-  transform: scale(1.01);
-}
-.compare-cta.chosen {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: #fff;
-  border-color: #059669;
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
-}
-
 /* Investment banner */
 .global-investment-banner {
   background: linear-gradient(
@@ -1028,7 +1019,22 @@ nav .relative.group:hover .absolute {
   color: #92400e;
   border: 1px solid #fde68a;
 }
-
+.faq-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+.faq-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (max-width: 768px) {
+  .faq-two-col {
+    grid-template-columns: 1fr;
+  }
+}
 /* ══ TOAST ════════════════════════════════════════════════════ */
 #toast-container {
   position: fixed;
